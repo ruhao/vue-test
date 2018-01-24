@@ -21,10 +21,17 @@ export default {
   },
   methods: {
     getData () {
-      this.$http.post('http://localhost:3000/admin/data', this.data).then(res => {
+      this.$http.post('api/admin/data', this.data).then(res => {
+      })
+    },
+    getList () {
+      this.$http.get('api/admin/data').then(res => {
         console.log(res)
       })
     }
+  },
+  created () {
+    this.getList()
   }
 }
 </script>
