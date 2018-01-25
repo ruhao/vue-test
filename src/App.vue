@@ -2,6 +2,9 @@
   <div id="app">
     <img src="./assets/logo.png">
     <button @click="getData">click</button>
+    <p v-for='(item,index) in list' :key=index>
+       {{ item.reg }}
+    </p>
     <router-link to="/Text">9999</router-link>
     <router-view/>
   </div>
@@ -16,17 +19,19 @@ export default {
         reg: 'lanqiao',
         password: 'laowaicang',
         workarea: 'news'
-      }
+      },
+      list: []
     }
   },
   methods: {
     getData () {
-      this.$http.post('api/admin/data', this.data).then(res => {
+      this.$http.post('http://120.79.22.222:3000/admin/data', this.data).then(res => {
       })
     },
     getList () {
-      this.$http.get('api/admin/data').then(res => {
-        console.log(res)
+      this.$http.get('http://120.79.22.222:3000/admin/data').then(res => {
+        this.list = res.data
+        console.log(this.list)
       })
     }
   },
