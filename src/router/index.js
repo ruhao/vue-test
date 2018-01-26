@@ -17,12 +17,73 @@ import CompanyPhotos from '@/components/news/companyphotos'
 import Marketing from '@/components/news/marketing'
 import IndustryDynamics from '@/components/news/industrydynamics'
 import PhotoDetail from '@/components/news/photodetail'
+import About from '@/components/about/about'
+import AboutHonor from '@/components/about/honor'
+import AboutCulture from '@/components/about/culture'
+import AboutFramework from '@/components/about/framework'
+import AboutFootprint from '@/components/about/footprint'
+import Product from '@/components/product/product'
+import ProductList from '@/components/product/productlist'
+import ProductCid from '@/components/product/productcid'
+import ProductDetail from '@/components/product/productdetail'
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   base: __dirname,
   routes: [
+    {
+      path: '/product',
+      components: {
+        default: Product
+      },
+      children: [{
+        path: '/',
+        components: {
+          default: ProductList
+        }
+      }, {
+        path: 'productcid/:id',
+        name: 'productcid',
+        components: {
+          default: ProductCid
+        }
+      }, {
+        path: 'productdetail/:content',
+        name: 'productdetail',
+        components: {
+          default: ProductDetail
+        }
+      }]
+    },
+    {
+      path: '/about',
+      components: {
+        default: About
+      },
+      children: [{
+        path: 'honor',
+        components: {
+          default: AboutHonor
+        }
+      }, {
+        path: '/',
+        components: {
+          default: AboutCulture
+        }
+
+      }, {
+        path: 'framework',
+        components: {
+          default: AboutFramework
+        }
+      }, {
+        path: 'footprint',
+        components: {
+          default: AboutFootprint
+        }
+      }]
+    },
     {
       path: '/news',
       components: {
