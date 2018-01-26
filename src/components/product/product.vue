@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div><img class="headerbg" src="api/products-ban.jpg"></div>
+		<div><img class="headerbg" src="http://www.api.com:3000/products-ban.jpg"></div>
 		<div class="wraperwidth-box">
 			<router-view></router-view>
 		</div>

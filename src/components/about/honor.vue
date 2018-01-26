@@ -54,7 +54,7 @@ export default {
   },
   created () {
     this.$http
-      .post('api/about/list', this.fliter)
+      .post('http://www.api.com:3000/about/list', this.fliter)
       .then(res => {
         let ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {

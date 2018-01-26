@@ -52,7 +52,7 @@
 					</router-link>
 					<router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}">
 						<div class="serverbox2" @click="changepage(item.num)">
-							<img src="api/products2-1.jpg">
+							<img src="http://www.api.com:3000/products2-1.jpg">
 							<p class="prolist">
 								{{item.name}}
 							</p>
@@ -137,7 +137,7 @@ export default {
     },
     getData () {
       this.$http
-        .post('api/products/list', this.fliter)
+        .post('http://www.api.com:3000/products/list', this.fliter)
         .then(res => {
           // 获取数据
           this.relatived = []

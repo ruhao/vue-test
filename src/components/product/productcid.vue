@@ -50,7 +50,7 @@
 				</router-link>
 				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:tempdata}}}">
 					<div class="serverbox2">
-						<img src="api/products2-1.jpg">
+						<img src="http://www.api.com:3000/products2-1.jpg">
 						<p class="prolist">
 							{{item.name}}
 						</p>
@@ -240,7 +240,7 @@ export default {
   created () {
     this.id = this.$route.params.id.id // 接受传递下来的信息
     this.cidsec1 = this.$route.params.id.name
-    this.$http.get('api/kind/data').then(res => {
+    this.$http.get('http://www.api.com:3000/kind/data').then(res => {
       this.alldata = res.data[0].children[5].children
       this.getcid(this.alldata, this.id)
       this.getData()

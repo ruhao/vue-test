@@ -1,30 +1,30 @@
 <template>
 	<div>
-		<div><img class="headerbg" src="../../../images/news-ban.jpg"></div>
+		<div><img class="headerbg" src="http://www.http://www.api.com:3000.com:3000/news-ban.jpg"></div>
 		<div class="wraperwidth">
 			<div class="hrroute">
 				<router-link to='/news'>
 					<div class="heroutebox1" @mouseenter="imgchange2" @mouseleave="imgchange3">
-						<img src="api/news1.jpg" id="hrimg1" />
-						<img src="api/news1a.jpg" id="hrimg2" />
+						<img src="http://www.api.com:3000/news1.jpg" id="hrimg1" />
+						<img src="http://www.api.com:3000/news1a.jpg" id="hrimg2" />
 					</div>
 				</router-link>
 				<router-link to='/news/industrydynamics'>
 					<div class="heroutebox1" @mouseenter="imgchange" @mouseleave="imgchange1">
-						<img src="api/news2.jpg" id="hrimg3" />
-						<img src="api/news2a.jpg" id="hrimg4" />
+						<img src="http://www.api.com:3000/news2.jpg" id="hrimg3" />
+						<img src="http://www.api.com:3000/news2a.jpg" id="hrimg4" />
 					</div>
 				</router-link>
 				<router-link to='/news/companyphotos'>
 					<div class="heroutebox1" @mouseenter="imgchange4" @mouseleave="imgchange5">
-						<img src="api/news3.jpg" id="hrimg5" />
-						<img src="api/news3a.jpg" id="hrimg6" />
+						<img src="http://www.api.com:3000/news3.jpg" id="hrimg5" />
+						<img src="http://www.api.com:3000/news3a.jpg" id="hrimg6" />
 					</div>
 				</router-link>
 				<router-link to='/news/marketing'>
 					<div class="heroutebox1" @mouseenter="imgchange6" @mouseleave="imgchange7">
-						<img src="api/news4.jpg" id="hrimg7" />
-						<img src="api/news4a.jpg" id="hrimg8" />
+						<img src="http://www.api.com:3000/news4.jpg" id="hrimg7" />
+						<img src="http://www.api.com:3000/news4a.jpg" id="hrimg8" />
 					</div>
 				</router-link>
 			</div>

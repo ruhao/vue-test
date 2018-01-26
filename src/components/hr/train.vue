@@ -37,7 +37,7 @@ export default {
     Nav
   },
   created () {
-    this.$http.post('api/hr/list', this.fliter).then(res => {
+    this.$http.post('http://www.api.com:3000/hr/list', this.fliter).then(res => {
       this.fliter.data6 = res.data.rows
       this.information = res.data.rows[0].edreson
     })
