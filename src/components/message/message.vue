@@ -1,10 +1,10 @@
 <template>
 	<div>
-		<div><img class='headerbg' src='api/liuyan-ban.jpg'></div>
+		<div><img class='headerbg' src='http://www.api.com:3000/liuyan-ban.jpg'></div>
 		<div class='contact-title'>
-			<img src='api/left-c.jpg' />
+			<img src='http://www.api.com:3000/left-c.jpg' />
 			<p>在线留言</p>
-			<img src='api/right-c.jpg' />
+			<img src='http://www.api.com:3000/right-c.jpg' />
 		</div>
 		<div class='contact-sketch'>
 			<p>留下评论，分享你的观点，留下评论，分享你的观点</p>
@@ -78,7 +78,7 @@ export default {
           }
 
           this.$http
-            .post('api/message/data', this.dataif)
+            .post('http://www.api.com:3000/message/data', this.dataif)
             .then(res => {
               setTimeout(function () {
                 document.getElementById('title').value = ''
