@@ -52,7 +52,7 @@
 					</router-link>
 					<router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}">
 						<div class="serverbox2" @click="changepage(item.num)">
-							<img src="../../../images/products2-1.jpg">
+							<img src="api/products2-1.jpg">
 							<p class="prolist">
 								{{item.name}}
 							</p>

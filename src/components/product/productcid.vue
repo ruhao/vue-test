@@ -50,7 +50,7 @@
 				</router-link>
 				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:tempdata}}}">
 					<div class="serverbox2">
-						<img src="../../../images/products2-1.jpg">
+						<img src="api/products2-1.jpg">
 						<p class="prolist">
 							{{item.name}}
 						</p>
