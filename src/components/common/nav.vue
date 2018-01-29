@@ -1,8 +1,8 @@
 <template>
 	<div class='contact-title'>
-		<img src='http://120.79.22.222:3000/left-c.jpg' />
+		<img src='../../../images/left-c.jpg' />
 		<p>{{navtitle}}</p>
-		<img src='http://120.79.22.222:3000/right-c.jpg' />
+		<img src='../../../images/right-c.jpg' />
 	</div>
 </template>
 

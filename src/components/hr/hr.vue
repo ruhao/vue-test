@@ -1,24 +1,24 @@
 <template>
 	<div>
-		<div><img class="headerbg" src="http://www.api.com:3000/join-ban.jpg"></div>
+		<div><img class="headerbg" src="../../../images/join-ban.jpg"></div>
 		<div class="wraperwidth">
 			<div class="hrroute">
 				<router-link to='/hr/strategy'>
 				<div class="heroutebox1" @mouseenter="imgchange2" @mouseleave="imgchange3">
-					<img src="http://www.api.com:3000/join1.jpg" id="hrimg1"/>
-					<img src="http://www.api.com:3000/join1a.jpg" id="hrimg2"/>
+					<img src="../../../images/join1.jpg" id="hrimg1"/>
+					<img src="../../../images/join1a.jpg" id="hrimg2"/>
 				</div>
 				</router-link>
 				<router-link to='/hr/train'>
 				<div class="heroutebox1" @mouseenter="imgchange" @mouseleave="imgchange1">
-					<img src="http://www.api.com:3000/join2.jpg" id="hrimg3"/>
-					<img src="http://www.api.com:3000/join2a.jpg" id="hrimg4"/>
+					<img src="../../../images/join2.jpg" id="hrimg3"/>
+					<img src="../../../images/join2a.jpg" id="hrimg4"/>
 				</div>
 				</router-link>
 				<router-link to='/hr/advertises'>
 				<div class="heroutebox1" @mouseenter="imgchange4" @mouseleave="imgchange5">
-					<img src="http://www.api.com:3000/join3.jpg" id="hrimg5"/>
-					<img src="http://www.api.com:3000/join3a.jpg" id="hrimg6"/>
+					<img src="../../../images/join3.jpg" id="hrimg5"/>
+					<img src="../../../images/join3a.jpg" id="hrimg6"/>
 				</div>
 				</router-link>
 			</div>

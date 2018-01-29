@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div>
-			<div><img class="headerbg" src="http://www.api.com:3000/banner1.jpg"/></div>
+			<div><img class="headerbg" src="../../../images/banner1.jpg"/></div>
 		</div>
 
 		<!--产品业务-->
@@ -16,33 +16,33 @@
 		<div class="wraperwidth">
 			<div class="index-product-content">
 				<div class="index-product-content-left">
-					<img src="http://www.api.com:3000/index-products1.jpg" />
+					<img src="../../../images/index-products1.jpg" />
 				</div>
 				<div class="index-product-content-right">
 					<div class="index-product-content-right-top">
 						<div>
-							<img src="http://www.api.com:3000/products1-1.jpg" />
+							<img src="../../../images/products1-1.jpg" />
 						</div>
 						<div class="index-product-content-box">
-							<img src="http://www.api.com:3000/index-products3.jpg" />
+							<img src="../../../images/index-products3.jpg" />
 							<p class="index-product-content-right-title">进口零食</p>
 							<p class="index-product-content-right-content">意大利有什么好吃的小吃？让我告诉你一些美味到不能停止的食品</p>
 						</div>
 						<div>
-							<img src="http://www.api.com:3000/products1-3.jpg" />
+							<img src="../../../images/products1-3.jpg" />
 						</div>
 					</div>
 					<div class="index-product-content-right-bottom">
 						<div class="index-product-content-box">
-							<img src="http://www.api.com:3000/index-products5.jpg" />
+							<img src="../../../images/index-products5.jpg" />
 							<p class="index-product-content-right-title">酒水饮料</p>
 							<p class="index-product-content-right-content">意大利文化我们应该学习葡萄酒，意大利葡萄酒，葡萄酒和许多其他称是家庭的基本饮料</p>
 						</div>
 						<div>
-							<img src="http://www.api.com:3000/products1-2.jpg" />
+							<img src="../../../images/products1-2.jpg" />
 						</div>
 						<div class="index-product-content-box">
-							<img src="http://www.api.com:3000/index-products7.jpg" />
+							<img src="../../../images/index-products7.jpg" />
 							<p class="index-product-content-right-title">副食品</p>
 							<p class="index-product-content-right-content">意大利是个美食国家，他们有着悠久的饮料历史，作为他们的艺术，时尚和家具，总是喜欢精心制作</p>
 						</div>
@@ -56,7 +56,7 @@
 		<div class="index-news-body">
 			<div class="wraperwidth">
 				<div class="index-news-title">
-					<img src="http://www.api.com:3000/index-news.jpg" />
+					<img src="../../../images/index-news.jpg" />
 					<p>老外仓坚持“合作创造财富、创新谋求发展”的经营理念，力求为社会、为企业、为员工创造和谐的氛围，走持续发展的道路。</p>
 				</div>
 				<div class="index-news-content">
@@ -68,7 +68,7 @@
 									<p class="index-news-p2">新闻营销可能是未来营销的主流趋势</p>
 								</span>
 							</i>
-							<img src="http://www.api.com:3000/news-con1.png" />
+							<img src="../../../images/news-con1.png" />
 						</div>
 						<div>
 							<i>
@@ -77,7 +77,7 @@
 								<p class="index-news-p2">构造城市捷运新风景，改善交通新方式，构造城市捷运新风景</p>
 							</span>
 						</i>
-							<img src="http://www.api.com:3000/news-con4.png" />
+							<img src="../../../images/news-con4.png" />
 						</div>
 					</div>
 					<div class="index-news-content-top">
@@ -88,7 +88,7 @@
 								<p class="index-news-p2">生产工厂成功举办竣工仪式暨产品推介，会</p>
 							</span>
 						</i>
-							<img src="http://www.api.com:3000/news-con2.png" />
+							<img src="../../../images/news-con2.png" />
 						</div>
 						<div>
 							<i>
@@ -97,7 +97,7 @@
 								<p class="index-news-p2">生产工厂成功举办竣工仪式暨产品推介会，生产工厂成功举办竣工仪式暨产...</p>
 							</span>
 						</i>
-							<img src="http://www.api.com:3000/news-con3.png" />
+							<img src="../../../images/news-con3.png" />
 						</div>
 					</div>
 				</div>
@@ -107,25 +107,25 @@
 		<!--关于我们-->
 
 		<div class="index-about-body-next">
-			<img class="index-about-img" src="http://www.api.com:3000/index-about.jpg" />
+			<img class="index-about-img" src="../../../images/index-about.jpg" />
 			<div class="index-about-content">
 				<div class="index-about-box">
-					<img src="http://www.api.com:3000/index-about1.png" />
+					<img src="../../../images/index-about1.png" />
 					<p class="index-about-box-p1">公司服务</p>
 					<p class="index-about-box-p2">专业上乘，服务一流，实现客户的利益最大化</p>
 				</div>
 				<div class="index-about-box">
-					<img src="http://www.api.com:3000/index-about2.png" />
+					<img src="../../../images/index-about2.png" />
 					<p class="index-about-box-p1">公司招聘</p>
 					<p class="index-about-box-p2">请关注我们的最新招聘信息</p>
 				</div>
 				<div class="index-about-box">
-					<img src="http://www.api.com:3000/index-about3.png" />
+					<img src="../../../images/index-about3.png" />
 					<p class="index-about-box-p1">营销活动</p>
 					<p class="index-about-box-p2">让服务永远物超所值，服务提升品质.</p>
 				</div>
 				<div class="index-about-box">
-					<img src="http://www.api.com:3000/index-about4.png" />
+					<img src="../../../images/index-about4.png" />
 					<p class="index-about-box-p1">Guestbook</p>
 					<p class="index-about-box-p2">请详细的填写表单留言，我们将在第一时间与您联系。</p>
 				</div>
@@ -135,7 +135,7 @@
 
 		<!--营销网络-->
 		<div class="index-internet-body">
-			<img class="imgsize" src="http://www.api.com:3000/index-network.jpg" />
+			<img class="imgsize" src="../../../images/index-network.jpg" />
 			<div class="index-internet-content">
 				<div class="index-internet-top">
 					<p class="index-internet-title">营销网络</p>
@@ -155,7 +155,7 @@
 
 		<!--联系我们-->
 		<div class="index-contact">
-			<img class="imgsize" src="http://www.api.com:3000/index-contact.jpg" />
+			<img class="imgsize" src="../../../images/index-contact.jpg" />
 			<div class="index-contact-c">
 				<div class="index-contact-content">
 					<p class="index-contact-introduce">某某控股集团有限公司成立于2005年1月18日，是一个市政府资本加快国有资本的战略性调整，一些重点企业做大做强，XX（实业）集团有限公司，国有独资公司XYZ控股有限公司和市燃气集团有限责任公司重组和一个城市的建立， 是其中的一个最大的国有企业资本、基础设施和公共设施和市政府和市国资委规划投资融资平台。自成立以来...
@@ -213,33 +213,33 @@ export default {
       ],
       contact: [
         {
-          icon: 'http://www.api.com:3000/index-contact1.png',
+          icon: '../../../images/index-contact1.png',
           value: '手机：86-15868121781 '
         },
         {
-          icon: 'http://www.api.com:3000/index-contact2.png',
+          icon: '../../../images/index-contact2.png',
           value: '座机：86-010-15868121781'
         },
         {
-          icon: 'http://www.api.com:3000/index-contact3.png',
+          icon: '../../../images/index-contact3.png',
           value: '邮件：15868121781@qq.com'
         },
         {
-          icon: 'http://www.api.com:3000/index-contact4.png',
+          icon: '../../../images/index-contact4.png',
           value: '地址：中国杭州 滨江区 滨盛路1688号'
         }
       ],
       cooperation: [
-        'http://www.api.com:3000/cooperation-1.png',
-        'http://www.api.com:3000/cooperation-2.png',
-        'http://www.api.com:3000/cooperation-3.png',
-        'http://www.api.com:3000/cooperation-4.png',
-        'http://www.api.com:3000/cooperation-5.png',
-        'http://www.api.com:3000/cooperation-6.png'
+        '../../../images/cooperation-1.png',
+        '../../../images/cooperation-2.png',
+        '../../../images/cooperation-3.png',
+        '../../../images/cooperation-4.png',
+        '../../../images/cooperation-5.png',
+        '../../../images/cooperation-6.png'
       ],
       cooperationf: [
-        'http://www.api.com:3000/cooperation-7.png',
-        'http://www.api.com:3000/cooperation-8.png'
+        '../../../images/cooperation-7.png',
+        '../../../images/cooperation-8.png'
       ]
     }
   }

@@ -15,19 +15,19 @@ export default {
     return {
       contact: [
         {
-          icon: 'http://www.api.com:3000/index-contact1.png',
+          icon: '../../../images/index-contact1.png',
           value: '手机：86-15868121781 '
         },
         {
-          icon: 'http://www.api.com:3000/index-contact2.png',
+          icon: '../../../images/index-contact2.png',
           value: '座机：86-010-15868121781'
         },
         {
-          icon: 'http://www.api.com:3000/index-contact3.png',
+          icon: '../../../images/index-contact3.png',
           value: '邮件：15868121781@qq.com'
         },
         {
-          icon: 'http://www.api.com:3000/index-contact4.png',
+          icon: '../../../images/index-contact4.png',
           value: '地址：中国杭州 滨江区 滨盛路1688号'
         }
       ]

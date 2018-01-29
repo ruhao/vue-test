@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     getData () {
-      this.$http.post('http://www.api.com:3000/internet/list').then(res => {
+      this.$http.post('http://120.79.22.222/internet/list').then(res => {
         var ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {
           res.data.rows[i].num = i

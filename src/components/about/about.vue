@@ -1,30 +1,30 @@
 <template>
 	<div>
-		<div><img class="headerbg" src="http://www.api.com:3000/about-ban.jpg"></div>
+		<div><img class="headerbg" src="../../../images/about-ban.jpg"></div>
 		<div class="wraperwidth">
 			<div class="hrroute">
 				<router-link to='/about'>
 					<div class="heroutebox1" @mouseenter="imgchange2" @mouseleave="imgchange3">
-						<img src="http://www.api.com:3000/about1.jpg" id="hrimg1" />
-						<img src="http://www.api.com:3000/about1a.jpg" id="hrimg2" />
+						<img src="../../../images/about1.jpg" id="hrimg1" />
+						<img src="../../../images/about1a.jpg" id="hrimg2" />
 					</div>
 				</router-link>
 				<router-link to='/about/footprint'>
 					<div class="heroutebox1" @mouseenter="imgchange" @mouseleave="imgchange1">
-						<img src="http://www.api.com:3000/about2.jpg" id="hrimg3" />
-						<img src="http://www.api.com:3000/about2a.jpg" id="hrimg4" />
+						<img src="../../../images/about2.jpg" id="hrimg3" />
+						<img src="../../../images/about2a.jpg" id="hrimg4" />
 					</div>
 				</router-link>
 				<router-link to='/about/honor'>
 					<div class="heroutebox1" @mouseenter="imgchange4" @mouseleave="imgchange5">
-						<img src="http://www.api.com:3000/about3.jpg" id="hrimg5" />
-						<img src="http://www.api.com:3000/about3a.jpg" id="hrimg6" />
+						<img src="../../../images/about3.jpg" id="hrimg5" />
+						<img src="../../../images/about3a.jpg" id="hrimg6" />
 					</div>
 				</router-link>
 				<router-link to='/about/framework'>
 					<div class="heroutebox1" @mouseenter="imgchange6" @mouseleave="imgchange7">
-						<img src="http://www.api.com:3000/about4.jpg" id="hrimg7" />
-						<img src="http://www.api.com:3000/about4a.jpg" id="hrimg8" />
+						<img src="../../../images/about4.jpg" id="hrimg7" />
+						<img src="../../../images/about4a.jpg" id="hrimg8" />
 					</div>
 				</router-link>
 			</div>

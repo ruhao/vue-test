@@ -54,7 +54,7 @@ export default {
   },
   created () {
     this.$http
-      .post('http://localhost:3000/about/list', this.fliter)
+      .post('http://120.79.22.22:3000/about/list', this.fliter)
       .then(res => {
         let ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {

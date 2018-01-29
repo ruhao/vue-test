@@ -2,7 +2,7 @@
 	<div>
 		<Nav navtitle='发展足迹'></Nav>
 		<div class="wraperwidth">
-			<img src="http://www.api.com:3000/organization.jpg" />
+			<img src="../../../images/organization.jpg" />
 		</div>
 	</div>
 </template>

@@ -1,18 +1,18 @@
 <template>
 	<div>
-		<div><img class='headerbg' src='http://www.api.com:3000/contact-ban.jpg'></div>
+		<div><img class='headerbg' src='../../../images/contact-ban.jpg'></div>
 
 		<div class='contact-title'>
-			<img src='http://www.api.com:3000/left-c.jpg' />
+			<img src='../../../images/left-c.jpg' />
 			<p>联系我们</p>
-			<img src='http://www.api.com:3000/right-c.jpg' />
+			<img src='../../../images/right-c.jpg' />
 		</div>
 		<div class='contact-sketch'>
 			<p>请在线提交您的咨询、建议、意见，我们会在收到邮件后的1个工作日内，对您的问题给予答复。</p>
 		</div>
 		<div class='contact-content'>
 			<div class='contact-content-top'>
-				<img src='http://www.api.com:3000/contact1.jpg' />
+				<img src='../../../images/contact1.jpg' />
 				<div class='contact-content-tr'>
 					<div class='contact-content-tc'>
 						<h3>意大利总部</h3>
@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			<div class='contact-content-top'>
-				<img class='contact-content-img' src='http://www.api.com:3000/contact2.jpg' />
+				<img class='contact-content-img' src='../../../images/contact2.jpg' />
 				<div class='contact-content-tb'>
 					<div class='contact-content-tc'>
 						<h3>意大利总部</h3>
@@ -47,19 +47,19 @@ export default {
     return {
       contact: [
         {
-          icon: 'http://www.api.com:3000/index-contact1.png',
+          icon: '../../../images/index-contact1.png',
           value: '手机：86-15868121781 '
         },
         {
-          icon: 'http://www.api.com:3000/index-contact2.png',
+          icon: '../../../images/index-contact2.png',
           value: '座机：86-010-15868121781'
         },
         {
-          icon: 'http://www.api.com:3000/index-contact3.png',
+          icon: '../../../images/index-contact3.png',
           value: '邮件：15868121781@qq.com'
         },
         {
-          icon: 'http://www.api.com:3000/index-contact4.png',
+          icon: '../../../images/index-contact4.png',
           value: '地址：中国杭州 滨江区 滨盛路1688号'
         }
       ]

@@ -15,7 +15,7 @@
 					<router-link to='/internet' tag='span' class="navfont" active-class="routeactive">网络服务</router-link>
 				</li>
 				<li class="headernavmid">
-					<img src="http://www.laowaicang.com/templates/main/images/logo.png"></li>
+					<img src="../images/logo.png"></li>
 				<li class="headernavright">
 					<router-link to='/news' tag='span' class="navfont" active-class="routeactive">新闻动态</router-link>
 				</li>
