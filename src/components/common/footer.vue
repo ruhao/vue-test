@@ -10,24 +10,28 @@
 </template>
 
 <script>
+import contact1 from '../../../images/index-contact1.png'
+import contact2 from '../../../images/index-contact2.png'
+import contact3 from '../../../images/index-contact3.png'
+import contact4 from '../../../images/index-contact4.png'
 export default {
   data () {
     return {
       contact: [
         {
-          icon: '../../../images/index-contact1.png',
+          icon: contact1,
           value: '手机：86-15868121781 '
         },
         {
-          icon: '../../../images/index-contact2.png',
+          icon: contact2,
           value: '座机：86-010-15868121781'
         },
         {
-          icon: '../../../images/index-contact3.png',
+          icon: contact3,
           value: '邮件：15868121781@qq.com'
         },
         {
-          icon: '../../../images/index-contact4.png',
+          icon: contact4,
           value: '地址：中国杭州 滨江区 滨盛路1688号'
         }
       ]

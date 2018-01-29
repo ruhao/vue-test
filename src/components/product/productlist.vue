@@ -23,62 +23,78 @@
 <script>
 import Nav from '../common/nav.vue'
 import Foot from '../common/footer.vue'
+import p11 from '../../../images/products1-1.jpg'
+import p21 from '../../../images/products2-1.jpg'
+import p12 from '../../../images/products1-2.jpg'
+import p22 from '../../../images/products2-2.jpg'
+import p13 from '../../../images/products1-3.jpg'
+import p23 from '../../../images/products2-3.jpg'
+import p14 from '../../../images/products1-4.jpg'
+import p24 from '../../../images/products2-4.jpg'
+import p15 from '../../../images/products1-5.jpg'
+import p25 from '../../../images/products2-5.jpg'
+import p16 from '../../../images/products1-6.jpg'
+import p26 from '../../../images/products2-6.jpg'
+import p17 from '../../../images/products1-7.jpg'
+import p27 from '../../../images/products2-7.jpg'
+import p18 from '../../../images/products1-8.jpg'
+import p28 from '../../../images/products2-8.jpg'
 export default {
   data () {
     return {
       productlist: [
         {
-          imgurl1: '../../../images/products1-1.jpg',
-          imgurl2: '../../../images/products2-1.jpg',
+          imgurl1: p11,
+          imgurl2: p21,
           title: '酒水饮料',
           content: '意大利文化我们应该学习葡萄酒，意大利葡萄酒，葡萄酒和许多其他称，是家庭的 基本饮料。',
           id: '5a5c236891abad27484d3ee3'
         },
         {
-          imgurl1: '../../../images/products1-2.jpg',
-          imgurl2: '../../../images/products2-2.jpg',
+          imgurl1: p12,
+          imgurl2: p22,
           title: '休闲零食',
           content: '意大利有什么好吃的小吃？让我告诉你一些美味到不能停止的零食。',
           id: '5a5c12346354202600f286fe'
         },
         {
-          imgurl1: '../../../images/products1-3.jpg',
-          imgurl2: '../../../images/products2-3.jpg',
+          imgurl1: p13,
+          imgurl2: p23,
           title: '粮油副食',
           content: '意大利是一个美食国家，他们有着悠久的饮食历史，作为他们的艺术、时尚和家具，总是喜欢精心制作。',
           id: '5a5c120e6354202600f286fb'
         },
         {
-          imgurl1: '../../../images/products1-4.jpg',
-          imgurl2: '../../../images/products2-4.jpg',
+          imgurl1: p14,
+          imgurl2: p24,
           title: '新鲜水果',
           content: '意大利是一个美食国家，他们有着悠久的饮食历史，作为他们的艺术、时尚和家具，总是喜欢精心制作。',
           id: '5a5c12186354202600f286fc'
         },
         {
-          imgurl1: '../../../images/products1-5.jpg',
-          imgurl2: '../../../images/products2-5.jpg',
+          imgurl1: p15,
+          imgurl2: p25,
           title: '酒水饮料',
           content: '意大利文化我们应该学习葡萄酒，意大利葡萄酒，葡萄酒和许多其他称，是家庭的 基本饮料。',
           id: '5a5c12346354202600f286fe'
         },
         {
-          imgurl1: '../../../images/products1-6.jpg',
-          imgurl2: '../../../images/products2-6.jpg',
+          imgurl1: p16,
+          imgurl2: p26,
           title: '休闲零食',
           content: '意大利有什么好吃的小吃？让我告诉你一些美味到不能停止的零食。',
           id: '5a5c12346354202600f286fe'
         },
         {
-          imgurl1: '../../../images/products1-7.jpg',
-          imgurl2: '../../../images/products2-7.jpg',
+          imgurl1: p17,
+          imgurl2: p27,
           title: '粮油副食',
           content: '意大利是一个美食国家，他们有着悠久的饮食历史，作为他们的艺术、时尚和家具，总是喜欢精心制作。',
           id: '5a5c120e6354202600f286fb'
         },
         {
-          imgurl1: '../../../images/products1-8.jpg',
-          imgurl2: '../../../images/products2-8.jpg',
+          imgurl1: p18,
+          imgurl2: p28,
           title: '新鲜水果',
           content: '意大利是一个美食国家，他们有着悠久的饮食历史，作为他们的艺术、时尚和家具，总是喜欢精心制作。',
           id: '5a5c12186354202600f286fc'

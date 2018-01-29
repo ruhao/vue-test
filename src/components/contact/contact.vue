@@ -42,24 +42,29 @@
 <script>
 import Foot from '../common/footer.vue'
 
+import indexcontact1 from '../../../images/index-contact1.png'
+import indexcontact2 from '../../../images/index-contact2.png'
+import indexcontact3 from '../../../images/index-contact3.png'
+import indexcontact4 from '../../../images/index-contact4.png'
+
 export default {
   data () {
     return {
       contact: [
         {
-          icon: '../../../images/index-contact1.png',
+          icon: indexcontact1,
           value: '手机：86-15868121781 '
         },
         {
-          icon: '../../../images/index-contact2.png',
+          icon: indexcontact2,
           value: '座机：86-010-15868121781'
         },
         {
-          icon: '../../../images/index-contact3.png',
+          icon: indexcontact3,
           value: '邮件：15868121781@qq.com'
         },
         {
-          icon: '../../../images/index-contact4.png',
+          icon: indexcontact4,
           value: '地址：中国杭州 滨江区 滨盛路1688号'
         }
       ]
