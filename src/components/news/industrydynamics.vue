@@ -142,6 +142,7 @@ li {
 }
 
 .cnboxp2 {
+  margin-top: 20px;
   margin-left: 40px;
   font-weight: bold;
 }

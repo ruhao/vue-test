@@ -45,12 +45,16 @@
 		</div>
 		<div class="wraperwidth">
 			<div v-for="(item,index) in fliter.data6" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
-				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:tempdata}}}">
+				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
 					<div class="serverbox1"><img :src="item.imgurl"></div>
 				</router-link>
-				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:tempdata}}}">
+				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
 					<div class="serverbox2">
-						<img src="http://120.79.22.222:3000/products2-1.jpg">
+						<img v-if='item.type==5' src="../../../images/products2-1.jpg">
+            <img v-if='item.type==4' src="../../../images/products2-4.jpg">
+            <img v-if='item.type==2' src="../../../images/products2-7.jpg">
+            <img v-if='item.type==1' src="../../../images/products2-3.jpg">
+            <img v-if='item.type==3' src="../../../images/products2-6.jpg">
 						<p class="prolist">
 							{{item.name}}
 						</p>

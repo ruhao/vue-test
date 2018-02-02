@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<Nav navtitle='网络营销'></Nav>
+		<Nav navtitle='公司服务'></Nav>
 		<div class='wraperwidth'>
 			<div v-for='(item,index) in server' :key=index class='serverbox' @mouseenter='moveup(item.num)' @mouseleave='movedown(item.num)'>
 				<router-link :to="{name:'severdetail',params:{content:item}}">
@@ -32,11 +32,12 @@ export default {
   },
   methods: {
     getData () {
-      this.$http.post('http://120.79.22.222/internet/list').then(res => {
+      this.$http.post('http://120.79.22.222:3000/internet/list').then(res => {
         var ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {
           res.data.rows[i].num = i
           this.server.push(res.data.rows[i])
+          console.log(this.server)
         }
       })
     },

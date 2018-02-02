@@ -1,8 +1,10 @@
 <template>
 	<div class='contact-title'>
+    <div class="contact-middle">
 		<img src='../../../images/left-c.jpg' />
 		<p>{{navtitle}}</p>
 		<img src='../../../images/right-c.jpg' />
+    </div>
 	</div>
 </template>
 
@@ -20,13 +22,17 @@ p {
 }
 
 .contact-title {
-  display: flex;
-  width: 440px;
+  width: 1420px;
   margin: 0 auto;
   position: relative;
-  margin-top: 50px;
+  margin-top: 50px auto;
 }
-
+.contact-middle{
+  width: 440px;
+ display: flex;
+ margin: 0 auto;
+ position: relative;
+}
 .contact-title p {
   line-height: 24px;
   font-size: 24px;

@@ -78,7 +78,9 @@ export default {
       relative: [],
       x: '',
       y: '',
+      id: '',
       relatived: [],
+      tempdata: [],
       fliter: {
         data6: [],
         limit: 50,
@@ -104,6 +106,28 @@ export default {
       let object1 = data.split('&&')
       this.introduction = object1
     },
+    getlist (data) {
+      this.$http.get('http://120.79.22.222:3000/kind/data').then(res => {
+        this.getcid(res.data[0].children[5].children, data)
+        this.getData()
+      })
+    },
+    getcid (data, id) {
+      let ii = data.length
+      for (let i = 0; i < ii; i++) {
+        if (data[i]._id === id) {
+          this.tempdata = data[i]
+          console.log(this.tempdata)
+          this.getlistcid(this.tempdata)
+          return
+        } else {
+          if (data[i].children) {
+            this.getcid(data[i].children, id)
+          }
+        }
+      }
+    },
+    // 获取id数组与数据库进行交互
     getlistcid (data) {
       if (data.children) {
         let ll = data.children.length
@@ -122,8 +146,12 @@ export default {
     },
     randomre (data) {
       let uu = data.length
-      this.x = parseInt(Math.random() * uu)
-      this.randomrem(this.x, uu)
+      if (uu > 0) {
+        this.x = parseInt(Math.random() * uu)
+        this.randomrem(this.x, uu)
+      } else {
+        this.x = 0
+      }
     },
     randomrem (x, uu) {
       this.y = parseInt(Math.random() * uu)
@@ -136,16 +164,24 @@ export default {
       this.getData()
     },
     getData () {
-      this.$http
-        .post('http://120.79.22.222:3000/products/list', this.fliter)
+      this.$http.post('http://120.79.22.222:3000/products/list', this.fliter)
         .then(res => {
           // 获取数据
+          console.log(this.fliter)
+          console.log(res)
           this.relatived = []
-          this.randomre(res.data.rows)
-          res.data.rows[this.x].num = 0
-          res.data.rows[this.y].num = 1
-          this.relatived.push(res.data.rows[this.x])
-          this.relatived.push(res.data.rows[this.y])
+          let uu = res.data.rows.length
+          if (uu > 0) {
+            this.randomre(res.data.rows)
+            res.data.rows[this.x].num = 0
+            res.data.rows[this.y].num = 1
+            this.relatived.push(res.data.rows[this.x])
+            this.relatived.push(res.data.rows[this.y])
+          } else {
+            this.randomre(res.data.rows)
+            res.data.rows[this.x].num = 0
+            this.relatived.push(res.data.rows[this.x])
+          }
         })
     }
   },
@@ -154,8 +190,7 @@ export default {
   },
   created () {
     this.detail = this.$route.params.content.content
-    this.getlistcid(this.$route.params.content.relative)
-    this.getData()
+    this.getlist(this.$route.params.content.relative)
 
     if (this.detail.content) {
       this.getdetail(this.detail.content)

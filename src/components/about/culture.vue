@@ -54,8 +54,9 @@ export default {
   },
   created () {
     this.$http
-      .post('http://120.79.22.22:3000/about/list', this.fliter)
+      .post('http://120.79.22.222:3000/about/list', this.fliter)
       .then(res => {
+        console.log(res)
         let ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {
           res.data.rows[i].content = res.data.rows[i].content.replace(

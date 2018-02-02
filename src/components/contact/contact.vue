@@ -53,7 +53,7 @@ export default {
       contact: [
         {
           icon: indexcontact1,
-          value: '手机：86-15868121781 '
+          value: '手机：86-15868121781'
         },
         {
           icon: indexcontact2,

@@ -267,13 +267,13 @@ button {
   position: absolute;
   top: 50%;
   margin-top: -56px;
-  background: url('http://120.79.22.222:3000/prev.png') no-repeat;
+  background: url('../../../images/prev.png') no-repeat;
   z-index: 99;
 }
 
 .next {
   right: 0;
-  background-image: url('http://120.79.22.222:3000/prev.png');
+  background-image: url('../../../images/next.png');
 }
 .titlep {
   color: #ee882a;
