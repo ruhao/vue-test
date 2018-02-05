@@ -26,18 +26,20 @@ export default {
       server: [],
       fliter: {
         limit: 12,
-        page: 1
+        page: 1,
+        type: '1'
       }
     }
   },
   methods: {
     getData () {
-      this.$http.post('http://120.79.22.222:3000/news/list').then(res => {
+      this.$http.post('http://120.79.22.222:3000/news/list', this.fliter).then(res => {
         var ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {
           res.data.rows[i].num = i
           this.server.push(res.data.rows[i])
         }
+        console.log(this.server)
       })
     },
     moveup (value) {
