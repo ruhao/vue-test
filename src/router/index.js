@@ -1,5 +1,31 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Indexen from '@/component/index/index'
+import Contacten from '@/component/contact/contact'
+import Messageen from '@/component/message/message'
+import interneten from '@/component/internet/internet'
+import CompanyServeren from '@/component/internet/companyserver'
+import Imarketingen from '@/component/internet/marketing'
+import ServerDetailen from '@/component/internet/severdetail'
+import Hren from '@/component/hr/hr'
+import Strategyen from '@/component/hr/strategy'
+import Trainen from '@/component/hr/train'
+import Advertisesen from '@/component/hr/advertises'
+import Newsen from '@/component/news/news'
+import CompanyNewsen from '@/component/news/companynews'
+import CompanyPhotosen from '@/component/news/companyphotos'
+import Marketingen from '@/component/news/marketing'
+import IndustryDynamicsen from '@/component/news/industrydynamics'
+import PhotoDetailen from '@/component/news/photodetail'
+import Abouten from '@/component/about/about'
+import AboutHonoren from '@/component/about/honor'
+import AboutCultureen from '@/component/about/culture'
+import AboutFrameworken from '@/component/about/framework'
+import AboutFootprinten from '@/component/about/footprint'
+import Producten from '@/component/product/product'
+import ProductListen from '@/component/product/productlist'
+import ProductCiden from '@/component/product/productcid'
+import ProductDetailen from '@/component/product/productdetail'
 import Index from '@/components/index/index'
 import Contact from '@/components/contact/contact'
 import Message from '@/components/message/message'
@@ -23,9 +49,12 @@ import AboutCulture from '@/components/about/culture'
 import AboutFramework from '@/components/about/framework'
 import AboutFootprint from '@/components/about/footprint'
 import Product from '@/components/product/product'
+import Brandlist from '@/components/product/brandlist'
+import Branddetail from '@/components/product/branddetail'
 import ProductList from '@/components/product/productlist'
 import ProductCid from '@/components/product/productcid'
 import ProductDetail from '@/components/product/productdetail'
+
 Vue.use(Router)
 
 export default new Router({
@@ -49,11 +78,24 @@ export default new Router({
           default: ProductCid
         }
       }, {
-        path: 'productdetail/:content',
+        path: 'productdetail/:id',
         name: 'productdetail',
         components: {
           default: ProductDetail
         }
+      },
+      {
+        path: '/brandlist',
+        components: {
+          default: Brandlist
+        },
+        children: [{
+          path: 'branddetail/:id',
+          name: 'branddetail',
+          components: {
+            default: Branddetail
+          }
+        }]
       }]
     },
     {
@@ -140,14 +182,14 @@ export default new Router({
       }]
     },
     {
-      path: '/',
-      name: 'index',
-      component: Index
-    },
-    {
       path: '/Contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/',
+      name: 'index',
+      component: Index
     },
     {
       path: '/Message',
@@ -173,6 +215,150 @@ export default new Router({
         name: 'severdetail',
         components: {
           default: ServerDetail
+        }
+      }]
+    },
+    {
+      path: '/enproduct',
+      components: {
+        default: Producten
+      },
+      children: [{
+        path: '/',
+        components: {
+          default: ProductListen
+        }
+      }, {
+        path: 'enproductcid/:id',
+        name: 'enproductcid',
+        components: {
+          default: ProductCiden
+        }
+      }, {
+        path: 'enproductdetail/:content',
+        name: 'enproductdetail',
+        components: {
+          default: ProductDetailen
+        }
+      }]
+    },
+    {
+      path: '/enabout',
+      components: {
+        default: Abouten
+      },
+      children: [{
+        path: 'enhonor',
+        components: {
+          default: AboutHonoren
+        }
+      }, {
+        path: 'enculture',
+        components: {
+          default: AboutCultureen
+        }
+
+      }, {
+        path: 'enframework',
+        components: {
+          default: AboutFrameworken
+        }
+      }, {
+        path: 'enfootprint',
+        components: {
+          default: AboutFootprinten
+        }
+      }]
+    },
+    {
+      path: '/ennews',
+      components: {
+        default: Newsen
+      },
+      children: [{
+        path: '/',
+        components: {
+          default: CompanyNewsen
+        }
+      }, {
+        path: 'encompanyphotos',
+        components: {
+          default: CompanyPhotosen
+        }
+      }, {
+        path: 'enmarketing',
+        components: {
+          default: Marketingen
+        }
+      }, {
+        path: 'enindustrydynamics',
+        components: {
+          default: IndustryDynamicsen
+        }
+      }, {
+        path: 'enphotodetail/:content',
+        name: 'enphotodetail',
+        components: {
+          default: PhotoDetailen
+        }
+      }]
+    },
+    {
+      path: '/enhr',
+      components: {
+        default: Hren
+      },
+      children: [{
+        path: 'enstrategy',
+        components: {
+          default: Strategyen
+        }
+      }, {
+        path: 'entrain',
+        components: {
+          default: Trainen
+        }
+      }, {
+        path: 'enadvertises',
+        components: {
+          default: Advertisesen
+        }
+      }]
+    },
+    {
+      path: '/en',
+      name: 'enindex',
+      component: Indexen
+    },
+    {
+      path: '/enContact',
+      name: 'enContact',
+      component: Contacten
+    },
+    {
+      path: '/enMessage',
+      name: 'enMessage',
+      component: Messageen
+    },
+    {
+      path: '/eninternet',
+      name: 'eninternet',
+      component: interneten,
+      children: [{
+        path: 'enserver',
+        components: {
+          default: CompanyServeren
+        }
+      }, {
+        path: '/',
+        components: {
+          default: Imarketingen
+        }
+      }, {
+        path: 'enseverdetail/:content',
+        name: 'enseverdetail',
+        components: {
+          default: ServerDetailen
         }
       }]
     }

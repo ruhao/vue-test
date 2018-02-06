@@ -1,5 +1,6 @@
 <template>
 	<div class="bodywidth">
+    <div v-if='this.$route.path.indexOf("en")==-1'>
 		<div class="wraperwidth">
 			<ul>
 				<li class="headernavleft">
@@ -12,7 +13,7 @@
 					<router-link to='/product' tag='span' class="navfont" active-class="routeactive">产品业务</router-link>
 				</li>
 				<li class="headernavleft">
-					<router-link to='/internet' tag='span' class="navfont" active-class="routeactive">网络服务</router-link>
+					<router-link to='/internet' tag='span' class="navfont" active-class="routeactive">网络与服务</router-link>
 				</li>
 				<li class="headernavmid">
 					<img src="../images/logo.png"></li>
@@ -31,13 +32,13 @@
 			</ul>
 		</div>
 		<div class="headernavlast" v-if="this.width>=1600">
-			<router-link to='/index' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
-			<router-link class="navfont" to='/index' tag='span'>EN</router-link>
+			<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
+			<router-link class="navfont" to='/en' tag='span'>EN</router-link>
 		</div>
 		<div class="wraperwidth" v-else>
 			<div class="headernavlastb">
-				<router-link to='/index' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
-				<router-link class="navfont" to='/index' tag='span'>EN</router-link>
+				<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
+				<router-link class="navfont" to='/en' tag='span'>EN</router-link>
 			</div>
 		</div>
 		<div>
@@ -45,6 +46,54 @@
 				<router-view class="child-view"></router-view>
 			</transition>
 		</div>
+    </div>
+    <div v-else>
+      <div class="wraperwidth">
+			<ul>
+				<li class="headernavleft">
+					<router-link to='/en' tag='span' class="navfont" active-class="routeactive" exact>Home</router-link>
+				</li>
+				<li class="headernavleft">
+					<router-link to='/enabout' tag='span' class="navfont" active-class="routeactive">About Us</router-link>
+				</li>
+				<li class="headernavleft">
+					<router-link to='/enproduct' tag='span' class="navfont" active-class="routeactive">Business</router-link>
+				</li>
+				<li class="headernavleft">
+					<router-link to='/eninternet' tag='span' class="navfont" active-class="routeactive">Network</router-link>
+				</li>
+				<li class="headernavmid">
+					<img src="../images/logo.png"></li>
+				<li class="headernavright">
+					<router-link to='/ennews' tag='span' class="navfont" active-class="routeactive">News</router-link>
+				</li>
+				<li class="headernavright">
+					<router-link to='/hr' tag='span' class="navfont" active-class="routeactive">Human resources</router-link>
+				</li>
+				<li class="headernavright">
+					<router-link to='/enmessage' tag='span' class="navfont" active-class="routeactive">Online Message</router-link>
+				</li>
+				<li class="headernavright">
+					<router-link to='/encontact' tag='span' class="navfont" active-class="routeactive">Contact Us</router-link>
+				</li>
+			</ul>
+		</div>
+		<div class="headernavlast" v-if="this.width>=1600">
+			<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
+			<router-link class="navfont" to='/en' tag='span'>EN</router-link>
+		</div>
+		<div class="wraperwidth" v-else>
+			<div class="headernavlastb">
+				<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
+				<router-link class="navfont" to='/en' tag='span'>EN</router-link>
+			</div>
+		</div>
+		<div>
+			<transition :name="transitionName">
+				<router-view class="child-view"></router-view>
+			</transition>
+		</div>
+    </div>
 	</div>
 </template>
 
