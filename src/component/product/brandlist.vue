@@ -98,6 +98,7 @@ export default {
   text-align: center;
   font-size: 18px;
   color:#ee882a;
+  margin-bottom: 30px;
 }
 ul{
   list-style: none;
@@ -129,6 +130,7 @@ brandcontent img{
   border: 1px #cccccc solid;
   text-align: center;
   height: 40px;
+  line-height: 40px;
 }
 .fontstyle{
  text-decoration: none;
