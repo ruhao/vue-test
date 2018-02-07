@@ -3,19 +3,19 @@
 		<div><img class="headerbg" src="../../../images/join-ban.jpg"></div>
 		<div class="wraperwidth">
 			<div class="hrroute">
-				<router-link to='/hr/strategy'>
+				<router-link to='/enhr/enstrategy'>
 				<div class="heroutebox1" @mouseenter="imgchange2" @mouseleave="imgchange3">
 					<img src="../../../images/join1.jpg" id="hrimg1"/>
 					<img src="../../../images/join1a.jpg" id="hrimg2"/>
 				</div>
 				</router-link>
-				<router-link to='/hr/train'>
+				<router-link to='/enhr/entrain'>
 				<div class="heroutebox1" @mouseenter="imgchange" @mouseleave="imgchange1">
 					<img src="../../../images/join2.jpg" id="hrimg3"/>
 					<img src="../../../images/join2a.jpg" id="hrimg4"/>
 				</div>
 				</router-link>
-				<router-link to='/hr/advertises'>
+				<router-link to='/enhr/enadvertises'>
 				<div class="heroutebox1" @mouseenter="imgchange4" @mouseleave="imgchange5">
 					<img src="../../../images/join3.jpg" id="hrimg5"/>
 					<img src="../../../images/join3a.jpg" id="hrimg6"/>

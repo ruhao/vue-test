@@ -50,6 +50,7 @@ import AboutFramework from '@/components/about/framework'
 import AboutFootprint from '@/components/about/footprint'
 import Product from '@/components/product/product'
 import Brandlist from '@/components/product/brandlist'
+import Brand from '@/components/product/brand'
 import Branddetail from '@/components/product/branddetail'
 import ProductList from '@/components/product/productlist'
 import ProductCid from '@/components/product/productcid'
@@ -85,11 +86,17 @@ export default new Router({
         }
       },
       {
-        path: '/brandlist',
+        path: '/brand',
         components: {
-          default: Brandlist
+          default: Brand
         },
         children: [{
+          path: '/',
+          components: {
+            default: Brandlist
+          }
+        },
+        {
           path: 'branddetail/:id',
           name: 'branddetail',
           components: {

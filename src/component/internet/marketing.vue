@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<Nav navtitle='网络营销'></Nav>
+		<Nav navtitle='MARKETING'></Nav>
 		<div class='wraperwidth'>
-			<p class='titleex'>某某控股集团有限公司成立于2005年1月18日，是一个市政府资本加快国有资本的战略性调整，一些重点企业做大做强，XX（实业）集团有限公司，国有独资公司XYZ控股有限公司和市燃气集团有限责任公司重组和一个城市的建立，是其中的一个最大的国有企业资本、基础设施和公共设施和市政府和市国资委规划投资融资平台。由于对照组的建立，一个国有企业利润总额一直排在第一，被评为“中国企业500强”、“中国企业500强”。</p>
+			<p class='titleex'>Moumou Holding Group Co. Ltd. was founded in January 18, 2005, is a municipal government capital to accelerate the strategic adjustment of state-owned capital, a few key enterprises bigger and stronger, to XX (industry) Group Limited, a wholly state-owned company XYZ Holdings Limited and a city gas Refco Group Ltd reorganization and the establishment of a city, is one of the largest state-owned enterprise capital, infrastructure and public utilities and municipal government and the municipal SASAC planning investment and financing platform. Since the establishment of a control group, a total profit of state-owned enterprises has always ranked in the first, and was named "China top 500 enterprises", "top 500 enterprises Chinese"</p>
 			<div>
 				<img class='imgsize' src='../../../images/index-network.jpg' />
 				<div class='index-internet-content'>
@@ -28,19 +28,19 @@ export default {
       internet: [
         {
           num: '860+',
-          introduction: '我们合作品牌的数量已达到860多个'
+          introduction: 'Our number of cooperative brands has reached 860+'
         },
         {
           num: '125+',
-          introduction: '我们公司产品历史悠久，每一件都很经典'
+          introduction: 'Our companys products have a long history, and each one is very classic'
         },
         {
           num: '1000+',
-          introduction: '我们的产品数量已达到1000多个'
+          introduction: 'The quantity of our products has reached 1000+'
         },
         {
           num: 'TOP',
-          introduction: '我们是业内最好的公司之一'
+          introduction: 'We are among the best in the industry'
         }
       ]
     }

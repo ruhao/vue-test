@@ -3,25 +3,25 @@
 		<div><img class="headerbg" src="../../../images/news-ban.jpg"></div>
 		<div class="wraperwidth">
 			<div class="hrroute">
-				<router-link to='/news'>
+				<router-link to='/ennews/'>
 					<div class="heroutebox1" @mouseenter="imgchange2" @mouseleave="imgchange3">
 						<img src="../../../images/news1.jpg" id="hrimg1" />
 						<img src="../../../images/news1a.jpg" id="hrimg2" />
 					</div>
 				</router-link>
-				<router-link to='/news/industrydynamics'>
+				<router-link to='/ennews/enindustrydynamics'>
 					<div class="heroutebox1" @mouseenter="imgchange" @mouseleave="imgchange1">
 						<img src="../../../images/news2.jpg" id="hrimg3" />
 						<img src="../../../images/news2a.jpg" id="hrimg4" />
 					</div>
 				</router-link>
-				<router-link to='/news/companyphotos'>
+				<router-link to='/ennews/encompanyphotos'>
 					<div class="heroutebox1" @mouseenter="imgchange4" @mouseleave="imgchange5">
 						<img src="../../../images/news3.jpg" id="hrimg5" />
 						<img src="../../../images/news3a.jpg" id="hrimg6" />
 					</div>
 				</router-link>
-				<router-link to='/news/marketing'>
+				<router-link to='/ennews/enmarketing'>
 					<div class="heroutebox1" @mouseenter="imgchange6" @mouseleave="imgchange7">
 						<img src="../../../images/news4.jpg" id="hrimg7" />
 						<img src="../../../images/news4a.jpg" id="hrimg8" />

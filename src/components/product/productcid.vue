@@ -171,6 +171,7 @@ export default {
       if (this.cidtir) {
         this.cidfour = ''
         this.cidfifth = ''
+        this.cidfifth1 = '可选分类'
         this.cidfour1 = '可选分类'
       } else {
 
@@ -319,6 +320,8 @@ p {
   line-height: 40px;
   background: #f8efe7;
   width: 100%;
+  position: relative;
+  z-index: 5
 }
 
 .productlistbox {

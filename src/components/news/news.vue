@@ -3,7 +3,7 @@
 		<div><img class="headerbg" src="../../../images/news-ban.jpg"></div>
 		<div class="wraperwidth">
 			<div class="hrroute">
-				<router-link to='/news'>
+				<router-link to='/news/'>
 					<div class="heroutebox1" @mouseenter="imgchange2" @mouseleave="imgchange3">
 						<img src="../../../images/news1.jpg" id="hrimg1" />
 						<img src="../../../images/news1a.jpg" id="hrimg2" />

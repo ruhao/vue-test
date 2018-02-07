@@ -47,14 +47,14 @@ export default {
           imgurl1: p11,
           imgurl2: p21,
           title: 'Drinks',
-          content: "To study in Italy, we should learn wine, Italy wine, wine and many other names, is the family's essential drinks.",
+          content: "o study in Italy, we should learn wine, Italy wine, wine and many other names, is the family's essential drinks.",
           id: '5a72ca5fd03d2b14449ff1a6'
         },
         {
           imgurl1: p12,
           imgurl2: p22,
           title: 'Imported snacks',
-          content: "To study in Italy, we should learn wine, Italy wine, wine and many other names, is the family's essential drinks.",
+          content: "What delicious snacks do you have in Italy? Let me tell you some delicious snacks that can't ",
           id: '5a72ca6cd03d2b14449ff1a7'
         },
         {
@@ -75,7 +75,7 @@ export default {
           imgurl1: p15,
           imgurl2: p25,
           title: 'Vegetables',
-          content: "To study in Italy, we should learn wine, Italy wine, wine and many other names, is the family's essential drinks.",
+          content: "What delicious snacks do you have in Italy? Let me tell you some delicious snacks that can't stop.",
           id: '5a72ca5fd03d2b14449ff1a6'
         },
         {
@@ -89,7 +89,7 @@ export default {
           imgurl1: p17,
           imgurl2: p27,
           title: 'Poultry eggs and milk',
-          content: 'Italy is a gourmet people, they have a long history of diet, as their art, fashion and furniture, always like to elaborate. ',
+          content: 'taly is a gourmet people, they have a long history of diet, as their art, fashion and furniture, always like to elaborate.',
           id: '5a72cac6d03d2b14449ff1aa'
         },
         {
@@ -119,6 +119,7 @@ export default {
 
 .product-boxl {
   width: 348px;
+  height: 348px;
 }
 
 .product-boxr {
@@ -138,7 +139,8 @@ export default {
   color: #ee882a;
   font-weight: 600;
   font-size: 18px;
-  margin: 30px 35px 0;
+  margin: 25px 35px 0;
+  box-sizing: border-box;
 }
 
 .margintop {
@@ -154,9 +156,10 @@ export default {
   color: #ee882a;
   font-weight: 100;
   font-size: 14px;
-  margin: 20px 20px 0;
+  margin: 12px 30px 0;
   line-height: 20px;
   letter-spacing: 1px;
+  box-sizing: border-box;
 }
 
 .product-boxl img {

@@ -1,6 +1,5 @@
 <template>
 	<div>
-     <Nav navtitle='品牌商家'></Nav>
     <div class='wrapwidth'>所有品牌均按首字母顺序排列</div>
     <div class="wraperwidth" v-for="(item,index) in typeone" :key=index>
       <div v-if="flag[index]==='true'">

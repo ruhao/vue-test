@@ -319,6 +319,8 @@ p {
   line-height: 40px;
   background: #f8efe7;
   width: 100%;
+  position: relative;
+  z-index: 5
 }
 
 .productlistbox {

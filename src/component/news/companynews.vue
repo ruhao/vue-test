@@ -1,52 +1,79 @@
 <template>
 	<div>
-		<Nav navtitle="网络营销"></Nav>
-		<div class="wraperwidth">
-			<div v-for="(item,index) in server" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
-				<router-link :to="{name:'severdetail',params:{content:item}}">
-					<div class="serverbox1"><img :src="item.imgurl"></div>
-				</router-link>
-				<router-link :to="{name:'severdetail',params:{content:item}}">
-					<div class="serverbox2">
-						<p class="serverboxp1">{{item.title}}</p>
-						<p class="serverboxp2">{{item.content}}</p>
+		<Nav navtitle="公司新闻"></Nav>
+
+		<div class="bodycolor">
+			<div class="wraperwidth">
+				<div v-for="(item,index) in fliter.data6" :key=index>
+					<div class="cnbox">
+						<div class="cnbox1">
+							<div class="cnbox3" @mouseenter="newsmove(item.limitnum)">
+								<p class="cnboxp1"><span>{{item.day}}</span>{{item.year}}</p>
+								<p class="cnboxp2">{{item.title}}</p>
+							</div>
+						</div>
+						<div class="cnbox2"><img :src="item.imgurl" /></div>
 					</div>
-				</router-link>
+				</div>
 			</div>
-			<div style="clear: both;"></div>
+			<div class="wraperwidth">
+				<div class="page">
+					<ul v-if="li7>=7">
+						<li @click="prev"><span>上一页</span></li>
+						<li class="li"><span @click="changepage(li1,1)">{{this.li1}}</span></li>
+						<li class="li"><span v-if="li2===2" @click="changepage(li2,2)">{{this.li2}}</span>
+							<span v-else>..{{this.li2}}</span>
+						</li>
+						<li class="li"><span @click="changepage(li3,3)">{{this.li3}}</span></li>
+						<li class="li"><span @click="changepage(li4,4)">{{this.li4}}</span></li>
+						<li class="li"><span @click="changepage(li5,5)">{{this.li5}}</span></li>
+						<li class="li"><span v-if="li6==='...'">{{this.li6}}</span>
+							<span v-else @click="changepage(li6,6)">{{this.li6}}</span>
+						</li>
+						<li class="li"><span @click="changepage(li7,7)">{{this.li7}}</span></li>
+						<li @click="next"><span>下一页</span></li>
+					</ul>
+					<ul v-else>
+						<li @click="prev"><span>上一页</span></li>
+						<li v-for="(item,index) in li7" :key=index class="li">
+							<span @click="changepage(item,item)">{{item}}</span>
+						</li>
+						<li @click="next"><span>下一页</span></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import PageJs from '../common/page.js'
 import Nav from '../common/nav.vue'
 export default {
+  mixins: [PageJs],
   data () {
     return {
-      server: [],
+      apimodel: 'news',
+      pagenum: [],
+      companynews: [],
+      li1: 1,
+      li2: 2,
+      li3: 3,
+      li4: 4,
+      li5: 5,
+      li6: '...',
+      li7: 7,
       fliter: {
-        limit: 12,
-        page: 1,
-        type: '1'
+        data6: [],
+        type: '1',
+        limit: 8,
+        page: 1
       }
     }
   },
   methods: {
-    getData () {
-      this.$http.post('http://120.79.22.222:3000/news/list', this.fliter).then(res => {
-        var ii = res.data.rows.length
-        for (let i = 0; i < ii; i++) {
-          res.data.rows[i].num = i
-          this.server.push(res.data.rows[i])
-        }
-        console.log(this.server)
-      })
-    },
-    moveup (value) {
-      document.getElementsByClassName('serverbox2')[value].id = 'active'
-    },
-    movedown (value) {
-      document.getElementsByClassName('serverbox2')[value].id = ''
+    newsmove (index) {
+      console.log(index)
     }
   },
   components: {
@@ -54,67 +81,124 @@ export default {
   },
   created () {
     this.getData()
+  },
+  mounted () {
+    document.getElementsByClassName('li')[0].id = 'active'
   }
 }
 </script>
 
-<style scoped>
-p {
+<style>
+p,
+img,
+ul,
+li {
   margin: 0;
   padding: 0;
 }
 
-.wraperwidth {
-  width: 1420px;
-  margin: 45px auto 0;
+.bodycolor {
+  background: #f5f5f5;
+  margin-top: 50px;
+  padding-top: 50px;
 }
 
-.serverbox {
-  width: 350px;
-  position: relative;
-  height: 350px;
-  float: left;
-  cursor: pointer;
+.wraperwidth {
+  width: 1420px;
+  margin: 0 auto;
   overflow: hidden;
 }
 
-.serverbox1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.cnbox {
+  width: 700px;
+  float: left;
+  display: flex;
+  margin-top: 20px;
 }
 
-.serverbox2 {
-  position: absolute;
-  top: 350px;
-  left: 0px;
-  background: #f9f1e9;
-  width: 338px;
-  height: 338px;
-  opacity: 0;
-  transition: all 0.5s;
+.cnbox:nth-of-type(2n + 1) {
+  margin-right: 10px;
 }
 
-.serverboxp1 {
-  margin-top: 40px;
-  margin-left: 30px;
-  color: #ee882a;
-  text-shadow: 0.5px 0.5px 0.5px #ee882a;
+.cnbox1 {
+  width: 350px;
+  height: 210px;
+  background: white;
   position: relative;
-  z-index: 10px;
-  opacity: 1;
-  cursor: pointer;
 }
 
-.serverboxp2 {
-  margin: 80px 30px 0;
-  font-size: 12px;
-  line-height: 25px;
-  color: #464c5b;
+.cnbox2 {
+  width: 350px;
+  height: 210px;
+  overflow: hidden;
+}
+
+.cnbox2 img {
+  width: 350px;
+  height: 210px;
+}
+
+.cnbox3 {
+  width: 350px;
+  height: 170px;
+  background: #f5f5f5;
+  margin-top: 20px;
+  margin-left: 20px;
+  position: absolute;
+  transition: all 1s;
+}
+
+.cnboxp1 {
+  color: #ee882a;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.cnboxp1 span {
+  font-size: 48px;
+}
+
+.cnboxp2 {
+  margin-left: 40px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.page {
+  margin-top: 30px;
+}
+
+.page ul {
+  overflow: hidden;
+  height: 50px;
+  width: 700px;
+  list-style: none;
+  margin: 30px auto;
+}
+
+.page ul li {
+  float: left;
+  margin-left: 20px;
+  border: solid 1px #00b7ff;
+  line-height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: white;
+  color: #00b7ff;
+}
+
+.page ul li:hover {
+  color: #ee882a;
+  border: solid 1px #ee882a;
+}
+
+.page ul li span {
+  padding: 0 15px;
+  background: white;
 }
 
 #active {
-  top: 0px;
-  opacity: 0.8;
+  color: #ee882a;
+  border: solid 1px #ee882a;
 }
 </style>
