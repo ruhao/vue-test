@@ -320,7 +320,7 @@ p {
   background: #f8efe7;
   width: 100%;
   position: relative;
-  z-index: 5
+  z-index: 15
 }
 
 .productlistbox {
