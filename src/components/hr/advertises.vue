@@ -20,7 +20,7 @@
 						</div>
 					</div>
 					<div class="adrequest">
-						<div>详细要求：</div>
+						<div class="detaillll">详细要求：</div>
 						<div>
 							<p v-for="(detail,index) in item.detail" :key=index>{{detail}}</p>
 						</div>
@@ -38,7 +38,7 @@
 
 						</div>
 					</div>
-					<div class="adrequest">
+					<div class="adrequest1">
 						<div></div>
 						<div>
 
@@ -108,7 +108,7 @@ p {
 
 .adbody {
   overflow: hidden;
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   text-align: center;
   margin-top: 50px;
@@ -116,14 +116,16 @@ p {
 }
 
 .adhrbox {
-  width: 704px;
-  height: 394px;
+  width: 630px;
+  height: 360px;
   background: url("../../../images/hradbg.png");
+  background-size: 100% 100%;
   float: left;
   position: relative;
   color: #a3a3a3;
   text-shadow: 0.5px 0.5px 0.5px #a3a3a3;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .adhrbox:nth-of-type(2n + 1) {
@@ -149,19 +151,19 @@ p {
 }
 
 .adrequest {
-  width: 604px;
+  width: 560px;
   text-align: left;
   padding-left: 50px;
   padding-right: 50px;
-  line-height: 40px;
+  line-height: 25px;
   display: flex;
 }
 
-.adrequest div:nth-of-type(1) {
+.adrequest .detaillll {
   width: 120px;
 }
 
-.adrequest div:nth-of-type(2) p {
+.adrequest1 p {
   height: 30px;
 }
 </style>

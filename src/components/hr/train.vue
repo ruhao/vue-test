@@ -72,8 +72,9 @@ p {
   margin: 3px 40px;
 }
 .traincontent {
-  width: 1420px;
+  width: 1200px;
   margin: 30px auto 0;
+  padding: 0 40px;
 }
 .traincontent-title {
   color: #666666;
@@ -84,6 +85,7 @@ p {
   font-size: 14px;
   color: #666666;
   text-shadow: -0.2px 0.2px 0.2px #666666;
+  text-indent: 2em;
 }
 .traindetail-title {
   margin-top: 30px;
@@ -99,5 +101,6 @@ p {
   font-size: 14px;
   color: #666666;
   text-shadow: -0.2px 0.2px 0.2px #666666;
+  text-indent: 2em;
 }
 </style>

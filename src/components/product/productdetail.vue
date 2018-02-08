@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<Nav :navtitle="this.$route.params.content.navname"></Nav>
+		<Nav :navtitle="cidsec2"></Nav>
 
 		<div class="wraperwidth">
 			<div class="pdetail-left">
@@ -76,6 +76,7 @@ export default {
       introduction: [],
       cidsec1: '',
       relative: [],
+      cidsec2: '',
       x: '',
       y: '',
       id: '',
@@ -186,7 +187,10 @@ export default {
     Nav
   },
   created () {
-    console.log(this.$route)
+    this.cidsec2 = this.$route.params.content.navname
+    if (this.cidsec2 === '可选分类') {
+      this.cidsec2 = '产品详情'
+    }
     this.detail = this.$route.params.content.content
     this.getlist(this.$route.params.content.relative)
 
@@ -208,14 +212,14 @@ export default {
 
 <style scoped>
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 50px auto 0;
   display: flex;
 }
 
 .pdetail-left {
   width: 900px;
-  padding: 0 90px;
+  padding: 0 45px;
 }
 
 .pdetail-right {

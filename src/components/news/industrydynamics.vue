@@ -9,7 +9,9 @@
 						<div class="cnbox1">
 							<div class="cnbox3">
 								<p class="cnboxp1"><span>{{item.hday}}</span>{{item.hyear}}</p>
+                 <router-link :to="{name:'newdetail',params:{content:item}}" class="fontstyle">
 								<p class="cnboxp2">{{item.htitle}}</p>
+                </router-link>
 								<p class="cnboxp3">{{item.hcontent}}</p>
 							</div>
 						</div>
@@ -102,12 +104,12 @@ li {
 }
 
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
 }
 
 .cnbox {
-  width: 700px;
+  width: 630px;
   float: left;
   display: flex;
   margin-top: 20px;
@@ -118,14 +120,14 @@ li {
 }
 
 .cnbox1 {
-  width: 700px;
+  width: 630px;
   height: 210px;
   background: white;
   position: relative;
 }
 
 .cnbox3 {
-  width: 640px;
+  width: 590px;
   height: 160px;
   margin: 20px;
   padding-top: 10px;
@@ -189,5 +191,9 @@ li {
 #active {
   color: #ee882a;
   border: solid 1px #ee882a;
+}
+.fontstyle{
+  text-decoration: none;
+  color: black;
 }
 </style>

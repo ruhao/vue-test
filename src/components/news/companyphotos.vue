@@ -79,7 +79,7 @@ export default {
 
 <style scoped>
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
 }
 
@@ -100,7 +100,7 @@ p {
 .page ul {
   overflow: hidden;
   height: 50px;
-  width: 700px;
+  width: 630px;
   list-style: none;
   margin: 30px auto;
 }
@@ -127,13 +127,15 @@ p {
 }
 
 .photobox {
-  width: 340px;
+  width: 320px;
   margin-left: 15px;
   float: left;
+  height: 180px;
 }
 
 .photobox img {
-  width: 340px;
+  width: 320px;
+  height: 180px;
 }
 
 .box {

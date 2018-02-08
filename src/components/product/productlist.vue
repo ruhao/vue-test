@@ -111,34 +111,36 @@ export default {
 
 <style scoped>
 .product-box {
-  width: 700px;
+  width: 630px;
   display: flex;
   z-index: 11;
   position: relative;
 }
 
 .product-boxl {
-  width: 348px;
+  width: 308px;
 }
 
 .product-boxr {
-  width: 350px;
+  width: 308px;
   background: #f8efe7;
   position: relative;
   text-align: center;
+  box-sizing: border-box;
+  height: 308px;
 }
 .all {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 .product-boxr img {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .product-boxp1 {
   color: #ee882a;
   font-weight: 600;
   font-size: 18px;
-  margin: 30px 35px 0;
+  margin: 15px 15px 0;
 }
 
 .margintop {
@@ -147,15 +149,15 @@ export default {
 }
 
 .margintop:nth-of-type(2n) {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .product-boxp2 {
   color: #ee882a;
   font-weight: 100;
   font-size: 14px;
-  margin: 20px 35px 0;
-  line-height: 25px;
+  margin: 10px 20px 0;
+  line-height: 20px;
   letter-spacing: 1px;
 }
 

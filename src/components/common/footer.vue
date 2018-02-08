@@ -52,20 +52,21 @@ p {
 }
 
 .contact-footer-content {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
 }
 
 .index-footer-method {
   margin-top: 90px;
   list-style: none;
-  padding-top: 55px;
+  padding-top: 40px;
   position: relative;
   display: flex;
+  width: 100%;
 }
 
 .contact-footer-li {
-  width: 355px;
+  width: 24%;
 }
 
 .contact-footer-li:nth-of-type(4) {
@@ -76,6 +77,7 @@ p {
   position: relative;
   color: #666666;
   margin-left: 25px;
+  font-size: 14px;
   top: -8px;
   text-shadow: 0.2px 0.2px 0.2px #b4b0ad;
 }
@@ -83,7 +85,7 @@ p {
 .contact-footer-bottom {
   font-size: 14px;
   text-align: center;
-  margin-top: 75px;
+  margin-top: 60px;
   padding-bottom: 20px;
   text-shadow: 0.2px 0.2px 0.2px #b4b0ad;
 }

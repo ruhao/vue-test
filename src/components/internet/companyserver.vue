@@ -64,14 +64,14 @@ p {
 }
 
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 45px auto 0;
 }
 
 .serverbox {
-  width: 350px;
+  width: 315px;
   position: relative;
-  height: 350px;
+  height: 315px;
   float: left;
   cursor: pointer;
   overflow: hidden;
@@ -85,11 +85,11 @@ p {
 
 .serverbox2 {
   position: absolute;
-  top: 350px;
+  top: 315px;
   left: 0px;
   background: #f9f1e9;
-  width: 338px;
-  height: 338px;
+  width: 315px;
+  height: 315px;
   opacity: 0;
   transition: all 0.5s;
 }

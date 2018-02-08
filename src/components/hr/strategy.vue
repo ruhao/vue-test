@@ -44,13 +44,15 @@ p {
   margin: 3px 40px;
 }
 .bottom {
-  width: 1420px;
+  width: 1200px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 .stp {
   margin-top: 45px;
   font-size: 14px;
   color: #666666;
   line-height: 25px;
+  text-indent: 2em;
 }
 </style>

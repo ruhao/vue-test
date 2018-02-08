@@ -97,13 +97,13 @@ li {
 }
 
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .cnbox {
-  width: 700px;
+  width: 630px;
   float: left;
   display: flex;
   margin-top: 20px;
@@ -114,14 +114,14 @@ li {
 }
 
 .cnbox1 {
-  width: 700px;
+  width: 630px;
   height: 210px;
   background: white;
   position: relative;
 }
 
 .cnbox3 {
-  width: 640px;
+  width: 590px;
   height: 160px;
   margin: 20px;
   padding-top: 10px;

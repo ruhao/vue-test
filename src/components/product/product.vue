@@ -62,22 +62,22 @@ export default {
 <style scoped>
 .headerbg {
   width: 100%;
-  min-width: 1420px;
+  min-width: 1280px;
 }
 
 .wraperwidth-box {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   margin-top: 30px;
 }
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
 }
 
 .headerbg {
   width: 100%;
-  min-width: 1420px;
+  min-width: 1280px;
 }
 
 .hrroute {

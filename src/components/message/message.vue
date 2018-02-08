@@ -1,11 +1,8 @@
 <template>
 	<div>
 		<div><img class='headerbg' src='../../../images/liuyan-ban.jpg'></div>
-		<div class='contact-title'>
-			<img src='../../../images/left-c.jpg' />
-			<p>在线留言</p>
-			<img src='../../../images/right-c.jpg' />
-		</div>
+    <p class="navtop"></p>
+		<Nav navtitle="在线留言"></Nav>
 		<div class='contact-sketch'>
 			<p>留下评论，分享你的观点，留下评论，分享你的观点</p>
 		</div>
@@ -30,6 +27,7 @@
 
 <script>
 import Foot from '../common/footer.vue'
+import Nav from '../common/nav.vue'
 export default {
   data () {
     return {
@@ -103,7 +101,8 @@ export default {
     }
   },
   components: {
-    Foot
+    Foot,
+    Nav
   }
 }
 </script>
@@ -120,33 +119,16 @@ input {
 
 .headerbg {
   width: 100%;
-  min-width: 1420px;
-}
-
-.contact-title {
-  display: flex;
-  width: 440px;
-  margin: 0 auto;
-  position: relative;
-  margin-top: 100px;
-}
-
-.contact-title p {
-  line-height: 24px;
-  font-size: 24px;
-  flex: 1;
-  color: #f1662c;
-  text-shadow: 1px 1px 1px #f1662c;
-}
-
-.contact-title img {
-  height: 20px;
-  margin: 3px 40px;
+  min-width: 1280px;
 }
 
 .contact-content {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
+}
+
+.navtop{
+  height:50px;
 }
 
 .contact-content-top {
@@ -156,6 +138,7 @@ input {
 
 .contact-sketch {
   text-align: center;
+  width: 1280px;
 }
 
 .contact-sketch p {
@@ -166,7 +149,7 @@ input {
 }
 
 .message-content-w {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   position: relative;
   z-index: 11;

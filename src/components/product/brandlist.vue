@@ -86,13 +86,13 @@ export default {
 
 <style scoped>
 .wrapwidth{
-  width: 1420px;
+  width: 1280px;
   margin-top: 20px;
   text-align: center;
   text-shadow: 0.3px 0.3px 0.3px black;
 }
 .wraperwidth{
-  width: 1420px;
+  width: 1280px;
   margin-top: 70px;
 }
 .letter{

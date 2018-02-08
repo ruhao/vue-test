@@ -12,7 +12,11 @@
 								<p class="cnboxp2">{{item.title}}</p>
 							</div>
 						</div>
-						<div class="cnbox2"><img :src="item.imgurl" /></div>
+						<div class="cnbox2">
+              <router-link :to="{name:'newdetail',params:{content:item}}">
+              <img :src="item.imgurl" />
+              </router-link>
+              </div>
 					</div>
 				</div>
 			</div>
@@ -73,7 +77,6 @@ export default {
   },
   methods: {
     newsmove (index) {
-      console.log(index)
     }
   },
   components: {
@@ -104,13 +107,13 @@ li {
 }
 
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .cnbox {
-  width: 700px;
+  width: 620px;
   float: left;
   display: flex;
   margin-top: 20px;
@@ -121,29 +124,29 @@ li {
 }
 
 .cnbox1 {
-  width: 350px;
-  height: 210px;
+  width: 310px;
+  height: 186px;
   background: white;
   position: relative;
 }
 
 .cnbox2 {
-  width: 350px;
-  height: 210px;
+  width: 310px;
+  height: 186px;
   overflow: hidden;
 }
 
 .cnbox2 img {
-  width: 350px;
-  height: 210px;
+  width: 310px;
+  height: 186px;
 }
 
 .cnbox3 {
-  width: 350px;
-  height: 170px;
+  width: 310px;
+  height: 160px;
   background: #f5f5f5;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
   position: absolute;
   transition: all 1s;
 }
@@ -151,7 +154,7 @@ li {
 .cnboxp1 {
   color: #ee882a;
   margin-left: 40px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .cnboxp1 span {

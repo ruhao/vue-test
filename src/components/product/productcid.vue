@@ -164,6 +164,16 @@ export default {
     // cidtir 是多级列表的标题
     // getlistcid重新获取id实现精确分类
     getall () {
+      if (this.cidtir) {
+        this.cidfour = ''
+        this.cidtir = ''
+        this.cidfifth = ''
+        this.cidsec1 = '可选分类'
+        this.cidfifth1 = '可选分类'
+        this.cidfour1 = '可选分类'
+        this.cidtir1 = '可选分类'
+      } else {
+      }
       this.fliter.cateId = []
       this.getData()
     },
@@ -287,7 +297,7 @@ p {
 }
 
 .wraperwidth {
-  min-width: 1420px;
+  min-width: 1280px;
   margin: 30px auto 0;
   overflow: visible;
 }
@@ -300,6 +310,7 @@ p {
   z-index: 14;
   position: relative;
   margin: 20px;
+  margin-left: 0px;
   line-height: 40px;
   cursor: pointer;
   color: white;
@@ -363,14 +374,13 @@ p {
 }
 
 .serverbox {
-  width: 338px;
+  width: 308px;
   position: relative;
-  height: 338px;
+  height: 308px;
   float: left;
   cursor: pointer;
   overflow: hidden;
   z-index: 11;
-  margin-left: 12px;
   margin-top: 12px;
 }
 

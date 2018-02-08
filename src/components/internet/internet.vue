@@ -61,7 +61,7 @@ export default {
 
 <style scoped>
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
 }
 
@@ -71,7 +71,7 @@ export default {
 
 .headerbg {
   width: 100%;
-  min-width: 1420px;
+  min-width: 1280px;
 }
 
 .heroutebox1 {

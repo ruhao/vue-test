@@ -3,7 +3,7 @@
     <div v-if='this.$route.path.indexOf("en")==-1'>
 		<div class="wraperwidth">
 			<ul>
-				<li class="headernavleft">
+				<li class="headernavlast">
 					<router-link to='/' tag='span' class="navfont" active-class="routeactive" exact>网站首页</router-link>
 				</li>
 				<li class="headernavleft">
@@ -13,7 +13,7 @@
 					<router-link to='/product' tag='span' class="navfont" active-class="routeactive">产品业务</router-link>
 				</li>
 				<li class="headernavleft">
-					<router-link to='/internet' tag='span' class="navfont" active-class="routeactive">网络与服务</router-link>
+					<router-link to='/internet' tag='span' class="navfont" active-class="routeactive">网络服务</router-link>
 				</li>
 				<li class="headernavmid">
 					<img src="../images/logo.png"></li>
@@ -29,9 +29,13 @@
 				<li class="headernavright">
 					<router-link to='/contact' tag='span' class="navfont" active-class="routeactive">联系我们</router-link>
 				</li>
+				<li class="headernavlast">
+					<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
+					<router-link class="navfont" to='/en' tag='span'>EN</router-link>
+				</li>
 			</ul>
 		</div>
-		<div class="headernavlast" v-if="this.width>=1600">
+		<!-- <div class="headernavlast" v-if="this.width>=1600">
 			<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
 			<router-link class="navfont" to='/en' tag='span'>EN</router-link>
 		</div>
@@ -40,7 +44,7 @@
 				<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
 				<router-link class="navfont" to='/en' tag='span'>EN</router-link>
 			</div>
-		</div>
+		</div> -->
 		<div>
 			<transition :name="transitionName">
 				<router-view class="child-view"></router-view>
@@ -76,9 +80,13 @@
 				<li class="headernavright">
 					<router-link to='/encontact' tag='span' class="navfont" active-class="routeactive">Contact Us</router-link>
 				</li>
+				<li class="headernavright">
+					<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
+					<router-link class="navfont" to='/' tag='span'>EN</router-link>
+				</li>
 			</ul>
 		</div>
-		<div class="headernavlast" v-if="this.width>=1600">
+		<!-- <div class="headernavlast" v-if="this.width>=1600">
 			<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
 			<router-link class="navfont" to='/' tag='span'>EN</router-link>
 		</div>
@@ -87,7 +95,7 @@
 				<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
 				<router-link class="navfont" to='/' tag='span'>EN</router-link>
 			</div>
-		</div>
+		</div> -->
 		<div>
 			<transition :name="transitionName">
 				<router-view class="child-view"></router-view>
@@ -129,22 +137,17 @@ export default {
 
 <style scoped>
 .wraperwidth {
-  width: 1420px;
-  margin: 0 auto;
+  width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 10;
 }
 ul {
   margin-top: 30px;
   list-style: none;
+	display: flex;
 }
 .headernavleft {
-  width: 150px;
-  text-align: left;
+  width: 10%;
 }
 .navfont {
   color: white;
@@ -157,14 +160,12 @@ ul {
   color: #ee882a;
 }
 .headernavright {
-  width: 150px;
-  text-align: right;
+  width: 10%;
+	text-align: right;
 }
 .headernavlast {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  z-index: 10;
+  width: 10%;
+	text-align: center;
 }
 .navfontapsn {
   color: white;

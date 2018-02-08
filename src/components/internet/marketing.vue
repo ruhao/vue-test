@@ -53,7 +53,7 @@ export default {
 
 <style scoped>
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   position: relative;
 }
@@ -71,16 +71,17 @@ export default {
 }
 .index-internet-content {
   position: absolute;
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto 0 auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
 }
 
 .index-internet-box {
-  width: 185px;
+  width: 25%;
   padding: 150px 20px 0 20px;
   float: left;
   text-align: center;

@@ -8,44 +8,53 @@
 		<div class="wraperwidth">
 			<p class="index-product-title"><span>产品业务</span></p>
 			<p class="index-product-introduction">
-				老外仓贸易有限公司致力于打造成为中国跨境食品的领军企业、服务和支持于一体的全方位解决方案提供
-				<p class="index-product-introduction">
-					商。
-				</p>
+				老外仓贸易有限公司致力于打造成为中国跨境食品的领军企业、服务和支持于一体的全方位解决方案提商。</p>
 		</div>
 		<div class="wraperwidth">
 			<div class="index-product-content">
 				<div class="index-product-content-left">
-					<img src="../../../images/index-products1.jpg" />
+					<img src="../../../images/index-products1.jpg" class="index-product-content-left-img"/>
 				</div>
 				<div class="index-product-content-right">
 					<div class="index-product-content-right-top">
-						<div>
+            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca6cd03d2b14449ff1a7',name:'进口零食'}}}" class="fontstyle">
+						<div class="index-product-content-box1">
 							<img src="../../../images/products1-1.jpg" />
 						</div>
+            </router-link>
+            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca6cd03d2b14449ff1a7',name:'进口零食'}}}" class="fontstyle">
 						<div class="index-product-content-box">
 							<img src="../../../images/index-products3.jpg" />
 							<p class="index-product-content-right-title">进口零食</p>
 							<p class="index-product-content-right-content">意大利有什么好吃的小吃？让我告诉你一些美味到不能停止的食品</p>
 						</div>
-						<div>
+            </router-link>
+            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="fontstyle">
+						<div class="index-product-content-box1">
 							<img src="../../../images/products1-3.jpg" />
 						</div>
+             </router-link>
 					</div>
 					<div class="index-product-content-right-bottom">
+             <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="fontstyle">
 						<div class="index-product-content-box">
 							<img src="../../../images/index-products5.jpg" />
 							<p class="index-product-content-right-title">酒水饮料</p>
 							<p class="index-product-content-right-content">意大利文化我们应该学习葡萄酒，意大利葡萄酒，葡萄酒和许多其他称是家庭的基本饮料</p>
 						</div>
-						<div>
+            </router-link>
+             <router-link :to="{name:'productcid',params:{id:{id:'5a72cac6d03d2b14449ff1aa',name:'粮油副食'}}}" class="fontstyle">
+						<div class="index-product-content-box1">
 							<img src="../../../images/products1-2.jpg" />
 						</div>
+            </router-link>
+             <router-link :to="{name:'productcid',params:{id:{id:'5a72cac6d03d2b14449ff1aa',name:'粮油副食'}}}" class="fontstyle">
 						<div class="index-product-content-box">
 							<img src="../../../images/index-products7.jpg" />
 							<p class="index-product-content-right-title">副食品</p>
 							<p class="index-product-content-right-content">意大利是个美食国家，他们有着悠久的饮料历史，作为他们的艺术，时尚和家具，总是喜欢精心制作</p>
 						</div>
+            </router-link>
 					</div>
 				</div>
 			</div>
@@ -56,28 +65,30 @@
 		<div class="index-news-body">
 			<div class="wraperwidth">
 				<div class="index-news-title">
+          <router-link to='/news' tag='span' class="navfont" active-class="routeactive">
 					<img src="../../../images/index-news.jpg" />
+          </router-link>
 					<p>老外仓坚持“合作创造财富、创新谋求发展”的经营理念，力求为社会、为企业、为员工创造和谐的氛围，走持续发展的道路。</p>
 				</div>
 				<div class="index-news-content">
 					<div class="index-news-content-top">
-						<div>
+						<div class="index-news-content-top-boxx">
 							<i>
 								<span class="index-news-content-span">
 									<p class="index-news-p1"><span class="index-news-content-year">17</span><span class="index-news-content-month">17-01</span></p>
 									<p class="index-news-p2">新闻营销可能是未来营销的主流趋势</p>
 								</span>
 							</i>
-							<img src="../../../images/news-con1.png" />
+							<img src="../../../images/news-con1.png" class="index-news-content-top-img"/>
 						</div>
-						<div>
+						<div class="index-news-content-top-boxx">
 							<i>
 							<span class="index-news-content-span">
 								<p class="index-news-p1"><span class="index-news-content-year">06</span><span class="index-news-content-month">17-01</span></p>
 								<p class="index-news-p2">构造城市捷运新风景，改善交通新方式，构造城市捷运新风景</p>
 							</span>
 						</i>
-							<img src="../../../images/news-con4.png" />
+							<img src="../../../images/news-con4.png" class="index-news-content-top-img"/>
 						</div>
 					</div>
 					<div class="index-news-content-top">
@@ -88,16 +99,16 @@
 								<p class="index-news-p2">生产工厂成功举办竣工仪式暨产品推介，会</p>
 							</span>
 						</i>
-							<img src="../../../images/news-con2.png" />
+							<img src="../../../images/news-con2.png" class="index-news-content-top-img"/>
 						</div>
 						<div>
 							<i>
 							<span class="index-news-content-span">
 								<p class="index-news-p1"><span class="index-news-content-year">11</span><span class="index-news-content-month">17-01</span></p>
-								<p class="index-news-p2">生产工厂成功举办竣工仪式暨产品推介会，生产工厂成功举办竣工仪式暨产...</p>
+								<p class="index-news-p2">生产工厂举办竣工仪式暨产品推介会，生产工厂成功举办竣工仪式暨产...</p>
 							</span>
 						</i>
-							<img src="../../../images/news-con3.png" />
+							<img src="../../../images/news-con3.png" class="index-news-content-top-img"/>
 						</div>
 					</div>
 				</div>
@@ -159,7 +170,9 @@
 			<div class="index-contact-c">
 				<div class="index-contact-content">
 					<p class="index-contact-introduce">某某控股集团有限公司成立于2005年1月18日，是一个市政府资本加快国有资本的战略性调整，一些重点企业做大做强，XX（实业）集团有限公司，国有独资公司XYZ控股有限公司和市燃气集团有限责任公司重组和一个城市的建立， 是其中的一个最大的国有企业资本、基础设施和公共设施和市政府和市国资委规划投资融资平台。自成立以来...
-						<span class="index-contact-more">MORE></span></p>
+						<router-link to='/about' tag='span' class="navfont" active-class="routeactive">
+            <span class="index-contact-more">MORE></span>
+            </router-link></p>
 					<ul class="index-contact-method">
 						<li v-for="(item,index) in contact" :key=index><img :src="item.icon"><span class="index-contact-span">{{item.value}}</span></li>
 					</ul>
@@ -172,11 +185,13 @@
 			<div class="index-cooperation-top">
 				<p class="index-cooperation-title">合作伙伴</p>
 				<p class="index-cooperation-content">这里是一些关于老外仓的业务服务伙伴</p>
+        <router-link to='/brand'>
 				<ul>
 					<li v-for="(item,index) in cooperation"  :key=index>
 						<img :src="item" />
 					</li>
 				</ul>
+        </router-link>
 				<div class="index-cooperation-bottom">
 					<i><img :src="cooperationf[1]"></i>
 					<i><img :src="cooperationf[0]"></i>
@@ -270,24 +285,30 @@ li {
 }
 .headerbg {
   width: 100%;
-  min-width: 1420px;
+  min-width: 1280px;
 }
 .wraperwidth {
   position: relative;
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto 0 auto;
 }
-
+.index-product-content-left-img{
+  width: 303px;
+  margin-left:20px;
+}
 .index-about-content {
   position: absolute;
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto 0 auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
 }
-
+img{
+  border:0
+}
 .index-product-title {
   margin-top: 100px;
   text-align: center;
@@ -300,7 +321,9 @@ li {
   color: #f1662c;
   text-shadow: 1px 1px 1px #f1662c;
 }
-
+.fontstyle{
+  text-decoration: none;
+}
 .index-product-introduction {
   margin-top: 10px;
   text-align: center;
@@ -311,14 +334,17 @@ li {
 .index-product-content {
   padding-top: 55px;
   display: flex;
+  text-align: center;
 }
 
 .index-product-content-left {
   flex: 1;
+  margin-right: 20px;
 }
 
 .index-product-content-right-top {
   display: flex;
+  margin-right:20px;
 }
 
 .index-product-content-right-bottom {
@@ -326,13 +352,19 @@ li {
 }
 
 .index-product-content-box {
-  width: 348px;
-  height: 318px;
+  width: 303px;
+  height: 273px;
   background: #faf4ee;
   padding-top: 30px;
   text-align: center;
 }
-
+.index-product-content-box1{
+  height: 303px;
+  width: 303px;
+}
+.index-product-content-box1 img{
+  height: 100%;
+}
 .index-product-content-right-title {
   font-size: 18px;
   color: #ee882a;
@@ -352,13 +384,15 @@ li {
   background: #f5f5f5;
   padding-bottom: 100px;
 }
-
+.navfont{
+  cursor: pointer;
+}
 .index-news-title {
   text-align: center;
 }
 
 .index-news-title p {
-  padding: 0 350px;
+  padding: 0 303px;
   font-size: 14px;
   color: #666666;
   text-shadow: 0.3px 0.3px 0.3px #b2b2b2;
@@ -372,10 +406,15 @@ li {
 .index-news-content-top {
   display: flex;
 }
-
+.index-news-content-top-img{
+  width: 303px;
+}
+.index-news-content-top-boxx{
+  width: 640px;
+}
 .index-news-content-top i {
-  width: 350px;
-  height: 211px;
+  width: 303px;
+  height: 182px;
   top: 0;
   left: 0;
   position: absolute;
@@ -384,13 +423,13 @@ li {
 
 .index-news-content-top i .index-news-content-span {
   display: block;
-  width: 335px;
-  height: 140px;
-  margin: 20px;
+  width: 290px;
+  height: 121px;
+  margin: 17.3px;
   background: #f0f2f2;
   z-index: 2;
-  padding-top: 30px;
-  padding-right: 25px;
+  padding-top: 26px;
+  padding-right: 15px;
 }
 
 .index-news-content-top i .index-news-content-span:hover {
@@ -403,9 +442,9 @@ li {
 }
 
 .index-news-p2 {
-  margin-top: 40px;
+  margin-top: 20px;
   text-shadow: 0.5px 0.5px 0.5px black;
-  margin-left: 45px;
+  margin-left: 20px;
 }
 
 .index-news-content-year {
@@ -419,8 +458,8 @@ li {
 }
 
 .index-news-content-top div {
-  width: 700px;
-  padding-left: 350px;
+  width: 640px;
+  padding-left: 320px;
   position: relative;
 }
 
@@ -434,16 +473,15 @@ li {
 
 .index-about-body-next .index-about-img {
   width: 100%;
-  min-width: 1420px;
-  min-height: 410px;
+  min-width: 1280px;
+  min-height: 370px;
 }
 
 .index-about-box {
-  width: 140px;
-  padding: 100px 20px 0 20px;
+  width: 25%;
+  padding: 60px 35px 0 35px;
   float: left;
   text-align: center;
-  margin-left: 220px;
 }
 
 .index-about-box:nth-of-type(1) {
@@ -470,17 +508,19 @@ li {
 
 .index-internet-top {
   text-align: center;
-  padding: 90px 260px 0 260px;
+  padding: 90px 60px 0 60px;
 }
 
 .index-internet-content {
   position: absolute;
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto 0 auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
+  text-align: center;
 }
 
 .index-internet-title {
@@ -489,11 +529,10 @@ li {
 }
 
 .index-internet-box {
-  width: 185px;
-  padding: 290px 20px 0 20px;
+  width: 25%;
+  padding: 260px 20px 0 20px;
   float: left;
   text-align: center;
-  margin-left: 160px;
 }
 
 .index-internet-box:nth-of-type(1) {
@@ -526,21 +565,22 @@ li {
 
 .index-contact-c {
   position: absolute;
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
 }
 .imgsize {
   width: 100%;
-  min-width: 1420px;
-  min-height: 410px;
+  min-width: 1280px;
+  min-height: 370px;
 }
 .index-contact-content {
   position: absolute;
-  width: 640px;
+  width: 50%;
   padding-right: 70px;
   top: 0;
   left: 0;
@@ -551,7 +591,7 @@ li {
   font-size: 10px;
   letter-spacing: 3px;
   text-shadow: 0.2px 0.2px 0.2px #b4b0ad;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .index-contact-more {
@@ -564,7 +604,7 @@ li {
 
 .index-contact-method {
   list-style: none;
-  margin-top: 70px;
+  margin-top: 50px;
   position: relative;
 }
 
@@ -583,7 +623,7 @@ li {
 
 .index-cooperation-top {
   position: relative;
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   top: 0;
   left: 0;
@@ -596,6 +636,7 @@ li {
   color: #f1662c;
   text-shadow: 0.4px 0.4px 0.4px #f1662c;
   padding-top: 100px;
+  font-size: 24px;
 }
 
 .index-cooperation-content {
@@ -608,10 +649,10 @@ li {
   display: flex;
   list-style: none;
   text-align: center;
-  padding: 0 180px;
 }
 
 .index-cooperation-top ul li {
+  width: 16.5%;
   margin-top: 75px;
   padding: 0 20px;
 }

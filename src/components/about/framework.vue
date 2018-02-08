@@ -2,7 +2,7 @@
 	<div>
 		<Nav navtitle='发展足迹'></Nav>
 		<div class="wraperwidth">
-			<img src="../../../images/organization.jpg" />
+			<img src="../../../images/organization.jpg" class="wraperwidth-img"/>
 		</div>
 	</div>
 </template>
@@ -24,8 +24,11 @@ img {
 }
 
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   margin-top: 50px;
+}
+.wraperwidth-img{
+  width: 100%;
 }
 </style>

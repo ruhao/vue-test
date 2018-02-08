@@ -22,13 +22,13 @@ p {
 }
 
 .contact-title {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   position: relative;
   margin-top: 50px auto;
 }
 .contact-middle{
-  width: 440px;
+ width: 440px;
  display: flex;
  margin: 0 auto;
  position: relative;

@@ -38,6 +38,7 @@ import Strategy from '@/components/hr/strategy'
 import Train from '@/components/hr/train'
 import Advertises from '@/components/hr/advertises'
 import News from '@/components/news/news'
+import Newdetail from '@/components/news/newdtail'
 import CompanyNews from '@/components/news/companynews'
 import CompanyPhotos from '@/components/news/companyphotos'
 import Marketing from '@/components/news/marketing'
@@ -116,7 +117,7 @@ export default new Router({
           default: AboutHonor
         }
       }, {
-        path: '/',
+        path: 'culture',
         components: {
           default: AboutCulture
         }
@@ -144,6 +145,13 @@ export default new Router({
           default: CompanyNews
         }
       }, {
+        path: 'newdetail',
+        name: 'newdetail',
+        components: {
+          default: Newdetail
+        }
+      },
+      {
         path: 'companyphotos',
         components: {
           default: CompanyPhotos

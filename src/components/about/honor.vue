@@ -84,7 +84,7 @@ img {
 }
 
 .wraperwidth {
-  width: 1420px;
+  width: 1280px;
   margin: 0 auto;
   margin-top: 50px;
 }
@@ -94,14 +94,14 @@ img {
 }
 
 .honor1 {
-  width: 710px;
-  height: 300px;
+  width: 640px;
+  height: 270px;
   overflow: hidden;
 }
 
 .honor2 {
-  width: 710px;
-  height: 300px;
+  width: 640px;
+  height: 270px;
   overflow: hidden;
   position: relative;
 }
