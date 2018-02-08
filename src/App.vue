@@ -80,12 +80,12 @@
 		</div>
 		<div class="headernavlast" v-if="this.width>=1600">
 			<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
-			<router-link class="navfont" to='/en' tag='span'>EN</router-link>
+			<router-link class="navfont" to='/' tag='span'>EN</router-link>
 		</div>
 		<div class="wraperwidth" v-else>
 			<div class="headernavlastb">
 				<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
-				<router-link class="navfont" to='/en' tag='span'>EN</router-link>
+				<router-link class="navfont" to='/' tag='span'>EN</router-link>
 			</div>
 		</div>
 		<div>
