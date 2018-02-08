@@ -99,7 +99,6 @@ li {
 .wraperwidth {
   width: 1420px;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .cnbox {

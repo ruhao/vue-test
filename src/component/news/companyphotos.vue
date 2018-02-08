@@ -130,6 +130,8 @@ p {
   width: 340px;
   margin-left: 15px;
   float: left;
+  position: relative;
+  z-index: 17
 }
 
 .photobox img {

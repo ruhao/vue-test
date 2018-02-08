@@ -289,6 +289,7 @@ p {
 .wraperwidth {
   min-width: 1420px;
   margin: 30px auto 0;
+  overflow: visible;
 }
 
 .secondul {
