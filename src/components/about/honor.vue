@@ -1,5 +1,6 @@
 <template>
-	<div>
+<div>
+	<div v-if="width<1500&&width>640">
 		<Nav navtitle='资质荣誉'></Nav>
 		<div class="wraperwidth">
 			<div v-for="(item,index) in this.fliter.data6" :key=index>
@@ -34,6 +35,63 @@
 			</div>
 		</div>
 	</div>
+  <div v-if="width>=1500">
+		<Nav navtitle='资质荣誉'></Nav>
+		<div class="midwraperwidth">
+			<div v-for="(item,index) in this.fliter.data6" :key=index>
+				<div v-if="item.num%2==0" class="midhonor">
+					<div class="midhonor1">
+						<img :src="item.imgurl">
+					</div>
+					<div class="midhonor2">
+						<img :src="item.bgimg" />
+						<div class="midhonorcontent">
+							<p class="midhonortitle">{{item.title}}</p>
+							<p class="midhonorcontentp" v-for="(it,ind) in item.content" :key=ind>
+								{{it}}
+							</p>
+						</div>
+					</div>
+				</div>
+				<div v-else class="midhonor">
+					<div class="midhonor2">
+						<img :src="item.bgimg" />
+						<div class="midhonorcontent">
+							<p class="midhonortitle">{{item.title}}</p>
+							<p class="midhonorcontentp" v-for="(it,ind) in item.content" :key=ind>
+								{{it}}
+							</p>
+						</div>
+					</div>
+					<div class="midhonor1">
+						<img :src="item.imgurl">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <div v-if="width<=640">
+			<Nav navtitle='资质荣誉'></Nav>
+		<div class="mobilewraperwidth">
+			<div v-for="(item,index) in this.fliter.data6" :key=index>
+				<div class="mobilehonor">
+					<div class="mobilehonor1">
+						<img :src="item.imgurl">
+					</div>
+					<div class="mobilehonor2">
+						<img :src="item.bgimg" />
+						<div class="mobilehonorcontent">
+							<p class="mobilehonortitle">{{item.title}}</p>
+							<p class="mobilehonorcontentp" v-for="(it,ind) in item.content" :key=ind>
+								{{it}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
 </template>
 
 <script>
@@ -41,6 +99,7 @@ import Nav from '../common/nav.vue'
 export default {
   data () {
     return {
+      width: 1920,
       fliter: {
         data6: [],
         type: '1',
@@ -48,11 +107,11 @@ export default {
       }
     }
   },
-  methods: {},
   components: {
     Nav
   },
   created () {
+    this.width = document.documentElement.offsetWidth
     this.$http
       .post('http://120.79.22.222:3000/about/list', this.fliter)
       .then(res => {
@@ -72,6 +131,11 @@ export default {
 
         this.fliter.data6 = res.data.rows
       })
+  },
+  mounted () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
   }
 }
 </script>
@@ -84,7 +148,7 @@ img {
 }
 
 .wraperwidth {
-  width: 1280px;
+  width: 1000px;
   margin: 0 auto;
   margin-top: 50px;
 }
@@ -94,14 +158,14 @@ img {
 }
 
 .honor1 {
-  width: 640px;
-  height: 270px;
+  width: 495px;
+  height: 204px;
   overflow: hidden;
 }
 
 .honor2 {
-  width: 640px;
-  height: 270px;
+  width: 495px;
+  height: 204px;
   overflow: hidden;
   position: relative;
 }
@@ -131,6 +195,112 @@ img {
   margin-right: 50px;
   font-size: 12px;
   line-height: 25px;
+  color: #5b6270;
+  text-shadow: 0.4px 0.4px 0.4px #9ba7b5;
+  letter-spacing: 2px;
+}
+.midwraperwidth {
+  width: 1420px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.midhonor {
+  display: flex;
+}
+
+.midhonor1 {
+  width: 710px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.midhonor2 {
+  width: 710px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.midhonor1 img {
+  width: 100%;
+  height: 100%;
+}
+
+.midhonor2 .midhonorcontent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.midhonortitle {
+  margin-left: 50px;
+  margin-top: 35px;
+  font-size: 28px;
+  color: #ee882a;
+  margin-bottom: 35px;
+}
+.midhonorcontentp {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 12px;
+  line-height: 25px;
+  color: #5b6270;
+  text-shadow: 0.4px 0.4px 0.4px #9ba7b5;
+  letter-spacing: 2px;
+}
+.mobilewraperwidth {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.mobilehonor {
+}
+
+.mobilehonor1 {
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+    font-size: 0;
+}
+
+.mobilehonor2 {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+    font-size: 0;
+}
+
+.mobilehonor1 img {
+  width: 100%;
+  font-size: 0;
+}
+.mobilehonor2 img{
+  width: 100%;
+}
+
+.mobilehonor2 .mobilehonorcontent {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.mobilehonortitle {
+  margin-left: 20px;
+  margin-top: 15px;
+  font-size: 18px;
+  color: #ee882a;
+  margin-bottom: 15px;
+}
+.mobilehonorcontentp {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 10px;
+  line-height: 18px;
   color: #5b6270;
   text-shadow: 0.4px 0.4px 0.4px #9ba7b5;
   letter-spacing: 2px;

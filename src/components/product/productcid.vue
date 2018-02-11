@@ -1,5 +1,6 @@
 <template>
-	<div>
+<div>
+<div v-if="width<1500&&width>640">
 		<Nav navtitle="产品业务"></Nav>
 		<div class="wraperwidth">
 			<div class="productlistbox">
@@ -91,6 +92,182 @@
 			</div>
 		</div>
 	</div>
+  <div v-if="width>=1500">
+		<Nav navtitle="产品业务"></Nav>
+		<div class="midwraperwidth">
+			<div class="productlistbox">
+				<div class="secondul" @click="getall">产品业务</div>
+				<!--二级搜索-->
+				<!--用v-if进行判断，用v-for进行(循环-->
+				<div class="secondul" @click="getsecond(0)">
+					{{cidsec1}}
+					<div class="secondarea">
+						<div v-for="(item,index) in alldata" :key=index class="secondcon" @click="getsec(item.children,item.text,item)">
+							{{item.text}}
+						</div>
+					</div>
+				</div>
+				<!--三级搜索-->
+				<div class="secondul" @click="getsecond(1)" v-if="cidtir">
+					{{cidfour1}}
+					<div class="secondarea">
+						<div v-for="(item,index) in cidtir" :key=index class="secondcon" @click="getthird(item.children,item.text,item)">
+							{{item.text}}
+						</div>
+					</div>
+				</div>
+				<!--四级搜索-->
+				<div class="secondul" @click="getsecond(2)" v-if="cidfour">
+					{{cidfifth1}}
+					<div class="secondarea">
+						<div v-for="(item,index) in cidfour" :key=index class="secondcon" @click="getfour(item.children,item.text,item)">
+							{{item.text}}
+						</div>
+					</div>
+				</div>
+				<!--五级搜索-->
+				<div class="secondul" @click="getsecond(3)" v-if="cidfifth">
+					{{cidsix1}}
+					<div class="secondarea">
+						<div v-for="(item,index) in cidfifth" :key=index class="secondcon" @click="getfifth(item.children,item.text,item)">
+							{{item.text}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wraperwidth">
+			<div v-for="(item,index) in fliter.data6" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
+				<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}"> -->
+        <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
+					<div class="serverbox1"><img :src="item.imgurl"></div>
+				</router-link>
+				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
+					<div class="serverbox2">
+						<img v-if='item.type==5' src="../../../images/products2-1.jpg">
+            <img v-if='item.type==4' src="../../../images/products2-4.jpg">
+            <img v-if='item.type==2' src="../../../images/products2-7.jpg">
+            <img v-if='item.type==1' src="../../../images/products2-3.jpg">
+            <img v-if='item.type==3' src="../../../images/products2-6.jpg">
+						<p class="prolist">
+							{{item.name}}
+						</p>
+					</div>
+				</router-link>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<div class="wraperwidth">
+			<div class="page">
+				<ul v-if="li7>=7">
+					<li @click="prev"><span>上一页</span></li>
+					<li class="li"><span @click="changepage(li1,1)">{{this.li1}}</span></li>
+					<li class="li"><span v-if="li2===2" @click="changepage(li2,2)">{{this.li2}}</span>
+						<span v-else>..{{this.li2}}</span>
+					</li>
+					<li class="li"><span @click="changepage(li3,3)">{{this.li3}}</span></li>
+					<li class="li"><span @click="changepage(li4,4)">{{this.li4}}</span></li>
+					<li class="li"><span @click="changepage(li5,5)">{{this.li5}}</span></li>
+					<li class="li"><span v-if="li6==='...'">{{this.li6}}</span>
+						<span v-else @click="changepage(li6,6)">{{this.li6}}</span>
+					</li>
+					<li class="li"><span @click="changepage(li7,7)">{{this.li7}}</span></li>
+					<li @click="next"><span>下一页</span></li>
+				</ul>
+				<ul v-else>
+					<li @click="prev"><span>上一页</span></li>
+					<li v-for="(item,index) in li7" :key=index class="li">
+						<span @click="changepage(item,item)">{{item}}</span>
+					</li>
+					<li @click="next"><span>下一页</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+  <div v-if="width<=640">
+		<Nav navtitle="产品业务"></Nav>
+		<div class="mobilewraperwidth">
+			<div class="mobileproductlistbox">
+				<div class="mobilesecondul" @click="getall">产品业务</div>
+				<!--二级搜索-->
+				<!--用v-if进行判断，用v-for进行(循环-->
+				<div class="mobilesecondul" @click="getsecond(0)">
+					{{cidsec1}}
+					<div class="secondarea mobilesecondarea">
+						<div v-for="(item,index) in alldata" :key=index class="mobilesecondcon" @click="getsec(item.children,item.text,item)">
+							{{item.text}}
+						</div>
+					</div>
+				</div>
+				<!--三级搜索-->
+				<div class="mobilesecondul" @click="getsecond(1)" v-if="cidtir">
+					{{cidfour1}}
+					<div class="secondarea mobilesecondarea">
+						<div v-for="(item,index) in cidtir" :key=index class="mobilesecondcon" @click="getthird(item.children,item.text,item)">
+							{{item.text}}
+						</div>
+					</div>
+				</div>
+				<!--四级搜索-->
+				<div class="mobilesecondul" @click="getsecond(2)" v-if="cidfour">
+					{{cidfifth1}}
+					<div class="secondarea mobilesecondarea">
+						<div v-for="(item,index) in cidfour" :key=index class="mobilesecondcon" @click="getfour(item.children,item.text,item)">
+							{{item.text}}
+						</div>
+					</div>
+				</div>
+				<!--五级搜索-->
+				<div class="mobilesecondul" @click="getsecond(3)" v-if="cidfifth">
+					{{cidsix1}}
+					<div class="secondarea mobilesecondarea">
+						<div v-for="(item,index) in cidfifth" :key=index class="mobilesecondcon" @click="getfifth(item.children,item.text,item)">
+							{{item.text}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mobilewraperwidth">
+			<div v-if="fliter.data6.length>=1" v-for="(item,index) in fliter.data6" :key=index class="mobileserverbox">
+				<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}"> -->
+        <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
+					<div class="mobileserverbox1"><img :src="item.imgurl"></div>
+				</router-link>
+			</div>
+      <div v-if="fliter.data6.length<1">
+				<p class="mobilenothing">敬请期待</P>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<div class="mobilewraperwidth">
+			<div class="mobilepage" v-if="li7>1">
+				<ul v-if="li7>=7">
+					<li @click="prev"><span>上一页</span></li>
+					<li class="li"><span @click="changepage(li1,1)">{{this.li1}}</span></li>
+					<li class="li"><span v-if="li2===2" @click="changepage(li2,2)">{{this.li2}}</span>
+						<span v-else>..{{this.li2}}</span>
+					</li>
+					<li class="li"><span @click="changepage(li3,3)">{{this.li3}}</span></li>
+					<li class="li"><span @click="changepage(li4,4)">{{this.li4}}</span></li>
+					<li class="li"><span @click="changepage(li5,5)">{{this.li5}}</span></li>
+					<li class="li"><span v-if="li6==='...'">{{this.li6}}</span>
+						<span v-else @click="changepage(li6,6)">{{this.li6}}</span>
+					</li>
+					<li class="li"><span @click="changepage(li7,7)">{{this.li7}}</span></li>
+					<li @click="next"><span>下一页</span></li>
+				</ul>
+				<ul v-else>
+					<li @click="prev"><span>上一页</span></li>
+					<li v-for="(item,index) in li7" :key=index class="mobileli">
+						<span @click="changepage(item,item)">{{item}}</span>
+					</li>
+					<li @click="next"><span>下一页</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+  </div>
 </template>
 
 <script>
@@ -100,6 +277,7 @@ export default {
   mixins: [PageJs],
   data () {
     return {
+      width: 1920,
       apimodel: 'products',
       pagenum: [],
       companynews: [],
@@ -272,6 +450,7 @@ export default {
     Nav
   },
   created () {
+    this.width = document.documentElement.offsetWidth
     this.id = this.$route.params.id.id // 接受传递下来的信息
     if (this.$route.params.id.name) {
       this.cidsec1 = this.$route.params.id.name
@@ -281,6 +460,11 @@ export default {
       this.getcid(this.alldata, this.id)
       this.getData()
     })
+  },
+  mounted () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
   }
 }
 </script>
@@ -297,11 +481,15 @@ p {
 }
 
 .wraperwidth {
-  min-width: 1280px;
+  min-width: 1000px;
   margin: 30px auto 0;
   overflow: visible;
 }
-
+.midwraperwidth {
+  min-width: 1420px;
+  margin: 30px auto 0;
+  overflow: visible;
+}
 .secondul {
   width: 200px;
   height: 40px;
@@ -374,9 +562,10 @@ p {
 }
 
 .serverbox {
-  width: 308px;
+  width: 318px;
   position: relative;
-  height: 308px;
+  height: 318px;
+  margin-right: 15px;
   float: left;
   cursor: pointer;
   overflow: hidden;
@@ -420,4 +609,128 @@ p {
   top: 0px;
   opacity: 0.8;
 }
+img {
+  border: 0;
+}
+
+ul,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.mobilewraperwidth {
+  width: 100%;
+  margin: 10px auto 0;
+  overflow: visible;
+}
+
+.mobilesecondul {
+  width: 25%;
+  height: 20px;
+  background: #f2ab69;
+  text-align: center;
+  z-index: 14;
+  position: relative;
+  margin: 1%;
+  line-height: 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 10px;
+}
+  .mobilenothing{
+    height: 100px;
+    text-align: center;
+    color: #ee882a;
+    font-weight: 600;
+    padding-top: 50px;
+  }
+ .mobilesecondarea {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: all 0.5s;
+  z-index: 14;
+  color: #f2ab69;
+}
+
+.mobilesecondul .mobilesecondcon {
+  line-height: 20px;
+  background: #f8efe7;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mobileproductlistbox {
+  display: flex;
+}
+
+.mobilepage {
+  margin-top: 30px;
+}
+
+.mobilepage ul {
+  overflow: hidden;
+  height: 26px;
+  width: 100%;
+  list-style: none;
+  margin: 30px auto;
+  position: relative;
+  z-index: 14;
+}
+
+.mobilepage ul li {
+  float: left;
+  margin-left: 5px;
+  border: solid 1px #00b7ff;
+  line-height: 22px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: white;
+  color: #00b7ff;
+}
+
+.mobilepage ul li:hover {
+  color: #ee882a;
+  border: solid 1px #ee882a;
+}
+
+.mobilepage ul li span {
+  padding: 0 6px;
+  background: white;
+  font-size: 12px;
+}
+
+.mobileserverbox {
+  width: 46%;
+  position: relative;
+  height: 46%;
+  float: left;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 11;
+  margin-left:2%;
+}
+
+.mobileserverbox1 {
+  top: 0px;
+  left: 0px;
+  float: left;
+  background: #faf1e8;
+}
+
+.mobileserverbox1 img {
+  width: 100%;
+  height: 100%;
+}
+
 </style>

@@ -1,5 +1,6 @@
 <template>
-	<div>
+<div>
+	<div v-if="width<1500&&width>640">
 		<Nav navtitle='产品业务'></Nav>
 		<div class='all'>
 		<div class='margintop' v-for='(item,index) in this.productlist' :key=index>
@@ -7,7 +8,7 @@
 				<div class="product-box">
 					<div class="product-boxl"><img :src="item.imgurl1"></div>
 					<div class="product-boxr">
-						<img :src="item.imgurl2">
+						<img :src="item.imgurl2" class="productimg">
 						<p class="product-boxp1">{{item.title}}</p>
 						<p class="product-boxp2">{{item.content}}
 						</p>
@@ -18,6 +19,43 @@
 		<div style="clear: both;"></div>
 		</div>
 	</div>
+  <div v-if="width>=1500">
+		<Nav navtitle='产品业务'></Nav>
+		<div class='midall'>
+		<div class='midmargintop' v-for='(item,index) in this.productlist' :key=index>
+			<router-link :to="{name:'productcid',params:{id:{id:item.id,name:item.title}}}" class="midfontstyle">
+				<div class="midproduct-box">
+					<div class="midproduct-boxl"><img :src="item.imgurl1"></div>
+					<div class="midproduct-boxr">
+						<img :src="item.imgurl2">
+						<p class="midproduct-boxp1">{{item.title}}</p>
+						<p class="midproduct-boxp2">{{item.content}}
+						</p>
+					</div>
+				</div>
+			</router-link>
+		</div>
+		<div style="clear: both;"></div>
+		</div>
+	</div>
+  <div v-if="width<=640">
+		<Nav navtitle='产品业务'></Nav>
+		<div class='mobileall'>
+		<div class='mobilemargintop' v-for='(item,index) in this.productlist' :key=index>
+			<router-link :to="{name:'productcid',params:{id:{id:item.id,name:item.title}}}" class="mobilefontstyle">
+				<div class="mobileproduct-box">
+					<div class="mobileproduct-boxl mobileindex-product-content-box1"><img :src="item.imgurl1" class="mobilefontstyle1"></div>
+					<div class="mobileproduct-boxr mobileindex-product-content-box">
+						<img :src="item.imgurl2">
+						<p class="mobileproduct-boxp1">{{item.title}}</p>
+					</div>
+				</div>
+			</router-link>
+		</div>
+		<div style="clear: both;"></div>
+		</div>
+	</div>
+  </div>
 </template>
 
 <script>
@@ -42,6 +80,7 @@ import p28 from '../../../images/products2-8.jpg'
 export default {
   data () {
     return {
+      width: 1920,
       productlist: [
         {
           imgurl1: p11,
@@ -105,46 +144,64 @@ export default {
   components: {
     Nav,
     Foot
+  },
+  created () {
+    this.width = document.documentElement.offsetWidth
+  },
+  mounted () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
+  },
+  updated () {
+    let ii = window.getComputedStyle(document.getElementsByClassName('mobilefontstyle1')[0], null)['width']
+    let oo = document.getElementsByClassName('mobileindex-product-content-box').length
+    for (let i = 0; i < oo; i++) {
+      document.getElementsByClassName('mobileindex-product-content-box')[i].style.height = ii
+    }
   }
 }
 </script>
 
 <style scoped>
 .product-box {
-  width: 630px;
+  width: 495px;
   display: flex;
   z-index: 11;
   position: relative;
 }
 
 .product-boxl {
-  width: 308px;
+  width: 240px;
 }
 
 .product-boxr {
-  width: 308px;
+  width: 240px;
   background: #f8efe7;
   position: relative;
   text-align: center;
   box-sizing: border-box;
-  height: 308px;
+  height: 240px;
 }
 .all {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 .product-boxr img {
-  margin-top: 15px;
+  margin-top: 5px;
 }
-
+.productimg{
+  width: 120px;
+  height: 120px;
+}
 .product-boxp1 {
   color: #ee882a;
   font-weight: 600;
   font-size: 18px;
-  margin: 15px 15px 0;
+  margin: 10px 10px 0;
 }
 
 .margintop {
-  margin-top: 20px;
+  margin-top: 10px;
   float: left;
 }
 
@@ -155,8 +212,8 @@ export default {
 .product-boxp2 {
   color: #ee882a;
   font-weight: 100;
-  font-size: 14px;
-  margin: 10px 20px 0;
+  font-size: 12px;
+  margin: 10px 15px 0;
   line-height: 20px;
   letter-spacing: 1px;
 }
@@ -167,6 +224,125 @@ export default {
 
 .fontstyle {
   text-decoration: none;
+  font-size: 12px;
   z-index: 11;
 }
+.midproduct-box {
+  width: 700px;
+  display: flex;
+  z-index: 11;
+  position: relative;
+}
+
+.midproduct-boxl {
+  width: 348px;
+}
+
+.midproduct-boxr {
+  width: 350px;
+  background: #f8efe7;
+  position: relative;
+  text-align: center;
+}
+.midall {
+  margin-top: 30px;
+}
+.midproduct-boxr img {
+  margin-top: 30px;
+}
+
+.midproduct-boxp1 {
+  color: #ee882a;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 30px 35px 0;
+}
+
+.midmargintop {
+  margin-top: 20px;
+  float: left;
+}
+
+.midmargintop:nth-of-type(2n) {
+  margin-left: 20px;
+}
+
+.midproduct-boxp2 {
+  color: #ee882a;
+  font-weight: 100;
+  font-size: 14px;
+  margin: 20px 35px 0;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+.midproduct-boxl img {
+  width: 100%;
+}
+
+.midfontstyle {
+  text-decoration: none;
+  z-index: 11;
+}
+.mobileproduct-box {
+  width: 100%;
+  display: flex;
+  z-index: 11;
+  position: relative;
+}
+
+.mobileproduct-boxl {
+  width: 50%;
+}
+
+.mobilefontstyle{
+  text-decoration: none;
+}
+.mobileproduct-boxr {
+  width: 50%;
+  background: #f8efe7;
+  position: relative;
+  text-align: center;
+}
+.mobileall {
+  margin-top: 10px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.mobileproduct-boxr img {
+  margin-top: 10px;
+  width:70%;
+}
+
+.mobileproduct-boxp1 {
+  color: #ee882a;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 5px 35px 0;
+}
+
+.mobilemargintop {
+  margin-top: 10px;
+  float: left;
+}
+
+.mobileindex-product-content-box1{
+  width: 50%;
+  height: 100%;
+  font-size: 0;
+}
+
+.mobileproduct-boxp2 {
+  color: #ee882a;
+  font-weight: 100;
+  font-size: 14px;
+  margin: 20px 35px 0;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+.mobileproduct-boxl img {
+  width: 100%;
+}
+
 </style>

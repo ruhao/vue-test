@@ -1,8 +1,49 @@
 <template>
-	<div>
+<div>
+	<div v-if="width<1500&&width>640">
 		<div><img class="headerbg" src="../../../images/join-ban.jpg"></div>
 		<div class="wraperwidth">
 			<div class="hrroute">
+				<router-link to='/hr/strategy'>
+				<div class="heroutebox1 navimg" @mouseenter="imgchange2" @mouseleave="imgchange3">
+					<img src="../../../images/join1.jpg" id="hrimg1"/>
+					<img src="../../../images/join1a.jpg" id="hrimg2"/>
+				</div>
+				</router-link>
+				<router-link to='/hr/train'>
+				<div class="heroutebox1 navimg" @mouseenter="imgchange" @mouseleave="imgchange1">
+					<img src="../../../images/join2.jpg" id="hrimg3"/>
+					<img src="../../../images/join2a.jpg" id="hrimg4"/>
+				</div>
+				</router-link>
+				<router-link to='/hr/advertises'>
+				<div class="heroutebox1 navimg" @mouseenter="imgchange4" @mouseleave="imgchange5">
+					<img src="../../../images/join3.jpg" id="hrimg5"/>
+					<img src="../../../images/join3a.jpg" id="hrimg6"/>
+				</div>
+				</router-link>
+			</div>
+		</div>
+		<div v-if="this.$route.path==='/hr'">
+			<div>
+				<Nav navtitle="人力资源"></Nav>
+			</div>
+			<div class="bottom">
+			<p class="stp">我们的团队拥有广泛的专业和文化背景，我们对中国和其他海外市场的商业环境的深刻理解，是对国际商业舞台上成功运行的关键。同时，我们也认识到人才对集团发展的重要性，因此，我们一直致力于为人才创造最佳的工作和发展平台。</p>
+			<p class="stp">通过多年的实践和发展，我们团队的骨干更深刻的理解是最大的信心，韩胜集团的发展是稳定的集团的长期基础。品行、能力、健康是我们的选择标准，“激情、使命、责任、坚持、锲而不舍”是我们的团队精神，我们致力于创造一个愿景和崇高境界，团队精神，身心健康，和英国的跨国好团队的特点。</p>
+			</div>
+		</div>
+		<div v-else>
+			<keep-alive>
+				<router-view></router-view>
+			</keep-alive>
+		</div>
+		<Foot></Foot>
+	</div>
+  <div v-if="width>=1500">
+		<div><img class="midheaderbg" src="../../../images/join-ban.jpg"></div>
+		<div class="midwraperwidth">
+			<div class="midhrroute">
 				<router-link to='/hr/strategy'>
 				<div class="heroutebox1" @mouseenter="imgchange2" @mouseleave="imgchange3">
 					<img src="../../../images/join1.jpg" id="hrimg1"/>
@@ -27,9 +68,9 @@
 			<div>
 				<Nav navtitle="人力资源"></Nav>
 			</div>
-			<div class="bottom">
-			<p class="stp">我们的团队拥有广泛的专业和文化背景，我们对中国和其他海外市场的商业环境的深刻理解，是对国际商业舞台上成功运行的关键。同时，我们也认识到人才对集团发展的重要性，因此，我们一直致力于为人才创造最佳的工作和发展平台。</p>
-			<p class="stp">通过多年的实践和发展，我们团队的骨干更深刻的理解是最大的信心，韩胜集团的发展是稳定的集团的长期基础。品行、能力、健康是我们的选择标准，“激情、使命、责任、坚持、锲而不舍”是我们的团队精神，我们致力于创造一个愿景和崇高境界，团队精神，身心健康，和英国的跨国好团队的特点。</p>
+			<div class="midbottom">
+			<p class="midstp">我们的团队拥有广泛的专业和文化背景，我们对中国和其他海外市场的商业环境的深刻理解，是对国际商业舞台上成功运行的关键。同时，我们也认识到人才对集团发展的重要性，因此，我们一直致力于为人才创造最佳的工作和发展平台。</p>
+			<p class="midstp">通过多年的实践和发展，我们团队的骨干更深刻的理解是最大的信心，韩胜集团的发展是稳定的集团的长期基础。品行、能力、健康是我们的选择标准，“激情、使命、责任、坚持、锲而不舍”是我们的团队精神，我们致力于创造一个愿景和崇高境界，团队精神，身心健康，和英国的跨国好团队的特点。</p>
 			</div>
 		</div>
 		<div v-else>
@@ -38,14 +79,24 @@
 			</keep-alive>
 		</div>
 		<Foot></Foot>
-	</div>
+  </div>
+    <div v-if="width<=640">
+      <Hrr></Hrr>
+    </div>
+  </div>
 </template>
 
 <script>
 import Foot from '../common/footer.vue'
 // 模块导入
 import Nav from '../common/nav.vue'
+import Hrr from './mobile/hr.vue'
 export default {
+  data () {
+    return {
+      width: 1920
+    }
+  },
   methods: {
     imgchange () {
       document.getElementById('hrimg3').style.left = -160 + 'px'
@@ -86,19 +137,28 @@ export default {
   },
   components: {
     Foot,
-    Nav
+    Nav,
+    Hrr
   },
-  created () {}
+  created () {
+    this.width = document.documentElement.offsetWidth
+  },
+  mounted () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
+  }
 }
 </script>
 
 <style scoped>
 .headerbg {
   width: 100%;
-  min-width: 1280px;
+  min-width: 1000px;
+  text-align: center;
 }
 .wraperwidth {
-  width: 1280px;
+  width: 1000px;
   margin: 0 auto;
 }
 .hrroute {
@@ -113,6 +173,14 @@ export default {
   cursor: pointer;
   z-index: 11;
   overflow: hidden;
+}
+.navimg {
+  height: 120px;
+  width: 120px;
+  margin: 30px;
+}
+.navimg img{
+  width: 100%;
 }
 .heroutebox1 img:nth-of-type(1) {
   position: absolute;
@@ -133,7 +201,7 @@ export default {
   transition: all 0.5s;
 }
 .bottom {
-  width: 1200px;
+  width: 900px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -143,5 +211,26 @@ export default {
   color: #666666;
   line-height: 25px;
   text-indent: 2em;
+}
+.midheaderbg {
+  width: 100%;
+  min-width: 1420px;
+}
+.midwraperwidth {
+  width: 1420px;
+  margin: 0 auto;
+}
+.midhrroute {
+  text-align: center;
+}
+.midbottom {
+  width: 1420px;
+  margin: 0 auto;
+}
+.midstp {
+  margin-top: 45px;
+  font-size: 14px;
+  color: #666666;
+  line-height: 25px;
 }
 </style>

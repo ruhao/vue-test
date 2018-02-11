@@ -1,17 +1,44 @@
-    <template>
-	<div>
+  <template>
+  <div>
+	<div v-if="width<1500&&width>640">
 		<Nav navtitle='发展足迹'></Nav>
 		<div class="wraperwidth">
 			<img src="../../../images/organization.jpg" class="wraperwidth-img"/>
 		</div>
 	</div>
+  <div v-if="width>=1500">
+		<Nav navtitle='发展足迹'></Nav>
+		<div class="midwraperwidth">
+			<img src="../../../images/organization.jpg" />
+		</div>
+	</div>
+  <div v-if="width<=640">
+		<Nav navtitle='发展足迹'></Nav>
+		<div class="midwraperwidth">
+			<img src="../../../images/organization.jpg" />
+		</div>
+	</div>
+  </div>
 </template>
 
 <script>
 import Nav from '../common/nav.vue'
 export default {
+  data () {
+    return {
+      width: 1920
+    }
+  },
   components: {
     Nav
+  },
+  created () {
+    this.width = document.documentElement.offsetWidth
+  },
+  mounted () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
   }
 }
 </script>
@@ -24,11 +51,25 @@ img {
 }
 
 .wraperwidth {
-  width: 1280px;
+  width: 1000px;
   margin: 0 auto;
   margin-top: 50px;
 }
 .wraperwidth-img{
   width: 100%;
+}
+.midwraperwidth {
+  width: 1420px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.midwraperwidth {
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.midwraperwidth img{
+  width: 100%;
+  height: 300px;
 }
 </style>

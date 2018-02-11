@@ -1,5 +1,6 @@
 <template>
-	<div>
+<div>
+	<div v-if="width<1500&&width>640">
      <Nav navtitle='品牌商家'></Nav>
     <div class='wrapwidth'>所有品牌均按首字母顺序排列</div>
     <div class="wraperwidth" v-for="(item,index) in typeone" :key=index>
@@ -25,6 +26,59 @@
     </div>
     </div>
 	</div>
+  <div v-if="width>=1500">
+     <Nav navtitle='品牌商家'></Nav>
+    <div class='midwrapwidth'>所有品牌均按首字母顺序排列</div>
+    <div class="midwraperwidth" v-for="(item,index) in typeone" :key=index>
+      <div v-if="flag[index]==='true'">
+      <p class="midletter">{{title[index]}}</p>
+      <ul>
+        <li v-for="(it,ind) in content[index]" :key=ind class="midbrandlist">
+          <router-link :to="'/brand/branddetail/'+it._id" class="midfontstyle">
+          <div class="midbrandcontent"><img :src="it.imgurl"></div>
+          <div class="midbrandcontent1"><p>{{it.name}}</P></div>
+          </router-link>
+        </li>
+      </ul>
+       <div class="midwrapmore" v-if="content[index].length <= 12">
+        <i class="midmore" @click="getmore(index)">more+ </i>
+       </div>
+        <div class="midwrapmore" v-else>
+        <div class="midtwobutton">
+          <i class="midmore" @click="getmore(index)">more+ </i>
+          <i class="midmore" @click="getless(index)">less- </i>
+        </div>
+      </div>
+    </div>
+    </div>
+	</div>
+  <div v-if="width<=640">
+         <Nav navtitle='品牌商家'></Nav>
+    <div class='mobilewrapwidth'>所有品牌均按首字母顺序排列</div>
+    <div class="mobilewraperwidth" v-for="(item,index) in typeone" :key=index>
+      <div v-if="flag[index]==='true'">
+      <p class="mobileletter">{{title[index]}}</p>
+      <ul class="moul">
+        <li v-for="(it,ind) in content[index]" :key=ind class="mobilebrandlist">
+          <router-link :to="'/brand/branddetail/'+it._id" class="mobilefontstyle">
+          <div class="mobilebrandcontent"><img :src="it.imgurl"></div>
+          <div class="mobilebrandcontent1"><p>{{it.name}}</P></div>
+          </router-link>
+        </li>
+      </ul>
+       <div class="mobilewrapmore" v-if="content[index].length <= 12">
+        <i class="mobilemore" @click="getmore(index)">more+ </i>
+       </div>
+        <div class="mobilewrapmore" v-else>
+        <div class="mobiletwobutton">
+          <i class="mobilemore" @click="getmore(index)">more+ </i>
+          <i class="mobilemore" @click="getless(index)">less- </i>
+        </div>
+      </div>
+    </div>
+    </div>
+	</div>
+  </div>
 </template>
 
 <script>
@@ -32,6 +86,7 @@ import Nav from '../common/nav.vue'
 export default {
   data () {
     return {
+      width: 1920,
       typeone: ['1', '2', '3', '4', '5'],
       title: ['A ~ G', 'H ~ N', 'O ~ T', 'U ~ Z', 'U ~ Z', '其 他'],
       flag: [],
@@ -79,21 +134,27 @@ export default {
     Nav
   },
   created () {
+    this.width = document.documentElement.offsetWidth
     this.getData(0)
+  },
+  mounted () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
   }
 }
 </script>
 
 <style scoped>
 .wrapwidth{
-  width: 1280px;
+  width: 1000px;
   margin-top: 20px;
   text-align: center;
   text-shadow: 0.3px 0.3px 0.3px black;
 }
 .wraperwidth{
-  width: 1280px;
-  margin-top: 70px;
+  width: 1000px;
+  margin-top: 50px;
 }
 .letter{
   text-align: center;
@@ -106,30 +167,32 @@ ul{
 }
 .brandlist{
   float: left;
-  width: 200px;
+  width: 180px;
   margin-right:20px;
   margin-bottom: 20px;
   z-index: 10;
   position: relative;
 }
 .brandcontent{
-  width:200px;
+  width:180px;
   border: 1px #cccccc solid;
   border-bottom: 0;
   text-align: center;
   padding: 15px 0;
   cursor: pointer;
+  box-sizing: border-box
 }
-brandcontent img{
-  max-width: 200px;
+.brandcontent img{
+  max-width: 155px;
 }
 .brandcontent1{
   cursor: pointer;
   color: black;
-  width:200px;
+  width:180px;
   border: 1px #cccccc solid;
   text-align: center;
   height: 40px;
+  box-sizing: border-box
 }
 .fontstyle{
  text-decoration: none;
@@ -153,5 +216,142 @@ brandcontent img{
   display: block;
   color:#ee882a;
   margin: 20px auto 0;
+}
+.midwrapwidth{
+  width: 1420px;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 0.3px 0.3px 0.3px black;
+}
+.midwraperwidth{
+  width: 1420px;
+  margin-top: 70px;
+}
+.midletter{
+  text-align: center;
+  font-size: 18px;
+  color:#ee882a;
+}
+.midbrandlist{
+  float: left;
+  width: 200px;
+  margin-right:20px;
+  margin-bottom: 20px;
+  z-index: 10;
+  position: relative;
+}
+.midbrandcontent{
+  width:200px;
+  border: 1px #cccccc solid;
+  border-bottom: 0;
+  text-align: center;
+  padding: 15px 0;
+  cursor: pointer;
+}
+.midbrandcontent img{
+  max-width: 200px;
+}
+.midbrandcontent1{
+  cursor: pointer;
+  color: black;
+  width:200px;
+  border: 1px #cccccc solid;
+  text-align: center;
+  height: 40px;
+}
+.midfontstyle{
+ text-decoration: none;
+}
+.midwrapmore{
+  text-align: center;
+}
+.midtwobutton{
+  width: 160px;
+  margin: 0 auto;
+  display: flex;
+}
+.midmore{
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+  background: #f9f1e9;
+  font-style: normal;
+  cursor: pointer;
+  display: block;
+  color:#ee882a;
+  margin: 20px auto 0;
+}
+.mobilewrapwidth{
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+.mobilewraperwidth{
+  width: 100%;
+  margin-top: 20px;
+}
+.mobileletter{
+  text-align: center;
+  font-size: 18px;
+  color:#ee882a;
+}
+.moul{
+  list-style: none;
+  overflow: hidden;
+  padding: 0 5%;
+}
+.mobilebrandlist{
+  float: left;
+  width: 21%;
+  margin-right:10px;
+  margin-bottom: 10px;
+  z-index: 10;
+  position: relative;
+}
+.mobilebrandcontent{
+  width:100%;
+  border: 1px #cccccc solid;
+  border-bottom: 0;
+  text-align: center;
+  padding: 1% 0;
+  cursor: pointer;
+}
+.mobilebrandcontent img{
+  max-width: 95%;
+}
+.mobilebrandcontent1{
+  cursor: pointer;
+  color: black;
+  width:100%;
+  border: 1px #cccccc solid;
+  text-align: center;
+  height: 20px;
+}
+.mobilefontstyle{
+ text-decoration: none;
+}
+.mobilewrapmore{
+  text-align: center;
+}
+.mobiletwobutton{
+  width: 120px;
+  margin: 0 auto;
+  display: flex;
+}
+.mobilemore{
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  background: #f9f1e9;
+  font-style: normal;
+  cursor: pointer;
+  display: block;
+  color:#ee882a;
+  margin: 10px auto 0;
+  position: relative;
+  z-index: 14
 }
 </style>

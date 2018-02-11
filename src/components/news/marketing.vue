@@ -1,7 +1,7 @@
 <template>
-	<div>
+<div>
+	<div v-if="width<1500&&width>640">
 		<Nav navtitle="行业动态"></Nav>
-
 		<div class="bodycolor">
 			<div class="wraperwidth">
 				<div v-for="(item,index) in fliter.data6" :key=index>
@@ -44,6 +44,96 @@
 			</div>
 		</div>
 	</div>
+  <div v-if="width>=1500">
+		<Nav navtitle="行业动态"></Nav>
+		<div class="midbodycolor">
+			<div class="midwraperwidth">
+				<div v-for="(item,index) in fliter.data6" :key=index>
+					<div class="midcnbox">
+						<div class="midcnbox1">
+							<div class="midcnbox3">
+								<p class="midcnboxp1"><span>{{item.yday}}</span>{{item.yyear}}</p>
+								<p class="midcnboxp2">{{item.ytitle}}</p>
+								<p class="midcnboxp3">{{item.ycontent}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="midwraperwidth">
+				<div class="page">
+					<ul v-if="li7>=7">
+						<li @click="prev"><span>上一页</span></li>
+						<li class="li"><span @click="changepage(li1,1)">{{this.li1}}</span></li>
+						<li class="li"><span v-if="li2===2" @click="changepage(li2,2)">{{this.li2}}</span>
+							<span v-else>..{{this.li2}}</span>
+						</li>
+						<li class="li"><span @click="changepage(li3,3)">{{this.li3}}</span></li>
+						<li class="li"><span @click="changepage(li4,4)">{{this.li4}}</span></li>
+						<li class="li"><span @click="changepage(li5,5)">{{this.li5}}</span></li>
+						<li class="li"><span v-if="li6==='...'">{{this.li6}}</span>
+							<span v-else @click="changepage(li6,6)">{{this.li6}}</span>
+						</li>
+						<li class="li"><span @click="changepage(li7,7)">{{this.li7}}</span></li>
+						<li @click="next"><span>下一页</span></li>
+					</ul>
+					<ul v-else>
+						<li @click="prev"><span>上一页</span></li>
+						<li v-for="(item,index) in li7" class="li" :key=index>
+							<span @click="changepage(item,item)">{{item}}</span>
+						</li>
+						<li @click="next"><span>下一页</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+  <div v-if="width<=640">
+		<Nav navtitle="行业动态"></Nav>
+		<div class="mobilebodycolor">
+			<div class="mobilewraperwidth">
+        <div class="mobileindex-news-content-top-boxx" v-for="(item,index) in fliter.data6" :key=index>
+							<i>
+								<span class="mobileindex-news-content-span">
+									<p class="mobileindex-news-p1"><span class="mobileindex-news-content-year">{{item.yday}}</span><span class="mobileindex-news-content-month">{{item.yyear}}</span></p>
+									<p class="mobileindex-news-p2">{{item.ytitle}}</p>
+                  <p class="mobileindex-news-p3">{{item.ycontent}}</p>
+								</span>
+							</i>
+						</div>
+      <div v-if="fliter.data6.length<1">
+				<p class="mobilenothing">敬请期待</P>
+			</div>
+			</div>
+			<div class="mobilewraperwidth">
+				<div class="mobilepage">
+					<ul v-if="li7>=7">
+						<li @click="prev"><span>上一页</span></li>
+						<li class="li"><span @click="changepage(li1,1)">{{this.li1}}</span></li>
+						<li class="li"><span v-if="li2===2" @click="changepage(li2,2)">{{this.li2}}</span>
+							<span v-else>..{{this.li2}}</span>
+						</li>
+						<li class="li"><span @click="changepage(li3,3)">{{this.li3}}</span></li>
+						<li class="li"><span @click="changepage(li4,4)">{{this.li4}}</span></li>
+						<li class="li"><span @click="changepage(li5,5)">{{this.li5}}</span></li>
+						<li class="li"><span v-if="li6==='...'">{{this.li6}}</span>
+							<span v-else @click="changepage(li6,6)">{{this.li6}}</span>
+						</li>
+						<li class="li"><span @click="changepage(li7,7)">{{this.li7}}</span></li>
+						<li @click="next"><span>下一页</span></li>
+					</ul>
+					<ul v-else>
+						<li @click="prev"><span>上一页</span></li>
+						<li v-for="(item,index) in li7" :key=index class="li">
+							<span @click="changepage(item,item)">{{item}}</span>
+						</li>
+						<li @click="next"><span>下一页</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
 </template>
 
 <script>
@@ -53,6 +143,7 @@ export default {
   mixins: [PageJs],
   data () {
     return {
+      width: 1920,
       apimodel: 'news',
       pagenum: [],
       companynews: [],
@@ -77,6 +168,12 @@ export default {
   },
   created () {
     this.getData()
+    this.width = document.documentElement.offsetWidth
+  },
+  mounted () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
   }
 }
 </script>
@@ -97,13 +194,13 @@ li {
 }
 
 .wraperwidth {
-  width: 1280px;
+  width: 1000px;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .cnbox {
-  width: 630px;
+  width: 490px;
   float: left;
   display: flex;
   margin-top: 20px;
@@ -114,14 +211,14 @@ li {
 }
 
 .cnbox1 {
-  width: 630px;
+  width: 490px;
   height: 210px;
   background: white;
   position: relative;
 }
 
 .cnbox3 {
-  width: 590px;
+  width: 450px;
   height: 160px;
   margin: 20px;
   padding-top: 10px;
@@ -134,14 +231,73 @@ li {
 }
 
 .cnboxp1 span {
-  font-size: 48px;
+  font-size: 36px;
 }
 
 .cnboxp2 {
+  margin-top: 20px;
   margin-left: 40px;
   font-weight: bold;
 }
 .cnboxp3 {
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 20px;
+  font-size: 12px;
+  color: #666666;
+}
+.midbodycolor {
+  background: #f5f5f5;
+  margin-top: 50px;
+  padding-top: 50px;
+}
+
+.midwraperwidth {
+  width: 1420px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.midcnbox {
+  width: 700px;
+  float: left;
+  display: flex;
+  margin-top: 20px;
+}
+
+.midcnbox:nth-of-type(2n + 1) {
+  margin-right: 10px;
+}
+
+.midcnbox1 {
+  width: 700px;
+  height: 210px;
+  background: white;
+  position: relative;
+}
+
+.midcnbox3 {
+  width: 640px;
+  height: 160px;
+  margin: 20px;
+  padding-top: 10px;
+  background: #f5f5f5;
+}
+
+.midcnboxp1 {
+  color: #ee882a;
+  margin-left: 40px;
+}
+
+.midcnboxp1 span {
+  font-size: 48px;
+}
+
+.midcnboxp2 {
+  margin-left: 40px;
+  font-weight: bold;
+}
+.midcnboxp3 {
   margin-top: 10px;
   margin-left: 40px;
   margin-right: 20px;
@@ -179,7 +335,132 @@ li {
   padding: 0 15px;
   background: white;
 }
+i{
+  font-style: normal;
+}
+.mobilebodycolor {
+  background: #f5f5f5;
+  margin-top: 20px;
+  padding-top: 20px;
+}
 
+  .mobilenothing{
+    height: 100px;
+    text-align: center;
+    color: #ee882a;
+    font-weight: 600;
+    padding-top: 50px;
+  }
+.mobilewraperwidth {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.mobileindex-news-content-top-boxx{
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 105px;
+  position: relative;
+}
+
+.mobileindex-news-content-top-boxx i {
+  width: 100%;
+  height: 105px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: white;
+}
+
+.mobileindex-news-content-top-boxx i .mobileindex-news-content-span {
+  display: block;
+  width: 94%;
+  height: 80px;
+  background: #f0f2f2;
+  z-index: 2;
+  margin: 7px 3%;
+  position: relative;
+  z-index: 12
+}
+
+.mobileindex-news-content-top-boxx i .mobileindex-news-content-span:hover {
+  margin-left: 0px;
+  transition: all 1s;
+}
+.mobileindex-news-content-top-img{
+  width: 50%;
+  margin-left: 50%;
+  height: 105px;
+  position: relative;
+  z-index: 11
+}
+.mobileindex-news-content-top-boxx i .mobileindex-news-content-span .mobileindex-news-p1 {
+  margin-left: 25px;
+}
+
+.mobileindex-news-p2 {
+  margin-top: 5px;
+  text-shadow: 0.1px 0.1px 0.1px black;
+  margin-left: 10px;
+  font-size: 12px;
+  text-indent: 1.5em;
+}
+
+.mobileindex-news-content-year {
+  font-size: 20px;
+  color: #ee882a;
+}
+
+.mobileindex-news-content-month {
+  font-size: 8px;
+  color: #ee882a;
+}
+
+.mobilepage {
+  margin-top: 30px;
+}
+
+.mobilepage ul {
+  overflow: hidden;
+  height: 26px;
+  width: 100%;
+  list-style: none;
+  margin: 30px auto;
+  position: relative;
+  z-index: 14;
+}
+
+.mobilepage ul li {
+  float: left;
+  margin-left: 5px;
+  border: solid 1px #00b7ff;
+  line-height: 22px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: white;
+  color: #00b7ff;
+}
+.mobileindex-news-p3{
+  width: 100%;
+  overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:12px;
+    text-indent: 2em;
+    margin-top: 5px;
+}
+.mobilepage ul li:hover {
+  color: #ee882a;
+  border: solid 1px #ee882a;
+}
+
+.mobilepage ul li span {
+  padding: 0 6px;
+  background: white;
+  font-size: 12px;
+}
 #active {
   color: #ee882a;
   border: solid 1px #ee882a;

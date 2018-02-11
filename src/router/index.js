@@ -37,6 +37,9 @@ import Hr from '@/components/hr/hr'
 import Strategy from '@/components/hr/strategy'
 import Train from '@/components/hr/train'
 import Advertises from '@/components/hr/advertises'
+import Strategy1 from '@/components/hr/mobile/strategy'
+import Train1 from '@/components/hr/mobile/train'
+import Advertises1 from '@/components/hr/mobile/advertises'
 import News from '@/components/news/news'
 import Newdetail from '@/components/news/newdtail'
 import CompanyNews from '@/components/news/companynews'
@@ -56,6 +59,7 @@ import Branddetail from '@/components/product/branddetail'
 import ProductList from '@/components/product/productlist'
 import ProductCid from '@/components/product/productcid'
 import ProductDetail from '@/components/product/productdetail'
+import PhotoDetail1 from '@/components/news/photodetaill'
 
 Vue.use(Router)
 
@@ -172,6 +176,12 @@ export default new Router({
         components: {
           default: PhotoDetail
         }
+      }, {
+        path: 'photodetail1/:content',
+        name: 'photodetail1',
+        components: {
+          default: PhotoDetail1
+        }
       }]
     },
     {
@@ -193,6 +203,21 @@ export default new Router({
         path: 'advertises',
         components: {
           default: Advertises
+        }
+      }, {
+        path: 'strategy1',
+        components: {
+          default: Strategy1
+        }
+      }, {
+        path: 'train1',
+        components: {
+          default: Train1
+        }
+      }, {
+        path: 'advertises1',
+        components: {
+          default: Advertises1
         }
       }]
     },
