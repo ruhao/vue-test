@@ -37,6 +37,24 @@
 				<div v-if="this.detail.expiration">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">保质期:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.expiration}}</p>
 				</div>
+				<div v-if="this.detail.ingredient">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酒精含量:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.Qcontent}}</p>
+				</div>
+				<div v-if="this.detail.ingredient">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">糖含量:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.Tcontent}}</p>
+				</div>
+				<div v-if="this.detail.ingredient">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酸含量:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.Scontent}}</p>
+				</div>
+				<div v-if="this.detail.ingredient">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">颜色:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.color}}</p>
+				</div>
+				<div v-if="this.detail.ingredient">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">气味:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.smell}}</p>
+				</div>
+				<div v-if="this.detail.ingredient">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">口感:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.taste}}</p>
+				</div>
 				<div v-if="this.detail.storaged">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">储存方法:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.storaged}}</p>
 				</div>
@@ -81,7 +99,7 @@
 					<p class="pdetail-leftp1">{{this.detail.title2}}</p>
 					<p class="pdetail-leftp2" v-for="(item,index) in this.thirdtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.imgurl" class="midimgsize">
+				<div v-if="this.detail.imgurl" class="imgsize">
 					<img :src="this.detail.imgurl" />
 				</div>
 				<div v-if="this.detail.introduction">
@@ -179,7 +197,7 @@
 				<p class="mobilepdetail-rightp1">产品推荐</p>
 				<div v-if="relatived.length>0" v-for="(item,index) in relatived" :key=index class="mobileserverbox">
           <div class="mobileserverbox1">
-          <img :src="item.imgurl" @click="changcontent(item,reid)">
+          <img :src="item.imgurl" @click="changcontent(item,reid)"><span></span>
           </div>
 				</div>
         <div v-if="relatived.length<1" class="jingqingqidai">
@@ -348,15 +366,23 @@ export default {
       this.getdetail1(this.detail.content1)
     }
     if (this.detail.content2) {
-      this.getdetail(this.detail.content2)
+      this.getdetail2(this.detail.content2)
     }
     if (this.detail.introduction) {
       this.getdetail3(this.detail.introduction)
     }
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
+    }
+    if (document.getElementsByClassName('mobileimgsize')[0]) {
+      let ii = window.getComputedStyle(document.getElementsByClassName('mobileserverbox1')[0], null)['width']
+      document.getElementsByClassName('mobileimgsize')[0].style.height = window.getComputedStyle(document.getElementsByClassName('mobileimgsize')[0], null)['width']
+      let oo = document.getElementsByClassName('mobileserverbox1').length
+      for (let i = 0; i < oo; i++) {
+        document.getElementsByClassName('mobileserverbox1')[i].style.height = ii
+      }
     }
   }
 }
@@ -380,6 +406,7 @@ export default {
 }
 
 .pdetail-leftp1 {
+	margin-top: 10px;
   font-size: 18px;
   font-weight: bold;
   color: #464c5b;
@@ -388,8 +415,8 @@ export default {
 .pdetail-leftp2 {
   margin-top: 10px;
   font-size: 14px;
-  font-weight: 600;
   color: #464c5b;
+  text-indent: 2em;
 }
 
 .pdetail-leftp3 {
@@ -408,11 +435,11 @@ export default {
 .imgsize {
   margin: 30px;
   width: 245px;
-  height: 245px;
   text-align: center;
+  height: 245px;
 }
 .imgsize img{
-  width: 100%;
+  height: 100%;
 }
 .pdetail-rightp1 {
   margin-top: 20px;
@@ -423,9 +450,9 @@ export default {
 }
 
 .serverbox {
-  width: 338px;
+  width: 245px;
   position: relative;
-  height: 338px;
+  height: 245px;
   cursor: pointer;
   overflow: hidden;
   z-index: 11;
@@ -436,20 +463,22 @@ export default {
   position: absolute;
   top: 0px;
   left: 0px;
+  text-align: center;
+  height: 245px;
+  text-align: center;
 }
 
 .serverbox1 img {
-  width: 100%;
   height: 100%;
 }
 
 .serverbox2 {
   position: absolute;
-  top: 338px;
+  top: 245px;
   left: 0px;
   background: #f9f1e9;
-  width: 338px;
-  height: 338px;
+  width: 245px;
+  height: 245px;
   opacity: 0;
   transition: all 0.5s;
   text-align: center;
@@ -458,6 +487,7 @@ export default {
 .serverbox2 img {
   margin-top: 20px;
   width: 120px;
+  height: 120px;
 }
 
 .prolist {
@@ -465,8 +495,8 @@ export default {
   color: #ee882a;
 }
 .productimg{
-  width: 245px;
   height: 245px;
+  width: 245px;
 }
 .smwidth{
   width: 245px;
@@ -494,15 +524,17 @@ export default {
 }
 
 .mobilepdetail-leftp1 {
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 600;
   color: #464c5b;
+  margin-top:10px;
 }
 
 .mobilepdetail-leftp2 {
   margin-top: 10px;
   font-size: 10px;
   color: #464c5b;
+  text-indent: 2em;
 }
 
 .mobilepdetail-leftp3 {
@@ -512,7 +544,7 @@ export default {
 }
 
 .mobilepdetail-leftspan {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: #464c5b;
 }
@@ -521,9 +553,10 @@ export default {
   margin: 10px;
   text-align: center;
   width: 50%;
+  height: 0;
 }
 .mobileimgsize img{
-  width: 100%;
+  height: 100%;
 }
 .mobilepdetail-rightp1 {
   margin-top: 10px;
@@ -531,6 +564,7 @@ export default {
   color: #ee882a;
   font-size: 14px;
   font-weight: 600;
+  text-indent: 2em;
 }
 .mobileserverbox {
   width: 100%;
@@ -549,15 +583,21 @@ export default {
   top: 0px;
   left: 0px;
   font-size: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .mobileserverbox1 img {
-  width: 100%;
   height: 100%;
 }
 .mobileprolist {
   margin-top: 50px;
   color: #ee882a;
+}
+.mobileserverbox1 span{
+ display:inline-block;
+ height:100%;
+ vertical-align:middle;
 }
 .wantjump{
   display: block;

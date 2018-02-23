@@ -48,7 +48,9 @@
 			<div v-for="(item,index) in fliter.data6" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
 				<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}"> -->
         <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
-					<div class="serverbox1"><img :src="item.imgurl"></div>
+					<div class="serverbox1"><img :src="item.imgurl">
+					<span></span>
+					</div>
 				</router-link>
 				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
 					<div class="serverbox2">
@@ -140,7 +142,9 @@
 			<div v-for="(item,index) in fliter.data6" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
 				<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}"> -->
         <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
-					<div class="serverbox1"><img :src="item.imgurl"></div>
+					<div class="serverbox1"><img :src="item.imgurl">
+						<span></span>
+					</div>
 				</router-link>
 				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
 					<div class="serverbox2">
@@ -232,7 +236,7 @@
 			<div v-if="fliter.data6.length>=1" v-for="(item,index) in fliter.data6" :key=index class="mobileserverbox">
 				<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}"> -->
         <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
-					<div class="mobileserverbox1"><img :src="item.imgurl"></div>
+					<div class="mobileserverbox1"><img :src="item.imgurl"><span></span></div>
 				</router-link>
 			</div>
       <div v-if="fliter.data6.length<1">
@@ -461,9 +465,16 @@ export default {
       this.getData()
     })
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
+    }
+    if (document.getElementsByClassName('mobileserverbox1')[0]) {
+      let ii = window.getComputedStyle(document.getElementsByClassName('mobileserverbox1')[0], null)['width']
+      let oo = document.getElementsByClassName('mobileserverbox1').length
+      for (let i = 0; i < oo; i++) {
+        document.getElementsByClassName('mobileserverbox1')[i].style.height = ii
+      }
     }
   }
 }
@@ -577,11 +588,19 @@ p {
   position: absolute;
   top: 0px;
   left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align:center;
+  box-sizing: border-box;
 }
 
 .serverbox1 img {
-  width: 100%;
   height: 100%;
+}
+.serverbox1 span{
+ display:inline-block;
+ height:100%;
+ vertical-align:middle;
 }
 
 .serverbox2 {
@@ -725,12 +744,18 @@ p {
   top: 0px;
   left: 0px;
   float: left;
-  background: #faf1e8;
+  border: #faf1e8 solid 1px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 .mobileserverbox1 img {
-  width: 100%;
   height: 100%;
 }
-
+.mobileserverbox1 span{
+ display:inline-block;
+ height:100%;
+ vertical-align:middle;
+}
 </style>

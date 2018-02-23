@@ -10,8 +10,8 @@
                <p class="title">
                    意大利品牌 {{content.name}}
                </p>
-               <p class="content">
-                   {{content.detail}}
+               <p class="content" v-for="(pp,index) in content.detail" :key=index>
+                   {{pp}}
                </p>
             </div>
         </div>
@@ -19,6 +19,7 @@
             <div class="wraperwidth">
                 <div v-for="(item,index) in relation" :key=index class="box2">
                     <img :src="item.imgurl">
+                    <span></span>
                 </div>
             </div>
 	</div>
@@ -32,15 +33,15 @@
                <p class="midtitle">
                    意大利品牌 {{content.name}}
                </p>
-               <p class="midcontent">
-                   {{content.detail}}
+               <p class="midcontent" v-for="(pp,index) in content.detail" :key=index>
+                   {{pp}}
                </p>
             </div>
         </div>
             <Nav navtitle='经典单品' v-if="relation.length"></Nav>
             <div class="midwraperwidth">
                 <div v-for="(item,index) in relation" :key=index class="midbox2">
-                    <img :src="item.imgurl">
+                    <img :src="item.imgurl"><span></span>
                 </div>
             </div>
 	</div>
@@ -54,8 +55,8 @@
                <p class="mobiletitle">
                    意大利品牌 {{content.name}}
                </p>
-               <p class="mobilecontent">
-                   {{content.detail}}
+               <p class="mobilecontent" v-for="(pp,index) in content.detail" :key=index>
+                   {{pp}}
                </p>
             </div>
         </div>
@@ -101,6 +102,7 @@ export default {
       .get('http://120.79.22.222:3000/brand/data/' + this.$route.params.id)
       .then(res => {
         this.content = res.data
+        this.content.detail = this.content.detail.split('&&')
         this.fliter.belong = res.data.name
         this.$http
           .post('http://120.79.22.222:3000/products/list', this.fliter)
@@ -119,9 +121,16 @@ export default {
           })
       })
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
+    }
+    if (document.getElementsByClassName('mobilebox2')[0]) {
+      let ii = window.getComputedStyle(document.getElementsByClassName('mobilebox2')[0], null)['width']
+      let oo = document.getElementsByClassName('mobilebox2').length
+      for (let i = 0; i < oo; i++) {
+        document.getElementsByClassName('mobilebox2')[i].style.height = ii
+      }
     }
   }
 }
@@ -143,10 +152,11 @@ export default {
 .box{
     width:500px;
     border: #dad8d6 1px solid;
-    height: 250px;
+    height: 300px;
     position: relative;
     text-align:center;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .box span{
  display:inline-block;
@@ -156,8 +166,9 @@ export default {
  .box1{
      background: #f8efe7;
      width: 500px;
-     height: 250px;
+     height: 300px;
      box-sizing: border-box;
+     overflow: hidden;
  }
 .box img{
     width: 495px;
@@ -171,7 +182,7 @@ export default {
     color: #ef9643;
 }
 .content{
-    margin: 60px 45px 0;
+    margin: 20px 45px 0;
     line-height: 20px;
     letter-spacing: 1px;
     font-size: 14px;
@@ -181,9 +192,15 @@ export default {
     border: #dad8d6 1px solid;
     height: 240px;
     margin-right:10px;
+    text-align: center;
 }
 .box2 img{
-    width: 240px;
+    height: 100%;
+}
+.box2 span{
+ display:inline-block;
+ height:100%;
+ vertical-align:middle;
 }
 .midmargintop50{
     margin-top:50px;
@@ -218,6 +235,7 @@ export default {
  }
 .midbox img{
     width: 600px;
+    max-height: 358px;
     margin: auto;
     vertical-align:middle;
 }
@@ -228,20 +246,28 @@ export default {
     color: #ef9643;
 }
 .midcontent{
-    margin: 60px 45px 0;
+    margin: 20px 45px 0;
     line-height: 20px;
     letter-spacing: 1px;
     font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .midbox2{
     width: 330px;
     border: #dad8d6 1px solid;
     height: 330px;
+    text-align: center;
     margin-right:20px;
 }
 .midbox2 img{
-    width: 330px;
+   height: 100%;
 }
+.midbox2 span{
+ display:inline-block;
+ height:100%;
+ vertical-align:middle;
+ }
 .mobilemargintop50{
     margin-top:50px;
 }
@@ -271,10 +297,11 @@ export default {
  .mobilebox1{
      background: #f8efe7;
      width:96%;
-     height: 200px;
+     padding-top:75px;
      box-sizing: border-box;
      overflow: hidden;
      margin: 0 2%;
+     text-overflow: ellipsis;
  }
 .mobilebox img{
     width: 90%;
@@ -291,14 +318,21 @@ export default {
     line-height: 20px;
     letter-spacing: 1px;
     font-size: 12px;
+    text-indent: 2em;
 }
 .mobilebox2{
     width: 45%;
     margin: 0 2%;
     font-size: 0;
     float: left;
+    text-align: center;
 }
 .mobilebox2 img{
-    width: 100%;
+    height: 100%;
 }
+.mobilebox2 span{
+ display:inline-block;
+ height:100%;
+ vertical-align:middle;
+ }
 </style>

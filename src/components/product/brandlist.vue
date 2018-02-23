@@ -175,12 +175,14 @@ ul{
 }
 .brandcontent{
   width:180px;
+  height: 100px;
   border: 1px #cccccc solid;
   border-bottom: 0;
   text-align: center;
-  padding: 15px 0;
+  padding: 5px 0;
   cursor: pointer;
-  box-sizing: border-box
+  box-sizing: border-box;
+   overflow: hidden;
 }
 .brandcontent img{
   max-width: 155px;
@@ -192,7 +194,8 @@ ul{
   border: 1px #cccccc solid;
   text-align: center;
   height: 40px;
-  box-sizing: border-box
+  box-sizing: border-box;
+  line-height: 40px;
 }
 .fontstyle{
  text-decoration: none;
@@ -245,8 +248,10 @@ ul{
   border: 1px #cccccc solid;
   border-bottom: 0;
   text-align: center;
-  padding: 15px 0;
+  padding: 5px 0;
   cursor: pointer;
+  height: 100px;
+  overflow: hidden;
 }
 .midbrandcontent img{
   max-width: 200px;
@@ -258,6 +263,10 @@ ul{
   border: 1px #cccccc solid;
   text-align: center;
   height: 40px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  line-height: 40px;;
 }
 .midfontstyle{
  text-decoration: none;
@@ -317,6 +326,8 @@ ul{
   text-align: center;
   padding: 1% 0;
   cursor: pointer;
+  height: 40px;
+  overflow: hidden;
 }
 .mobilebrandcontent img{
   max-width: 95%;
@@ -328,6 +339,12 @@ ul{
   border: 1px #cccccc solid;
   text-align: center;
   height: 20px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-weight: 600;
+  line-height: 20px;
+  font-size: 10px;
 }
 .mobilefontstyle{
  text-decoration: none;
