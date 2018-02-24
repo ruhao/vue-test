@@ -37,22 +37,22 @@
 				<div v-if="this.detail.expiration">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">保质期:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.expiration}}</p>
 				</div>
-				<div v-if="this.detail.ingredient">
+				<div v-if="this.detail.Qcontent">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酒精含量:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.Qcontent}}</p>
 				</div>
-				<div v-if="this.detail.ingredient">
+				<div v-if="this.detail.Tcontent">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">糖含量:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.Tcontent}}</p>
 				</div>
-				<div v-if="this.detail.ingredient">
+				<div v-if="this.detail.Scontent">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酸含量:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.Scontent}}</p>
 				</div>
-				<div v-if="this.detail.ingredient">
+				<div v-if="this.detail.color">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">颜色:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.color}}</p>
 				</div>
-				<div v-if="this.detail.ingredient">
+				<div v-if="this.detail.smell">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">气味:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.smell}}</p>
 				</div>
-				<div v-if="this.detail.ingredient">
+				<div v-if="this.detail.taste">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">口感:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.taste}}</p>
 				</div>
 				<div v-if="this.detail.storaged">
@@ -131,11 +131,11 @@
 				<p class="pdetail-rightp1">产品推荐</p>
 				<div v-for="(item,index) in relatived" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
 					<router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}">
-						<div class="serverbox1"><img :src="item.imgurl"></div>
+						<div class="serverbox1 productimg"><img :src="item.imgurl"></div>
 					</router-link>
 					<router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}">
 						<div class="serverbox2" @click="changepage(item.num)">
-							<img src="../../../images/products2-1.jpg">
+							<img src="../../../images/products2-1.jpg" @click="changcontent(item,reid)">
 							<p class="prolist">
 								{{item.name}}
 							</p>
@@ -417,6 +417,7 @@ export default {
   font-size: 14px;
   color: #464c5b;
   text-indent: 2em;
+  font-weight: 600;
 }
 
 .pdetail-leftp3 {
@@ -457,6 +458,7 @@ export default {
   overflow: hidden;
   z-index: 11;
   margin-top: 30px;
+  text-align: center;
 }
 
 .serverbox1 {
@@ -552,8 +554,9 @@ export default {
 .mobileimgsize {
   margin: 10px;
   text-align: center;
-  width: 50%;
+  max-width: 80%;
   height: 0;
+  overflow:hidden;
 }
 .mobileimgsize img{
   height: 100%;

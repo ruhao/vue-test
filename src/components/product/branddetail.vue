@@ -282,12 +282,13 @@ export default {
 .mobilebox{
     width:96%;
     border: #dad8d6 1px solid;
-    height: 160px;
+    max-height: 240px;
     padding-top:20px;
     position: relative;
     text-align:center;
     box-sizing: border-box;
     margin: 0 2%;
+    overflow:hidden;
 }
 .mobilebox span{
  display:inline-block;
@@ -297,7 +298,7 @@ export default {
  .mobilebox1{
      background: #f8efe7;
      width:96%;
-     padding-top:75px;
+     padding-top:15px;
      box-sizing: border-box;
      overflow: hidden;
      margin: 0 2%;

@@ -124,6 +124,9 @@ export default {
         let ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {
           res.data.rows[i].num = i
+          if (res.data.rows[i].describe) {
+            res.data.rows[i].describe.replace(/&&/, ';')
+          }
         }
         this.fliter.data6 = res.data.rows
         this.li7 = res.data.pages
