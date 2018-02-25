@@ -403,7 +403,6 @@ i{
   z-index: 11
 }
 .mobileindex-news-content-top-boxx i .mobileindex-news-content-span .mobileindex-news-p1 {
-  margin-top: 15px;
   margin-left: 25px;
   padding-top: 10px;
 }

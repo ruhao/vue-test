@@ -384,9 +384,6 @@ i{
   z-index: 12
 }
 
-.mobileindex-news-content-top-boxx i .mobileindex-news-content-span:hover {
-  margin-left: 0px;
-}
 .mobileindex-news-content-top-img{
   width: 50%;
   margin-left: 50%;
@@ -396,7 +393,6 @@ i{
 }
 .mobileindex-news-content-top-boxx i .mobileindex-news-content-span .mobileindex-news-p1 {
   margin-left: 25px;
-  margin-top: 15px;
 }
 
 .mobileindex-news-p2 {
