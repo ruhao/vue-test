@@ -132,7 +132,7 @@ export default {
         this.fliter.data6 = res.data.rows
       })
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }

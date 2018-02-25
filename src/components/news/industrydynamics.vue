@@ -12,14 +12,13 @@
                  <router-link :to="{name:'newdetail',params:{content:item}}" class="fontstyle">
 								<p class="cnboxp2">{{item.htitle}}</p>
                 </router-link>
-								<p class="cnboxp3">{{item.hcontent}}</p>
 							</div>
 						</div>
 					</div>
           <!-- <div style="clear:both"></div> -->
 				</div>
 			</div>
-			<div class="wraperwidth">
+			<div class="wraperwidth" v-if="fliter.pages>1">
 				<div class="page">
 					<ul v-if="li7>=7">
 						<li @click="prev"><span>上一页</span></li>
@@ -59,14 +58,13 @@
                  <router-link :to="{name:'newdetail',params:{content:item}}" class="fontstyle">
 								<p class="midcnboxp2">{{item.htitle}}</p>
                  </router-link>
-								<p class="midcnboxp3">{{item.hcontent}}</p>
 							</div>
 						</div>
 					</div>
           <!-- <div style="clear:both"></div> -->
 				</div>
 			</div>
-			<div class="midwraperwidth">
+			<div class="midwraperwidth" v-if="fliter.pages>1">
 				<div class="page">
 					<ul v-if="li7>=7">
 						<li @click="prev"><span>上一页</span></li>
@@ -103,7 +101,6 @@
 								<span class="mobileindex-news-content-span">
 									<p class="mobileindex-news-p1"><span class="mobileindex-news-content-year">{{item.hday}}</span><span class="mobileindex-news-content-month">{{item.hyear}}</span></p>
 									<router-link :to="{name:'newdetail',params:{content:item}}" class="fontstyle">
-                  <p class="mobileindex-news-p2">{{item.htitle}}</p>
 									</router-link>
                   <p class="mobileindex-news-p3">{{item.hcontent}}</p>
 								</span>
@@ -113,7 +110,7 @@
 				<p class="mobilenothing">敬请期待</P>
 			</div>
 			</div>
-			<div class="mobilewraperwidth">
+			<div class="mobilewraperwidth" v-if="fliter.pages>1">
 				<div class="mobilepage">
 					<ul v-if="li7>=7">
 						<li @click="prev"><span>上一页</span></li>
@@ -178,7 +175,7 @@ export default {
     this.getData()
     this.width = document.documentElement.offsetWidth
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }
@@ -254,7 +251,7 @@ li {
   color: #666666;
 }
 .page {
-  margin-top: 30px;
+  padding-top: 30px;
 }
 
 .page ul {
@@ -398,10 +395,6 @@ i{
   z-index: 12
 }
 
-.mobileindex-news-content-top-boxx i .mobileindex-news-content-span:hover {
-  margin-left: 0px;
-  transition: all 1s;
-}
 .mobileindex-news-content-top-img{
   width: 50%;
   margin-left: 50%;
@@ -410,7 +403,9 @@ i{
   z-index: 11
 }
 .mobileindex-news-content-top-boxx i .mobileindex-news-content-span .mobileindex-news-p1 {
+  margin-top: 15px;
   margin-left: 25px;
+  padding-top: 10px;
 }
 
 .mobileindex-news-p2 {

@@ -142,7 +142,7 @@ export default {
   created () {
     this.width = document.documentElement.offsetWidth
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }
@@ -188,14 +188,6 @@ export default {
   z-index: 11;
   overflow: hidden;
 }
-.navimg {
-  height: 120px;
-  width: 120px;
-  margin: 30px;
-}
-.navimg img{
-  width: 100%;
-}
 .heroutebox1 img:nth-of-type(1) {
   position: absolute;
   top: 0;
@@ -222,7 +214,6 @@ export default {
   width: 1280px;
   margin: 0 auto;
 }
-
 .stp {
   margin-top: 45px;
   font-size: 14px;
@@ -279,6 +270,14 @@ export default {
   max-height: 85px;
 }
 .mobileimg img{
+  width: 100%;
+}
+.navimg {
+  height: 120px;
+  width: 120px;
+  margin: 30px;
+}
+.navimg img{
   width: 100%;
 }
 </style>

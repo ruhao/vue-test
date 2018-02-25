@@ -14,8 +14,8 @@
 		<img src='../../../images/right-c.jpg' />
     </div>
 	</div>
-  <div class='midcontact-title' v-if="width<=640">
-    <div class="midcontact-middle">
+  <div class='mobilecontact-title' v-if="width<=640">
+    <div class="mobilecontact-middle">
 		<img src='../../../images/left-c.jpg' />
 		<p>{{navtitle}}</p>
 		<img src='../../../images/right-c.jpg' />
@@ -36,7 +36,7 @@ export default {
   created () {
     this.width = document.documentElement.offsetWidth
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }
@@ -74,6 +74,7 @@ p {
   height: 20px;
   margin: 3px 40px;
 }
+
 .midcontact-title {
   width: 1420px;
   margin: 0 auto;
@@ -98,19 +99,19 @@ p {
   height: 20px;
   margin: 3px 40px;
 }
-.midcontact-title {
+.mobilecontact-title {
   width: 100%;
   position: relative;
   margin-top: 20px auto;
 }
-.midcontact-middle{
+.mobilecontact-middle{
  width: 240px;
  display: flex;
  margin: 0 auto;
  position: relative;
  margin-top: 15px;
 }
-.midcontact-title p {
+.mobilecontact-title p {
   line-height: 18px;
   font-size: 14px;
   color: #f1662c;
@@ -118,7 +119,7 @@ p {
   text-shadow: 0.5px 0.5px 0.5px #f1662c;
 }
 
-.midcontact-middle img {
+.mobilecontact-middle img {
   width: 60px;
   height: 15px;
   margin: 3px 15px;

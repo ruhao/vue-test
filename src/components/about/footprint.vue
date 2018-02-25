@@ -15,7 +15,7 @@
   <div v-if="width<=640">
 		<Nav navtitle='发展足迹'></Nav>
 		<div class="mobilewraperwidth">
-			<img src="../../../images/aboutfoot.jpg" />
+			<img src="../../../images/a4.jpg" />
 		</div>
 	</div>
   </div>
@@ -35,7 +35,7 @@ export default {
   created () {
     this.width = document.documentElement.offsetWidth
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }

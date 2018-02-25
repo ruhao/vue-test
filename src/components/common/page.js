@@ -129,6 +129,7 @@ export default {
           }
         }
         this.fliter.data6 = res.data.rows
+        this.fliter.pages = res.data.pages
         this.li7 = res.data.pages
         if (this.li7 < 7) {
           for (let i = 1; i < this.li7; i++) {

@@ -12,7 +12,7 @@
 				<div style="clear: both;"></div>
 			</div>
 		</div>
-		<div class="wraperwidth">
+		<div class="wraperwidth" v-if="fliter.pages>1">
 			<div class="page">
 				<ul v-if="li7>=7">
 					<li @click="prev"><span>上一页</span></li>
@@ -51,7 +51,7 @@
 				<div style="clear: both;"></div>
 			</div>
 		</div>
-		<div class="midwraperwidth">
+		<div class="midwraperwidth" v-if="fliter.pages>1">
 			<div class="page">
 				<ul v-if="li7>=7">
 					<li @click="prev"><span>上一页</span></li>
@@ -96,7 +96,7 @@
 				<div style="clear: both;"></div>
 			</div>
 		</div>
-			<div class="mobilewraperwidth">
+			<div class="mobilewraperwidth" v-if="fliter.pages>1">
 				<div class="mobilepage">
 					<ul v-if="li7>=7">
 						<li @click="prev"><span>上一页</span></li>
@@ -121,6 +121,9 @@
 						<li @click="next"><span>下一页</span></li>
 					</ul>
 				</div>
+			</div>
+      <div v-if="fliter.data6.length<1" class="mobileinfo">
+				<p class="mobilenothing">敬请期待</P>
 			</div>
 	</div>
   </div>
@@ -159,8 +162,12 @@ export default {
     this.getData()
     this.width = document.documentElement.offsetWidth
   },
+  mounted () {
+    if (document.getElementsByClassName('li')[0]) {
+      document.getElementsByClassName('li')[0].id = 'active'
+    }
+  },
   updated () {
-    document.getElementsByClassName('li')[0].id = 'active'
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }
@@ -358,5 +365,13 @@ p {
   padding: 0 6px;
   background: white;
   font-size: 12px;
+}
+.mobileinfo{
+  height: 150px;
+  padding-top:100px;
+}
+.mobilenothing{
+  text-align: center;
+  color: #ee882a;
 }
 </style>

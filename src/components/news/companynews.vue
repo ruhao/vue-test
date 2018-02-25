@@ -20,7 +20,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="wraperwidth">
+			<div class="wraperwidth" v-if="fliter.pages>1">
 				<div class="page">
 					<ul v-if="li7>=7">
 						<li @click="prev"><span>上一页</span></li>
@@ -66,7 +66,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="midwraperwidth">
+			<div class="midwraperwidth" v-if="fliter.pages>1">
 				<div class="page">
 					<ul v-if="li7>=7">
 						<li @click="prev"><span>上一页</span></li>
@@ -113,7 +113,7 @@
 				<p class="mobilenothing">敬请期待</P>
 			</div>
 			</div>
-			<div class="mobilewraperwidth">
+			<div class="mobilewraperwidth" v-if="fliter.pages>1">
 				<div class="mobilepage">
 					<ul v-if="li7>=7">
 						<li @click="prev"><span>上一页</span></li>
@@ -181,7 +181,11 @@ export default {
     this.width = document.documentElement.offsetWidth
   },
   mounted () {
-    document.getElementsByClassName('li')[0].id = 'active'
+    if (document.getElementsByClassName('li')[0]) {
+      document.getElementsByClassName('li')[0].id = 'active'
+    }
+  },
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }
@@ -197,7 +201,9 @@ li {
   margin: 0;
   padding: 0;
 }
-
+i{
+  font-style: normal;
+}
 .midbodycolor {
   background: #f5f5f5;
   margin-top: 50px;
@@ -246,7 +252,6 @@ li {
   margin-top: 20px;
   margin-left: 20px;
   position: absolute;
-  transition: all 1s;
 }
 
 .midcnboxp1 {
@@ -313,7 +318,6 @@ li {
   margin-top: 15px;
   margin-left: 15px;
   position: absolute;
-  transition: all 1s;
 }
 
 .cnboxp1 {
@@ -330,7 +334,7 @@ li {
   margin-left: 20px;
   margin-top: 10px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .page {

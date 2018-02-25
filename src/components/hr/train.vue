@@ -65,7 +65,7 @@ export default {
       this.information = res.data.rows[0].edreson
     })
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }

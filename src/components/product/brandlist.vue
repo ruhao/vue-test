@@ -66,14 +66,19 @@
           </router-link>
         </li>
       </ul>
+      <div v-if="pages[index]>1">
        <div class="mobilewrapmore" v-if="content[index].length <= 12">
         <i class="mobilemore" @click="getmore(index)">more+ </i>
        </div>
         <div class="mobilewrapmore" v-else>
-        <div class="mobiletwobutton">
+        <div class="mobiletwobutton" v-if="content[index].length % 12==0">
           <i class="mobilemore" @click="getmore(index)">more+ </i>
           <i class="mobilemore" @click="getless(index)">less- </i>
         </div>
+      </div>
+      <div class="mobilewrapmore" v-if="content[index].length % 12 != 0">
+        <i class="mobilemore" @click="getless(index)">less- </i>
+       </div>
       </div>
     </div>
     </div>
@@ -90,6 +95,7 @@ export default {
       typeone: ['1', '2', '3', '4', '5'],
       title: ['A ~ G', 'H ~ N', 'O ~ T', 'U ~ Z', 'U ~ Z', '其 他'],
       flag: [],
+      pages: [],
       content: [],
       fliter: {
         limit: 12,
@@ -102,6 +108,7 @@ export default {
     getData (index) {
       this.fliter.type = this.typeone[index]
       this.$http.post('http://120.79.22.222:3000/brand/list', this.fliter).then(res => {
+        this.pages.push(res.data.pages)
         this.content.push(res.data.rows)
         if (res.data.rows.length > 0) {
           this.flag.push('true')
@@ -137,7 +144,7 @@ export default {
     this.width = document.documentElement.offsetWidth
     this.getData(0)
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }

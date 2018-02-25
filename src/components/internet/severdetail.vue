@@ -44,7 +44,7 @@ export default {
     this.server = this.$route.params.content.content
     this.width = document.documentElement.offsetWidth
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }

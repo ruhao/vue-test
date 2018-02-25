@@ -1,8 +1,9 @@
 <template>
 <div>
 	<div v-if="width<1500&&width>640">
+    <div v-if="this.detail.cateId">
 		<Nav :navtitle="cidsec2"></Nav>
-		<div class="wraperwidth">
+		<div class="wraperwidth" >
 			<div class="pdetail-left">
 				<div v-if="this.detail.title">
 					<p class="pdetail-leftp1">{{this.detail.title}}</p>
@@ -82,8 +83,13 @@
 				</div>
 			</div>
 		</div>
+    </div>
+    <div v-if="!this.detail.cateId" class="chanceanother">
+      请选择相关产品
+    </div>
 	</div>
   <div v-if="width>=1500">
+    <div v-if="this.detail.cateId">
 		<Nav :navtitle="this.$route.params.content.navname"></Nav>
 		<div class="wraperwidth">
 			<div class="pdetail-left">
@@ -147,10 +153,14 @@
 				</div>
 			</div>
 		</div>
+    </div>
+    <div v-if="!this.detail.cateId" class="chanceanother">
+      请选择相关产品
+    </div>
 	</div>
   <div v-if="width<=640">
+    <div v-if="this.detail.cateId">
 		<Nav :navtitle="this.$route.params.content.navname"></Nav>
-
 		<div class="mobilewraperwidth">
 			<div class="mobilepdetail-left">
 				<div v-if="this.detail.title">
@@ -204,7 +214,11 @@
           敬请期待
 				</div>
 			</div>
+      </div>
 		</div>
+    <div v-if="!this.detail.cateId" class="chanceanother mobilechanceanother">
+      请选择相关产品
+    </div>
 	</div>
   </div>
 </template>
@@ -286,7 +300,6 @@ export default {
       }
     },
     changcontent (value, value2) {
-      console.log(value)
       this.detail = value
       this.getlist(value2)
       if (this.detail.content) {
@@ -352,24 +365,26 @@ export default {
   },
   created () {
     this.width = document.documentElement.offsetWidth
-    this.cidsec2 = this.$route.params.content.navname
-    if (this.cidsec2 === '可选分类') {
-      this.cidsec2 = '产品详情'
-    }
-    this.detail = this.$route.params.content.content
-    this.getlist(this.$route.params.content.relative)
-    this.reid = this.$route.params.content.relative
-    if (this.detail.content) {
-      this.getdetail(this.detail.content)
-    }
-    if (this.detail.content1) {
-      this.getdetail1(this.detail.content1)
-    }
-    if (this.detail.content2) {
-      this.getdetail2(this.detail.content2)
-    }
-    if (this.detail.introduction) {
-      this.getdetail3(this.detail.introduction)
+    if (this.$route.params.content) {
+      this.getlist(this.$route.params.content.relative)
+      this.reid = this.$route.params.content.relative
+      this.detail = this.$route.params.content.content
+      this.cidsec2 = this.$route.params.content.navname
+      if (this.cidsec2 === '可选分类') {
+        this.cidsec2 = '产品详情'
+      }
+      if (this.detail.content) {
+        this.getdetail(this.detail.content)
+      }
+      if (this.detail.content1) {
+        this.getdetail1(this.detail.content1)
+      }
+      if (this.detail.content2) {
+        this.getdetail2(this.detail.content2)
+      }
+      if (this.detail.introduction) {
+        this.getdetail3(this.detail.introduction)
+      }
     }
   },
   updated () {
@@ -449,7 +464,12 @@ export default {
   font-size: 16px;
   font-weight: 600;
 }
-
+.chanceanother{
+  color: #ee882a;
+  text-align: center;
+  padding: 85px 0;
+  font-weight: 600;
+}
 .serverbox {
   width: 245px;
   position: relative;
@@ -605,5 +625,8 @@ export default {
 .wantjump{
   display: block;
   position: relative;
+}
+.mobilechanceanother{
+  padding: 135px 0;
 }
 </style>

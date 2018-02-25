@@ -2,7 +2,7 @@
 <div>
     <div v-if="width>640">
     <div class="wraperwidth" v-if="this.$route.params.content.title">
-        <h3 class="title">{{this.$route.params.content.title}}</h3>
+        <h4 class="title">{{this.$route.params.content.title}}</h4>
         <div class="line"></div>
         <p class="date">{{this.$route.params.content.year}}-{{this.$route.params.content.day}}</p>
         <p class="content">{{this.$route.params.content.content}}</p>
@@ -43,7 +43,7 @@ export default {
   created () {
     this.width = document.documentElement.offsetWidth
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }

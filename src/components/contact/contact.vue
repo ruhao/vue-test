@@ -72,7 +72,7 @@
 
 		<Foot></Foot>
 	</div>
-  <div>
+  <div  v-if="width<=640">
     <Contact></Contact>
   </div>
   </div>
@@ -119,7 +119,7 @@ export default {
   created () {
     this.width = document.documentElement.offsetWidth
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }

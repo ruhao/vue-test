@@ -85,7 +85,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="midheadernavlast" v-if="this.width>=1600">
+		<div class="midheadernavlast">
 			<router-link to='/' tag='span' class="midnavfont">CN</router-link><span class="midnavfontapsn">|</span>
 			<router-link class="midnavfont" to='/en' tag='span'>EN</router-link>
 		</div>
@@ -349,13 +349,13 @@ li {
   color: #ee882a;
 }
 .midheadernavright {
-  width: 150px;
+  width: 140px;
 	margin-top: 20px;
   text-align: right;
 }
 .midheadernavlast {
   position: absolute;
-  top: 30px;
+  top: 25px;
   right: 30px;
   z-index: 10;
 }

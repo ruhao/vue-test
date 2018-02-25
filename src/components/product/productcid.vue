@@ -67,7 +67,7 @@
 			</div>
 			<div style="clear: both;"></div>
 		</div>
-		<div class="wraperwidth">
+		<div class="wraperwidth" v-if="fliter.pages>1">
 			<div class="page">
 				<ul v-if="li7>=7">
 					<li @click="prev"><span>上一页</span></li>
@@ -161,7 +161,7 @@
 			</div>
 			<div style="clear: both;"></div>
 		</div>
-		<div class="wraperwidth">
+		<div class="wraperwidth" v-if="fliter.pages>1">
 			<div class="page">
 				<ul v-if="li7>=7">
 					<li @click="prev"><span>上一页</span></li>
@@ -244,7 +244,7 @@
 			</div>
 			<div style="clear: both;"></div>
 		</div>
-		<div class="mobilewraperwidth">
+		<div class="mobilewraperwidth" v-if="fliter.pages>1">
 			<div class="mobilepage" v-if="li7>1">
 				<ul v-if="li7>=7">
 					<li @click="prev"><span>上一页</span></li>
@@ -368,6 +368,7 @@ export default {
       } else {
 
       }
+      this.fliter.cateId = [] // 重置cateId
       this.cidsec1 = value2.text
       this.cidtir = value
       this.cidtir1 = value1
@@ -381,6 +382,7 @@ export default {
       } else {
 
       }
+      this.fliter.cateId = [] // 重置cateId
       this.cidfour = value
       this.cidfour1 = value1
       this.getlistcid(value2)
@@ -392,12 +394,14 @@ export default {
       } else {
 
       }
+      this.fliter.cateId = [] // 重置cateId
       this.cidfifth = value
       this.cidfifth1 = value1
       this.getlistcid(value2)
       this.getData()
     },
     getfifth (value, value1, value2) {
+      this.fliter.cateId = [] // 重置cateId
       this.cidsix = value
       this.cidsix1 = value1
       this.getlistcid(value2)
@@ -405,7 +409,6 @@ export default {
     },
     // 点击进行动画效果交互
     getsecond (index) {
-      this.fliter.cateId = [] // 重置cateId
       let vv = this.alldata.length // 获取数量 来计算secondarea的高度
       let bb = document.getElementsByClassName('secondarea').length // 获取循环长度
       if (this.flag === index) {
@@ -695,6 +698,7 @@ p {
 
 .mobilepage {
   margin-top: 30px;
+  padding-left: 30px;
 }
 
 .mobilepage ul {
@@ -716,11 +720,6 @@ p {
   cursor: pointer;
   background: white;
   color: #00b7ff;
-}
-
-.mobilepage ul li:hover {
-  color: #ee882a;
-  border: solid 1px #ee882a;
 }
 
 .mobilepage ul li span {
@@ -757,5 +756,9 @@ p {
  display:inline-block;
  height:100%;
  vertical-align:middle;
+}
+#active {
+  color: #ee882a;
+  border: solid 1px #ee882a;
 }
 </style>

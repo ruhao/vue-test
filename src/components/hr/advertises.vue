@@ -3,7 +3,7 @@
 	<div v-if="width<1500&&width>640">
 		<Nav navtitle="人才招聘"></Nav>
 		<div class="adbody">
-			<div v-if="this.fliter.data6">
+			<div v-if="this.fliter.data6.length>0">
 				<div v-for="(item,index) in this.fliter.data6" class="adhrbox" :key=index>
 					{{item.title}}
 					<div class="content-top">
@@ -28,23 +28,9 @@
 					</div>
 				</div>
 			</div>
-			<div v-else>
-				<div class="adhrbox">
+			<div v-if="this.fliter.data6.length<1">
+				<div class="noneed">
 					暂无需求
-					<div class="content-top">
-						<div class="content-left">
-
-						</div>
-						<div class="content-left">
-
-						</div>
-					</div>
-					<div class="adrequest1">
-						<div></div>
-						<div>
-
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -52,7 +38,7 @@
   <div v-if="width>=1500">
 		<Nav navtitle="人才招聘"></Nav>
 		<div class="midadbody">
-			<div v-if="this.fliter.data6">
+			<div v-if="this.fliter.data6.length>0">
 				<div v-for="(item,index) in this.fliter.data6" class="midadhrbox" :key=index>
 					{{item.title}}
 					<div class="midcontent-top">
@@ -77,23 +63,9 @@
 					</div>
 				</div>
 			</div>
-			<div v-else>
-				<div class="midadhrbox">
+			<div v-if="this.fliter.data6.length<1">
+        <div class="noneed">
 					暂无需求
-					<div class="midcontent-top">
-						<div class="midcontent-left">
-
-						</div>
-						<div class="midcontent-left">
-
-						</div>
-					</div>
-					<div class="midadrequest1">
-						<div></div>
-						<div>
-
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -129,7 +101,7 @@ export default {
       }
     })
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }
@@ -302,5 +274,11 @@ p {
 
 .midadrequest1 p {
   height: 30px;
+}
+.noneed{
+  min-height: 150px;
+  padding-top: 100px;
+  color: #ee882a;
+  font-weight: 600;
 }
 </style>

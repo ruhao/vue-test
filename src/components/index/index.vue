@@ -406,8 +406,8 @@
 			</div>
 		</div>
 	</div>
-  <div>
-		<div  v-if="width<=640">
+  <div v-if="width<=640">
+		<div>
 			<div><img class="mobileheaderbg" src="../../../images/banner1.jpg"/></div>
 		</div>
 
@@ -472,7 +472,7 @@
 			<div class="mobilewraperwidth">
 				<div class="mobileindex-news-title">
           <p class="mobileindex-new-title"><span>新闻</span>
-        <router-link to='/product' tag='span' class="knowmore" active-class="mobilerouteactive">了解更多</router-link>
+        <router-link to='/news' tag='span' class="knowmore" active-class="mobilerouteactive">了解更多</router-link>
           </p>
 				</div>
 				<div class="mobileindex-news-content">

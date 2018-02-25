@@ -1,7 +1,7 @@
 <template>
 <div>
 	<div v-if="width<1500&&width>640">
-		<Nav navtitle="行业动态"></Nav>
+		<Nav navtitle="营销活动"></Nav>
 		<div class="bodycolor">
 			<div class="wraperwidth">
 				<div v-for="(item,index) in fliter.data6" :key=index>
@@ -10,13 +10,12 @@
 							<div class="cnbox3">
 								<p class="cnboxp1"><span>{{item.yday}}</span>{{item.yyear}}</p>
 								<p class="cnboxp2">{{item.ytitle}}</p>
-								<p class="cnboxp3">{{item.ycontent}}</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="wraperwidth">
+			<div class="wraperwidth" v-if="fliter.pages>1">
 				<div class="page">
 					<ul v-if="li7>=7">
 						<li @click="prev"><span>上一页</span></li>
@@ -45,7 +44,7 @@
 		</div>
 	</div>
   <div v-if="width>=1500">
-		<Nav navtitle="行业动态"></Nav>
+		<Nav navtitle="营销活动"></Nav>
 		<div class="midbodycolor">
 			<div class="midwraperwidth">
 				<div v-for="(item,index) in fliter.data6" :key=index>
@@ -54,13 +53,12 @@
 							<div class="midcnbox3">
 								<p class="midcnboxp1"><span>{{item.yday}}</span>{{item.yyear}}</p>
 								<p class="midcnboxp2">{{item.ytitle}}</p>
-								<p class="midcnboxp3">{{item.ycontent}}</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="midwraperwidth">
+			<div class="midwraperwidth" v-if="fliter.pages>1">
 				<div class="page">
 					<ul v-if="li7>=7">
 						<li @click="prev"><span>上一页</span></li>
@@ -89,7 +87,7 @@
 		</div>
 	</div>
   <div v-if="width<=640">
-		<Nav navtitle="行业动态"></Nav>
+		<Nav navtitle="营销活动"></Nav>
 		<div class="mobilebodycolor">
 			<div class="mobilewraperwidth">
         <div class="mobileindex-news-content-top-boxx" v-for="(item,index) in fliter.data6" :key=index>
@@ -97,7 +95,6 @@
 								<span class="mobileindex-news-content-span">
 									<p class="mobileindex-news-p1"><span class="mobileindex-news-content-year">{{item.yday}}</span><span class="mobileindex-news-content-month">{{item.yyear}}</span></p>
 									<p class="mobileindex-news-p2">{{item.ytitle}}</p>
-                  <p class="mobileindex-news-p3">{{item.ycontent}}</p>
 								</span>
 							</i>
 						</div>
@@ -105,7 +102,7 @@
 				<p class="mobilenothing">敬请期待</P>
 			</div>
 			</div>
-			<div class="mobilewraperwidth">
+			<div class="mobilewraperwidth" v-if="fliter.pages>1">
 				<div class="mobilepage">
 					<ul v-if="li7>=7">
 						<li @click="prev"><span>上一页</span></li>
@@ -170,7 +167,7 @@ export default {
     this.getData()
     this.width = document.documentElement.offsetWidth
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }
@@ -197,6 +194,7 @@ li {
   width: 1000px;
   margin: 0 auto;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .cnbox {
@@ -256,6 +254,7 @@ li {
   width: 1420px;
   margin: 0 auto;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .midcnbox {
@@ -387,7 +386,6 @@ i{
 
 .mobileindex-news-content-top-boxx i .mobileindex-news-content-span:hover {
   margin-left: 0px;
-  transition: all 1s;
 }
 .mobileindex-news-content-top-img{
   width: 50%;
@@ -398,10 +396,11 @@ i{
 }
 .mobileindex-news-content-top-boxx i .mobileindex-news-content-span .mobileindex-news-p1 {
   margin-left: 25px;
+  margin-top: 15px;
 }
 
 .mobileindex-news-p2 {
-  margin-top: 5px;
+  margin-top: 10px;
   text-shadow: 0.1px 0.1px 0.1px black;
   margin-left: 10px;
   font-size: 12px;

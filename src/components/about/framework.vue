@@ -1,21 +1,21 @@
   <template>
   <div>
 	<div v-if="width<1500&&width>640">
-		<Nav navtitle='发展足迹'></Nav>
+		<Nav navtitle='组织机构'></Nav>
 		<div class="wraperwidth">
 			<img src="../../../images/organization.jpg" class="wraperwidth-img"/>
 		</div>
 	</div>
   <div v-if="width>=1500">
-		<Nav navtitle='发展足迹'></Nav>
+		<Nav navtitle='组织机构'></Nav>
 		<div class="midwraperwidth">
 			<img src="../../../images/organization.jpg" />
 		</div>
 	</div>
   <div v-if="width<=640">
-		<Nav navtitle='发展足迹'></Nav>
+		<Nav navtitle='组织机构'></Nav>
 		<div class="midwraperwidth">
-			<img src="../../../images/organization.jpg" />
+			<img src="../../../images/a2.jpg" />
 		</div>
 	</div>
   </div>
@@ -35,7 +35,7 @@ export default {
   created () {
     this.width = document.documentElement.offsetWidth
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }
@@ -55,7 +55,7 @@ img {
   margin: 0 auto;
   margin-top: 50px;
 }
-.wraperwidth-img{
+.wraperwidth img {
   width: 100%;
 }
 .midwraperwidth {
@@ -67,9 +67,10 @@ img {
   width: 100%;
   margin-top: 20px;
   overflow: hidden;
+  text-align: center;
 }
 .midwraperwidth img{
+  min-height: 300px;
   width: 100%;
-  height: 300px;
 }
 </style>

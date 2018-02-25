@@ -41,7 +41,7 @@
 				<router-link :to="{name:'severdetail',params:{content:item}}">
 					<div class='miobileserverbox1'><img :src='item.imgurl' class="miobilefontstyle"></div>
 					<div class='miobileserverbox2 miobileindex-product-content-box1'>
-						<!-- <p class='miobileserverboxp1'>{{item.title}}</p> -->
+						<p class='miobileserverboxp1'>{{item.title}}</p>
 						<p class='miobileserverboxp2'>{{item.content}}</p>
 					</div>
 				</router-link>
@@ -90,12 +90,10 @@ export default {
     this.width = document.documentElement.offsetWidth
     this.getData()
   },
-  mounted () {
+  updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
     }
-  },
-  updated () {
     if (this.width <= 640) {
       let ii = window.getComputedStyle(document.getElementsByClassName('miobileindex-product-content-box1')[0], null)['width']
       let oo = document.getElementsByClassName('miobileindex-product-content-box1').length
@@ -131,21 +129,27 @@ p {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 14;
+}
+.serverbox1{
+   height: 250px;
+}
+.serverbox1 img{
+  height: 100%;
 }
 .serverbox1a{
   position: relative;
   z-index: 14;
 }
-.serverbox2 {
+.serverbox .serverbox2 {
   position: absolute;
   top: 250px;
   left: 0px;
   background: #f9f1e9;
-  width: 315px;
-  height: 315px;
-  opacity: 0;
+  width: 250px;
+  height: 250px;
+  opacity: 1;
   transition: all 0.5s;
+  z-index: 11;
 }
 
 .serverboxp1 {
@@ -157,13 +161,23 @@ p {
   z-index: 10px;
   opacity: 1;
   cursor: pointer;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .serverboxp2 {
-  margin: 80px 30px 0;
+  margin: 40px 30px 0;
   font-size: 12px;
   line-height: 25px;
   color: #464c5b;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .midwraperwidth {
   width: 1420px;
@@ -178,7 +192,6 @@ p {
   cursor: pointer;
   overflow: hidden;
 }
-
 .midserverbox1 {
   position: absolute;
   top: 0px;
@@ -206,6 +219,11 @@ p {
   z-index: 10px;
   opacity: 1;
   cursor: pointer;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .midserverboxp2 {
@@ -213,6 +231,11 @@ p {
   font-size: 12px;
   line-height: 25px;
   color: #464c5b;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .miobilewraperwidth {
   width: 100%;
@@ -248,8 +271,12 @@ p {
   margin-left: 30px;
   color: #ee882a;
   text-shadow: 0.5px 0.5px 0.5px #ee882a;
-  opacity: 1;
-  height: 30px;
+  font-size: 14px;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .miobileserverboxp2 {
@@ -257,7 +284,12 @@ p {
   font-size: 12px;
   line-height: 25px;
   color: #464c5b;
-  text-indent: 2em;
+  text-indent: 1em;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 #active {
   top: 0px;
