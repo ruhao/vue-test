@@ -748,7 +748,6 @@ img{
   font-size: 24px;
   margin: 0 auto;
   color: #f1662c;
-  text-shadow: 0.6px 0.6px 0.6px #f1662c;
 }
 .fontstyle{
   text-decoration: none;
@@ -758,7 +757,6 @@ img{
   font-size: 14px;
   text-align: center;
   color: #666666;
-  text-shadow: 0.2px 0.2px 0.2px #666666;
 }
 
 .index-product-content {
@@ -803,14 +801,12 @@ img{
 .index-product-content-right-title {
   font-size: 16px;
   color: #ee882a;
-  text-shadow: 0.5px 0.5px 0.5px #f1662c;
 }
 
 .index-product-content-right-content {
   font-size: 12px;
   color: #ee882a;
   padding: 0 40px;
-  text-shadow: 0.3px 0.3px 0.3px #f1662c;
 }
 
 .index-news-body {
@@ -830,7 +826,6 @@ img{
   padding: 0 245px;
   font-size: 14px;
   color: #666666;
-  text-shadow: 0.3px 0.3px 0.3px #b2b2b2;
   margin-top: 10px;
 }
 
@@ -879,7 +874,6 @@ img{
 
 .index-news-p2 {
   margin-top: 10px;
-  text-shadow: 0.2px 0.2px 0.2px black;
   font-size: 14px;
   margin-left: 20px;
 }
@@ -928,14 +922,12 @@ img{
 .index-about-box-p1 {
   margin-top: 15px;
   color: #f1662c;
-  text-shadow: 0.3px 0.3px 0.3px #f1662c;
 }
 
 .index-about-box-p2 {
   font-size: 12px;
   margin-top: 15px;
   color: #847e75;
-  text-shadow: 0.2px 0.2px 0.2px #847e75;
 }
 
 .index-internet-body {
@@ -992,7 +984,6 @@ img{
 .index-internet-title-introduction {
   font-size: 12px;
   color: #707070;
-  text-shadow: 0.4px 0.4px 0.4px #707070;
   margin-top: 20px;
 }
 
@@ -1005,7 +996,6 @@ img{
 .index-internet-body-p2 {
   font-size: 12px;
   color: #ee882a;
-  text-shadow: 0.4px 0.4px 0.4px #ee882a;
   margin-top: 20px;
 }
 
@@ -1041,7 +1031,6 @@ img{
   font-size: 10px;
   letter-spacing: 3px;
   text-indent: 2em;
-  text-shadow: 0.2px 0.2px 0.2px #b4b0ad;
   margin-top: 15px;
 }
 
@@ -1050,7 +1039,6 @@ img{
   letter-spacing: 1px;
   font-size: 12px;
   text-indent: 2em;
-  text-shadow: 0 0 0;
   cursor: pointer;
 }
 
@@ -1072,7 +1060,6 @@ img{
   top: -8px;
   font-size: 14px;
   text-indent: 2em;
-  text-shadow: 0.2px 0.2px 0.2px #b4b0ad;
 }
 
 .iconfont{
@@ -1092,7 +1079,6 @@ img{
 
 .index-cooperation-title {
   color: #f1662c;
-  text-shadow: 0.4px 0.4px 0.4px #f1662c;
   padding-top: 60px;
   font-size: 20px;
 }
@@ -1101,7 +1087,6 @@ img{
   font-size: 14px;
   color: #666666;
   margin-top: 20px;
-  text-shadow: 0.2px 0.2px 0.2px #666666;
 }
 
 .index-cooperation-top ul {
@@ -1124,7 +1109,6 @@ img{
   margin-top: 60px;
   padding-bottom: 20px;
   font-size: 14px;
-  text-shadow: 0.2px 0.2px 0.2px #666666;
 }
 i {
   font-style: normal;
@@ -1169,14 +1153,12 @@ li {
   font-size: 26px;
   margin: 0 auto;
   color: #f1662c;
-  text-shadow: 1px 1px 1px #f1662c;
 }
 
 .midindex-product-introduction {
   margin-top: 10px;
   text-align: center;
   color: #666666;
-  text-shadow: 0.2px 0.2px 0.2px #666666;
 }
 
 .midindex-product-content {
@@ -1208,14 +1190,12 @@ li {
 .midindex-product-content-right-title {
   font-size: 18px;
   color: #ee882a;
-  text-shadow: 0.5px 0.5px 0.5px #f1662c;
 }
 
 .midindex-product-content-right-content {
   font-size: 12px;
   color: #ee882a;
   padding: 0 80px;
-  text-shadow: 0.3px 0.3px 0.3px #f1662c;
 }
 
 .midindex-news-body {
@@ -1257,7 +1237,6 @@ li {
   padding: 0 350px;
   font-size: 14px;
   color: #666666;
-  text-shadow: 0.3px 0.3px 0.3px #b2b2b2;
   margin-top: 10px;
 }
 
@@ -1300,7 +1279,6 @@ li {
 
 .midindex-news-p2 {
   margin-top: 40px;
-  text-shadow: 0.5px 0.5px 0.5px black;
   margin-left: 45px;
 }
 
@@ -1349,14 +1327,12 @@ li {
 .midindex-about-box-p1 {
   margin-top: 30px;
   color: #f1662c;
-  text-shadow: 0.3px 0.3px 0.3px #f1662c;
 }
 
 .midindex-about-box-p2 {
   font-size: 12px;
   margin-top: 30px;
   color: #847e75;
-  text-shadow: 0.2px 0.2px 0.2px #847e75;
 }
 
 .midindex-internet-body {
@@ -1399,7 +1375,6 @@ li {
 .midindex-internet-title-introduction {
   font-size: 14px;
   color: #707070;
-  text-shadow: 0.4px 0.4px 0.4px #707070;
   margin-top: 20px;
 }
 
@@ -1412,7 +1387,6 @@ li {
 .midindex-internet-body-p2 {
   font-size: 14px;
   color: #ee882a;
-  text-shadow: 0.4px 0.4px 0.4px #ee882a;
   margin-top: 20px;
 }
 
@@ -1446,7 +1420,6 @@ li {
   color: #999999;
   font-size: 10px;
   letter-spacing: 3px;
-  text-shadow: 0.2px 0.2px 0.2px #b4b0ad;
   margin-top: 100px;
 }
 
@@ -1454,7 +1427,6 @@ li {
   color: #ee882a;
   letter-spacing: 1px;
   font-size: 12px;
-  text-shadow: 0 0 0;
   cursor: pointer;
 }
 
@@ -1474,7 +1446,6 @@ li {
   color: #666666;
   margin-left: 40px;
   top: -8px;
-  text-shadow: 0.2px 0.2px 0.2px #b4b0ad;
 }
 
 .midindex-cooperation-top {
@@ -1490,14 +1461,12 @@ li {
 
 .midindex-cooperation-title {
   color: #f1662c;
-  text-shadow: 0.4px 0.4px 0.4px #f1662c;
   padding-top: 100px;
 }
 
 .midindex-cooperation-content {
   color: #666666;
   margin-top: 20px;
-  text-shadow: 0.2px 0.2px 0.2px #666666;
 }
 
 .midindex-cooperation-top ul {
@@ -1518,7 +1487,6 @@ li {
 .midindex-cooperation-footer {
   margin-top: 60px;
   padding-bottom: 20px;
-  text-shadow: 0.2px 0.2px 0.2px #666666;
 }
 .mobilefontstyle{
   text-decoration: none;
@@ -1632,7 +1600,6 @@ img{
 .mobileindex-product-content-right-title {
   font-size: 16px;
   color: #ee882a;
-  text-shadow: 0.5px 0.5px 0.5px #f1662c;
 }
 .mobileindex-product-content-box1{
   width: 50%;
@@ -1658,7 +1625,6 @@ img{
   padding: 0 10px;
   font-size: 14px;
   color: #666666;
-  text-shadow: 0.3px 0.3px 0.3px #b2b2b2;
   margin-top: 10px;
 }
 
@@ -1714,7 +1680,6 @@ img{
 
 .mobileindex-news-p2 {
   margin-top: 5px;
-  text-shadow: 0.1px 0.1px 0.1px black;
   margin-left: 10px;
   font-size: 12px;
 }
@@ -1762,7 +1727,6 @@ img{
 .mobileindex-about-box-p1 {
   margin-top: 5px;
   color: #f1662c;
-  text-shadow: 0.3px 0.3px 0.3px #f1662c;
   font-size: 14px;
 }
 
@@ -1860,7 +1824,6 @@ img{
   color: #ee882a;
   letter-spacing: 1px;
   font-size: 12px;
-  text-shadow: 0 0 0;
   cursor: pointer;
 }
 
@@ -1896,7 +1859,6 @@ img{
   color: #666666;
   margin-left: 5px;
   top: -5px;
-  text-shadow: 0.2px 0.2px 0.2px #b4b0ad;
   font-size: 10px;
 }
 
@@ -1904,7 +1866,6 @@ img{
   margin-top: 15px;
   padding-bottom: 15px;
   font-size: 12px;
-  text-shadow: 0.2px 0.2px 0.2px #666666;
   width: 100%;
   text-align: center;
 }

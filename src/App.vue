@@ -91,7 +91,7 @@
 		</div>
 		<div>
 			<transition :name="transitionName">
-				<router-view class="midchild-view"></router-view>
+				<router-view class="child-view"></router-view>
 			</transition>
 		</div>
 		</div>
