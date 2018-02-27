@@ -138,7 +138,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="wraperwidth">
+		<div class="midwraperwidth">
 			<div v-for="(item,index) in fliter.data6" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
 				<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}"> -->
         <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">

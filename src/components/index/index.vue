@@ -72,44 +72,30 @@
 					<p>老外仓坚持“合作创造财富、创新谋求发展”的经营理念，力求为社会、为企业、为员工创造和谐的氛围，走持续发展的道路。</p>
 				</div>
 				<div class="index-news-content">
-					<div class="index-news-content-top">
-						<div class="index-news-content-top-boxx">
+          <div class="index-news-content-top">
+						<div class="index-news-content-top-boxx" v-for="(item,index) in indexnews1" :key=index>
 							<i>
 								<span class="index-news-content-span">
-									<p class="index-news-p1"><span class="index-news-content-year">17</span><span class="index-news-content-month">17-01</span></p>
-									<p class="index-news-p2">新闻营销可能是未来营销的主流趋势</p>
+									<p class="index-news-p1"><span class="index-news-content-year">{{item.day}}</span><span class="index-news-content-month">{{item.year}}</span></p>
+									<p class="index-news-p2">{{item.title}}</p>
 								</span>
 							</i>
-							<img src="../../../images/news-con1.png" class="index-news-content-top-img"/>
-						</div>
-						<div class="index-news-content-top-boxx">
-							<i>
-							<span class="index-news-content-span">
-								<p class="index-news-p1"><span class="index-news-content-year">06</span><span class="index-news-content-month">17-01</span></p>
-								<p class="index-news-p2">构造城市捷运新风景，改善交通新方式，构造城市捷运新风景</p>
-							</span>
-						</i>
-							<img src="../../../images/news-con4.png" class="index-news-content-top-img"/>
+              <router-link :to="{name:'newdetail',params:{content:item}}">
+							<img :src="item.imgurl" class="index-news-content-top-img"/>
+              </router-link>
 						</div>
 					</div>
-					<div class="index-news-content-top">
-						<div class="index-news-content-top-boxx">
+          <div class="index-news-content-top">
+						<div class="index-news-content-top-boxx" v-for="(item,index) in indexnews2" :key=index>
 							<i>
-							<span class="index-news-content-span">
-								<p class="index-news-p1"><span class="index-news-content-year">06</span><span class="index-news-content-month">17-01</span></p>
-								<p class="index-news-p2">生产工厂成功举办竣工仪式暨产品推介，会</p>
-							</span>
-						</i>
-							<img src="../../../images/news-con2.png" class="index-news-content-top-img"/>
-						</div>
-						<div class="index-news-content-top-boxx">
-							<i>
-							<span class="index-news-content-span">
-								<p class="index-news-p1"><span class="index-news-content-year">11</span><span class="index-news-content-month">17-01</span></p>
-								<p class="index-news-p2">生产工厂举办竣工仪式暨产品推介会，生产工厂成功举办竣工仪式暨产...</p>
-							</span>
-						</i>
-							<img src="../../../images/news-con3.png" class="index-news-content-top-img"/>
+								<span class="index-news-content-span">
+									<p class="index-news-p1"><span class="index-news-content-year">{{item.day}}</span><span class="index-news-content-month">{{item.year}}</span></p>
+									<p class="index-news-p2">{{item.title}}</p>
+								</span>
+							</i>
+              <router-link :to="{name:'newdetail',params:{content:item}}">
+							<img :src="item.imgurl" class="index-news-content-top-img"/>
+              </router-link>
 						</div>
 					</div>
 				</div>
@@ -122,22 +108,30 @@
 			<img class="index-about-img" src="../../../images/index-about.jpg" />
 			<div class="index-about-content">
 				<div class="index-about-box">
+          <router-link to='/internet/server'>
 					<img src="../../../images/index-about1.png" class="productimg"/>
+          </router-link>
 					<p class="index-about-box-p1">公司服务</p>
 					<p class="index-about-box-p2">专业上乘，服务一流，实现客户的利益最大化</p>
 				</div>
 				<div class="index-about-box">
+          <router-link to='/hr/advertises'>
 					<img src="../../../images/index-about2.png" class="productimg"/>
+          </router-link>
 					<p class="index-about-box-p1">公司招聘</p>
 					<p class="index-about-box-p2">请关注我们的最新招聘信息</p>
 				</div>
 				<div class="index-about-box">
+          <router-link to='/internet'>
 					<img src="../../../images/index-about3.png" class="productimg"/>
+          </router-link>
 					<p class="index-about-box-p1">营销活动</p>
 					<p class="index-about-box-p2">让服务永远物超所值，服务提升品质.</p>
 				</div>
 				<div class="index-about-box">
+          <router-link to='/message'>
 					<img src="../../../images/index-about4.png" class="productimg"/>
+          </router-link>
 					<p class="index-about-box-p1">Guestbook</p>
 					<p class="index-about-box-p2">请详细的填写表单留言，我们将在第一时间与您联系。</p>
 				</div>
@@ -186,15 +180,15 @@
 			<div class="index-cooperation-top">
 				<p class="index-cooperation-title">合作伙伴</p>
 				<p class="index-cooperation-content">这里是一些关于老外仓的业务服务伙伴</p>
-        <router-link to='/brand'>
         <div class="ulheight">
 				<ul class="ullong">
 					<li v-for="(item,index) in cooperation"  :key=index>
-						<img :src="item" />
+            <router-link :to="'/brand/branddetail/'+item._id">
+						<img :src="item.imgurl" />
+            </router-link>
 					</li>
 				</ul>
         </div>
-        </router-link>
 				<div class="index-cooperation-bottom">
 					<i><img :src="cooperationf[0]" id="ullongone" @click="ullongone"></i>
 					<i><img :src="cooperationf[1]" id="ullongtwo" @click="ullongtwo"></i>
@@ -275,44 +269,30 @@
 					<p>老外仓坚持“合作创造财富、创新谋求发展”的经营理念，力求为社会、为企业、为员工创造和谐的氛围，走持续发展的道路。</p>
 				</div>
 				<div class="midindex-news-content">
-					<div class="midindex-news-content-top">
-						<div class="midindex-news-content-top-boxx">
+          <div class="midindex-news-content-top">
+						<div class="midindex-news-content-top-boxx" v-for="(item,index) in indexnews1" :key=index>
 							<i>
 								<span class="midindex-news-content-span">
-									<p class="midindex-news-p1"><span class="midindex-news-content-year">17</span><span class="midindex-news-content-month">17-01</span></p>
-									<p class="midindex-news-p2">新闻营销可能是未来营销的主流趋势</p>
+									<p class="midindex-news-p1"><span class="midindex-news-content-year">{{item.day}}</span><span class="midindex-news-content-month">{{item.year}}</span></p>
+									<p class="midindex-news-p2">{{item.title}}</p>
 								</span>
 							</i>
-							<img src="../../../images/news-con1.png" class="midindex-news-content-top-img"/>
-						</div>
-						<div class="midindex-news-content-top-boxx">
-							<i>
-							<span class="midindex-news-content-span">
-								<p class="midindex-news-p1"><span class="midindex-news-content-year">06</span><span class="midindex-news-content-month">17-01</span></p>
-								<p class="midindex-news-p2">构造城市捷运新风景，改善交通新方式，构造城市捷运新风景</p>
-							</span>
-						</i>
-							<img src="../../../images/news-con4.png" class="midindex-news-content-top-img"/>
+              <router-link :to="{name:'newdetail',params:{content:item}}">
+							<img :src="item.imgurl" class="midindex-news-content-top-img"/>
+              </router-link>
 						</div>
 					</div>
-					<div class="midindex-news-content-top">
-						<div>
+          <div class="midindex-news-content-top">
+						<div class="midindex-news-content-top-boxx" v-for="(item,index) in indexnews2" :key=index>
 							<i>
-							<span class="midindex-news-content-span">
-								<p class="midindex-news-p1"><span class="midindex-news-content-year">06</span><span class="midindex-news-content-month">17-01</span></p>
-								<p class="midindex-news-p2">生产工厂成功举办竣工仪式暨产品推介，会</p>
-							</span>
-						</i>
-							<img src="../../../images/news-con2.png" class="midindex-news-content-top-img"/>
-						</div>
-						<div>
-							<i>
-							<span class="midindex-news-content-span">
-								<p class="midindex-news-p1"><span class="midindex-news-content-year">11</span><span class="midindex-news-content-month">17-01</span></p>
-								<p class="midindex-news-p2">生产工厂举办竣工仪式暨产品推介会，生产工厂成功举办竣工仪式暨产...</p>
-							</span>
-						</i>
-							<img src="../../../images/news-con3.png" class="midindex-news-content-top-img"/>
+								<span class="midindex-news-content-span">
+									<p class="midindex-news-p1"><span class="midindex-news-content-year">{{item.day}}</span><span class="midindex-news-content-month">{{item.year}}</span></p>
+									<p class="midindex-news-p2">{{item.title}}</p>
+								</span>
+							</i>
+              <router-link :to="{name:'newdetail',params:{content:item}}">
+							<img :src="item.imgurl" class="midindex-news-content-top-img"/>
+              </router-link>
 						</div>
 					</div>
 				</div>
@@ -325,22 +305,30 @@
 			<img class="midindex-about-img" src="../../../images/index-about.jpg" />
 			<div class="midindex-about-content">
 				<div class="midindex-about-box">
+           <router-link to='/internet/server'>
 					<img src="../../../images/index-about1.png" />
+           </router-link>
 					<p class="midindex-about-box-p1">公司服务</p>
 					<p class="midindex-about-box-p2">专业上乘，服务一流，实现客户的利益最大化</p>
 				</div>
 				<div class="midindex-about-box">
+           <router-link to='/hr/advertises'>
 					<img src="../../../images/index-about2.png" />
+           </router-link>
 					<p class="midindex-about-box-p1">公司招聘</p>
 					<p class="midindex-about-box-p2">请关注我们的最新招聘信息</p>
 				</div>
 				<div class="midindex-about-box">
+          <router-link to='/internet'>
 					<img src="../../../images/index-about3.png" />
+          </router-link>
 					<p class="midindex-about-box-p1">营销活动</p>
 					<p class="midindex-about-box-p2">让服务永远物超所值，服务提升品质.</p>
 				</div>
 				<div class="midindex-about-box">
+          <router-link to='/message'>
 					<img src="../../../images/index-about4.png" />
+          </router-link>
 					<p class="midindex-about-box-p1">Guestbook</p>
 					<p class="midindex-about-box-p2">请详细的填写表单留言，我们将在第一时间与您联系。</p>
 				</div>
@@ -389,15 +377,15 @@
 			<div class="midindex-cooperation-top">
 				<p class="midindex-cooperation-title">合作伙伴</p>
 				<p class="midindex-cooperation-content">这里是一些关于老外仓的业务服务伙伴</p>
-        <router-link to='/brand'>
         <div class="midulheight">
 				<ul class="midullong">
 					<li v-for="(item,index) in cooperation"  :key=index>
-						<img :src="item" />
+            <router-link :to="'/brand/branddetail/'+item._id">
+						<img :src="item.imgurl" />
+            </router-link>
 					</li>
 				</ul>
         </div>
-        </router-link>
 				<div class="midindex-cooperation-bottom">
 					<i><img :src="cooperationf[0]" id="ullongthree" @click="ullongthree"></i>
 					<i><img :src="cooperationf[1]" id="ullongfour" @click="ullongfour"></i>
@@ -429,20 +417,20 @@
 							<img src="../../../images/products1-1.jpg" />
 						</div>
             </router-link>
-            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca6cd03d2b14449ff1a7',name:'进口零食'}}}" class="mobilefontstyle mobileindex-product-content-box">
-						<div >
-							<img src="../../../images/index-products3.jpg" />
-							<p class="mobileindex-product-content-right-title">进口零食</p>
-						</div>
-            </router-link>
-          </div>
-          <div class="mobileindex-product-content-right-top">
-             <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="mobilefontstyle mobileindex-product-content-box">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="mobilefontstyle mobileindex-product-content-box">
                <div>
 							<img src="../../../images/index-products5.jpg" />
 							<p class="mobileindex-product-content-right-title">酒水饮料</p>
               </div>
               </router-link>
+          </div>
+          <div class="mobileindex-product-content-right-top">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca6cd03d2b14449ff1a7',name:'进口零食'}}}" class="mobilefontstyle mobileindex-product-content-box">
+						<div >
+						<img src="../../../images/index-products3.jpg" />
+						<p class="mobileindex-product-content-right-title">进口零食</p>
+						</div>
+            </router-link>
               <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="mobilefontstyle mobileindex-product-content-box1">
 						<div>
 							<img src="../../../images/products1-3.jpg" />
@@ -593,21 +581,28 @@ import indexcontact1 from '../../../images/index-contact1.png'
 import indexcontact2 from '../../../images/index-contact2.png'
 import indexcontact3 from '../../../images/index-contact3.png'
 import indexcontact4 from '../../../images/index-contact4.png'
-import cooperation1 from '../../../images/cooperation-1.png'
-import cooperation2 from '../../../images/cooperation-2.png'
-import cooperation3 from '../../../images/cooperation-3.png'
-import cooperation4 from '../../../images/cooperation-4.png'
-import cooperation5 from '../../../images/cooperation-5.png'
-import cooperation6 from '../../../images/cooperation-6.png'
 import cooperation7 from '../../../images/cooperation-7.png'
 import cooperation8 from '../../../images/cooperation-8.png'
-import partner14 from '../../../images/partner14.jpg'
-import partner13 from '../../../images/partner13.jpg'
-import partner12 from '../../../images/partner12.jpg'
-import partner11 from '../../../images/partner11.jpg'
 export default {
   data () {
     return {
+      fliterbrand: {
+        data6: [],
+        limit: 10,
+        page: 1
+      },
+      fliternews: {
+        data6: [],
+        limit: 2,
+        page: 1,
+        type: '1'
+      },
+      fliternews1: {
+        data6: [],
+        limit: 2,
+        page: 2,
+        type: '1'
+      },
       width: 1920,
       internet: [
         {
@@ -645,18 +640,9 @@ export default {
           value: '地址：中国杭州 滨江区 滨盛路1688号'
         }
       ],
-      cooperation: [
-        cooperation1,
-        cooperation2,
-        cooperation3,
-        cooperation4,
-        cooperation5,
-        cooperation6,
-        partner11,
-        partner12,
-        partner13,
-        partner14
-      ],
+      cooperation: [],
+      indexnews1: [],
+      indexnews2: [],
       cooperationf: [
         cooperation7,
         cooperation8
@@ -679,19 +665,32 @@ export default {
   },
   created () {
     this.width = document.documentElement.offsetWidth
+    this.$http.post('http://120.79.22.222:3000/brand/list', this.fliterbrand).then(res => {
+      this.cooperation = res.data.rows
+    })
+    this.$http.post('http://120.79.22.222:3000/news/list', this.fliternews).then(res => {
+      this.indexnews1 = res.data.rows
+    })
+    this.$http.post('http://120.79.22.222:3000/news/list', this.fliternews1).then(res => {
+      this.indexnews2 = res.data.rows
+    })
   },
   mounted () {
-    let ii = window.getComputedStyle(document.getElementsByClassName('mobilefontstyle')[0], null)['width']
-    let oo = document.getElementsByClassName('mobileindex-product-content-box1').length
-    for (let i = 0; i < oo; i++) {
-      document.getElementsByClassName('mobileindex-product-content-box')[i].style.height = ii
+    if (document.getElementsByClassName('mobilefontstyle')[0]) {
+      let ii = window.getComputedStyle(document.getElementsByClassName('mobilefontstyle')[0], null)['width']
+      let oo = document.getElementsByClassName('mobileindex-product-content-box1').length
+      for (let i = 0; i < oo; i++) {
+        document.getElementsByClassName('mobileindex-product-content-box')[i].style.height = ii
+      }
     }
   },
   updated () {
-    let ii = window.getComputedStyle(document.getElementsByClassName('mobilefontstyle')[0], null)['width']
-    let oo = document.getElementsByClassName('mobileindex-product-content-box1').length
-    for (let i = 0; i < oo; i++) {
-      document.getElementsByClassName('mobileindex-product-content-box')[i].style.height = ii
+    if (document.getElementsByClassName('mobilefontstyle')[0]) {
+      let ii = window.getComputedStyle(document.getElementsByClassName('mobilefontstyle')[0], null)['width']
+      let oo = document.getElementsByClassName('mobileindex-product-content-box1').length
+      for (let i = 0; i < oo; i++) {
+        document.getElementsByClassName('mobileindex-product-content-box')[i].style.height = ii
+      }
     }
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
@@ -804,8 +803,9 @@ img{
 }
 
 .index-product-content-right-content {
+  margin-top: 10px;
   font-size: 12px;
-  color: #ee882a;
+  color: gray;
   padding: 0 40px;
 }
 
@@ -874,7 +874,7 @@ img{
 
 .index-news-p2 {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 12px;
   margin-left: 20px;
 }
 
@@ -1193,9 +1193,11 @@ li {
 }
 
 .midindex-product-content-right-content {
+  margin-top: 25px;
   font-size: 12px;
-  color: #ee882a;
+  color: gray;
   padding: 0 80px;
+  font-size: 14px;
 }
 
 .midindex-news-body {
@@ -1214,8 +1216,8 @@ li {
   width: 200px;
   text-align: center;
 }
-.ullong li{
-  max-width: 200px;
+.ullong img{
+  width: 100%;
 }
 .midullong{
   width: 2840px;
@@ -1228,7 +1230,9 @@ li {
   margin-right: 4px;
   text-align: center;
 }
-
+.midullong img{
+  width: 100%;
+}
 .midindex-news-title {
   text-align: center;
 }
@@ -1256,7 +1260,9 @@ li {
   position: absolute;
   background: white;
 }
-
+.midnavfont{
+  cursor: pointer;
+}
 .midindex-news-content-top i .midindex-news-content-span {
   display: block;
   width: 335px;
@@ -1278,7 +1284,7 @@ li {
 }
 
 .midindex-news-p2 {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 45px;
 }
 
@@ -1314,24 +1320,27 @@ li {
 
 .midindex-about-box {
   width: 140px;
-  padding: 100px 20px 0 20px;
+  padding: 100px 10px 0 10px;
   float: left;
   text-align: center;
   margin-left: 220px;
 }
-
+.midindex-about-box img{
+  width: 100%;
+}
 .midindex-about-box:nth-of-type(1) {
   margin: 0;
 }
 
 .midindex-about-box-p1 {
+  font-weight: 600;
   margin-top: 30px;
   color: #f1662c;
 }
 
 .midindex-about-box-p2 {
   font-size: 12px;
-  margin-top: 30px;
+  margin-top: 20px;
   color: #847e75;
 }
 
@@ -1592,6 +1601,7 @@ img{
   font-size: 0;
 }
 .mobileindex-product-content-box img{
+  margin-top: 15px;
   width: 70%;
   background: #faf4ee;
   text-align: center;
