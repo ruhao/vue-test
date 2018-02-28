@@ -214,6 +214,7 @@ i{
   width: 1420px;
   margin: 0 auto;
   overflow: hidden;
+  padding-bottom:20px;
 }
 
 .midcnbox {
@@ -280,6 +281,7 @@ i{
   width: 1000px;
   margin: 0 auto;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .cnbox {
