@@ -465,43 +465,25 @@
 				</div>
 				<div class="mobileindex-news-content">
 					<div class="mobileindex-news-content-top">
-						<div class="mobileindex-news-content-top-boxx">
+						<div class="mobileindex-news-content-top-boxx" v-for="(item,index) in indexnews1" :key=index>
 							<i>
 								<span class="mobileindex-news-content-span">
-									<p class="mobileindex-news-p1"><span class="mobileindex-news-content-year">17</span><span class="mobileindex-news-content-month">17-01</span></p>
-									<p class="mobileindex-news-p2">新闻营销可能是未来营销的主流趋势</p>
+									<p class="mobileindex-news-p1"><span class="mobileindex-news-content-year">{{item.day}}</span><span class="mobileindex-news-content-month">{{item.year}}</span></p>
+									<p class="mobileindex-news-p2">{{item.title}}</p>
 								</span>
 							</i>
-              <img src="../../../images/news-con1.png" class="mobileindex-news-content-top-img"/>
-						</div>
-						<div class="mobileindex-news-content-top-boxx">
-							<i>
-							<span class="mobileindex-news-content-span">
-								<p class="mobileindex-news-p1"><span class="mobileindex-news-content-year">06</span><span class="mobileindex-news-content-month">17-01</span></p>
-								<p class="mobileindex-news-p2">构造城市捷运新风景，改善交通新方式，构造城市捷运新风景</p>
-							</span>
-						</i>
-							<img src="../../../images/news-con4.png" class="mobileindex-news-content-top-img"/>
+              <img :src="item.imgurl" class="mobileindex-news-content-top-img"/>
 						</div>
 					</div>
-					<div class="mobileindex-news-content-top">
-						<div>
+           <div class="mobileindex-news-content-top">
+						<div class="mobileindex-news-content-top-boxx" v-for="(item,index) in indexnews2" :key=index>
 							<i>
-							<span class="mobileindex-news-content-span">
-								<p class="mobileindex-news-p1"><span class="mobileindex-news-content-year">06</span><span class="mobileindex-news-content-month">17-01</span></p>
-								<p class="mobileindex-news-p2">生产工厂成功举办竣工仪式暨产品推介，会</p>
-							</span>
-						</i>
-							<img src="../../../images/news-con2.png" class="mobileindex-news-content-top-img"/>
-						</div>
-						<div>
-							<i>
-							<span class="mobileindex-news-content-span">
-								<p class="mobileindex-news-p1"><span class="mobileindex-news-content-year">11</span><span class="mobileindex-news-content-month">17-01</span></p>
-								<p class="mobileindex-news-p2">生产工厂举办竣工仪式暨产品推介会，生产工厂成功举办竣工仪式暨产...</p>
-							</span>
-						</i>
-							<img src="../../../images/news-con3.png" class="mobileindex-news-content-top-img"/>
+								<span class="mobileindex-news-content-span">
+									<p class="mobileindex-news-p1"><span class="mobileindex-news-content-year">{{item.day}}</span><span class="mobileindex-news-content-month">{{item.year}}</span></p>
+									<p class="mobileindex-news-p2">{{item.title}}</p>
+								</span>
+							</i>
+              <img :src="item.imgurl" class="mobileindex-news-content-top-img"/>
 						</div>
 					</div>
 				</div>

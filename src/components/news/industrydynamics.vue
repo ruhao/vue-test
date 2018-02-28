@@ -101,8 +101,8 @@
 								<span class="mobileindex-news-content-span">
 									<p class="mobileindex-news-p1"><span class="mobileindex-news-content-year">{{item.hday}}</span><span class="mobileindex-news-content-month">{{item.hyear}}</span></p>
 									<router-link :to="{name:'newdetail',params:{content:item}}" class="fontstyle">
+                    <p class="mobileindex-news-p3">{{item.hcontent}}</p>
 									</router-link>
-                  <p class="mobileindex-news-p3">{{item.hcontent}}</p>
 								</span>
 							</i>
 						</div>

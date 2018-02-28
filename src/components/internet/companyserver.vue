@@ -4,15 +4,11 @@
 		<Nav navtitle='公司服务'></Nav>
 		<div class='wraperwidth'>
 			<div v-for='(item,index) in server' :key=index class='serverbox' @mouseenter='moveup(item.num)' @mouseleave='movedown(item.num)'>
-				<router-link :to="{name:'severdetail',params:{content:item}}">
 					<div class='serverbox1'><img :src='item.imgurl'></div>
-				</router-link>
-				<router-link :to="{name:'severdetail',params:{content:item}}">
 					<div class='serverbox2'>
 						<p class='serverboxp1'>{{item.title}}</p>
 						<p class='serverboxp2'>{{item.content}}</p>
 					</div>
-				</router-link>
 			</div>
 			<div style='clear: both;'></div>
 		</div>
@@ -21,15 +17,11 @@
 		<Nav navtitle='公司服务'></Nav>
 		<div class='midwraperwidth'>
 			<div v-for='(item,index) in server' :key=index class='midserverbox' @mouseenter='moveup(item.num)' @mouseleave='movedown(item.num)'>
-				<router-link :to="{name:'severdetail',params:{content:item}}">
 					<div class='midserverbox1'><img :src='item.imgurl'></div>
-				</router-link>
-				<router-link :to="{name:'severdetail',params:{content:item}}">
 					<div class='serverbox2 midserverbox2'>
 						<p class='midserverboxp1'>{{item.title}}</p>
 						<p class='midserverboxp2'>{{item.content}}</p>
 					</div>
-				</router-link>
 			</div>
 			<div style='clear: both;'></div>
 		</div>
@@ -38,13 +30,11 @@
 		<Nav navtitle='公司服务'></Nav>
 		<div class='miobilewraperwidth'>
 			<div v-for='(item,index) in server' :key=index class='miobileserverbox'>
-				<router-link :to="{name:'severdetail',params:{content:item}}">
 					<div class='miobileserverbox1'><img :src='item.imgurl' class="miobilefontstyle"></div>
 					<div class='miobileserverbox2 miobileindex-product-content-box1'>
 						<p class='miobileserverboxp1'>{{item.title}}</p>
 						<p class='miobileserverboxp2'>{{item.content}}</p>
 					</div>
-				</router-link>
 			</div>
 			<div style='clear: both;'></div>
 		</div>
@@ -72,7 +62,6 @@ export default {
         for (let i = 0; i < ii; i++) {
           res.data.rows[i].num = i
           this.server.push(res.data.rows[i])
-          console.log(this.server)
         }
       })
     },

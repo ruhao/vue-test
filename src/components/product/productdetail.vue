@@ -24,43 +24,43 @@
 					<p class="pdetail-leftp2" v-for="(item,index) in this.introduction" :key=index>{{item}}</p>
 				</div>
 				<div v-if="this.detail.name">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">商品名称:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.name}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">商品名称:</span>&nbsp;&nbsp;{{this.detail.name}}</p>
 				</div>
 				<div v-if="this.detail.describe">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品描述:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.describe}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品描述:</span>&nbsp;&nbsp;{{this.detail.describe}}</p>
 				</div>
 				<div v-if="this.detail.origin">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">原产地:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.origin}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">原&nbsp;产&nbsp;地:</span>&nbsp;&nbsp;{{this.detail.origin}}</p>
 				</div>
 				<div v-if="this.detail.ingredient">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品材料:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.ingredient}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品材料:</span>&nbsp;&nbsp;{{this.detail.ingredient}}</p>
 				</div>
 				<div v-if="this.detail.expiration">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">保质期:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.expiration}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">保&nbsp;质&nbsp;期:</span>&nbsp;&nbsp;{{this.detail.expiration}}</p>
 				</div>
 				<div v-if="this.detail.Qcontent">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酒精含量:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.Qcontent}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酒精含量:</span>&nbsp;&nbsp;{{this.detail.Qcontent}}</p>
 				</div>
 				<div v-if="this.detail.Tcontent">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">糖含量:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.Tcontent}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">糖&nbsp;含&nbsp;量:</span>&nbsp;&nbsp;{{this.detail.Tcontent}}</p>
 				</div>
 				<div v-if="this.detail.Scontent">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酸含量:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.Scontent}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酸&nbsp;含&nbsp;量:</span>&nbsp;&nbsp;{{this.detail.Scontent}}</p>
 				</div>
 				<div v-if="this.detail.color">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">颜色:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.color}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">颜&nbsp;&nbsp;色:</span>&nbsp;&nbsp;{{this.detail.color}}</p>
 				</div>
 				<div v-if="this.detail.smell">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">气味:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.smell}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">气&nbsp;&nbsp;味:</span>&nbsp;&nbsp;{{this.detail.smell}}</p>
 				</div>
 				<div v-if="this.detail.taste">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">口感:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.taste}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">口&nbsp;&nbsp;感:</span>&nbsp;&nbsp;{{this.detail.taste}}</p>
 				</div>
 				<div v-if="this.detail.storaged">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">储存方法:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.storaged}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">储存方法:</span>&nbsp;&nbsp;{{this.detail.storaged}}</p>
 				</div>
 				<div v-if="this.detail.match">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品搭配:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.match}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品搭配:</span>&nbsp;&nbsp;{{this.detail.match}}</p>
 				</div>
 			</div>
 			<div class="pdetail-right smwidth">
@@ -112,25 +112,43 @@
 					<p class="pdetail-leftp2" v-for="(item,index) in this.introduction" :key=index>{{item}}</p>
 				</div>
 				<div v-if="this.detail.name">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">商品名称:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.name}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">商品名称:</span>&nbsp;&nbsp;{{this.detail.name}}</p>
 				</div>
 				<div v-if="this.detail.describe">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品描述:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.describe}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品描述:</span>&nbsp;&nbsp;{{this.detail.describe}}</p>
 				</div>
 				<div v-if="this.detail.origin">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">原产地:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.origin}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">原&nbsp;产&nbsp;地:</span>&nbsp;&nbsp;{{this.detail.origin}}</p>
 				</div>
 				<div v-if="this.detail.ingredient">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品材料:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.ingredient}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品材料:</span>&nbsp;&nbsp;{{this.detail.ingredient}}</p>
 				</div>
 				<div v-if="this.detail.expiration">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">保质期:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.expiration}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">保&nbsp;质&nbsp;期:</span>&nbsp;&nbsp;{{this.detail.expiration}}</p>
 				</div>
+        <div v-if="this.detail.Qcontent">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酒精含量:</span>&nbsp;&nbsp;{{this.detail.Qcontent}}</p>
+				</div>
+				<div v-if="this.detail.Tcontent">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">糖&nbsp;含&nbsp;量:</span>&nbsp;&nbsp;{{this.detail.Tcontent}}</p>
+				</div>
+				<div v-if="this.detail.Scontent">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酸&nbsp;含&nbsp;量:</span>&nbsp;&nbsp;{{this.detail.Scontent}}</p>
+				</div>
+				<div v-if="this.detail.color">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">颜&nbsp;&nbsp;色:</span>&nbsp;&nbsp;{{this.detail.color}}</p>
+				</div>
+				<div v-if="this.detail.smell">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">气&nbsp;&nbsp;味:</span>&nbsp;&nbsp;{{this.detail.smell}}</p>
+				</div>
+				<div v-if="this.detail.taste">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">口&nbsp;&nbsp;感:</span>&nbsp;&nbsp;{{this.detail.taste}}</p>
+        </div>
 				<div v-if="this.detail.storaged">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">储存方法:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.storaged}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">储存方法:</span>&nbsp;&nbsp;{{this.detail.storaged}}</p>
 				</div>
 				<div v-if="this.detail.match">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品搭配:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.match}}</p>
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品搭配:</span>&nbsp;&nbsp;{{this.detail.match}}</p>
 				</div>
 			</div>
 			<div class="pdetail-right">
@@ -182,25 +200,43 @@
 					<p class="mobilepdetail-leftp2" v-for="(item,index) in this.introduction" :key=index>{{item}}</p>
 				</div>
 				<div v-if="this.detail.name">
-					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">商品名称:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.name}}</p>
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">商品名称:</span>&nbsp;&nbsp;{{this.detail.name}}</p>
 				</div>
 				<div v-if="this.detail.describe">
-					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">产品描述:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.describe}}</p>
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">产品描述:</span>&nbsp;&nbsp;{{this.detail.describe}}</p>
 				</div>
 				<div v-if="this.detail.origin">
-					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">原产地:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.origin}}</p>
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">原&nbsp;产&nbsp;地:</span>&nbsp;&nbsp;{{this.detail.origin}}</p>
 				</div>
 				<div v-if="this.detail.ingredient">
-					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">产品材料:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.ingredient}}</p>
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">产品材料:</span>&nbsp;&nbsp;{{this.detail.ingredient}}</p>
 				</div>
 				<div v-if="this.detail.expiration">
-					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">保质期:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.expiration}}</p>
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">保&nbsp;质&nbsp;期:</span>&nbsp;&nbsp;{{this.detail.expiration}}</p>
 				</div>
+        <div v-if="this.detail.Qcontent">
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">酒精含量:</span>&nbsp;&nbsp;{{this.detail.Qcontent}}</p>
+				</div>
+				<div v-if="this.detail.Tcontent">
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">糖&nbsp;含&nbsp;量:</span>&nbsp;&nbsp;{{this.detail.Tcontent}}</p>
+				</div>
+				<div v-if="this.detail.Scontent">
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">酸&nbsp;含&nbsp;量:</span>&nbsp;&nbsp;{{this.detail.Scontent}}</p>
+				</div>
+				<div v-if="this.detail.color">
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">颜&nbsp;&nbsp;色:</span>&nbsp;&nbsp;{{this.detail.color}}</p>
+				</div>
+				<div v-if="this.detail.smell">
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">气&nbsp;&nbsp;味:</span>&nbsp;&nbsp;{{this.detail.smell}}</p>
+				</div>
+				<div v-if="this.detail.taste">
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">口&nbsp;&nbsp;感:</span>&nbsp;&nbsp;{{this.detail.taste}}</p>
+        </div>
 				<div v-if="this.detail.storaged">
-					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">储存方法:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.storaged}}</p>
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">储存方法:</span>&nbsp;&nbsp;{{this.detail.storaged}}</p>
 				</div>
 				<div v-if="this.detail.match">
-					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">产品搭配:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{this.detail.match}}</p>
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">产品搭配:</span>&nbsp;&nbsp;{{this.detail.match}}</p>
 				</div>
 			</div>
 			<div class="mobilepdetail-right">
