@@ -16,9 +16,13 @@
             </div>
         </div>
             <Nav navtitle='经典单品' v-if="relation.length"></Nav>
-            <div class="wraperwidth">
-                <div v-for="(item,index) in relation" :key=index class="box2">
-                    <img :src="item.imgurl">
+            <div class="wraperwidthtwo">
+                <div v-for="(item,index) in relation" :key=index>
+                    <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
+                    <div class="box2">
+                      <img :src="item.imgurl">
+                    </div>
+                    </router-link>
                     <span></span>
                 </div>
             </div>
@@ -39,9 +43,13 @@
             </div>
         </div>
             <Nav navtitle='经典单品' v-if="relation.length"></Nav>
-            <div class="midwraperwidth">
-                <div v-for="(item,index) in relation" :key=index class="midbox2">
+            <div class="midwraperwidthtwo">
+                <div v-for="(item,index) in relation" :key=index>
+                    <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
+                    <div class="midbox2">
                     <img :src="item.imgurl"><span></span>
+                    </div>
+                    </router-link>
                 </div>
             </div>
 	</div>
@@ -86,7 +94,7 @@ export default {
       id: '',
       cidsec1: '',
       fliter: {
-        limit: 4,
+        limit: 1000,
         page: 1,
         type: '',
         belong: ''
@@ -108,7 +116,7 @@ export default {
           .post('http://120.79.22.222:3000/products/list', this.fliter)
           .then(res => {
             this.relation = res.data.rows
-            this.fliter.type = res.data.rows.type
+            this.fliter.type = res.data.rows[0].type
             this.$http.get('http://120.79.22.222:3000/kind/data').then(res => {
               let rr = res.data[0].children[5].children.length
               for (let i = 0; i < rr; i++) {
@@ -178,7 +186,7 @@ export default {
 .title{
     margin-left: 45px;
     font-size: 24px;
-    margin-top: 50px;
+    margin-top: 20px;
     color: #ef9643;
 }
 .content{
@@ -187,14 +195,29 @@ export default {
     letter-spacing: 1px;
     font-size: 14px;
 }
+.wraperwidthtwo{
+    width: 1000px;
+    margin: 50px auto 0;
+    padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
 .box2{
-    width: 240px;
+    width: 230px;
     border: #dad8d6 1px solid;
-    height: 240px;
-    margin-right:10px;
+    height: 230px;
+    margin:5px;
     text-align: center;
+    overflow: hidden;
+    position: relative;
+    float: left;
 }
 .box2 img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
     height: 100%;
 }
 .box2 span{
@@ -211,7 +234,7 @@ export default {
     display: flex;
     padding-bottom: 50px;
 }
-.midwraperwidth:nth-of-type(4){
+.midwraperwidth:nth-of-type(4n){
     padding-bottom:0
 }
 .midbox{
@@ -253,15 +276,30 @@ export default {
     text-overflow: ellipsis;
     overflow: hidden;
 }
+.midwraperwidthtwo{
+    width: 1420px;
+    margin: 50px auto 0;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
 .midbox2{
     width: 330px;
     border: #dad8d6 1px solid;
     height: 330px;
     text-align: center;
-    margin-right:20px;
+    margin:10px;
+    overflow: hidden;
+    float: left;
+    line-height: 330px;
+    position: relative;
 }
 .midbox2 img{
-   height: 100%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    height: 100%;
 }
 .midbox2 span{
  display:inline-block;
@@ -282,13 +320,11 @@ export default {
 .mobilebox{
     width:96%;
     border: #dad8d6 1px solid;
-    max-height: 240px;
     padding-top:20px;
     position: relative;
     text-align:center;
     box-sizing: border-box;
     margin: 0 2%;
-    overflow:hidden;
 }
 .mobilebox span{
  display:inline-block;
@@ -327,8 +363,15 @@ export default {
     font-size: 0;
     float: left;
     text-align: center;
+    overflow: hidden;
+    position: relative;
 }
 .mobilebox2 img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
     height: 100%;
 }
 .mobilebox2 span{

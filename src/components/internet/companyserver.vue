@@ -1,7 +1,7 @@
 <template>
 <div>
 	<div v-if="width<1500&&width>640">
-		<Nav navtitle='公司服务'></Nav>
+		<Nav navtitle='营销网络'></Nav>
 		<div class='wraperwidth'>
 			<div v-for='(item,index) in server' :key=index class='serverbox' @mouseenter='moveup(item.num)' @mouseleave='movedown(item.num)'>
 					<div class='serverbox1'><img :src='item.imgurl'></div>
@@ -14,7 +14,7 @@
 		</div>
 	</div>
   <div v-if="width>=1500">
-		<Nav navtitle='公司服务'></Nav>
+		<Nav navtitle='营销网络'></Nav>
 		<div class='midwraperwidth'>
 			<div v-for='(item,index) in server' :key=index class='midserverbox' @mouseenter='moveup(item.num)' @mouseleave='movedown(item.num)'>
 					<div class='midserverbox1'><img :src='item.imgurl'></div>
@@ -27,7 +27,7 @@
 		</div>
 	</div>
   <div v-if="width<=640">
-		<Nav navtitle='公司服务'></Nav>
+		<Nav navtitle='营销网络'></Nav>
 		<div class='miobilewraperwidth'>
 			<div v-for='(item,index) in server' :key=index class='miobileserverbox'>
 					<div class='miobileserverbox1'><img :src='item.imgurl' class="miobilefontstyle"></div>

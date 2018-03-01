@@ -595,10 +595,16 @@ p {
   height: 100%;
   text-align:center;
   box-sizing: border-box;
+  position: relative;
 }
 
 .serverbox1 img {
-  height: 100%;
+   position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    height: 100%;
 }
 .serverbox1 span{
  display:inline-block;

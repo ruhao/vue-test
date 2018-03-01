@@ -524,10 +524,16 @@ export default {
   text-align: center;
   height: 245px;
   text-align: center;
+  position: relative;
 }
 
 .serverbox1 img {
-  height: 100%;
+  position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    height: 100%;
 }
 
 .serverbox2 {

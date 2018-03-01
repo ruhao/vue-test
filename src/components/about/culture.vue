@@ -12,9 +12,10 @@
 						<img :src="item.bgimg" />
 						<div class="honorcontent">
 							<p class="honortitle">{{item.title}}</p>
-							<p class="honorcontentp" v-for="(it,ind) in item.content" :key=ind>
+							<span class="honorcontentp" v-for="(it,ind) in item.content" :key=ind>
 								{{it}}
-							</p>
+                <br />
+							</span>
 						</div>
 					</div>
 				</div>
@@ -115,21 +116,20 @@ export default {
     this.$http
       .post('http://120.79.22.222:3000/about/list', this.fliter)
       .then(res => {
-        console.log(res)
         let ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {
+          res.data.rows[i].content = res.data.rows[i].content.trim()
           res.data.rows[i].content = res.data.rows[i].content.replace(
             /；/g,
             ';'
-          ) // 进行替换，把中英文的；统一起来
+          ).trim() // 进行替换，把中英文的；统一起来
           res.data.rows[i].content = res.data.rows[i].content.split(';') // 进行分割 使语句分行显示
           let ll = res.data.rows[i].content.length
-          for (let j = 0; j < ll; j++) {
+          for (let j = 0; j < ll - 1; j++) {
             res.data.rows[i].content[j] = res.data.rows[i].content[j] + ';' // 进行；好统一还原
           }
           res.data.rows[i].num = i
         }
-
         this.fliter.data6 = res.data.rows
       })
   },
@@ -178,22 +178,21 @@ img {
 
 .honor2 .honorcontent {
   position: absolute;
-  width: 100%;
+  width: 435px;
   height: 100%;
+  padding: 0 30px 0 30px;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index:12;
 }
 .honortitle {
   margin-left: 50px;
-  margin-top: 35px;
+  margin-top: 20px;
   font-size: 24px;
   color: #ee882a;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 }
 .honorcontentp {
-  margin-left: 50px;
-  margin-right: 50px;
   font-size: 14px;
   line-height: 25px;
   color: #5b6270;

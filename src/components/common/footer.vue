@@ -5,7 +5,7 @@
 			<ul class='index-footer-method'>
 				<li v-for='(item,index) in contact' :key=index class='contact-footer-li'><img :src='item.icon'><span class='contact-span'>{{item.value}}</span></li>
 			</ul>
-			<p class='contact-footer-bottom'>老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;123456789</p>
+			<p class='contact-footer-bottom'>老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;浙ICP备15014783号-2</p>
 		</div>
 	</div>
 	<div class='midcontact-footer' v-if="width>=1500">
@@ -13,7 +13,7 @@
 			<ul class='midindex-footer-method'>
 				<li v-for='(item,index) in contact' :key=index class='midcontact-footer-li'><img :src='item.icon'><span class='midcontact-span'>{{item.value}}</span></li>
 			</ul>
-			<p class='midcontact-footer-bottom'>老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;123456789</p>
+			<p class='midcontact-footer-bottom'>老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;浙ICP备15014783号-2</p>
 		</div>
 	</div>
   <div class='mobilecontact-footer' v-if="width<=640">
@@ -21,7 +21,7 @@
 			<ul class='mobileindex-footer-method'>
 				<li v-for='(item,index) in contact' :key=index class='mobilecontact-footer-li'><img :src='item.icon'><span class='mobilecontact-span'>{{item.value}}</span></li>
 			</ul>
-			<p class='mobilecontact-footer-bottom'>老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;123456789</p>
+			<p class='mobilecontact-footer-bottom'>老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;浙ICP备15014783号-2</p>
 		</div>
 	</div>
   </div>
@@ -47,7 +47,7 @@ export default {
         },
         {
           icon: contact3,
-          value: '邮件：15868121781@qq.com'
+          value: '邮件：LWC@laowaicang.com'
         },
         {
           icon: contact4,

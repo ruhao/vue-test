@@ -5,15 +5,15 @@
 		<div class='wraperwidth'>
 			<div class='hrroute'>
 				<router-link to='/internet'>
-					<div class='heroutebox1 navimg' @mouseenter='imgchange2' @mouseleave='imgchange3'>
-						<img src='../../../images/network1.jpg' id='hrimg1' />
-						<img src='../../../images/network1a.jpg' id='hrimg2' />
+					<div class='heroutebox1 navimg' @mouseenter='imgchange' @mouseleave='imgchange3'>
+            <img src='../../../images/network2.jpg' id='hrimg3' />
+						<img src='../../../images/network2a.jpg' id='hrimg4' />
 					</div>
 				</router-link>
 				<router-link to='/internet/server'>
-					<div class='heroutebox1 navimg' @mouseenter='imgchange' @mouseleave='imgchange1'>
-						<img src='../../../images/network2.jpg' id='hrimg3' />
-						<img src='../../../images/network2a.jpg' id='hrimg4' />
+					<div class='heroutebox1 navimg' @mouseenter='imgchange2' @mouseleave='imgchange1'>
+						<img src='../../../images/network1.jpg' id='hrimg1' />
+						<img src='../../../images/network1a.jpg' id='hrimg2' />
 					</div>
 				</router-link>
 			</div>
@@ -28,15 +28,15 @@
 		<div class='midwraperwidth'>
 			<div class='midhrroute'>
 				<router-link to='/internet'>
-					<div class='heroutebox1' @mouseenter='imgchange2' @mouseleave='imgchange3'>
-						<img src='../../../images/network1.jpg' id='hrimg1' />
-						<img src='../../../images/network1a.jpg' id='hrimg2' />
+					<div class='heroutebox1' @mouseenter='imgchange' @mouseleave='imgchange3'>
+            <img src='../../../images/network2.jpg' id='hrimg3' />
+						<img src='../../../images/network2a.jpg' id='hrimg4' />
 					</div>
 				</router-link>
 				<router-link to='/internet/server'>
-					<div class='heroutebox1' @mouseenter='imgchange' @mouseleave='imgchange1'>
-						<img src='../../../images/network2.jpg' id='hrimg3' />
-						<img src='../../../images/network2a.jpg' id='hrimg4' />
+					<div class='heroutebox1' @mouseenter='imgchange2' @mouseleave='imgchange1'>
+						<img src='../../../images/network1.jpg' id='hrimg1' />
+						<img src='../../../images/network1a.jpg' id='hrimg2' />
 					</div>
 				</router-link>
 			</div>

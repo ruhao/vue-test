@@ -193,7 +193,7 @@
 					<i><img :src="cooperationf[0]" id="ullongone" @click="ullongone"></i>
 					<i><img :src="cooperationf[1]" id="ullongtwo" @click="ullongtwo"></i>
 				</div>
-				<p class="index-cooperation-footer">老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;123456789</p>
+				<p class="index-cooperation-footer">老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;浙ICP备15014783号-2</p>
 			</div>
 		</div>
 	</div>
@@ -390,7 +390,7 @@
 					<i><img :src="cooperationf[0]" id="ullongthree" @click="ullongthree"></i>
 					<i><img :src="cooperationf[1]" id="ullongfour" @click="ullongfour"></i>
 				</div>
-				<p class="midindex-cooperation-footer">老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;123456789</p>
+				<p class="midindex-cooperation-footer">老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;浙ICP备15014783号-2</p>
 			</div>
 		</div>
 	</div>
@@ -554,7 +554,7 @@
 				</div>
 			</div>
 		</div>
-		<p class="mobileindex-cooperation-footer">老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;123456789</p>
+		<p class="mobileindex-cooperation-footer">老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;浙ICP备15014783号-2</p>
     </div>
   </div>
 </template>
@@ -615,7 +615,7 @@ export default {
         },
         {
           icon: indexcontact3,
-          value: '邮件：15868121781@qq.com'
+          value: '邮件：LWC@laowaicang.com'
         },
         {
           icon: indexcontact4,

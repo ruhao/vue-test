@@ -14,14 +14,19 @@
           </router-link>
         </li>
       </ul>
+      <div v-if="pages[index]>1">
        <div class="wrapmore" v-if="content[index].length <= 12">
         <i class="more" @click="getmore(index)">more+ </i>
        </div>
         <div class="wrapmore" v-else>
-        <div class="twobutton">
+        <div class="twobutton" v-if="content[index].length % 12==0">
           <i class="more" @click="getmore(index)">more+ </i>
           <i class="more" @click="getless(index)">less- </i>
         </div>
+      </div>
+      <div class="wrapmore" v-if="content[index].length % 12 != 0">
+        <i class="more" @click="getless(index)">less- </i>
+       </div>
       </div>
     </div>
     </div>
@@ -40,14 +45,19 @@
           </router-link>
         </li>
       </ul>
+       <div v-if="pages[index]>1">
        <div class="midwrapmore" v-if="content[index].length <= 12">
         <i class="midmore" @click="getmore(index)">more+ </i>
        </div>
         <div class="midwrapmore" v-else>
-        <div class="midtwobutton">
+        <div class="midtwobutton" v-if="content[index].length % 12==0">
           <i class="midmore" @click="getmore(index)">more+ </i>
           <i class="midmore" @click="getless(index)">less- </i>
         </div>
+      </div>
+      <div class="midwrapmore" v-if="content[index].length % 12 != 0">
+        <i class="midmore" @click="getless(index)">less- </i>
+       </div>
       </div>
     </div>
     </div>
@@ -226,6 +236,7 @@ ul{
   display: block;
   color:#ee882a;
   margin: 20px auto 0;
+  display: block;
 }
 .midwrapwidth{
   width: 1420px;

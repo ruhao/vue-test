@@ -67,7 +67,6 @@ p {
   font-size: 18px;
   flex: 1;
   color: #f1662c;
-  text-shadow: 1px 1px 1px #f1662c;
 }
 
 .contact-title img {
@@ -92,7 +91,6 @@ p {
   font-size: 24px;
   flex: 1;
   color: #f1662c;
-  text-shadow: 1px 1px 1px #f1662c;
 }
 
 .midcontact-title img {
@@ -116,7 +114,6 @@ p {
   font-size: 14px;
   color: #f1662c;
   margin-top: 0px;
-  text-shadow: 0.5px 0.5px 0.5px #f1662c;
 }
 
 .mobilecontact-middle img {

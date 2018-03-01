@@ -67,7 +67,7 @@
 					<router-link to='/product' tag='span' class="midnavfont" active-class="midrouteactive">产品业务</router-link>
 				</li>
 				<li class="midheadernavleft">
-					<router-link to='/internet' tag='span' class="midnavfont" active-class="midrouteactive">网络与服务</router-link>
+					<router-link to='/internet' tag='span' class="midnavfont" active-class="midrouteactive">营销网络</router-link>
 				</li>
 				<li class="midheadernavmid">
 					<img src="../images/logo.png"></li>
@@ -170,7 +170,7 @@
 					<router-link to='/product' tag='span' class="mobilenavfont" active-class="mobilerouteactive">产品业务</router-link>
 				</li>
 				<li class="mobileheadernavleft">
-					<router-link to='/internet' tag='span' class="mobilenavfont" active-class="mobilerouteactive">网络与服务</router-link>
+					<router-link to='/internet' tag='span' class="mobilenavfont" active-class="mobilerouteactive">营销网络</router-link>
 				</li>
 				<li class="mobileheadernavleft">
 					<router-link to='/news' tag='span' class="mobilenavfont" active-class="mobilerouteactive">新闻动态</router-link>
