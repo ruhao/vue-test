@@ -177,6 +177,7 @@ export default {
   text-align: center;
   font-size: 18px;
   color:#ee882a;
+  margin-bottom: 20px;
 }
 ul{
   list-style: none;
@@ -249,6 +250,7 @@ ul{
   margin-top: 70px;
 }
 .midletter{
+  margin-bottom: 30px;
   text-align: center;
   font-size: 18px;
   color:#ee882a;

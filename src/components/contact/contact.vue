@@ -12,7 +12,7 @@
 				<img src='../../../images/contact1.jpg' class="contact-content-top-img"/>
 				<div class='contact-content-tr'>
 					<div class='contact-content-tc'>
-						<h3>意大利总部</h3>
+						<h3>中国总部</h3>
 						<ul class='index-contact-method'>
 							<li v-for='(item,index) in contact' :key=index><img :src='item.icon'><span class='index-contact-span'>{{item.value}}</span></li>
 						</ul>
@@ -25,7 +25,7 @@
 					<div class='contact-content-tc'>
 						<h3>意大利总部</h3>
 						<ul class='index-contact-method'>
-							<li v-for='(item,index) in contact' :key=index><img :src='item.icon'><span class='index-contact-span'>{{item.value}}</span></li>
+							<li v-for='(item,index) in contact1' :key=index><img :src='item.icon'><span class='index-contact-span'>{{item.value}}</span></li>
 						</ul>
 					</div>
 				</div>
@@ -50,7 +50,7 @@
 				<img src='../../../images/contact1.jpg' />
 				<div class='midcontact-content-tr'>
 					<div class='midcontact-content-tc'>
-						<h3>意大利总部</h3>
+						<h3>中国总部</h3>
 						<ul class='midindex-contact-method'>
 							<li v-for='(item,index) in contact' :key=index><img :src='item.icon'><span class='midindex-contact-span'>{{item.value}}</span></li>
 						</ul>
@@ -63,7 +63,7 @@
 					<div class='midcontact-content-tc'>
 						<h3>意大利总部</h3>
 						<ul class='midindex-contact-method'>
-							<li v-for='(item,index) in contact' :key=index><img :src='item.icon'><span class='midindex-contact-span'>{{item.value}}</span></li>
+							<li v-for='(item,index) in contact1' :key=index><img :src='item.icon'><span class='midindex-contact-span'>{{item.value}}</span></li>
 						</ul>
 					</div>
 				</div>
@@ -93,20 +93,26 @@ export default {
       width: 1920,
       contact: [
         {
-          icon: indexcontact1,
-          value: '手机：86-15868121781'
-        },
-        {
           icon: indexcontact2,
-          value: '座机：86-010-15868121781'
+          value: '座机：0571-88305872'
         },
         {
           icon: indexcontact3,
-          value: '邮件：15868121781@qq.com'
+          value: '邮件：laowaicang@laowaicang.com'
         },
         {
           icon: indexcontact4,
           value: '地址：中国杭州 滨江区 滨盛路1688号'
+        }
+      ],
+      contact1: [
+        {
+          icon: indexcontact1,
+          value: '电话：39320 3933535'
+        },
+        {
+          icon: indexcontact4,
+          value: '地址：Via Varese,2/a 21047 Saronno(VA),Italy'
         }
       ]
     }

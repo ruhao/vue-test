@@ -18,7 +18,7 @@
 				</router-link>
 			</div>
 		</div>
-		<div>
+		<div class="wraperwidth">
 			<router-view></router-view>
 		</div>
 		<Foot></Foot>
@@ -41,7 +41,7 @@
 				</router-link>
 			</div>
 		</div>
-		<div>
+		<div class="midwraperwidth-box">
 			<router-view></router-view>
 		</div>
 		<Foot></Foot>
@@ -220,5 +220,10 @@ export default {
 }
 .mobileimg img{
   width: 100%;
+}
+.midwraperwidth-box {
+  width: 1420px;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 </style>

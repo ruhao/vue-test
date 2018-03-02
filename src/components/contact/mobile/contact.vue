@@ -10,7 +10,7 @@
 				<img src='../../../../images/contact1.jpg' />
 				<div class='midcontact-content-tr'>
 					<div class='midcontact-content-tc'>
-						<h3>意大利总部</h3>
+						<h3>中国总部</h3>
 						<ul class='midindex-contact-method'>
 							<li v-for='(item,index) in contact' :key=index><img :src='item.icon'><span class='midindex-contact-span'>{{item.value}}</span></li>
 						</ul>
@@ -23,7 +23,7 @@
 					<div class='midcontact-content-tc'>
 						<h3>意大利总部</h3>
 						<ul class="midindex-contact-method">
-						<li v-for="(item,index) in contact" :key=index><img :src="item.icon"><span class="midindex-contact-span">{{item.value}}</span></li>
+						<li v-for="(item,index) in contact1" :key=index><img :src="item.icon"><span class="midindex-contact-span">{{item.value}}</span></li>
 					</ul>
 					</div>
 				</div>

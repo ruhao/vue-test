@@ -39,15 +39,15 @@ export default {
       contact: [
         {
           icon: contact1,
-          value: '手机：86-15868121781 '
+          value: '手机：17767052082 '
         },
         {
           icon: contact2,
-          value: '座机：86-010-15868121781'
+          value: '座机：0571-88305872'
         },
         {
           icon: contact3,
-          value: '邮件：LWC@laowaicang.com'
+          value: '邮件：laowaicang@laowaicang.com'
         },
         {
           icon: contact4,

@@ -1,45 +1,99 @@
 <template>
 <div>
 	<div v-if="width<1500&&width>640">
-		<Nav navtitle='营销网络'></Nav>
-		<div class='wraperwidth'>
-			<div v-for='(item,index) in server' :key=index class='serverbox' @mouseenter='moveup(item.num)' @mouseleave='movedown(item.num)'>
-					<div class='serverbox1'><img :src='item.imgurl'></div>
-					<div class='serverbox2'>
-						<p class='serverboxp1'>{{item.title}}</p>
-						<p class='serverboxp2'>{{item.content}}</p>
-					</div>
-			</div>
-			<div style='clear: both;'></div>
-		</div>
+     <Nav navtitle='营销网络'></Nav>
+    <div class='wrapwidth'></div>
+    <div class="wraperwidth" v-for="(item,index) in typeone" :key=index>
+      <div v-if="flag[index]==='true'">
+      <p class="letter">{{title[index]}}</p>
+      <ul>
+        <li v-for="(it,ind) in content[index]" :key=ind class="brandlist">
+          <router-link :to="'/brand/branddetail/'+it._id" class="fontstyle">
+          <div class="brandcontent"><img :src="it.imgurl"></div>
+          <div class="brandcontent1"><p>{{it.name}}</P></div>
+          </router-link>
+        </li>
+      </ul>
+      <div v-if="pages[index]>1">
+       <div class="wrapmore" v-if="content[index].length <= 12">
+        <i class="more" @click="getmore(index)">more+ </i>
+       </div>
+        <div class="wrapmore" v-else>
+        <div class="twobutton" v-if="content[index].length % 12==0">
+          <i class="more" @click="getmore(index)">more+ </i>
+          <i class="more" @click="getless(index)">less- </i>
+        </div>
+      </div>
+      <div class="wrapmore" v-if="content[index].length % 12 != 0">
+        <i class="more" @click="getless(index)">less- </i>
+       </div>
+      </div>
+    </div>
+    </div>
 	</div>
   <div v-if="width>=1500">
-		<Nav navtitle='营销网络'></Nav>
-		<div class='midwraperwidth'>
-			<div v-for='(item,index) in server' :key=index class='midserverbox' @mouseenter='moveup(item.num)' @mouseleave='movedown(item.num)'>
-					<div class='midserverbox1'><img :src='item.imgurl'></div>
-					<div class='serverbox2 midserverbox2'>
-						<p class='midserverboxp1'>{{item.title}}</p>
-						<p class='midserverboxp2'>{{item.content}}</p>
-					</div>
-			</div>
-			<div style='clear: both;'></div>
-		</div>
+     <Nav navtitle='营销网络'></Nav>
+    <div class='midwrapwidth'></div>
+    <div class="midwraperwidth" v-for="(item,index) in typeone" :key=index>
+      <div v-if="flag[index]==='true'">
+      <p class="midletter">{{title[index]}}</p>
+      <ul>
+        <li v-for="(it,ind) in content[index]" :key=ind class="midbrandlist">
+          <router-link :to="'/brand/branddetail/'+it._id" class="midfontstyle">
+          <div class="midbrandcontent"><img :src="it.imgurl"></div>
+          <div class="midbrandcontent1"><p>{{it.name}}</P></div>
+          </router-link>
+        </li>
+      </ul>
+       <div v-if="pages[index]>1">
+       <div class="midwrapmore" v-if="content[index].length <= 12">
+        <i class="midmore" @click="getmore(index)">more+ </i>
+       </div>
+        <div class="midwrapmore" v-else>
+        <div class="midtwobutton" v-if="content[index].length % 12==0">
+          <i class="midmore" @click="getmore(index)">more+ </i>
+          <i class="midmore" @click="getless(index)">less- </i>
+        </div>
+      </div>
+      <div class="midwrapmore" v-if="content[index].length % 12 != 0">
+        <i class="midmore" @click="getless(index)">less- </i>
+       </div>
+      </div>
+    </div>
+    </div>
 	</div>
   <div v-if="width<=640">
-		<Nav navtitle='营销网络'></Nav>
-		<div class='miobilewraperwidth'>
-			<div v-for='(item,index) in server' :key=index class='miobileserverbox'>
-					<div class='miobileserverbox1'><img :src='item.imgurl' class="miobilefontstyle"></div>
-					<div class='miobileserverbox2 miobileindex-product-content-box1'>
-						<p class='miobileserverboxp1'>{{item.title}}</p>
-						<p class='miobileserverboxp2'>{{item.content}}</p>
-					</div>
-			</div>
-			<div style='clear: both;'></div>
-		</div>
+         <Nav navtitle='营销网络'></Nav>
+    <div class='mobilewrapwidth'></div>
+    <div class="mobilewraperwidth" v-for="(item,index) in typeone" :key=index>
+      <div v-if="flag[index]==='true'">
+      <p class="mobileletter">{{title[index]}}</p>
+      <ul class="moul">
+        <li v-for="(it,ind) in content[index]" :key=ind class="mobilebrandlist">
+          <router-link :to="'/brand/branddetail/'+it._id" class="mobilefontstyle">
+          <div class="mobilebrandcontent"><img :src="it.imgurl"></div>
+          <div class="mobilebrandcontent1"><p>{{it.name}}</P></div>
+          </router-link>
+        </li>
+      </ul>
+      <div v-if="pages[index]>1">
+       <div class="mobilewrapmore" v-if="content[index].length <= 12">
+        <i class="mobilemore" @click="getmore(index)">more+ </i>
+       </div>
+        <div class="mobilewrapmore" v-else>
+        <div class="mobiletwobutton" v-if="content[index].length % 12==0">
+          <i class="mobilemore" @click="getmore(index)">more+ </i>
+          <i class="mobilemore" @click="getless(index)">less- </i>
+        </div>
+      </div>
+      <div class="mobilewrapmore" v-if="content[index].length % 12 != 0">
+        <i class="mobilemore" @click="getless(index)">less- </i>
+       </div>
+      </div>
+    </div>
+    </div>
 	</div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -47,29 +101,50 @@ import Nav from '../common/nav.vue'
 export default {
   data () {
     return {
-      server: [],
       width: 1920,
+      typeone: ['1', '2', '3'],
+      title: ['华东', '华南', '其 他'],
+      flag: [],
+      pages: [],
+      content: [],
       fliter: {
         limit: 12,
-        page: 1
+        page: 1,
+        type: ''
       }
     }
   },
   methods: {
-    getData () {
-      this.$http.post('http://120.79.22.222:3000/internet/list').then(res => {
-        var ii = res.data.rows.length
-        for (let i = 0; i < ii; i++) {
-          res.data.rows[i].num = i
-          this.server.push(res.data.rows[i])
+    getData (index) {
+      this.fliter.type = this.typeone[index]
+      this.$http.post('http://120.79.22.222:3000/intmarket/list', this.fliter).then(res => {
+        this.pages.push(res.data.pages)
+        this.content.push(res.data.rows)
+        if (res.data.rows.length > 0) {
+          this.flag.push('true')
+        } else {
+          this.flag.push('flase')
+        }
+        if (Number(this.typeone[index]) < 5) {
+          this.getData(index + 1)
         }
       })
     },
-    moveup (value) {
-      document.getElementsByClassName('serverbox2')[value].id = 'active'
+    getmore (index) {
+      this.fliter.limit = this.fliter.limit + 12
+      this.fliter.type = this.typeone[index]
+      this.$http.post('http://120.79.22.222:3000/intmarket/list', this.fliter).then(res => {
+        this.content[index] = res.data.rows
+        this.flag.push('flase')
+      })
     },
-    movedown (value) {
-      document.getElementsByClassName('serverbox2')[value].id = ''
+    getless (index) {
+      this.fliter.limit = 12
+      this.fliter.type = this.typeone[index]
+      this.$http.post('http://120.79.22.222:3000/intmarket/list', this.fliter).then(res => {
+        this.content[index] = res.data.rows
+        this.flag.push('flase')
+      })
     }
   },
   components: {
@@ -77,211 +152,243 @@ export default {
   },
   created () {
     this.width = document.documentElement.offsetWidth
-    this.getData()
+    this.getData(0)
   },
   updated () {
     window.onresize = () => {
       this.width = document.documentElement.offsetWidth
-    }
-    if (this.width <= 640) {
-      let ii = window.getComputedStyle(document.getElementsByClassName('miobileindex-product-content-box1')[0], null)['width']
-      let oo = document.getElementsByClassName('miobileindex-product-content-box1').length
-      for (let i = 0; i < oo; i++) {
-        document.getElementsByClassName('miobileindex-product-content-box1')[i].style.height = ii
-      }
     }
   }
 }
 </script>
 
 <style scoped>
-p {
-  margin: 0;
-  padding: 0;
-}
-
-.wraperwidth {
+.wrapwidth{
   width: 1000px;
-  margin: 45px auto 0;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 0.3px 0.3px 0.3px black;
 }
-
-.serverbox {
-  width: 250px;
-  position: relative;
-  height: 250px;
-  float: left;
-  cursor: pointer;
+.wraperwidth{
+  width: 1000px;
+  margin-top: 50px;
+}
+.letter{
+  text-align: center;
+  font-size: 18px;
+  color:#ee882a;
+  margin-bottom: 20px;
+}
+ul{
+  list-style: none;
   overflow: hidden;
 }
-
-.serverbox1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-.serverbox1{
-   height: 250px;
-}
-.serverbox1 img{
-  height: 100%;
-}
-.serverbox1a{
+.brandlist{
+  float: left;
+  width: 180px;
+  margin-right:20px;
+  margin-bottom: 20px;
+  z-index: 10;
   position: relative;
-  z-index: 14;
 }
-.serverbox .serverbox2 {
-  position: absolute;
-  top: 250px;
-  left: 0px;
-  background: #f9f1e9;
-  width: 250px;
-  height: 250px;
-  opacity: 1;
-  transition: all 0.5s;
-  z-index: 11;
-}
-
-.serverboxp1 {
-  margin-top: 40px;
-  margin-left: 30px;
-  color: #ee882a;
-  text-shadow: 0.5px 0.5px 0.5px #ee882a;
-  position: relative;
-  z-index: 10px;
-  opacity: 1;
+.brandcontent{
+  width:180px;
+  height: 100px;
+  border: 1px #cccccc solid;
+  border-bottom: 0;
+  text-align: center;
+  padding: 5px 0;
   cursor: pointer;
-  overflow : hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  box-sizing: border-box;
+   overflow: hidden;
 }
-
-.serverboxp2 {
-  margin: 40px 30px 0;
-  font-size: 12px;
-  line-height: 25px;
-  color: #464c5b;
-  overflow : hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+.brandcontent img{
+  max-width: 155px;
 }
-.midwraperwidth {
+.brandcontent1{
+  cursor: pointer;
+  color: black;
+  width:180px;
+  border: 1px #cccccc solid;
+  text-align: center;
+  height: 40px;
+  box-sizing: border-box;
+  line-height: 40px;
+}
+.fontstyle{
+ text-decoration: none;
+}
+.wrapmore{
+  text-align: center;
+}
+.twobutton{
+  width: 160px;
+  margin: 0 auto;
+  display: flex;
+}
+.more{
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+  background: #f9f1e9;
+  font-style: normal;
+  cursor: pointer;
+  display: block;
+  color:#ee882a;
+  margin: 20px auto 0;
+  display: block;
+}
+.midwrapwidth{
   width: 1420px;
-  margin: 45px auto 0;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 0.3px 0.3px 0.3px black;
 }
-
-.midserverbox {
-  width: 350px;
-  position: relative;
-  height: 350px;
+.midwraperwidth{
+  width: 1420px;
+  margin-top: 70px;
+}
+.midletter{
+  text-align: center;
+  font-size: 18px;
+  color:#ee882a;
+  margin-bottom: 20px;
+}
+.midbrandlist{
   float: left;
+  width: 200px;
+  margin-right:20px;
+  margin-bottom: 20px;
+  z-index: 10;
+  position: relative;
+}
+.midbrandcontent{
+  width:200px;
+  border: 1px #cccccc solid;
+  border-bottom: 0;
+  text-align: center;
+  padding: 5px 0;
   cursor: pointer;
+  height: 100px;
   overflow: hidden;
 }
-.midserverbox1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.midbrandcontent img{
+  max-width: 200px;
 }
-
-.midserverbox2 {
-  position: absolute;
-  top: 350px;
-  left: 0px;
-  background: #f9f1e9;
-  width: 338px;
-  height: 338px;
-  opacity: 0;
-  transition: all 0.5s;
-  z-index: 11;
-}
-
-.midserverboxp1 {
-  margin-top: 40px;
-  margin-left: 30px;
-  color: #ee882a;
-  text-shadow: 0.5px 0.5px 0.5px #ee882a;
-  position: relative;
-  z-index: 10px;
-  opacity: 1;
+.midbrandcontent1{
   cursor: pointer;
-  overflow : hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  color: black;
+  width:200px;
+  border: 1px #cccccc solid;
+  text-align: center;
+  height: 40px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  line-height: 40px;;
 }
-
-.midserverboxp2 {
-  margin: 80px 30px 0;
-  font-size: 12px;
-  line-height: 25px;
-  color: #464c5b;
-  overflow : hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+.midfontstyle{
+ text-decoration: none;
 }
-.miobilewraperwidth {
-  width: 100%;
+.midwrapmore{
+  text-align: center;
 }
-
-.miobileserverbox {
-  width: 96%;
-  position: relative;
-  cursor: pointer;
-  padding: 0 2%;
-  margin-top: 10px;
-  font-size: 0;
-  overflow: hidden;
+.midtwobutton{
+  width: 160px;
+  margin: 0 auto;
+  display: flex;
 }
-
-.miobileserverbox1 {
-  width: 50%;
-  font-size: 0;
-  float: left;
-}
-.miobileserverbox1 img{
-  width: 100%;
-}
-
-.miobileserverbox2 {
+.midmore{
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
   background: #f9f1e9;
-  width: 50%;
-  float: left;
+  font-style: normal;
+  cursor: pointer;
+  display: block;
+  color:#ee882a;
+  margin: 20px auto 0;
 }
-
-.miobileserverboxp1 {
-  margin-top: 10px;
-  margin-left: 30px;
-  color: #ee882a;
-  text-shadow: 0.5px 0.5px 0.5px #ee882a;
+.mobilewrapwidth{
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
   font-size: 14px;
-  overflow : hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
 }
-
-.miobileserverboxp2 {
-  margin: 20px 20px 0;
-  font-size: 12px;
-  line-height: 25px;
-  color: #464c5b;
-  text-indent: 1em;
-  overflow : hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+.mobilewraperwidth{
+  width: 100%;
+  margin-top: 20px;
 }
-#active {
-  top: 0px;
-  opacity: 0.8;
+.mobileletter{
+  text-align: center;
+  font-size: 18px;
+  color:#ee882a;
+}
+.moul{
+  list-style: none;
+  overflow: hidden;
+  padding: 0 5%;
+}
+.mobilebrandlist{
+  float: left;
+  width: 21%;
+  margin-right:10px;
+  margin-bottom: 10px;
+  z-index: 10;
+  position: relative;
+}
+.mobilebrandcontent{
+  width:100%;
+  border: 1px #cccccc solid;
+  border-bottom: 0;
+  text-align: center;
+  padding: 1% 0;
+  cursor: pointer;
+  height: 40px;
+  overflow: hidden;
+}
+.mobilebrandcontent img{
+  max-width: 95%;
+}
+.mobilebrandcontent1{
+  cursor: pointer;
+  color: black;
+  width:100%;
+  border: 1px #cccccc solid;
+  text-align: center;
+  height: 20px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-weight: 600;
+  line-height: 20px;
+  font-size: 10px;
+}
+.mobilefontstyle{
+ text-decoration: none;
+}
+.mobilewrapmore{
+  text-align: center;
+}
+.mobiletwobutton{
+  width: 120px;
+  margin: 0 auto;
+  display: flex;
+}
+.mobilemore{
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  background: #f9f1e9;
+  font-style: normal;
+  cursor: pointer;
+  display: block;
+  color:#ee882a;
+  margin: 10px auto 0;
+  position: relative;
+  z-index: 14
 }
 </style>
