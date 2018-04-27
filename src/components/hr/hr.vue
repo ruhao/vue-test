@@ -208,7 +208,7 @@ export default {
   padding: 0 40px;
 }
 .stp {
-  margin-top: 45px;
+  margin-top: 15px;
   font-size: 14px;
   color: #666666;
   line-height: 25px;
@@ -230,7 +230,7 @@ export default {
   margin: 0 auto;
 }
 .midstp {
-  margin-top: 45px;
+  margin-top: 15px;
   font-size: 14px;
   color: #666666;
   line-height: 25px;

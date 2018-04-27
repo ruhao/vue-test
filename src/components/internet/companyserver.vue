@@ -3,7 +3,7 @@
 	<div v-if="width<1500&&width>640">
      <Nav navtitle='营销网络'></Nav>
     <div class='wrapwidth'></div>
-    <div class="wraperwidth" v-for="(item,index) in typeone" :key=index>
+    <div class="wraperwidth" v-for="(item,index) in typeone" :key=index v-if="isopen.length>0">
       <div v-if="flag[index]==='true'">
       <p class="letter">{{title[index]}}</p>
       <ul>
@@ -30,11 +30,14 @@
       </div>
     </div>
     </div>
+    <div class="wraperwidth" v-if="isopen.length<1">
+         <p class="expect">敬请期待</p>
+      </div>
 	</div>
   <div v-if="width>=1500">
      <Nav navtitle='营销网络'></Nav>
     <div class='midwrapwidth'></div>
-    <div class="midwraperwidth" v-for="(item,index) in typeone" :key=index>
+    <div class="midwraperwidth" v-for="(item,index) in typeone" :key=index v-if="isopen.length>0">
       <div v-if="flag[index]==='true'">
       <p class="midletter">{{title[index]}}</p>
       <ul>
@@ -61,11 +64,14 @@
       </div>
     </div>
     </div>
+    <div class="midwraperwidth" v-if="isopen.length<1">
+         <p class="expect">敬请期待</p>
+      </div>
 	</div>
   <div v-if="width<=640">
          <Nav navtitle='营销网络'></Nav>
     <div class='mobilewrapwidth'></div>
-    <div class="mobilewraperwidth" v-for="(item,index) in typeone" :key=index>
+    <div class="mobilewraperwidth" v-for="(item,index) in typeone" :key=index v-if="isopen.length>0">
       <div v-if="flag[index]==='true'">
       <p class="mobileletter">{{title[index]}}</p>
       <ul class="moul">
@@ -92,6 +98,9 @@
       </div>
     </div>
     </div>
+    <div class="mobilewrapwidth" v-if="isopen.length<1">
+         <p class="mobileexpect">敬请期待</p>
+      </div>
 	</div>
   </div>
 </template>
@@ -102,11 +111,12 @@ export default {
   data () {
     return {
       width: 1920,
-      typeone: ['1', '2', '3'],
-      title: ['华东', '华南', '其 他'],
+      typeone: ['1', '2', '3', '4'],
+      title: ['华东', '华南', '华西', '华北'],
       flag: [],
       pages: [],
       content: [],
+      isopen: [],
       fliter: {
         limit: 12,
         page: 1,
@@ -117,15 +127,18 @@ export default {
   methods: {
     getData (index) {
       this.fliter.type = this.typeone[index]
-      this.$http.post('http://120.79.22.222:3000/intmarket/list', this.fliter).then(res => {
+      this.$http.post(this.getTest() + '/intmarket/list', this.fliter).then(res => {
         this.pages.push(res.data.pages)
         this.content.push(res.data.rows)
+        if (res.data.rows.length > 0) {
+          this.isopen.push('1')
+        }
         if (res.data.rows.length > 0) {
           this.flag.push('true')
         } else {
           this.flag.push('flase')
         }
-        if (Number(this.typeone[index]) < 5) {
+        if (Number(this.typeone[index]) < 4) {
           this.getData(index + 1)
         }
       })
@@ -133,7 +146,7 @@ export default {
     getmore (index) {
       this.fliter.limit = this.fliter.limit + 12
       this.fliter.type = this.typeone[index]
-      this.$http.post('http://120.79.22.222:3000/intmarket/list', this.fliter).then(res => {
+      this.$http.post(this.getTest() + '/intmarket/list', this.fliter).then(res => {
         this.content[index] = res.data.rows
         this.flag.push('flase')
       })
@@ -141,7 +154,7 @@ export default {
     getless (index) {
       this.fliter.limit = 12
       this.fliter.type = this.typeone[index]
-      this.$http.post('http://120.79.22.222:3000/intmarket/list', this.fliter).then(res => {
+      this.$http.post(this.getTest() + '/intmarket/list', this.fliter).then(res => {
         this.content[index] = res.data.rows
         this.flag.push('flase')
       })
@@ -310,6 +323,20 @@ ul{
   display: block;
   color:#ee882a;
   margin: 20px auto 0;
+}
+.expect{
+  color:#ee882a;
+  margin: 80px auto;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.mobileexpect{
+  color:#ee882a;
+  margin: 120px auto;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
 }
 .mobilewrapwidth{
   width: 100%;

@@ -45,7 +45,7 @@
 			</div>
 		</div>
 		<div class="wraperwidth">
-			<div v-for="(item,index) in fliter.data6" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
+			<div v-for="(item,index) in showlist" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
 				<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}"> -->
         <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
 					<div class="serverbox1"><img :src="item.imgurl">
@@ -54,11 +54,11 @@
 				</router-link>
 				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
 					<div class="serverbox2">
-						<img v-if='item.type==5' src="../../../images/products2-1.jpg">
-            <img v-if='item.type==4' src="../../../images/products2-4.jpg">
-            <img v-if='item.type==2' src="../../../images/products2-7.jpg">
-            <img v-if='item.type==1' src="../../../images/products2-3.jpg">
-            <img v-if='item.type==3' src="../../../images/products2-6.jpg">
+						<img v-if='item.type==5' src="../../../images/products2-3.jpg">
+            <img v-if='item.type==4' src="../../../images/products2-8.jpg">
+            <img v-if='item.type==2' src="../../../images/products2-1.jpg">
+            <img v-if='item.type==1' src="../../../images/products2-4.jpg">
+            <img v-if='item.type==3' src="../../../images/products2-5.jpg">
 						<p class="prolist">
 							{{item.name}}
 						</p>
@@ -81,7 +81,7 @@
 					<li class="li"><span v-if="li6==='...'">{{this.li6}}</span>
 						<span v-else @click="changepage(li6,6)">{{this.li6}}</span>
 					</li>
-					<li class="li"><span @click="changepage(li7,7)">{{this.li7}}</span></li>
+					<li class="li"><span @click="changepage(li7,7)">{{this.fliter.pages}}</span></li>
 					<li @click="next"><span>下一页</span></li>
 				</ul>
 				<ul v-else>
@@ -139,7 +139,7 @@
 			</div>
 		</div>
 		<div class="midwraperwidth">
-			<div v-for="(item,index) in fliter.data6" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
+			<div v-for="(item,index) in showlist" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
 				<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}"> -->
         <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
 					<div class="serverbox1"><img :src="item.imgurl">
@@ -148,11 +148,11 @@
 				</router-link>
 				<router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
 					<div class="serverbox2">
-						<img v-if='item.type==5' src="../../../images/products2-1.jpg">
-            <img v-if='item.type==4' src="../../../images/products2-4.jpg">
-            <img v-if='item.type==2' src="../../../images/products2-7.jpg">
-            <img v-if='item.type==1' src="../../../images/products2-3.jpg">
-            <img v-if='item.type==3' src="../../../images/products2-6.jpg">
+						<img v-if='item.type==5' src="../../../images/products2-3.jpg">
+            <img v-if='item.type==4' src="../../../images/products2-8.jpg">
+            <img v-if='item.type==2' src="../../../images/products2-1.jpg">
+            <img v-if='item.type==1' src="../../../images/products2-4.jpg">
+            <img v-if='item.type==3' src="../../../images/products2-5.jpg">
 						<p class="prolist">
 							{{item.name}}
 						</p>
@@ -175,7 +175,7 @@
 					<li class="li"><span v-if="li6==='...'">{{this.li6}}</span>
 						<span v-else @click="changepage(li6,6)">{{this.li6}}</span>
 					</li>
-					<li class="li"><span @click="changepage(li7,7)">{{this.li7}}</span></li>
+					<li class="li"><span @click="changepage(li7,7)">{{this.fliter.pages}}</span></li>
 					<li @click="next"><span>下一页</span></li>
 				</ul>
 				<ul v-else>
@@ -233,14 +233,14 @@
 			</div>
 		</div>
 		<div class="mobilewraperwidth">
-			<div v-if="fliter.data6.length>=1" v-for="(item,index) in fliter.data6" :key=index class="mobileserverbox">
+			<div v-if="showlist.length>=1" v-for="(item,index) in showlist" :key=index class="mobileserverbox">
 				<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}"> -->
         <router-link :to="{name:'productdetail',params:{content:{content:item,navname:cidsec1,relative:id}}}">
 					<div class="mobileserverbox1"><img :src="item.imgurl"><span></span></div>
 				</router-link>
 			</div>
-      <div v-if="fliter.data6.length<1">
-				<p class="mobilenothing">敬请期待</P>
+      <div v-if="showlist.length<1">
+				<p class="mobilenothing">加载中，请稍后...</P>
 			</div>
 			<div style="clear: both;"></div>
 		</div>
@@ -258,7 +258,7 @@
 					<li class="li"><span v-if="li6==='...'">{{this.li6}}</span>
 						<span v-else @click="changepage(li6,6)">{{this.li6}}</span>
 					</li>
-					<li class="li"><span @click="changepage(li7,7)">{{this.li7}}</span></li>
+					<li class="li"><span @click="changepage(li7,7)">{{this.fliter.pages}}</span></li>
 					<li @click="next"><span>下一页</span></li>
 				</ul>
 				<ul v-else>
@@ -275,10 +275,8 @@
 </template>
 
 <script>
-import PageJs from '../common/page.js'
 import Nav from '../common/nav.vue'
 export default {
-  mixins: [PageJs],
   data () {
     return {
       width: 1920,
@@ -294,10 +292,11 @@ export default {
       li7: 7,
       fliter: {
         data6: [],
-        limit: 12,
+        limit: 3000,
         page: 1,
         cateId: []
       },
+      listdata: [],
       alldata: [],
       tempdata: [],
       cidtir: '',
@@ -310,6 +309,8 @@ export default {
       cidfifth1: '可选分类',
       cidsix1: '可选分类',
       id: '',
+      showlist: [],
+      isfirstbrand: [],
       second: false, // 用于判断相同处展开与收拢
       flag: 6 // 用于判断点击不同处的展开与收拢
     }
@@ -451,6 +452,227 @@ export default {
     },
     movedown (value) {
       document.getElementsByClassName('serverbox2')[value].id = ''
+    },
+    changepage (value, index) {
+      // 通过改变page来改变数据的第几页
+      this.fliter.page = value
+      this.getPage(index)
+      this.changeData(value)
+    },
+    prev () {
+      if (this.fliter.pages >= 7) { // 如果分页数大于7
+        if (this.fliter.page > 1) {
+          this.fliter.page = this.fliter.page - 1// 向前一页
+          let index
+          if (this.fliter.page <= 3) { // 如果小于3页就不需要经验样式变化
+            index = this.fliter.page
+            this.getPage(index)
+            this.changeData(index)
+          } else if (this.fliter.page > 3 && this.fliter.page < this.fliter.pages - 2) { // 当到中间部分时前后的不显示部分用。。。代替
+            index = 5
+            this.getPage(index)
+            this.changeData(index)
+          } else if (this.fliter.page >= this.fliter.pages - 2) { // 分页在后三个的时候和前三一样
+            index = 7 - (this.fliter.pages - this.fliter.page)
+            this.getPage(index)
+            this.changeData(index)
+          }
+        } else {
+          this.fliter.page = 1
+        }
+      } else { // 总页数小于七 ，有多少就显示多少
+        if (this.fliter.page <= 1) {
+          this.fliter.page = 1
+          let index = 1
+          this.getPage(index)
+          this.changeData(index)
+        } else {
+          this.fliter.page = this.fliter.page - 1
+          let index = this.fliter.page
+          this.getPage(index)
+          this.changeData(index)
+        }
+      }
+    },
+    next () {
+      if (this.fliter.pages >= 7) { // 如果分页数大于7
+        if (this.fliter.page < this.fliter.pages) {
+          this.fliter.page = this.fliter.page + 1// 向后一页
+          let index
+          if (this.fliter.page <= 3) { // 如果小于3页就不需要经验样式变化
+            index = this.fliter.page
+            this.getPage(index)
+            this.changeData(index)
+          } else if (this.fliter.page > 3 && this.fliter.page < this.fliter.pages - 2) { // 当到中间部分时前后的不显示部分用。。。代替
+            index = 5
+            this.getPage(index)
+            this.changeData(index)
+          } else if (this.fliter.page >= this.fliter.pages - 2) { // 分页在后三个的时候和前三一样
+            index = 7 - (this.fliter.pages - this.fliter.page)
+            this.getPage(index)
+            this.changeData(index)
+          }
+        } else {
+          this.fliter.page = this.fliter.pages
+        }
+      } else { // 总页数小于七 ，有多少就显示多少
+        if (this.fliter.page >= this.fliter.pages) {
+          this.fliter.page = this.fliter.pages
+          let index = this.fliter.pages
+          this.getPage(index)
+          this.changeData(index)
+        } else {
+          this.fliter.page = this.fliter.page + 1
+          let index = this.fliter.page
+          this.getPage(index)// 调用分页
+          this.changeData(index)
+        }
+      }
+    },
+    changeData (value) {
+      if (this.listdata.length > 12 * value) {
+        this.showlist = this.listdata.slice(12 * (value - 1), 12 * value)
+      } else {
+        this.showlist = this.listdata.slice(12 * (value - 1), this.listdata.length)
+      }
+      if (this.showlist) {
+        let jj = this.showlist.length
+        for (let i = 0; i < jj; i++) {
+          this.showlist[i].num = i
+        }
+      }
+    },
+    getPage (index) {
+      if (this.fliter.pages >= 7) { // 如果分页数大于7
+        let ii = document.getElementsByClassName('li').length
+        if (this.fliter.page <= 3) { // 通过选中分页是前三页，则视图层如下
+          this.li2 = 2// 通过改变数据来操作视图层
+          this.li3 = 3
+          this.li4 = 4
+          this.li5 = 5
+          this.li6 = '...'
+          for (let i = 0; i < ii; i++) {
+            document.getElementsByClassName('li')[i].id = ''
+          }
+          document.getElementsByClassName('li')[index - 1].id = 'active'
+        } else if (this.fliter.page > 3 && this.fliter.page < this.fliter.pages - 2) { // 如果选中的视图层是中间部分
+          this.li2 = '...'
+          this.li3 = this.fliter.page - 1
+          this.li4 = this.fliter.page
+          this.li5 = this.fliter.page + 1
+          this.li6 = '...'
+          if (this.fliter.page > 4) { // 通过传值来给予和清空id
+            for (let i = 0; i < ii; i++) {
+              document.getElementsByClassName('li')[i].id = ''
+            }
+            document.getElementsByClassName('li')[3].id = 'active'// 大于四的由于会有视图层的变化，所以id停留在中间的固定位置
+          } else if (this.fliter.page === 3) {
+            for (let i = 0; i < ii; i++) {
+              document.getElementsByClassName('li')[i].id = ''
+            }
+            document.getElementsByClassName('li')[index - 1].id = 'active'// 页数等于三说明是向前翻，小于三时，试图不在变化，固定id不需固定在中间，放在当前页面即可
+          }
+        } else if (this.fliter.page >= this.fliter.pages - 2 && this.fliter.page < this.fliter.pages) { // 第N页为后三页的时候
+          this.li2 = '...'
+          this.li3 = this.fliter.pages - 4
+          this.li4 = this.fliter.pages - 3
+          this.li5 = this.fliter.pages - 2
+          this.li6 = this.fliter.pages - 1
+          for (let i = 0; i < ii; i++) {
+            document.getElementsByClassName('li')[i].id = ''
+          }
+          document.getElementsByClassName('li')[index - 1].id = 'active'// id给在相应的页面数上
+        } else if (this.fliter.page === this.li7) {
+          this.li2 = '...'
+          this.li3 = this.fliter.pages - 4
+          this.li4 = this.fliter.pages - 3
+          this.li5 = this.fliter.pages - 2
+          this.li6 = this.fliter.pages - 1
+          let ii = document.getElementsByClassName('li').length
+          for (let i = 0; i < ii; i++) {
+            document.getElementsByClassName('li')[i].id = ''
+          }
+          document.getElementsByClassName('li')[index - 1].id = 'active'
+        }
+      } else {
+        for (let i = 0; i < this.li7; i++) {
+          if (document.getElementsByClassName('li')[i]) {
+            document.getElementsByClassName('li')[i].id = ''
+          }
+        }
+        if (document.getElementsByClassName('li')[index - 1]) {
+          document.getElementsByClassName('li')[index - 1].id = 'active'// 页数等于三说明是向前翻，小于三时，试图不在变化，固定id不需固定在中间，放在当前页面即可
+        }
+      }
+    },
+    getdata (res, name) {
+      let ii = res.data.rows.length
+      for (let i = 0; i < ii; i++) {
+        if (res.data.rows[i].belong === name) {
+          this.listdata.push(res.data.rows[i])
+        }
+      }
+    },
+    getData () {
+      this.fliter.page = 1
+      this.$http.post(this.getTest() + '/products/list', this.fliter).then(res => { // 获取数据
+        this.listdata = []
+        let ii = this.isfirstbrand.length
+        for (let i = 0; i < ii; i++) {
+          this.getdata(res, this.isfirstbrand[i])
+        }
+        // 安排续拿数据
+        // let uu = this.listdata.length
+        // for (let i = 0; i < uu; i++) {
+        //   console.log(res.data.rows[i].flag)
+        //   if (!res.data.rows[i].flag) {
+        //     console.log(res.data.rows[i])
+        //   }
+        // }
+        if (this.listdata.length > 12) {
+          this.showlist = this.listdata.slice(0, 12)
+        } else {
+          this.showlist = this.listdata.slice(0, this.listdata.length)
+        }
+        if (this.showlist) {
+          let jj = this.showlist.length
+          for (let i = 0; i < jj; i++) {
+            this.showlist[i].num = i
+          }
+        }
+        this.li7 = parseInt(this.listdata.length / 12) + 1
+        this.fliter.pages = this.li7
+        if (this.li7 < 7) {
+          for (let i = 1; i < this.li7; i++) {
+            this.pagenum.push(i)
+          }
+        }
+      })
+    },
+    getbrand (res, index) {
+      let ii = res.data.rows.length
+      for (let i = 0; i < ii; i++) {
+        if (res.data.rows[i].isfisrt === index) {
+          this.isfirstbrand.push(res.data.rows[i].name)
+        }
+      }
+    },
+    getBrand () {
+      this.$http.post(this.getTest() + '/brand/list', this.fliter).then(res => { // 获取数据
+        this.getbrand(res, '1')
+        this.getbrand(res, '2')
+        this.getbrand(res, '3')
+        this.getbrand(res, '4')
+        this.getbrand(res, '5') // 获取品牌顺序
+        let ii = res.data.rows.length
+        for (let i = 0; i < ii; i++) {
+          if (!res.data.rows[i].isfisrt) {
+            this.isfirstbrand.push(res.data.rows[i].name)
+          }
+        }
+        this.getbrand(res, '7')
+        this.getData()
+      })
     }
   },
   components: {
@@ -462,11 +684,16 @@ export default {
     if (this.$route.params.id.name) {
       this.cidsec1 = this.$route.params.id.name
     }
-    this.$http.get('http://120.79.22.222:3000/kind/data').then(res => {
-      this.alldata = res.data[0].children[5].children
+    this.$http.get(this.getTest() + '/kind/data').then(res => {
+      this.alldata = res.data[0].children[0].children[5].children
       this.getcid(this.alldata, this.id)
-      this.getData()
+      this.getBrand()
     })
+  },
+  mounted () {
+    if (document.getElementsByClassName('li')[0]) {
+      document.getElementsByClassName('li')[0].id = 'active'
+    }
   },
   updated () {
     window.onresize = () => {

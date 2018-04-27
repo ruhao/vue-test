@@ -2,7 +2,7 @@
 <div>
 	<div v-if="width<1500&&width>640">
 		<Nav navtitle="营销活动"></Nav>
-		<div class="bodycolor">
+		<div class="bodycolor" v-if="fliter.data6.length>0">
 			<div class="wraperwidth">
 				<div v-for="(item,index) in fliter.data6" :key=index>
 					<div class="cnbox">
@@ -42,10 +42,13 @@
 				</div>
 			</div>
 		</div>
+    <div class="bodycolor colorwhite" v-if="fliter.data6.length<1">
+         <p class="expect">敬请期待</p>
+		</div>
 	</div>
   <div v-if="width>=1500">
 		<Nav navtitle="营销活动"></Nav>
-		<div class="midbodycolor">
+		<div class="midbodycolor" v-if="fliter.data6.length>0">
 			<div class="midwraperwidth">
 				<div v-for="(item,index) in fliter.data6" :key=index>
 					<div class="midcnbox">
@@ -85,10 +88,13 @@
 				</div>
 			</div>
 		</div>
+    <div class="midbodycolor colorwhite" v-if="fliter.data6.length<1">
+         <p class="expect">敬请期待</p>
+		</div>
 	</div>
   <div v-if="width<=640">
 		<Nav navtitle="营销活动"></Nav>
-		<div class="mobilebodycolor">
+		<div class="mobilebodycolor" v-if="fliter.data6.length>0">
 			<div class="mobilewraperwidth">
         <div class="mobileindex-news-content-top-boxx" v-for="(item,index) in fliter.data6" :key=index>
 							<i>
@@ -98,9 +104,6 @@
 								</span>
 							</i>
 						</div>
-      <div v-if="fliter.data6.length<1">
-				<p class="mobilenothing">敬请期待</P>
-			</div>
 			</div>
 			<div class="mobilewraperwidth" v-if="fliter.pages>1">
 				<div class="mobilepage">
@@ -128,6 +131,9 @@
 					</ul>
 				</div>
 			</div>
+		</div>
+    <div v-if="fliter.data6.length<1">
+				<p class="mobilenothing">敬请期待</P>
 		</div>
 	</div>
   </div>
@@ -344,7 +350,7 @@ i{
 }
 
   .mobilenothing{
-    height: 100px;
+    margin: 100px auto;
     text-align: center;
     color: #ee882a;
     font-weight: 600;
@@ -445,6 +451,18 @@ i{
     font-size:12px;
     text-indent: 2em;
     margin-top: 5px;
+}
+.colorwhite{
+  background: white;
+  padding-top: 0;
+  margin-top: 0;
+}
+.expect{
+  color:#ee882a;
+  margin: 80px auto;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
 }
 .mobilepage ul li:hover {
   color: #ee882a;

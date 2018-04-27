@@ -25,6 +25,7 @@
 					<div class='contact-content-tc'>
 						<h3>意大利总部</h3>
 						<ul class='index-contact-method'>
+              <br />
 							<li v-for='(item,index) in contact1' :key=index><img :src='item.icon'><span class='index-contact-span'>{{item.value}}</span></li>
 						</ul>
 					</div>
@@ -63,6 +64,7 @@
 					<div class='midcontact-content-tc'>
 						<h3>意大利总部</h3>
 						<ul class='midindex-contact-method'>
+              <br />
 							<li v-for='(item,index) in contact1' :key=index><img :src='item.icon'><span class='midindex-contact-span'>{{item.value}}</span></li>
 						</ul>
 					</div>

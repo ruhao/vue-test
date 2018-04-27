@@ -1,13 +1,14 @@
 <template>
-	<div>
-		<Nav navtitle='PRODUCT CLASSIFICATION'></Nav>
+<div>
+	<div v-if="width<1500&&width>640">
+		<Nav navtitle='Core Business'></Nav>
 		<div class='all'>
 		<div class='margintop' v-for='(item,index) in this.productlist' :key=index>
-			<router-link :to="{name:'productcid',params:{id:{id:item.id,name:item.title}}}" class="fontstyle">
+			<router-link :to="{name:'enproductcid',params:{id:{id:item.id,name:item.title}}}" class="fontstyle">
 				<div class="product-box">
 					<div class="product-boxl"><img :src="item.imgurl1"></div>
 					<div class="product-boxr">
-						<img :src="item.imgurl2">
+						<img :src="item.imgurl2" class="productimg">
 						<p class="product-boxp1">{{item.title}}</p>
 						<p class="product-boxp2">{{item.content}}
 						</p>
@@ -18,6 +19,43 @@
 		<div style="clear: both;"></div>
 		</div>
 	</div>
+  <div v-if="width>=1500">
+		<Nav navtitle='Core Business'></Nav>
+		<div class='midall'>
+		<div class='midmargintop' v-for='(item,index) in this.productlist' :key=index>
+			<router-link :to="{name:'enproductcid',params:{id:{id:item.id,name:item.title}}}" class="midfontstyle">
+				<div class="midproduct-box">
+					<div class="midproduct-boxl"><img :src="item.imgurl1"></div>
+					<div class="midproduct-boxr">
+						<img :src="item.imgurl2">
+						<p class="midproduct-boxp1">{{item.title}}</p>
+						<p class="midproduct-boxp2">{{item.content}}
+						</p>
+					</div>
+				</div>
+			</router-link>
+		</div>
+		<div style="clear: both;"></div>
+		</div>
+	</div>
+  <div v-if="width<=640">
+		<Nav navtitle='Core Business'></Nav>
+		<div class='mobileall'>
+		<div class='mobilemargintop' v-for='(item,index) in this.productlist' :key=index>
+			<router-link :to="{name:'enproductcid',params:{id:{id:item.id,name:item.title}}}" class="mobilefontstyle">
+				<div class="mobileproduct-box">
+					<div class="mobileproduct-boxl mobileindex-product-content-box1"><img :src="item.imgurl1" class="mobilefontstyle1"></div>
+					<div class="mobileproduct-boxr mobileindex-product-content-box">
+						<img :src="item.imgurl2">
+						<p class="mobileproduct-boxp1">{{item.title}}</p>
+					</div>
+				</div>
+			</router-link>
+		</div>
+		<div style="clear: both;"></div>
+		</div>
+	</div>
+  </div>
 </template>
 
 <script>
@@ -42,62 +80,63 @@ import p28 from '../../../images/products2-8.jpg'
 export default {
   data () {
     return {
+      width: 1920,
       productlist: [
         {
-          imgurl1: p11,
-          imgurl2: p21,
-          title: 'Drinks',
-          content: "o study in Italy, we should learn wine, Italy wine, wine and many other names, is the family's essential drinks.",
-          id: '5a72ca5fd03d2b14449ff1a6'
+          imgurl1: p13,
+          imgurl2: p23,
+          title: 'WINE & DRINKS',
+          content: 'About Italian culture, everyone should know that Italian wine and drinks are essential in Italian families.',
+          id: '5a9bf5e5fce9270fa4c2b6fc'
         },
         {
           imgurl1: p12,
           imgurl2: p22,
-          title: 'Imported snacks',
-          content: "What delicious snacks do you have in Italy? Let me tell you some delicious snacks that can't ",
-          id: '5a72ca6cd03d2b14449ff1a7'
+          title: 'IMPORTED SNACKS',
+          content: 'Which kind of snacks are there in Italy? Let’s us tell you something more about delicious snacks that you could not stop to eat.',
+          id: '5a9bf5e6fce9270fa4c2b6fd'
         },
         {
-          imgurl1: p13,
-          imgurl2: p23,
-          title: 'Non-staple food',
-          content: 'Italy is a gourmet people, they have a long history of diet, as their art, fashion and furniture, always like to elaborate.',
-          id: '5a72cac6d03d2b14449ff1aa'
+          imgurl1: p11,
+          imgurl2: p21,
+          title: 'FRUIT AND VEGETABLES',
+          content: 'The freshest fruit and vegetables from the most uncontaminated green lands of Italy. ',
+          id: '5a9bf5e7fce9270fa4c2b6ff'
         },
         {
           imgurl1: p14,
           imgurl2: p24,
-          title: 'Fruits',
-          content: "What delicious snacks do you have in Italy? Let me tell you some delicious snacks that can't stop.",
-          id: '5a72ca7ed03d2b14449ff1a9'
+          title: 'FROZEN FOOD',
+          content: 'Get all the Italian culinary traditions in a fast and simple way!',
+          id: '5a9bf5e7fce9270fa4c2b6fe'
         },
         {
           imgurl1: p15,
           imgurl2: p25,
-          title: 'Vegetables',
-          content: "What delicious snacks do you have in Italy? Let me tell you some delicious snacks that can't stop.",
-          id: '5a72ca5fd03d2b14449ff1a6'
+          title: 'FOODSTUFFS',
+          content: 'Italy is a nation of delicious food and it has a long history of culinary tradition, and, as for its art, fashion and furniture, also for food there is a high attention for details.',
+          id: '5a9bf793fce9270fa4c2b70d'
         },
         {
           imgurl1: p16,
           imgurl2: p26,
-          title: 'Seafood',
-          content: "What delicious snacks do you have in Italy? Let me tell you some delicious snacks that can't stop.",
-          id: '5a72ca6cd03d2b14449ff1a7'
+          title: 'WINE & DRINKS',
+          content: 'About Italian culture, everyone should know that Italian wine and drinks are essential in Italian families.',
+          id: '5a9bf5e5fce9270fa4c2b6fc'
         },
         {
           imgurl1: p17,
           imgurl2: p27,
-          title: 'Poultry eggs and milk',
-          content: 'taly is a gourmet people, they have a long history of diet, as their art, fashion and furniture, always like to elaborate.',
-          id: '5a72cac6d03d2b14449ff1aa'
+          title: 'IMPORTED SNACKS',
+          content: 'Which kind of snacks are there in Italy? Let’s us tell you something more about delicious snacks that you could not stop to eat.',
+          id: '5a9bf5e6fce9270fa4c2b6fd'
         },
         {
           imgurl1: p18,
           imgurl2: p28,
-          title: 'Fitting',
-          content: "What delicious snacks do you have in Italy? Let me tell you some delicious snacks that can't stop.",
-          id: '5a72ca5fd03d2b14449ff1a6'
+          title: 'IMPORTED SNACKS',
+          content: 'Which kind of snacks are there in Italy? Let’s us tell you something more about delicious snacks that you could not stop to eat.',
+          id: '5a9bf5e6fce9270fa4c2b6fd'
         }
       ]
     }
@@ -105,61 +144,76 @@ export default {
   components: {
     Nav,
     Foot
+  },
+  created () {
+    this.width = document.documentElement.offsetWidth
+  },
+  updated () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
+    let ii = window.getComputedStyle(document.getElementsByClassName('mobilefontstyle1')[0], null)['width']
+    let oo = document.getElementsByClassName('mobileindex-product-content-box').length
+    for (let i = 0; i < oo; i++) {
+      document.getElementsByClassName('mobileindex-product-content-box')[i].style.height = ii
+    }
   }
 }
 </script>
 
 <style scoped>
 .product-box {
-  width: 700px;
+  width: 495px;
   display: flex;
   z-index: 11;
   position: relative;
 }
 
 .product-boxl {
-  width: 348px;
-  height: 348px;
+  width: 240px;
 }
 
 .product-boxr {
-  width: 350px;
+  width: 240px;
   background: #f8efe7;
   position: relative;
   text-align: center;
+  box-sizing: border-box;
+  height: 240px;
 }
 .all {
-  margin-top: 30px;
+  margin-top: 5px;
 }
 .product-boxr img {
-  margin-top: 30px;
+  margin-top: 5px;
 }
-
+.productimg{
+  width: 120px;
+  height: 120px;
+}
 .product-boxp1 {
   color: #ee882a;
   font-weight: 600;
   font-size: 18px;
-  margin: 25px 35px 0;
-  box-sizing: border-box;
+  margin: 10px 10px 0;
 }
 
 .margintop {
-  margin-top: 20px;
+  margin-top: 10px;
   float: left;
 }
 
 .margintop:nth-of-type(2n) {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .product-boxp2 {
   color: #ee882a;
   font-weight: 100;
-  font-size: 14px;
-  margin: 12px 30px 0;
+  font-size: 12px;
+  margin: 10px 15px 0;
   line-height: 20px;
   letter-spacing: 1px;
-  box-sizing: border-box;
 }
 
 .product-boxl img {
@@ -168,6 +222,125 @@ export default {
 
 .fontstyle {
   text-decoration: none;
+  font-size: 12px;
   z-index: 11;
 }
+.midproduct-box {
+  width: 700px;
+  display: flex;
+  z-index: 11;
+  position: relative;
+}
+
+.midproduct-boxl {
+  width: 348px;
+}
+
+.midproduct-boxr {
+  width: 350px;
+  background: #f8efe7;
+  position: relative;
+  text-align: center;
+}
+.midall {
+  margin-top: 30px;
+}
+.midproduct-boxr img {
+  margin-top: 30px;
+}
+
+.midproduct-boxp1 {
+  color: #ee882a;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px 35px 0;
+}
+
+.midmargintop {
+  margin-top: 20px;
+  float: left;
+}
+
+.midmargintop:nth-of-type(2n) {
+  margin-left: 20px;
+}
+
+.midproduct-boxp2 {
+  color: #ee882a;
+  font-weight: 100;
+  font-size: 14px;
+  margin: 15px 35px 0;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+.midproduct-boxl img {
+  width: 100%;
+}
+
+.midfontstyle {
+  text-decoration: none;
+  z-index: 11;
+}
+.mobileproduct-box {
+  width: 100%;
+  display: flex;
+  z-index: 11;
+  position: relative;
+}
+
+.mobileproduct-boxl {
+  width: 50%;
+}
+
+.mobilefontstyle{
+  text-decoration: none;
+}
+.mobileproduct-boxr {
+  width: 50%;
+  background: #f8efe7;
+  position: relative;
+  text-align: center;
+}
+.mobileall {
+  margin-top: 10px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.mobileproduct-boxr img {
+  margin-top: 10px;
+  width:70%;
+}
+
+.mobileproduct-boxp1 {
+  color: #ee882a;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 5px 35px 0;
+}
+
+.mobilemargintop {
+  margin-top: 10px;
+  float: left;
+}
+
+.mobileindex-product-content-box1{
+  width: 50%;
+  height: 100%;
+  font-size: 0;
+}
+
+.mobileproduct-boxp2 {
+  color: #ee882a;
+  font-weight: 100;
+  font-size: 14px;
+  margin: 20px 35px 0;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+.mobileproduct-boxl img {
+  width: 100%;
+}
+
 </style>

@@ -32,26 +32,50 @@
 				</li>
 				<li class="headernavlast">
 					<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
-					<router-link class="navfont" to='/en' tag='span'>EN</router-link>
+					<router-link to='/en' tag='span' class="navfont">EN</router-link>
 				</li>
 			</ul>
 		</div>
-		<!-- <div class="headernavlast" v-if="this.width>=1600">
-			<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
-			<router-link class="navfont" to='/en' tag='span'>EN</router-link>
 		</div>
-		<div class="wraperwidth" v-else>
-			<div class="headernavlastb">
-				<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
-				<router-link class="navfont" to='/en' tag='span'>EN</router-link>
-			</div>
-		</div> -->
-		<div>
+		<div v-if='this.$route.path.indexOf("en")==1'>
+		<div class="wraperwidth">
+			<ul class="smul ulpc">
+				<li class="headernavlast">
+					<router-link to='/en' tag='span' class="navfont" active-class="routeactive" exact>Home</router-link>
+				</li>
+				<li class="headernavleft">
+					<router-link to='/enabout' tag='span' class="navfont" active-class="routeactive">About Us</router-link>
+				</li>
+				<li class="headernavleft">
+					<router-link to='/enproduct' tag='span' class="navfont" active-class="routeactive">Core Business</router-link>
+				</li>
+				<li class="headernavleft">
+					<router-link to='/eninternet' tag='span' class="navfont" active-class="routeactive">Sales Network</router-link>
+				</li>
+				<li class="headernavmid">
+					<img src="../images/logo.png"></li>
+				<li class="headernavrighten">
+					<router-link to='/ennews' tag='span' class="navfont" active-class="routeactive">News</router-link>
+				</li>
+				<li class="headernavrighten">
+					<router-link to='/enhr' tag='span' class="navfont" active-class="routeactive">Human resources</router-link>
+				</li>
+				<li class="headernavrighten">
+					<router-link to='/enmessage' tag='span' class="navfont" active-class="routeactive">Online Message</router-link>
+				</li>
+				<li class="headernavrighten">
+					<router-link to='/encontact' tag='span' class="navfont" active-class="routeactive">Contact Us</router-link>
+				</li>
+				<li class="headernavlast">
+					<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
+					<router-link to='/en' tag='span' class="navfont">EN</router-link>
+				</li>
+			</ul>
+		</div>
+		</div>
 			<transition :name="transitionName">
 				<router-view class="child-view"></router-view>
 			</transition>
-		</div>
-    </div>
 		</div>
 		<div class="bodywidth" v-if="width>=1500">
 		<div v-if='this.$route.path.indexOf("en")==-1'>
@@ -87,68 +111,94 @@
 		</div>
 		<div class="midheadernavlast">
 			<router-link to='/' tag='span' class="midnavfont">CN</router-link><span class="midnavfontapsn">|</span>
-			<router-link class="midnavfont" to='/en' tag='span'>EN</router-link>
-		</div>
-		<div>
-			<transition :name="transitionName">
-				<router-view class="child-view"></router-view>
-			</transition>
+			<router-link to='/en' tag='span' class="midnavfont">EN</router-link>
 		</div>
 		</div>
-		</div>
-		<!--
     <div v-else>
-      <div class="wraperwidth">
-			<ul>
-				<li class="headernavleft">
-					<router-link to='/en' tag='span' class="navfont" active-class="routeactive" exact>Home</router-link>
+      <div class="midwraperwidth">
+			<ul class="ulpc">
+				<li class="midheadernavleften">
+					<router-link to='/en' tag='span' class="midnavfont" active-class="midrouteactive" exact>Home</router-link>
 				</li>
-				<li class="headernavleft">
-					<router-link to='/enabout' tag='span' class="navfont" active-class="routeactive">About Us</router-link>
+				<li class="midheadernavleften">
+					<router-link to='/enabout' tag='span' class="midnavfont" active-class="midrouteactive">About Us</router-link>
 				</li>
-				<li class="headernavleft">
-					<router-link to='/enproduct' tag='span' class="navfont" active-class="routeactive">Business</router-link>
+				<li class="midheadernavleften">
+					<router-link to='/enproduct' tag='span' class="midnavfont" active-class="midrouteactive">Core Business</router-link>
 				</li>
-				<li class="headernavleft">
-					<router-link to='/eninternet' tag='span' class="navfont" active-class="routeactive">Network</router-link>
+				<li class="midheadernavleften">
+					<router-link to='/eninternet' tag='span' class="midnavfont" active-class="midrouteactive">Sales Network</router-link>
 				</li>
-				<li class="headernavmid">
+				<li class="midheadernavmid">
 					<img src="../images/logo.png"></li>
-				<li class="headernavright">
-					<router-link to='/ennews' tag='span' class="navfont" active-class="routeactive">News</router-link>
+				<li class="midheadernavrighten">
+					<router-link to='/ennews' tag='span' class="midnavfont" active-class="midrouteactive">News</router-link>
 				</li>
-				<li class="headernavright">
-					<router-link to='/hr' tag='span' class="navfont" active-class="routeactive">Human resources</router-link>
+				<li class="midheadernavrighten">
+					<router-link to='/enhr' tag='span' class="midnavfont" active-class="midrouteactive">Human resources</router-link>
 				</li>
-				<li class="headernavright">
-					<router-link to='/enmessage' tag='span' class="navfont" active-class="routeactive">Online Message</router-link>
+				<li class="midheadernavrighten">
+					<router-link to='/enmessage' tag='span' class="midnavfont" active-class="midrouteactive">Online Message</router-link>
 				</li>
-				<li class="headernavright">
-					<router-link to='/encontact' tag='span' class="navfont" active-class="routeactive">Contact Us</router-link>
-				</li>
-				<li class="headernavright">
-					<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
-					<router-link class="navfont" to='/' tag='span'>EN</router-link>
+				<li class="midheadernavrighten">
+					<router-link to='/encontact' tag='span' class="midnavfont" active-class="midrouteactive">Contact Us</router-link>
 				</li>
 			</ul>
-		</div> -->
-		<!-- <div class="headernavlast" v-if="this.width>=1600">
-			<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
-			<router-link class="navfont" to='/' tag='span'>EN</router-link>
 		</div>
-		<div class="wraperwidth" v-else>
-			<div class="headernavlastb">
-				<router-link to='/' tag='span' class="navfont">CN</router-link><span class="navfontapsn">|</span>
-				<router-link class="navfont" to='/' tag='span'>EN</router-link>
-			</div>
-		</div> -->
-		<!-- <div>
-			<transition :name="transitionName">
+		<div class="midheadernavlasten">
+			<router-link to='/' tag='span' class="midnavfont">CN</router-link><span class="midnavfontapsn">|</span>
+			<router-link class="midnavfont" to='/en' tag='span'>EN</router-link>
+		</div>
+		</div>
+					<transition :name="transitionName">
 				<router-view class="child-view"></router-view>
 			</transition>
-		</div> -->
+				</div>
 			<div class="mobilebodywidth" v-if="width<=640">
-    <div v-if='this.$route.path.indexOf("en")==-1'>
+    <div v-if='this.$route.path.indexOf("en")==1'>
+		<div class="mobilewraperwidth">
+			<div class="mobileheadernavmid">
+					<img src="../images/logo.png">
+      </div>
+			<div class="mobileheadernavmid1">
+					<img src="../images/mobile1.png" @click="navapped">
+      </div>
+			<ul class="mobileheadernavright" id="ulll" @click="navdis">
+				<li class="mobileheadernavleft">
+					<p class="mobilenavtitle">LaoWaiCang</p>
+				</li>
+				<li class="mobileheadernavleft">
+					<router-link to='/en' tag='span' class="mobilenavfont" active-class="mobilerouteactive" exact>Home</router-link>
+				</li>
+				<li class="mobileheadernavleft">
+					<router-link to='/enabout' tag='span' class="mobilenavfont" active-class="mobilerouteactive">About Us</router-link>
+				</li>
+				<li class="mobileheadernavleft">
+					<router-link to='/enproduct' tag='span' class="mobilenavfont" active-class="mobilerouteactive">Core Business</router-link>
+				</li>
+				<li class="mobileheadernavleft">
+					<router-link to='/eninternet' tag='span' class="mobilenavfont" active-class="mobilerouteactive">Sales Network</router-link>
+				</li>
+				<li class="mobileheadernavleft">
+					<router-link to='/ennews' tag='span' class="mobilenavfont" active-class="mobilerouteactive">News</router-link>
+				</li>
+				<li class="mobileheadernavleft">
+					<router-link to='/enhr' tag='span' class="mobilenavfont" active-class="mobilerouteactive">Human resources</router-link>
+				</li>
+				<li class="mobileheadernavleft">
+					<router-link to='/enmessage' tag='span' class="mobilenavfont" active-class="mobilerouteactive">Online Message</router-link>
+				</li>
+				<li class="mobileheadernavleft">
+					<router-link to='/encontact' tag='span' class="mobilenavfont" active-class="mobilerouteactive">Contact Us</router-link>
+				</li>
+				<li class="mobileheadernavleft">
+					<router-link to='/' tag='span' class="mobilenavfont">CN</router-link><span class="mobilenavfontapsn">|</span>
+					<router-link class="mobilenavfont" to='/en' tag='span'>EN</router-link>
+				</li>
+			</ul>
+		</div>
+    </div>
+		<div v-if='this.$route.path.indexOf("en")==-1'>
 		<div class="mobilewraperwidth">
 			<div class="mobileheadernavmid">
 					<img src="../images/logo.png">
@@ -190,12 +240,12 @@
 				</li>
 			</ul>
 		</div>
+    </div>
 		<div>
 			<transition :name="transitionName">
 				<router-view class="mobilechild-view"></router-view>
 			</transition>
 		</div>
-    </div>
 	</div>
     </div>
 </template>
@@ -274,9 +324,21 @@ ul{
 .routeactive {
   color: #ee882a;
 }
-.headernavright {
+.headernavright{
+	width: 10%;
+	text-align: center;
+}
+.headernavrighten {
   width: 10%;
-	text-align: right;
+	text-align: center;
+}
+.headernavrighten :nth-of-type(1){
+  width: 8%;
+	text-align: center;
+}
+.headernavrighten :nth-of-type(2){
+  width: 8%;
+	text-align: left;
 }
 .headernavlast {
   width: 10%;
@@ -338,6 +400,11 @@ li {
   text-align: left;
 	margin-top: 20px;
 }
+.midheadernavleften{
+	width: 150px;
+  text-align: center;
+	margin-top: 20px;
+}
 .midnavfont {
   color: white;
   cursor: pointer;
@@ -353,8 +420,34 @@ li {
 	margin-top: 20px;
   text-align: right;
 }
+.midheadernavrighten {
+	width: 140px;
+	margin-top: 20px;
+  text-align: center;
+}
+.midheadernavrighten {
+	width: 160px;
+	margin-top: 20px;
+  text-align: center;
+}
+.midheadernavrighten :nth-of-type(1){
+	width: 140px;
+	margin-top: 20px;
+  text-align: center;
+}
+.midheadernavrighten :nth-of-type(2n+1){
+	width: 160px;
+	margin-top: 20px;
+  text-align: center;
+}
 .midheadernavlast {
   position: absolute;
+  top: 25px;
+  right: 30px;
+  z-index: 10;
+}
+.midheadernavlasten{
+	position: absolute;
   top: 25px;
   right: 30px;
   z-index: 10;
@@ -388,7 +481,7 @@ ul,p{
 	padding-top: 5px;
 	font-size: 600;
 	color: #ee882a;
-	font-size: 24px;
+	font-size: 20px;
 }
 .mobileheadernavleft {
   text-align: left;

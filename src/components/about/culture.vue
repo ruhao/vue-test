@@ -12,10 +12,10 @@
 						<img :src="item.bgimg" />
 						<div class="honorcontent">
 							<p class="honortitle">{{item.title}}</p>
-							<span class="honorcontentp" v-for="(it,ind) in item.content" :key=ind>
+							<p class="honorcontentp" v-for="(it,ind) in item.content" :key=ind>
 								{{it}}
                 <br />
-							</span>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -114,7 +114,7 @@ export default {
   created () {
     this.width = document.documentElement.offsetWidth
     this.$http
-      .post('http://120.79.22.222:3000/about/list', this.fliter)
+      .post(this.getTest() + '/about/list', this.fliter)
       .then(res => {
         let ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {
@@ -198,6 +198,7 @@ img {
   color: #5b6270;
   text-shadow: 0.2px 0.2px 0.2px #9ba7b5;
   letter-spacing: 2px;
+  text-indent: 1.5em;
 }
 .midwraperwidth {
   width: 1420px;
@@ -250,13 +251,11 @@ img {
   color: #5b6270;
   text-shadow: 0.4px 0.4px 0.4px #9ba7b5;
   letter-spacing: 2px;
+  text-indent: 1.5em;
 }
 .mobilewraperwidth {
   width: 100%;
   margin-top: 20px;
-}
-
-.mobilehonor {
 }
 
 .mobilehonor1 {
@@ -304,5 +303,6 @@ img {
   color: #5b6270;
   text-shadow: 0.4px 0.4px 0.4px #9ba7b5;
   letter-spacing: 2px;
+  text-indent: 1.5em;
 }
 </style>

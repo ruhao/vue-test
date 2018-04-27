@@ -92,9 +92,17 @@ p {
   width: 100%;
 }
 
-.contact-footer-li {
-  font-size: 14px;
-  width: 25%;
+.contact-footer-li:nth-of-type(2){
+  width: 22%;
+}
+.contact-footer-li:nth-of-type(2){
+  width: 22%;
+}
+.contact-footer-li:nth-of-type(3){
+  width: 30%;
+}
+.contact-footer-li:nth-of-type(4){
+  width: 26%;
 }
 
 .contact-footer-li:nth-of-type(4) {

@@ -92,7 +92,7 @@ export default {
   },
   created () {
     this.width = document.documentElement.offsetWidth
-    this.$http.post('http://120.79.22.222:3000/hr/list', this.fliter).then(res => {
+    this.$http.post(this.getTest() + '/hr/list', this.fliter).then(res => {
       this.fliter.data6 = res.data.rows
       let ii = this.fliter.data6.length
       for (let i = 0; i < ii; i++) {

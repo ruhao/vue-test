@@ -16,6 +16,8 @@
 					<br />
 					<label for='telephone' id='telephone-label'>电&nbsp;&nbsp;话：</label><input type='text' id='telephone' @blur='telephonef' />
 					<br />
+          <label for='telephone' id='email-label'>邮&nbsp;&nbsp;箱：</label><input type='text' id='email' @blur='emailf' />
+					<br />
 					<button type='button' id='sub' @click='sub'>提交</button>
 				</form>
 			</div>
@@ -63,6 +65,14 @@ export default {
         this.flag[2] = false
       }
     },
+    emailf () {
+      let reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+      if (reg.test(document.getElementById('telephone').value)) {
+        this.flag[4] = true
+      } else {
+        this.flag[4] = false
+      }
+    },
     sub () {
       if (this.flag[0] && this.flag[2] && this.flag[1] && this.flag[3]) {
         if (confirm('确定提交吗')) {
@@ -71,17 +81,19 @@ export default {
             content: document.getElementById('content').value,
             name: document.getElementById('name').value,
             telephone: document.getElementById('telephone').value,
-            cateId: '5a41bf9d17db19233cf3ddcd'
+            email: document.getElementById('email').value,
+            cateId: '5aa88eee86b9ad13bcd34a07'
           }
 
           this.$http
-            .post('http://120.79.22.222:3000/message/data', this.dataif)
+            .post(this.getTest() + '/message/data', this.dataif)
             .then(res => {
               setTimeout(function () {
                 document.getElementById('title').value = ''
                 document.getElementById('content').value = null
                 document.getElementById('name').value = null
                 document.getElementById('telephone').value = null
+                document.getElementById('email').value = null
                 alert('留言成功')
               }, 500)
             })
@@ -95,6 +107,8 @@ export default {
           alert('姓名不能为空')
         } else if (!this.flag[3]) {
           alert('请输入正确的手机号')
+        } else if (!this.flag[4]) {
+          alert('请输入正确的邮箱')
         }
       }
     }
@@ -152,7 +166,8 @@ input {
 
 #title,
 #name,
-#telephone {
+#telephone,
+#email {
   height: 30px;
   width: 230px;
   border: 0;
@@ -163,7 +178,8 @@ input {
 
 #title-label,
 #name-label,
-#telephone-label {
+#telephone-label,
+#email-label {
   font-size: 12px;
   margin-right: 15px;
   text-shadow: 0.2px 0.2px 0.2px #cccccc;

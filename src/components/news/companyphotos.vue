@@ -86,8 +86,9 @@
 					<router-link :to="{name:'photodetail1',params:{content:item}}" class="fontstyle">
             <div class="mobileproduct-box">
             <div class="mobileproduct-boxl mobileindex-product-content-box1"><img :src="item.zimgurl1" class="mobilefontstyle1"></div>
-            <div class="mobileproduct-boxr mobileindex-product-content-box">
-						<img src="../../../images/news3.jpg">
+            <div class="mobileproduct-boxr">
+						<img src="../../../images/photo1.png">
+            <p class="mobileproduct-boxp2">{{item.content}}</p>
 						<p class="mobileproduct-boxp1">{{item.detaildate}}</p>
 					</div>
           </div>
@@ -233,12 +234,12 @@ p {
   width: 240px;
   margin-left: 15px;
   float: left;
-  height: 140px;
+  height: 240px;
 }
 
 .photobox img {
   width: 240px;
-  height: 140px;
+  height: 240px;
 }
 
 .box {
@@ -269,6 +270,7 @@ p {
   z-index: 11;
   position: relative;
   margin-top: 10px;
+  background: #f8efe8;
 }
 
 .mobileproduct-boxl {
@@ -289,13 +291,12 @@ p {
   padding-bottom: 20px;
 }
 .mobileproduct-boxr img {
-  margin-top: 0px;
+  margin-top: 30px;
   width:40%;
 }
 
 .mobileproduct-boxp1 {
-  font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   margin: 5px 35px 0;
   height: 18px;
   color: black;
@@ -314,7 +315,7 @@ p {
 
 .mobileproduct-boxp2 {
   color: #ee882a;
-  font-weight: 100;
+  font-weight: 600;
   font-size: 14px;
   margin: 20px 35px 0;
   line-height: 25px;

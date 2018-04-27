@@ -1,8 +1,9 @@
 <template>
-	<div>
-		<Nav navtitle='MARKETING'></Nav>
+<div>
+	<div v-if="width<1500&&width>640">
+		<Nav navtitle='Company Services'></Nav>
 		<div class='wraperwidth'>
-			<p class='titleex'>Moumou Holding Group Co. Ltd. was founded in January 18, 2005, is a municipal government capital to accelerate the strategic adjustment of state-owned capital, a few key enterprises bigger and stronger, to XX (industry) Group Limited, a wholly state-owned company XYZ Holdings Limited and a city gas Refco Group Ltd reorganization and the establishment of a city, is one of the largest state-owned enterprise capital, infrastructure and public utilities and municipal government and the municipal SASAC planning investment and financing platform. Since the establishment of a control group, a total profit of state-owned enterprises has always ranked in the first, and was named "China top 500 enterprises", "top 500 enterprises Chinese"</p>
+			<p class='titleex'>The service concept of LaoWaiCang is based on the principles of "customer above all, service-oriented, quality first, leaded by innovation". We strive to satisfy all the individual needs of every client for all our customers, putting all our efforts to offer the best services, to maximize the value and the service experience for each customer</p>
 			<div>
 				<img class='imgsize' src='../../../images/index-network.jpg' />
 				<div class='index-internet-content'>
@@ -18,6 +19,41 @@
 			</div>
 		</div>
 	</div>
+  <div v-if="width>=1500">
+		<Nav navtitle='Company Services'></Nav>
+		<div class='midwraperwidth'>
+			<p class='midtitleex'>The service concept of LaoWaiCang is based on the principles of "customer above all, service-oriented, quality first, leaded by innovation". We strive to satisfy all the individual needs of every client for all our customers, putting all our efforts to offer the best services, to maximize the value and the service experience for each customer</p>
+			<div>
+				<img class='midimgsize' src='../../../images/index-network.jpg' />
+				<div class='midindex-internet-content'>
+					<div class='midindex-internet-content'>
+						<!--循环数据-->
+						<div class='midindex-internet-box' v-for='(item,index) in internet' :key=index>
+							<p class='midindex-internet-body-p1'>{{item.num}}</p>
+							<p class='midindex-internet-body-p2'>{{item.introduction}}</p>
+						</div>
+						<div style='clear: both;'></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <div v-if="width<=640">
+		<Nav navtitle='Company Services'></Nav>
+		<div class='mobilewraperwidth mobileindex-internet-body'>
+			<p class='mobiletitleex'>The service concept of LaoWaiCang is based on the principles of "customer above all, service-oriented, quality first, leaded by innovation". We strive to satisfy all the individual needs of every client for all our customers, putting all our efforts to offer the best services, to maximize the value and the service experience for each customer</p>
+			<img class="mobileimgsizein" src="../../../images/index-network.jpg" />
+			<div class="mobileindex-internet-content">
+					<!--循环数据-->
+					<div class="mobileindex-internet-box" v-for="(item,index) in internet" :key=index>
+						<p class="mobileindex-internet-body-p1">{{item.num}}</p>
+						<p class="mobileindex-internet-body-p2">{{item.introduction}}</p>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+		</div>
+	</div>
+  </div>
 </template>
 
 <script>
@@ -25,35 +61,44 @@ import Nav from '../common/nav.vue'
 export default {
   data () {
     return {
+      width: 1920,
       internet: [
         {
-          num: '860+',
-          introduction: 'Our number of cooperative brands has reached 860+'
+          num: '100+',
+          introduction: 'More than 100 Italian brands are already cooperating with us'
         },
         {
-          num: '125+',
-          introduction: 'Our companys products have a long history, and each one is very classic'
+          num: '200+',
+          introduction: 'Most of our partners have a long history, in most cases of over 200 years.'
         },
         {
           num: '1000+',
-          introduction: 'The quantity of our products has reached 1000+'
+          introduction: 'Our offer includes more than 1000 different products'
         },
         {
           num: 'TOP',
-          introduction: 'We are among the best in the industry'
+          introduction: 'We are among the best companies of our sector'
         }
       ]
     }
   },
   components: {
     Nav
+  },
+  created () {
+    this.width = document.documentElement.offsetWidth
+  },
+  updated () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
   }
 }
 </script>
 
 <style scoped>
 .wraperwidth {
-  width: 1420px;
+  width: 1000px;
   margin: 0 auto;
   position: relative;
 }
@@ -71,26 +116,29 @@ export default {
 }
 .index-internet-content {
   position: absolute;
-  width: 1420px;
+  width: 1000px;
   margin: 0 auto 0 auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
 }
 
 .index-internet-box {
-  width: 185px;
+  width: 25%;
   padding: 150px 20px 0 20px;
   float: left;
   text-align: center;
-  margin-left: 160px;
 }
 
 .index-internet-box:nth-of-type(1) {
   margin: 0;
 }
 .imgsize {
+  width: 100%;
+}
+.imgsize img{
   width: 100%;
 }
 .in .index-internet-title-introduction {
@@ -111,5 +159,139 @@ export default {
   color: #ee882a;
   text-shadow: 0.4px 0.4px 0.4px #ee882a;
   margin-top: 20px;
+}
+.midwraperwidth {
+  width: 1420px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.midtitleex {
+  margin-top: 45px;
+  font-size: 14px;
+  color: #c2c2c2;
+  position: relative;
+}
+
+.midindex-internet-body {
+  width: 100%;
+  position: relative;
+}
+.midindex-internet-content {
+  position: absolute;
+  width: 1420px;
+  margin: 0 auto 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.midindex-internet-box {
+  width: 185px;
+  padding: 150px 20px 0 20px;
+  float: left;
+  text-align: center;
+  margin-left: 160px;
+}
+
+.midindex-internet-box:nth-of-type(1) {
+  margin: 0;
+}
+.midimgsize {
+  width: 100%;
+}
+.midindex-internet-title-introduction {
+  font-size: 14px;
+  color: #707070;
+  text-shadow: 0.4px 0.4px 0.4px #707070;
+  margin-top: 20px;
+}
+
+.midindex-internet-body-p1 {
+  font-size: 54px;
+  color: #ee882a;
+  font-weight: bolder;
+}
+
+.midindex-internet-body-p2 {
+  font-size: 14px;
+  color: #ee882a;
+  text-shadow: 0.4px 0.4px 0.4px #ee882a;
+  margin-top: 20px;
+}
+.mobilewraperwidth {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobiletitleex {
+  margin: 20px 30px 0;
+  font-size: 12px;
+  color: #444444;
+  position: relative;
+  text-indent: 2em;
+  line-height: 18px;
+  letter-spacing: 1px;
+}
+
+.mobileindex-internet-body {
+  width: 100%;
+  position: relative;
+}
+.mobileindex-internet-content {
+  position: absolute;
+  width: 100%;
+  margin: 40px auto 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mobileindex-internet-title {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1662c;
+}
+.mobileimgsizein{
+  width: 200%;
+  margin-top: 0px;
+  height: 200px;
+  margin-left:-50%;
+}
+.mobileindex-internet-box {
+  width: 50%;
+  float: left;
+  text-align: center;
+   margin-top: 120px;
+}
+
+.mobileindex-internet-box:nth-of-type(n+3) {
+  margin: 0;
+}
+
+.mobileindex-internet-title-introduction {
+  font-size: 10px;
+  color: #707070;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.mobileindex-internet-body-p1 {
+  margin-top: 15px;
+  font-size: 28px;
+  color: #ee882a;
+  font-weight: 600;
+  margin-bottom: 5px
+}
+
+.mobileindex-internet-body-p2 {
+  font-size: 10px;
+  color: #ee882a;
+  margin: 5px 10px 0;
 }
 </style>

@@ -83,60 +83,60 @@ export default {
       width: 1920,
       productlist: [
         {
-          imgurl1: p11,
-          imgurl2: p21,
+          imgurl1: p13,
+          imgurl2: p23,
           title: '酒水饮料',
           content: '意大利文化我们应该学习葡萄酒，意大利葡萄酒，葡萄酒和许多其他称，是家庭的 基本饮料。',
-          id: '5a72ca5fd03d2b14449ff1a6'
+          id: '5a9bf5e5fce9270fa4c2b6fc'
         },
         {
           imgurl1: p12,
           imgurl2: p22,
           title: '休闲零食',
           content: '意大利有什么好吃的小吃？让我告诉你一些美味到不能停止的零食。',
-          id: '5a72ca6cd03d2b14449ff1a7'
+          id: '5a9bf5e6fce9270fa4c2b6fd'
         },
         {
-          imgurl1: p13,
-          imgurl2: p23,
-          title: '粮油副食',
-          content: '意大利是一个美食国家，他们有着悠久的饮食历史，作为他们的艺术、时尚和家具，总是喜欢精心制作。',
-          id: '5a72cac6d03d2b14449ff1aa'
+          imgurl1: p11,
+          imgurl2: p21,
+          title: '新鲜水果',
+          content: '从意大利最无污染的绿色土地给您提供最新鲜的水果。',
+          id: '5a9bf5e7fce9270fa4c2b6ff'
         },
         {
           imgurl1: p14,
           imgurl2: p24,
-          title: '新鲜水果',
-          content: '意大利是一个美食国家，他们有着悠久的饮食历史，作为他们的艺术、时尚和家具，总是喜欢精心制作。',
-          id: '5a72ca7ed03d2b14449ff1a9'
+          title: '冷冻食品',
+          content: '又方便又快捷的意大利美食！',
+          id: '5a9bf5e7fce9270fa4c2b6fe'
         },
         {
           imgurl1: p15,
           imgurl2: p25,
-          title: '新鲜水果',
+          title: '粮油副食',
           content: '意大利是一个美食国家，他们有着悠久的饮食历史，作为他们的艺术、时尚和家具，总是喜欢精心制作。',
-          id: '5a72ca7ed03d2b14449ff1a9'
+          id: '5a9bf793fce9270fa4c2b70d'
         },
         {
           imgurl1: p16,
           imgurl2: p26,
-          title: '新鲜水果',
-          content: '意大利是一个美食国家，他们有着悠久的饮食历史，作为他们的艺术、时尚和家具，总是喜欢精心制作。',
-          id: '5a72ca7ed03d2b14449ff1a9'
+          title: '酒水饮料',
+          content: '意大利文化我们应该学习葡萄酒，意大利葡萄酒，葡萄酒和许多其他称，是家庭的 基本饮料。',
+          id: '5a9bf5e5fce9270fa4c2b6fc'
         },
         {
           imgurl1: p17,
           imgurl2: p27,
-          title: '冷冻食品',
-          content: '意大利是一个美食国家，他们有着悠久的饮食历史，作为他们的艺术、时尚和家具，总是喜欢精心制作。',
-          id: '5a72ca76d03d2b14449ff1a8'
+          title: '休闲零食',
+          content: '意大利有什么好吃的小吃？让我告诉你一些美味到不能停止的零食。',
+          id: '5a9bf5e6fce9270fa4c2b6fd'
         },
         {
           imgurl1: p18,
           imgurl2: p28,
-          title: '粮油副食',
-          content: '意大利是一个美食国家，他们有着悠久的饮食历史，作为他们的艺术、时尚和家具，总是喜欢精心制作。',
-          id: '5a72cac6d03d2b14449ff1aa'
+          title: '休闲零食',
+          content: '意大利有什么好吃的小吃？让我告诉你一些美味到不能停止的零食。',
+          id: '5a9bf5e6fce9270fa4c2b6fd'
         }
       ]
     }
@@ -253,7 +253,7 @@ export default {
   color: #ee882a;
   font-weight: 600;
   font-size: 18px;
-  margin: 30px 35px 0;
+  margin: 10px 35px 0;
 }
 
 .midmargintop {
@@ -269,7 +269,7 @@ export default {
   color: #ee882a;
   font-weight: 100;
   font-size: 14px;
-  margin: 20px 35px 0;
+  margin: 15px 35px 0;
   line-height: 25px;
   letter-spacing: 1px;
 }

@@ -120,7 +120,7 @@ export default {
       }
     },
     getData () {
-      this.$http.post(`http://120.79.22.222:3000/${this.apimodel}/list`, this.fliter).then(res => { // 获取数据
+      this.$http.post(this.getTest() + `/${this.apimodel}/list`, this.fliter).then(res => { // 获取数据
         let ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {
           res.data.rows[i].num = i

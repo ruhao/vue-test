@@ -3,7 +3,7 @@
 	<div v-if="width<1500&&width>640">
 		<Nav navtitle='公司服务'></Nav>
 		<div class='wraperwidth'>
-			<p class='titleex'>某某控股集团有限公司成立于2005年1月18日，是一个市政府资本加快国有资本的战略性调整，一些重点企业做大做强，XX（实业）集团有限公司，国有独资公司XYZ控股有限公司和市燃气集团有限责任公司重组和一个城市的建立，是其中的一个最大的国有企业资本、基础设施和公共设施和市政府和市国资委规划投资融资平台。由于对照组的建立，一个国有企业利润总额一直排在第一，被评为“中国企业500强”、“中国企业500强”。</p>
+			<p class='titleex'>老外仓秉持“客户至上，服务为本，质量第一，创新领先”的服务理念，争取为每一位选择老外仓的客户满足他们的一切个性化需求，努力做到服务至上，争取为每一位客户带去最大化的价值和最独一无二的服务体验。</p>
 			<div>
 				<img class='imgsize' src='../../../images/index-network.jpg' />
 				<div class='index-internet-content'>
@@ -22,7 +22,7 @@
   <div v-if="width>=1500">
 		<Nav navtitle='公司服务'></Nav>
 		<div class='midwraperwidth'>
-			<p class='midtitleex'>某某控股集团有限公司成立于2005年1月18日，是一个市政府资本加快国有资本的战略性调整，一些重点企业做大做强，XX（实业）集团有限公司，国有独资公司XYZ控股有限公司和市燃气集团有限责任公司重组和一个城市的建立，是其中的一个最大的国有企业资本、基础设施和公共设施和市政府和市国资委规划投资融资平台。由于对照组的建立，一个国有企业利润总额一直排在第一，被评为“中国企业500强”、“中国企业500强”。</p>
+			<p class='midtitleex'>老外仓秉持“客户至上，服务为本，质量第一，创新领先”的服务理念，争取为每一位选择老外仓的客户满足他们的一切个性化需求，努力做到服务至上，争取为每一位客户带去最大化的价值和最独一无二的服务体验。</p>
 			<div>
 				<img class='midimgsize' src='../../../images/index-network.jpg' />
 				<div class='midindex-internet-content'>
@@ -41,7 +41,7 @@
   <div v-if="width<=640">
 		<Nav navtitle='公司服务'></Nav>
 		<div class='mobilewraperwidth mobileindex-internet-body'>
-			<p class='mobiletitleex'>某某控股集团有限公司成立于2005年1月18日，是一个市政府资本加快国有资本的战略性调整，一些重点企业做大做强，XX（实业）集团有限公司，国有独资公司XYZ控股有限公司和市燃气集团有限责任公司重组和一个城市的建立，是其中的一个最大的国有企业资本、基础设施和公共设施和市政府和市国资委规划投资融资平台。由于对照组的建立，一个国有企业利润总额一直排在第一，被评为“中国企业500强”、“中国企业500强”。</p>
+			<p class='mobiletitleex'>老外仓秉持“客户至上，服务为本，质量第一，创新领先”的服务理念，争取为每一位选择老外仓的客户满足他们的一切个性化需求，努力做到服务至上，争取为每一位客户带去最大化的价值和最独一无二的服务体验。</p>
 			<img class="mobileimgsizein" src="../../../images/index-network.jpg" />
 			<div class="mobileindex-internet-content">
 					<!--循环数据-->
@@ -64,11 +64,11 @@ export default {
       width: 1920,
       internet: [
         {
-          num: '860+',
-          introduction: '我们合作品牌的数量已达到860多个'
+          num: '100+',
+          introduction: '我们合作品牌的数量已达到100多个'
         },
         {
-          num: '125+',
+          num: '200+',
           introduction: '我们公司产品历史悠久，每一件都很经典'
         },
         {
@@ -106,7 +106,7 @@ export default {
 .titleex {
   margin-top: 45px;
   font-size: 14px;
-  color: #c2c2c2;
+  color: #444444;
   position: relative;
 }
 
@@ -169,7 +169,7 @@ export default {
 .midtitleex {
   margin-top: 45px;
   font-size: 14px;
-  color: #c2c2c2;
+  color: #444444;
   position: relative;
 }
 
@@ -227,9 +227,9 @@ export default {
 }
 
 .mobiletitleex {
-  margin-top: 20px;
+  margin: 20px 30px 0;
   font-size: 12px;
-  color: #c2c2c2;
+  color: #444444;
   position: relative;
   text-indent: 2em;
   line-height: 18px;
@@ -266,7 +266,7 @@ export default {
   width: 50%;
   float: left;
   text-align: center;
-   margin-top: 120px;
+   margin-top: 60px;
 }
 
 .mobileindex-internet-box:nth-of-type(n+3) {

@@ -3,19 +3,17 @@
 	<div v-if="width<1500&&width>640">
 		<Nav navtitle="行业动态"></Nav>
 		<div class="bodycolor">
-			<div class="wraperwidth">
-				<div v-for="(item,index) in fliter.data6" :key=index>
-					<div class="cnbox">
+			<div class="wraperwidthc">
+				<div v-for="(item,index) in fliter.data6" :key=index  class="cnbox">
 						<div class="cnbox1">
 							<div class="cnbox3">
 								<p class="cnboxp1"><span>{{item.hday}}</span>{{item.hyear}}</p>
                  <router-link :to="{name:'newdetail',params:{content:item}}" class="fontstyle">
 								<p class="cnboxp2">{{item.htitle}}</p>
                 </router-link>
-							</div>
 						</div>
 					</div>
-          <!-- <div style="clear:both"></div> -->
+          <div style="clear:both"></div>
 				</div>
 			</div>
 			<div class="wraperwidth" v-if="fliter.pages>1">
@@ -49,9 +47,8 @@
   <div v-if="width>=1500">
 		<Nav navtitle="行业动态"></Nav>
 		<div class="midbodycolor">
-			<div class="midwraperwidth">
-				<div v-for="(item,index) in fliter.data6" :key=index>
-					<div class="midcnbox">
+			<div class="midwraperwidthc">
+				<div v-for="(item,index) in fliter.data6" :key=index class="midcnbox">
 						<div class="midcnbox1">
 							<div class="midcnbox3">
 								<p class="midcnboxp1"><span>{{item.hday}}</span>{{item.hyear}}</p>
@@ -59,7 +56,6 @@
 								<p class="midcnboxp2">{{item.htitle}}</p>
                  </router-link>
 							</div>
-						</div>
 					</div>
           <!-- <div style="clear:both"></div> -->
 				</div>
@@ -95,7 +91,7 @@
   <div v-if="width<=640">
 		<Nav navtitle="行业动态"></Nav>
 		<div class="mobilebodycolor">
-			<div class="mobilewraperwidth">
+			<div class="mobilewraperwidthr">
         <div class="mobileindex-news-content-top-boxx" v-for="(item,index) in fliter.data6" :key=index>
 							<i>
 								<span class="mobileindex-news-content-span">
@@ -195,19 +191,23 @@ li {
 .bodycolor {
   background: #f5f5f5;
   margin-top: 50px;
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 .wraperwidth {
   width: 1000px;
   margin: 0 auto;
 }
-
+.wraperwidthc{
+  width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 .cnbox {
   width: 490px;
   float: left;
   display: flex;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .cnbox:nth-of-type(2n + 1) {
@@ -290,19 +290,23 @@ li {
 .midbodycolor {
   background: #f5f5f5;
   margin-top: 50px;
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 .midwraperwidth {
   width: 1420px;
   margin: 0 auto;
 }
-
+.midwraperwidthc {
+  width: 1420px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 .midcnbox {
   width: 700px;
   float: left;
   display: flex;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .midcnbox:nth-of-type(2n + 1) {
@@ -365,6 +369,12 @@ i{
   width: 100%;
   overflow: hidden;
   position: relative;
+}
+.mobilewraperwidthr{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  min-height: 220px;
 }
 
 .mobileindex-news-content-top-boxx{

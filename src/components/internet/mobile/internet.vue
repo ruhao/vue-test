@@ -3,16 +3,16 @@
 		<div><img class='mobileheaderbg' src='../../../../images/network-ban.jpg'></div>
 		<div class='mobilewraperwidth'>
 			<div class='mobilehrroute'>
-				<router-link to='/internet'>
-					<div class='heroutebox1 mobileimg' @mouseenter='imgchange2' @mouseleave='imgchange3'>
-						<img src='../../../../images/network1.jpg' id='hrimg1' />
-						<img src='../../../../images/network1a.jpg' id='hrimg2' />
-					</div>
-				</router-link>
-				<router-link to='/internet/server'>
+        <router-link to='/internet'>
 					<div class='heroutebox1 mobileimg' @mouseenter='imgchange' @mouseleave='imgchange1'>
 						<img src='../../../../images/network2.jpg' id='hrimg3' />
 						<img src='../../../../images/network2a.jpg' id='hrimg4' />
+					</div>
+				</router-link>
+				<router-link to='/internet/server'>
+					<div class='heroutebox1 mobileimg' @mouseenter='imgchange2' @mouseleave='imgchange3'>
+						<img src='../../../../images/network1.jpg' id='hrimg1' />
+						<img src='../../../../images/network1a.jpg' id='hrimg2' />
 					</div>
 				</router-link>
 			</div>

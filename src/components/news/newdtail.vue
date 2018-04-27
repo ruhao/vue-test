@@ -1,7 +1,9 @@
 <template>
 <div>
     <div v-if="width>640">
+    <Nav navtitle="老外仓"></Nav>
     <div class="wraperwidth" v-if="this.$route.params.content.title">
+        <div v-if="!this.$route.params.content.imgurlContent">
         <div class="topall">
         <div class="topone">
           <h4 class="title">{{this.$route.params.content.title}}</h4>
@@ -20,16 +22,24 @@
         <p class="content" v-for="(item,index) in content2" :key=index>
             {{item}}
         </p>
+        </div>
+        <div class="imgurlContent" v-else>
+            <img :src="this.$route.params.content.imgurlContent">
+        </div>
     </div>
     <div class="wraperwidth" v-if="this.$route.params.content.htitle">
         <h3 class="title">{{this.$route.params.content.htitle}}</h3>
         <div class="line"></div>
         <p class="date">{{this.$route.params.content.hyear}}-{{this.$route.params.content.hday}}</p>
-        <p class="content">{{this.$route.params.content.hcontent}}</p>
+        <p class="content" v-for="(item,index) in hcontent1" :key=index>
+            {{item}}
+        </p>
     </div>
      </div>
         <div v-if="width<=640">
+            <Nav navtitle="老外仓"></Nav>
     <div class="mobilewraperwidth" v-if="this.$route.params.content.title">
+         <div v-if="!this.$route.params.content.imgurlContent">
         <h3 class="mobiletitle">{{this.$route.params.content.title}}</h3>
         <div class="mobileline"></div>
         <p class="mobiledate">{{this.$route.params.content.year}}-{{this.$route.params.content.day}}</p>
@@ -42,6 +52,10 @@
         <p class="mobilecontent" v-for="(item,index) in content2" :key=index>
             {{item}}
         </p>
+     </div>
+        <div class="moimgurlContent" v-else>
+            <img :src="this.$route.params.content.imgurlContent">
+        </div>
     </div>
     <div class="mobilewraperwidth" v-if="this.$route.params.content.htitle">
         <h3 class="mobiletitle">{{this.$route.params.content.htitle}}</h3>
@@ -74,6 +88,8 @@ export default {
     if (this.$route.params.content.hcontent) {
       this.hcontent1 = this.$route.params.content.hcontent.split('&&')
     }
+    console.log(typeof this.hcontent1)
+    console.log(this.hcontent1)
   },
   updated () {
     window.onresize = () => {
@@ -153,5 +169,20 @@ export default {
     margin-top: 10px;
     text-indent: 2em;
     font-size: 10px;
+}
+.imgurlContent{
+    display: inline-block;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+.imgurlContent img{
+    width: 100%;
+}
+.moimgurlContent{
+   width: 80%;
+   margin: 15px auto;
+}
+.moimgurlContent img{
+    width: 100%;
 }
 </style>

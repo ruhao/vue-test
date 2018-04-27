@@ -1,8 +1,50 @@
 <template>
-	<div>
+<div>
+	<div v-if="width<1500&&width>640">
 		<div><img class="headerbg" src="../../../images/join-ban.jpg"></div>
 		<div class="wraperwidth">
 			<div class="hrroute">
+				<router-link to='/enhr/enstrategy'>
+				<div class="heroutebox1 navimg" @mouseenter="imgchange2" @mouseleave="imgchange3">
+					<img src="../../../images/join1.jpg" id="hrimg1"/>
+					<img src="../../../images/join1a.jpg" id="hrimg2"/>
+				</div>
+				</router-link>
+				<router-link to='/enhr/entrain'>
+				<div class="heroutebox1 navimg" @mouseenter="imgchange" @mouseleave="imgchange1">
+					<img src="../../../images/join2.jpg" id="hrimg3"/>
+					<img src="../../../images/join2a.jpg" id="hrimg4"/>
+				</div>
+				</router-link>
+				<router-link to='/enhr/enadvertises'>
+				<div class="heroutebox1 navimg" @mouseenter="imgchange4" @mouseleave="imgchange5">
+					<img src="../../../images/join3.jpg" id="hrimg5"/>
+					<img src="../../../images/join3a.jpg" id="hrimg6"/>
+				</div>
+				</router-link>
+			</div>
+		</div>
+		<div v-if="this.$route.path==='/enhr'">
+			<div>
+				<Nav navtitle="Human Resources"></Nav>
+			</div>
+			<div class="bottom">
+			<p class="stp">In LaoWaiCang we have a dream, and we need the most professional talents to realize it together.Choosing our team according the characteristics of the import food industry is the root of our success, and talent is our life. We invest in our business not only our resources, but also knowledge, culture and emotions. We put all our humanity in the business of import food.</p>
+			<p class="stp">Our idea is to attract the best talent with to our common ideal, giving them the greatest trust. So we are looking for partners, not employees; partners that should have first-class quality, talent and mind. This is our basic logic.</p>
+			<p class="stp">Ideals and trust are the foundations of our team; only this way we can cherish this kind of trust, and therefore can not tolerate any blemish. In this way, we can ensure the purity of our team and the blooming of our company.</p>
+      </div>
+		</div>
+		<div v-else>
+			<keep-alive>
+				<router-view></router-view>
+			</keep-alive>
+		</div>
+		<Foot></Foot>
+	</div>
+  <div v-if="width>=1500">
+		<div><img class="midheaderbg" src="../../../images/join-ban.jpg"></div>
+		<div class="midwraperwidth">
+			<div class="midhrroute">
 				<router-link to='/enhr/enstrategy'>
 				<div class="heroutebox1" @mouseenter="imgchange2" @mouseleave="imgchange3">
 					<img src="../../../images/join1.jpg" id="hrimg1"/>
@@ -23,13 +65,14 @@
 				</router-link>
 			</div>
 		</div>
-		<div v-if="this.$route.path==='/hr'">
+		<div v-if="this.$route.path==='/enhr'">
 			<div>
-				<Nav navtitle="人力资源"></Nav>
+				<Nav navtitle="Human Resources"></Nav>
 			</div>
-			<div class="bottom">
-			<p class="stp">我们的团队拥有广泛的专业和文化背景，我们对中国和其他海外市场的商业环境的深刻理解，是对国际商业舞台上成功运行的关键。同时，我们也认识到人才对集团发展的重要性，因此，我们一直致力于为人才创造最佳的工作和发展平台。</p>
-			<p class="stp">通过多年的实践和发展，我们团队的骨干更深刻的理解是最大的信心，韩胜集团的发展是稳定的集团的长期基础。品行、能力、健康是我们的选择标准，“激情、使命、责任、坚持、锲而不舍”是我们的团队精神，我们致力于创造一个愿景和崇高境界，团队精神，身心健康，和英国的跨国好团队的特点。</p>
+			<div class="midbottom">
+			<p class="midstp">In LaoWaiCang we have a dream, and we need the most professional talents to realize it together.Choosing our team according the characteristics of the import food industry is the root of our success, and talent is our life. We invest in our business not only our resources, but also knowledge, culture and emotions. We put all our humanity in the business of import food.</p>
+			<p class="midstp">Our idea is to attract the best talent with to our common ideal, giving them the greatest trust. So we are looking for partners, not employees; partners that should have first-class quality, talent and mind. This is our basic logic.</p>
+			<p class="midstp">Ideals and trust are the foundations of our team; only this way we can cherish this kind of trust, and therefore can not tolerate any blemish. In this way, we can ensure the purity of our team and the blooming of our company.</p>
 			</div>
 		</div>
 		<div v-else>
@@ -38,14 +81,24 @@
 			</keep-alive>
 		</div>
 		<Foot></Foot>
-	</div>
+  </div>
+    <div v-if="width<=640">
+      <Hrr></Hrr>
+    </div>
+  </div>
 </template>
 
 <script>
 import Foot from '../common/footer.vue'
 // 模块导入
 import Nav from '../common/nav.vue'
+import Hrr from './mobile/hr.vue'
 export default {
+  data () {
+    return {
+      width: 1920
+    }
+  },
   methods: {
     imgchange () {
       document.getElementById('hrimg3').style.left = -160 + 'px'
@@ -86,19 +139,28 @@ export default {
   },
   components: {
     Foot,
-    Nav
+    Nav,
+    Hrr
   },
-  created () {}
+  created () {
+    this.width = document.documentElement.offsetWidth
+  },
+  updated () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
+  }
 }
 </script>
 
 <style scoped>
 .headerbg {
   width: 100%;
-  min-width: 1420px;
+  min-width: 1000px;
+  text-align: center;
 }
 .wraperwidth {
-  width: 1420px;
+  width: 1000px;
   margin: 0 auto;
 }
 .hrroute {
@@ -113,6 +175,14 @@ export default {
   cursor: pointer;
   z-index: 11;
   overflow: hidden;
+}
+.navimg {
+  height: 120px;
+  width: 120px;
+  margin: 30px;
+}
+.navimg img{
+  width: 100%;
 }
 .heroutebox1 img:nth-of-type(1) {
   position: absolute;
@@ -133,11 +203,34 @@ export default {
   transition: all 0.5s;
 }
 .bottom {
+  width: 900px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.stp {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666666;
+  line-height: 25px;
+  text-indent: 2em;
+}
+.midheaderbg {
+  width: 100%;
+  min-width: 1420px;
+}
+.midwraperwidth {
   width: 1420px;
   margin: 0 auto;
 }
-.stp {
-  margin-top: 45px;
+.midhrroute {
+  text-align: center;
+}
+.midbottom {
+  width: 1420px;
+  margin: 0 auto;
+}
+.midstp {
+  margin-top: 15px;
   font-size: 14px;
   color: #666666;
   line-height: 25px;

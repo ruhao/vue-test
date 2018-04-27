@@ -97,7 +97,7 @@
   <div v-if="width<=640">
 		<Nav navtitle="公司新闻"></Nav>
 		<div class="mobilebodycolor">
-			<div class="mobilewraperwidth">
+			<div class="mobilewraperwidthr">
         <div class="mobileindex-news-content-top-boxx" v-for="(item,index) in fliter.data6" :key=index>
 							<i>
 								<span class="mobileindex-news-content-span">
@@ -105,7 +105,7 @@
 									<p class="mobileindex-news-p2">{{item.title}}</p>
 								</span>
 							</i>
-              <router-link :to="{name:'newdetail',params:{content:item}}">
+              <router-link :to="{name:'newdetail',params:{content:item}}" class="mobileimgsize">
               <img :src="item.imgurl" class="mobileindex-news-content-top-img"/>
               </router-link>
 						</div>
@@ -389,7 +389,12 @@ i{
   overflow: hidden;
   position: relative;
 }
-
+.mobilewraperwidthr{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  min-height: 220px;
+}
 .mobileindex-news-content-top-boxx{
   display: flex;
   width: 100%;
@@ -430,6 +435,9 @@ i{
   height: 105px;
   position: relative;
   z-index: 11
+}
+.mobileimgsize{
+  width: 100%;
 }
 .mobileindex-news-content-top-boxx i .mobileindex-news-content-span .mobileindex-news-p1 {
   margin-left: 25px;

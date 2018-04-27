@@ -18,6 +18,8 @@
 					<br />
 					<label for='telephone' id='sxtelephone-label'>电&nbsp;&nbsp;话：</label><input type='text' id='telephone' @blur='telephonef' />
 					<br />
+          <label for='telephone' id='sxemail-label'>邮&nbsp;&nbsp;箱：</label><input type='text' id='email' @blur='emailf' />
+					<br />
 					<button type='button' id='sxsub' @click='sub'>提交</button>
 				</form>
 			</div>
@@ -44,6 +46,8 @@
 					<label for='name' id='name-label'>姓&nbsp;&nbsp;名：</label><input type='text' id='name' @blur='namef' />
 					<br />
 					<label for='telephone' id='telephone-label'>电&nbsp;&nbsp;话：</label><input type='text' id='telephone' @blur='telephonef' />
+					<br />
+          <label for='telephone' id='email-label'>邮&nbsp;&nbsp;箱：</label><input type='text' id='email' @blur='emailf' />
 					<br />
 					<button type='button' id='sub' @click='sub'>提交</button>
 				</form>
@@ -98,25 +102,35 @@ export default {
         this.flag[2] = false
       }
     },
+    emailf () {
+      let reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+      if (reg.test(document.getElementById('telephone').value)) {
+        this.flag[4] = true
+      } else {
+        this.flag[4] = false
+      }
+    },
     sub () {
-      if (this.flag[0] && this.flag[2] && this.flag[1] && this.flag[3]) {
+      if (this.flag[0] && this.flag[2] && this.flag[1] && this.flag[3] && this.flag[4]) {
         if (confirm('确定提交吗')) {
           this.dataif = {
             title: document.getElementById('title').value,
             content: document.getElementById('content').value,
             name: document.getElementById('name').value,
             telephone: document.getElementById('telephone').value,
-            cateId: '5a41bf9d17db19233cf3ddcd'
+            email: document.getElementById('email').value,
+            cateId: '5a9bf30bfce9270fa4c2b6df'
           }
 
           this.$http
-            .post('http://120.79.22.222:3000/message/data', this.dataif)
+            .post(this.getTest() + '/message/data', this.dataif)
             .then(res => {
               setTimeout(function () {
                 document.getElementById('title').value = ''
                 document.getElementById('content').value = null
                 document.getElementById('name').value = null
                 document.getElementById('telephone').value = null
+                document.getElementById('email').value = null
                 alert('留言成功')
               }, 500)
             })
@@ -130,6 +144,8 @@ export default {
           alert('姓名不能为空')
         } else if (!this.flag[3]) {
           alert('请输入正确的手机号')
+        } else if (!this.flag[4]) {
+          alert('请输入正确的邮箱')
         }
       }
     }
@@ -259,7 +275,8 @@ input {
 
 #title,
 #name,
-#telephone {
+#telephone,
+#email {
   height: 60px;
   width: 710px;
   border: 0;
@@ -270,7 +287,8 @@ input {
 
 #title-label,
 #name-label,
-#telephone-label {
+#telephone-label,
+#email-label {
   font-size: 18px;
   margin-right: 45px;
   text-shadow: 0.4px 0.4px 0.4px #cccccc;
@@ -278,7 +296,8 @@ input {
 }
 #sxtitle-label,
 #sxname-label,
-#sxtelephone-label {
+#sxtelephone-label,
+#sxemail-label {
   font-size: 18px;
   margin-right: 45px;
   text-shadow: 0.4px 0.4px 0.4px #cccccc;

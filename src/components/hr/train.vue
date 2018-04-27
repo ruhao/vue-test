@@ -56,9 +56,11 @@ export default {
   },
   created () {
     this.width = document.documentElement.offsetWidth
-    this.$http.post('http://120.79.22.222:3000/hr/list', this.fliter).then(res => {
+    this.$http.post(this.getTest() + '/hr/list', this.fliter).then(res => {
       this.fliter.data6 = res.data.rows
-      this.information = res.data.rows[0].edreson
+      if (res.data.rows[0]) {
+        this.information = res.data.rows[0].edreson
+      }
     })
   },
   updated () {
@@ -113,7 +115,7 @@ p {
   color: #666666;
 }
 .traindetail-content {
-  margin-top: 50px;
+  margin-top: 20px;
   display: flex;
 }
 .traincontent-bottom {

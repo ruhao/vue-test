@@ -1,6 +1,7 @@
 <template>
-	<div>
-		<Nav navtitle='BUSINESS CULTURE'></Nav>
+<div>
+	<div v-if="width<1500&&width>640">
+		<Nav navtitle='企业文化'></Nav>
 		<div class="wraperwidth">
 			<div v-for="(item,index) in this.fliter.data6" :key=index>
 				<div v-if="item.num%2==0" class="honor">
@@ -13,6 +14,7 @@
 							<p class="honortitle">{{item.title}}</p>
 							<p class="honorcontentp" v-for="(it,ind) in item.content" :key=ind>
 								{{it}}
+                <br />
 							</p>
 						</div>
 					</div>
@@ -33,6 +35,63 @@
 				</div>
 			</div>
 		</div>
+    </div>
+    <div v-if="width>=1500">
+		<Nav navtitle='企业文化'></Nav>
+		<div class="midwraperwidth">
+			<div v-for="(item,index) in this.fliter.data6" :key=index>
+				<div v-if="item.num%2==0" class="midhonor">
+					<div class="midhonor1">
+						<img :src="item.imgurl">
+					</div>
+					<div class="midhonor2">
+						<img :src="item.bgimg" />
+						<div class="midhonorcontent">
+							<p class="midhonortitle">{{item.title}}</p>
+							<p class="midhonorcontentp" v-for="(it,ind) in item.content" :key=ind>
+								{{it}}
+							</p>
+						</div>
+					</div>
+				</div>
+				<div v-else class="midhonor">
+					<div class="midhonor2">
+						<img :src="item.bgimg" />
+						<div class="midhonorcontent">
+							<p class="midhonortitle">{{item.title}}</p>
+							<p class="midhonorcontentp" v-for="(it,ind) in item.content" :key=ind>
+								{{it}}
+							</p>
+						</div>
+					</div>
+					<div class="midhonor1">
+						<img :src="item.imgurl">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <div v-if="width<=640">
+		<Nav navtitle='企业文化'></Nav>
+		<div class="mobilewraperwidth">
+			<div v-for="(item,index) in this.fliter.data6" :key=index>
+				<div>
+					<div class="mobilehonor1">
+						<img :src="item.imgurl">
+					</div>
+					<div class="mobilehonor2">
+						<img :src="item.bgimg" />
+						<div class="mobilehonorcontent">
+							<p class="mobilehonortitle">{{item.title}}</p>
+							<p class="mobilehonorcontentp" v-for="(it,ind) in item.content" :key=ind>
+								{{it}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	</div>
 </template>
 
@@ -41,6 +100,7 @@ import Nav from '../common/nav.vue'
 export default {
   data () {
     return {
+      width: 1920,
       fliter: {
         data6: [],
         type: '2',
@@ -48,31 +108,35 @@ export default {
       }
     }
   },
-  methods: {},
   components: {
     Nav
   },
   created () {
+    this.width = document.documentElement.offsetWidth
     this.$http
-      .post('http://120.79.22.222:3000/about/list', this.fliter)
+      .post(this.getTest() + '/about/list', this.fliter)
       .then(res => {
-        console.log(res)
         let ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {
+          res.data.rows[i].content = res.data.rows[i].content.trim()
           res.data.rows[i].content = res.data.rows[i].content.replace(
             /；/g,
             ';'
-          ) // 进行替换，把中英文的；统一起来
+          ).trim() // 进行替换，把中英文的；统一起来
           res.data.rows[i].content = res.data.rows[i].content.split(';') // 进行分割 使语句分行显示
           let ll = res.data.rows[i].content.length
-          for (let j = 0; j < ll; j++) {
+          for (let j = 0; j < ll - 1; j++) {
             res.data.rows[i].content[j] = res.data.rows[i].content[j] + ';' // 进行；好统一还原
           }
           res.data.rows[i].num = i
         }
-
         this.fliter.data6 = res.data.rows
       })
+  },
+  updated () {
+    window.onresize = () => {
+      this.width = document.documentElement.offsetWidth
+    }
   }
 }
 </script>
@@ -85,7 +149,7 @@ img {
 }
 
 .wraperwidth {
-  width: 1420px;
+  width: 1000px;
   margin: 0 auto;
   margin-top: 50px;
 }
@@ -95,14 +159,14 @@ img {
 }
 
 .honor1 {
-  width: 710px;
-  height: 300px;
+  width: 495px;
+  height: 204px;
   overflow: hidden;
 }
 
 .honor2 {
-  width: 710px;
-  height: 300px;
+  width: 495px;
+  height: 204px;
   overflow: hidden;
   position: relative;
 }
@@ -114,20 +178,72 @@ img {
 
 .honor2 .honorcontent {
   position: absolute;
+  width: 435px;
+  height: 100%;
+  padding: 0 30px 0 30px;
+  top: 0;
+  left: 0;
+  z-index:12;
+}
+.honortitle {
+  margin-left: 50px;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #ee882a;
+  margin-bottom: 15px;
+}
+.honorcontentp {
+  font-size: 14px;
+  line-height: 25px;
+  color: #5b6270;
+  text-shadow: 0.2px 0.2px 0.2px #9ba7b5;
+  letter-spacing: 2px;
+  text-indent: 1.5em;
+}
+.midwraperwidth {
+  width: 1420px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.midhonor {
+  display: flex;
+}
+
+.midhonor1 {
+  width: 710px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.midhonor2 {
+  width: 710px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.midhonor1 img {
+  width: 100%;
+  height: 100%;
+}
+
+.midhonor2 .midhonorcontent {
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   z-index: 2;
 }
-.honortitle {
+.midhonortitle {
   margin-left: 50px;
   margin-top: 35px;
   font-size: 28px;
   color: #ee882a;
   margin-bottom: 35px;
 }
-.honorcontentp {
+.midhonorcontentp {
   margin-left: 50px;
   margin-right: 50px;
   font-size: 14px;
@@ -135,5 +251,58 @@ img {
   color: #5b6270;
   text-shadow: 0.4px 0.4px 0.4px #9ba7b5;
   letter-spacing: 2px;
+  text-indent: 1.5em;
+}
+.mobilewraperwidth {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.mobilehonor1 {
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+    font-size: 0;
+}
+
+.mobilehonor2 {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+    font-size: 0;
+}
+
+.mobilehonor1 img {
+  width: 100%;
+  font-size: 0;
+}
+.mobilehonor2 img{
+  width: 100%;
+}
+
+.mobilehonor2 .mobilehonorcontent {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.mobilehonortitle {
+  margin-left: 20px;
+  margin-top: 15px;
+  font-size: 18px;
+  color: #ee882a;
+  margin-bottom: 15px;
+}
+.mobilehonorcontentp {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 10px;
+  line-height: 18px;
+  color: #5b6270;
+  text-shadow: 0.4px 0.4px 0.4px #9ba7b5;
+  letter-spacing: 2px;
+  text-indent: 1.5em;
 }
 </style>

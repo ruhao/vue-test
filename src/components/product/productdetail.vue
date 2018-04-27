@@ -5,7 +5,25 @@
 		<Nav :navtitle="cidsec2"></Nav>
 		<div class="wraperwidth" >
 			<div class="pdetail-left">
+        <div v-if="this.detail.imgurl" class="imgsize">
+					<img :src="this.detail.imgurl" />
+				</div>
+         <div v-if="this.detail.companyintroduction">
+					<p class="pdetail-leftp2" v-for="(item,index) in this.companyintroduction" :key=index>{{item}}</p>
+				</div>
+        <br />
+        <div v-if="this.detail.name">
+					<p class="pdetail-leftp4">{{this.detail.name}}</p>
+				</div>
+        <div v-if="this.detail.introduction">
+					<p class="pdetail-leftp2" v-for="(item,index) in this.introduction" :key=index>{{item}}</p>
+				</div>
+        <div v-if="this.detail.describe">
+					<p class="pdetail-leftp2" v-for="(item,index) in described" :key=index>{{item}}</p>
+				</div>
 				<div v-if="this.detail.title">
+          <br />
+          <p class="pdetail-leftp4">饮食搭配</p>
 					<p class="pdetail-leftp1">{{this.detail.title}}</p>
 					<p class="pdetail-leftp2" v-for="(item,index) in this.firsttitle" :key=index>{{item}}</p>
 				</div>
@@ -17,17 +35,21 @@
 					<p class="pdetail-leftp1">{{this.detail.title2}}</p>
 					<p class="pdetail-leftp2" v-for="(item,index) in this.thirdtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.imgurl" class="imgsize">
-					<img :src="this.detail.imgurl" />
+				<div v-if="this.detail.title3">
+					<p class="pdetail-leftp1">{{this.detail.title2}}</p>
+					<p class="pdetail-leftp2" v-for="(item,index) in this.fourtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.introduction">
-					<p class="pdetail-leftp2" v-for="(item,index) in this.introduction" :key=index>{{item}}</p>
+        <div v-if="this.detail.title4">
+					<p class="pdetail-leftp1">{{this.detail.title2}}</p>
+					<p class="pdetail-leftp2" v-for="(item,index) in this.fifthtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.name">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">商品名称:</span>&nbsp;&nbsp;{{this.detail.name}}</p>
+        <div v-if="this.detail.title5">
+					<p class="pdetail-leftp1">{{this.detail.title2}}</p>
+					<p class="pdetail-leftp2" v-for="(item,index) in this.sixtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.describe">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品描述:</span>&nbsp;&nbsp;{{this.detail.describe}}</p>
+        <br />
+        <div v-if="!this.detail.haveparameter">
+					<p class="pdetail-leftp4">产品参数</p>
 				</div>
 				<div v-if="this.detail.origin">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">原&nbsp;产&nbsp;地:</span>&nbsp;&nbsp;{{this.detail.origin}}</p>
@@ -50,11 +72,26 @@
 				<div v-if="this.detail.color">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">颜&nbsp;&nbsp;色:</span>&nbsp;&nbsp;{{this.detail.color}}</p>
 				</div>
+        <div v-if="this.detail.Kcontent">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">I&nbsp;B&nbsp;U:</span>&nbsp;&nbsp;{{this.detail.Kcontent}}</p>
+				</div>
 				<div v-if="this.detail.smell">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">气&nbsp;&nbsp;味:</span>&nbsp;&nbsp;{{this.detail.smell}}</p>
 				</div>
 				<div v-if="this.detail.taste">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">口&nbsp;&nbsp;感:</span>&nbsp;&nbsp;{{this.detail.taste}}</p>
+				</div>
+        <div v-if="this.detail.isfit">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">适用人群:</span>&nbsp;&nbsp;{{this.detail.isfit}}</p>
+				</div>
+        <div v-if="this.detail.fittemperature ">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">适用温度:</span>&nbsp;&nbsp;{{this.detail.fittemperature}}</p>
+				</div>
+        <div v-if="this.detail.use">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">食用方法:</span>&nbsp;&nbsp;{{this.detail.use}}</p>
+				</div>
+        <div v-if="this.detail.MethodOfUse">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">使用方法:</span>&nbsp;&nbsp;{{this.detail.MethodOfUse}}</p>
 				</div>
 				<div v-if="this.detail.storaged">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">储存方法:</span>&nbsp;&nbsp;{{this.detail.storaged}}</p>
@@ -66,17 +103,21 @@
 			<div class="pdetail-right smwidth">
 				<p class="pdetail-rightp1">产品推荐</p>
 				<div v-for="(item,index) in relatived" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
-					<router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}">
-						<div class="serverbox1 productimg"><img :src="item.imgurl"></div>
-					</router-link>
-					<router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}">
-						<div class="serverbox2 productimg" @click="changepage(item.num)">
-							<img src="../../../images/products2-1.jpg">
+					<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}"> -->
+						<div class="serverbox1 productimg"><img :src="item.imgurl" @click="changcontent(item,reid)"></div>
+					<!-- </router-link>
+					<router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}"> -->
+						<div class="serverbox2 productimg" @click="changcontent(item,reid)">
+						<img v-if='item.type==5' src="../../../images/products2-3.jpg">
+            <img v-if='item.type==4' src="../../../images/products2-8.jpg">
+            <img v-if='item.type==2' src="../../../images/products2-1.jpg">
+            <img v-if='item.type==1' src="../../../images/products2-4.jpg">
+            <img v-if='item.type==3' src="../../../images/products2-5.jpg">
 							<p class="prolist">
 								{{item.name}}
 							</p>
 						</div>
-					</router-link>
+					<!-- </router-link> -->
 				</div>
          <div v-if="relatived.length<1" class="jingqingqidai">
           敬请期待
@@ -93,7 +134,25 @@
 		<Nav :navtitle="this.$route.params.content.navname"></Nav>
 		<div class="wraperwidth">
 			<div class="pdetail-left">
+        <div v-if="this.detail.imgurl" class="imgsize">
+					<img :src="this.detail.imgurl" />
+				</div>
+         <div v-if="this.detail.companyintroduction">
+					<p class="pdetail-leftp2" v-for="(item,index) in this.companyintroduction" :key=index>{{item}}</p>
+				</div>
+        <br />
+        <div v-if="this.detail.name">
+					<p class="pdetail-leftp4">{{this.detail.name}}</p>
+				</div>
+        <div v-if="this.detail.introduction">
+					<p class="pdetail-leftp2" v-for="(item,index) in this.introduction" :key=index>{{item}}</p>
+				</div>
+        <div v-if="this.detail.describe">
+					<p class="pdetail-leftp2" v-for="(item,index) in described" :key=index>{{item}}</p>
+				</div>
 				<div v-if="this.detail.title">
+          <br />
+          <p class="pdetail-leftp4">饮食搭配</p>
 					<p class="pdetail-leftp1">{{this.detail.title}}</p>
 					<p class="pdetail-leftp2" v-for="(item,index) in this.firsttitle" :key=index>{{item}}</p>
 				</div>
@@ -105,17 +164,21 @@
 					<p class="pdetail-leftp1">{{this.detail.title2}}</p>
 					<p class="pdetail-leftp2" v-for="(item,index) in this.thirdtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.imgurl" class="imgsize">
-					<img :src="this.detail.imgurl" />
+				<div v-if="this.detail.title3">
+					<p class="pdetail-leftp1">{{this.detail.title2}}</p>
+					<p class="pdetail-leftp2" v-for="(item,index) in this.fourtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.introduction">
-					<p class="pdetail-leftp2" v-for="(item,index) in this.introduction" :key=index>{{item}}</p>
+        <div v-if="this.detail.title4">
+					<p class="pdetail-leftp1">{{this.detail.title2}}</p>
+					<p class="pdetail-leftp2" v-for="(item,index) in this.fifthtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.name">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">商品名称:</span>&nbsp;&nbsp;{{this.detail.name}}</p>
+        <div v-if="this.detail.title5">
+					<p class="pdetail-leftp1">{{this.detail.title2}}</p>
+					<p class="pdetail-leftp2" v-for="(item,index) in this.sixtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.describe">
-					<p class="pdetail-leftp3"><span class="pdetail-leftspan">产品描述:</span>&nbsp;&nbsp;{{this.detail.describe}}</p>
+        <br />
+        <div v-if="!this.detail.haveparameter">
+					<p class="pdetail-leftp4">产品参数</p>
 				</div>
 				<div v-if="this.detail.origin">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">原&nbsp;产&nbsp;地:</span>&nbsp;&nbsp;{{this.detail.origin}}</p>
@@ -135,6 +198,9 @@
 				<div v-if="this.detail.Scontent">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">酸&nbsp;含&nbsp;量:</span>&nbsp;&nbsp;{{this.detail.Scontent}}</p>
 				</div>
+        <div v-if="this.detail.Kcontent">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">I&nbsp;B&nbsp;U:</span>&nbsp;&nbsp;{{this.detail.Kcontent}}</p>
+				</div>
 				<div v-if="this.detail.color">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">颜&nbsp;&nbsp;色:</span>&nbsp;&nbsp;{{this.detail.color}}</p>
 				</div>
@@ -144,6 +210,15 @@
 				<div v-if="this.detail.taste">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">口&nbsp;&nbsp;感:</span>&nbsp;&nbsp;{{this.detail.taste}}</p>
         </div>
+         <div v-if="this.detail.isfit">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">适用人群:</span>&nbsp;&nbsp;{{this.detail.isfit}}</p>
+				</div>
+        <div v-if="this.detail.use">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">食用方法:</span>&nbsp;&nbsp;{{this.detail.use}}</p>
+				</div>
+        <div v-if="this.detail.MethodOfUse">
+					<p class="pdetail-leftp3"><span class="pdetail-leftspan">使用方法:</span>&nbsp;&nbsp;{{this.detail.MethodOfUse}}</p>
+				</div>
 				<div v-if="this.detail.storaged">
 					<p class="pdetail-leftp3"><span class="pdetail-leftspan">储存方法:</span>&nbsp;&nbsp;{{this.detail.storaged}}</p>
 				</div>
@@ -154,17 +229,21 @@
 			<div class="pdetail-right">
 				<p class="pdetail-rightp1">产品推荐</p>
 				<div v-for="(item,index) in relatived" :key=index class="serverbox" @mouseenter="moveup(item.num)" @mouseleave="movedown(item.num)">
-					<router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}">
-						<div class="serverbox1 productimg"><img :src="item.imgurl"></div>
-					</router-link>
-					<router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}">
-						<div class="serverbox2" @click="changepage(item.num)">
-							<img src="../../../images/products2-1.jpg" @click="changcontent(item,reid)">
+					<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}"> -->
+						<div class="serverbox1 productimg"><img :src="item.imgurl" @click="changcontent(item,reid)"></div>
+					<!-- </router-link> -->
+					<!-- <router-link :to="{name:'productdetail',params:{content:{content:item,navname:'this.$route.params.content.navname',relative:'this.$route.params.content.relative'}}}"> -->
+						<div class="serverbox2" @click="changcontent(item,reid)">
+						<img v-if='item.type==5' src="../../../images/products2-3.jpg">
+            <img v-if='item.type==4' src="../../../images/products2-8.jpg">
+            <img v-if='item.type==2' src="../../../images/products2-1.jpg">
+            <img v-if='item.type==1' src="../../../images/products2-4.jpg">
+            <img v-if='item.type==3' src="../../../images/products2-5.jpg">
 							<p class="prolist">
 								{{item.name}}
 							</p>
 						</div>
-					</router-link>
+					<!-- </router-link> -->
 				</div>
          <div v-if="relatived.length<1" class="jingqingqidai">
           敬请期待
@@ -179,9 +258,26 @@
   <div v-if="width<=640">
     <div v-if="this.detail.cateId">
 		<Nav :navtitle="this.$route.params.content.navname"></Nav>
-		<div class="mobilewraperwidth">
 			<div class="mobilepdetail-left">
+        <div v-if="this.detail.imgurl" class="mobileimgsize">
+					<img :src="this.detail.imgurl" />
+				</div>
+         <div v-if="this.detail.companyintroduction">
+					<p class="mobilepdetail-leftp2" v-for="(item,index) in this.companyintroduction" :key=index>{{item}}</p>
+				</div>
+        <br />
+        <div v-if="this.detail.name">
+					<h3 class="mobilepdetail-leftp4">{{this.detail.name}}</h3>
+				</div>
+        <div v-if="this.detail.introduction">
+					<p class="mobilepdetail-leftp2" v-for="(item,index) in this.introduction" :key=index>{{item}}</p>
+				</div>
+        <div v-if="this.detail.describe">
+					<p class="mobilepdetail-leftp2" v-for="(item,index) in described" :key=index>{{item}}</p>
+				</div>
 				<div v-if="this.detail.title">
+          <br />
+          <h3 class="mobilepdetail-leftp4">饮食搭配</h3>
 					<p class="mobilepdetail-leftp1">{{this.detail.title}}</p>
 					<p class="mobilepdetail-leftp2" v-for="(item,index) in this.firsttitle" :key=index>{{item}}</p>
 				</div>
@@ -193,17 +289,21 @@
 					<p class="mobilepdetail-leftp1">{{this.detail.title2}}</p>
 					<p class="mobilepdetail-leftp2" v-for="(item,index) in this.thirdtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.imgurl" class="mobileimgsize">
-					<img :src="this.detail.imgurl" />
+				<div v-if="this.detail.title3">
+					<p class="mobilepdetail-leftp1">{{this.detail.title2}}</p>
+					<p class="mobilepdetail-leftp2" v-for="(item,index) in this.fourtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.introduction">
-					<p class="mobilepdetail-leftp2" v-for="(item,index) in this.introduction" :key=index>{{item}}</p>
+        <div v-if="this.detail.title4">
+					<p class="mobilepdetail-leftp1">{{this.detail.title2}}</p>
+					<p class="mobilepdetail-leftp2" v-for="(item,index) in this.fifthtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.name">
-					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">商品名称:</span>&nbsp;&nbsp;{{this.detail.name}}</p>
+        <div v-if="this.detail.title5">
+					<p class="mobilepdetail-leftp1">{{this.detail.title2}}</p>
+					<p class="mobilepdetail-leftp2" v-for="(item,index) in this.sixtitle" :key=index>{{item}}</p>
 				</div>
-				<div v-if="this.detail.describe">
-					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">产品描述:</span>&nbsp;&nbsp;{{this.detail.describe}}</p>
+        <br />
+        <div v-if="!this.detail.haveparameter">
+					<h3 class="mobilepdetail-leftp4">产品参数</h3>
 				</div>
 				<div v-if="this.detail.origin">
 					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">原&nbsp;产&nbsp;地:</span>&nbsp;&nbsp;{{this.detail.origin}}</p>
@@ -223,6 +323,9 @@
 				<div v-if="this.detail.Scontent">
 					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">酸&nbsp;含&nbsp;量:</span>&nbsp;&nbsp;{{this.detail.Scontent}}</p>
 				</div>
+        <div v-if="this.detail.Kcontent">
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">I&nbsp;B&nbsp;U:</span>&nbsp;&nbsp;{{this.detail.Kcontent}}</p>
+				</div>
 				<div v-if="this.detail.color">
 					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">颜&nbsp;&nbsp;色:</span>&nbsp;&nbsp;{{this.detail.color}}</p>
 				</div>
@@ -232,15 +335,24 @@
 				<div v-if="this.detail.taste">
 					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">口&nbsp;&nbsp;感:</span>&nbsp;&nbsp;{{this.detail.taste}}</p>
         </div>
+         <div v-if="this.detail.isfit">
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">适用人群:</span>&nbsp;&nbsp;{{this.detail.isfit}}</p>
+				</div>
+        <div v-if="this.detail.use">
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">食用方法:</span>&nbsp;&nbsp;{{this.detail.use}}</p>
+				</div>
+        <div v-if="this.detail.MethodOfUse">
+					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">使用方法:</span>&nbsp;&nbsp;{{this.detail.MethodOfUse}}</p>
+				</div>
 				<div v-if="this.detail.storaged">
 					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">储存方法:</span>&nbsp;&nbsp;{{this.detail.storaged}}</p>
 				</div>
 				<div v-if="this.detail.match">
 					<p class="mobilepdetail-leftp3"><span class="mobilepdetail-leftspan">产品搭配:</span>&nbsp;&nbsp;{{this.detail.match}}</p>
 				</div>
-			</div>
+        <br />
+				<h3 class="mobilepdetail-leftp4">产品推荐</h3>
 			<div class="mobilepdetail-right">
-				<p class="mobilepdetail-rightp1">产品推荐</p>
 				<div v-if="relatived.length>0" v-for="(item,index) in relatived" :key=index class="mobileserverbox">
           <div class="mobileserverbox1">
           <img :src="item.imgurl" @click="changcontent(item,reid)"><span></span>
@@ -269,7 +381,11 @@ export default {
       firsttitle: [],
       secondtitle: [],
       thirdtitle: [],
+      fourtitle: [],
+      fifthtitle: [],
+      sixtitle: [],
       introduction: [],
+      described: [],
       cidsec1: '',
       reid: '',
       relative: [],
@@ -283,7 +399,8 @@ export default {
         data6: [],
         limit: 50,
         page: 1,
-        cateId: []
+        cateId: [],
+        type: ''
       }
     }
   },
@@ -300,13 +417,29 @@ export default {
       let object1 = data.split('&&')
       this.thirdtitle = object1
     },
+    getdetail5 (data) {
+      let object1 = data.split('&&')
+      this.fourtitle = object1
+    },
+    getdetail6 (data) {
+      let object1 = data.split('&&')
+      this.fifthtitle = object1
+    },
+    getdetail7 (data) {
+      let object1 = data.split('&&')
+      this.sixtitle = object1
+    },
     getdetail3 (data) {
       let object1 = data.split('&&')
       this.introduction = object1
     },
+    getdetail4 (data) {
+      let object1 = data.split('&&')
+      this.companyintroduction = object1
+    },
     getlist (data) {
-      this.$http.get('http://120.79.22.222:3000/kind/data').then(res => {
-        this.getcid(res.data[0].children[5].children, data)
+      this.$http.get(this.getTest() + '/kind/data').then(res => {
+        this.getcid(res.data[0].children[0].children[5].children, data)
         this.getData()
       })
     },
@@ -350,6 +483,18 @@ export default {
       if (this.detail.introduction) {
         this.getdetail3(this.detail.introduction)
       }
+      if (this.detail.companyintroduction) {
+        this.getdetail4(this.detail.companyintroduction)
+      }
+      if (this.detail.content3) {
+        this.getdetail4(this.detail.companyintroduction)
+      }
+      if (this.detail.content4) {
+        this.getdetail4(this.detail.companyintroduction)
+      }
+      if (this.detail.content5) {
+        this.getdetail4(this.detail.companyintroduction)
+      }
     },
     moveup (value) {
       document.getElementsByClassName('serverbox2')[value].id = 'activet'
@@ -377,7 +522,7 @@ export default {
       this.getData()
     },
     getData () {
-      this.$http.post('http://120.79.22.222:3000/products/list', this.fliter)
+      this.$http.post(this.getTest() + '/products/list', this.fliter)
         .then(res => {
           // 获取数据
           this.relatived = []
@@ -400,12 +545,15 @@ export default {
     Nav
   },
   created () {
+    console.log(this.$route.params)
     this.width = document.documentElement.offsetWidth
     if (this.$route.params.content) {
       this.getlist(this.$route.params.content.relative)
+      this.fliter.type = this.$route.params.content.type
       this.reid = this.$route.params.content.relative
       this.detail = this.$route.params.content.content
       this.cidsec2 = this.$route.params.content.navname
+      this.described = this.$route.params.content.content.describe.split(';')
       if (this.cidsec2 === '可选分类') {
         this.cidsec2 = '产品详情'
       }
@@ -420,6 +568,9 @@ export default {
       }
       if (this.detail.introduction) {
         this.getdetail3(this.detail.introduction)
+      }
+      if (this.detail.companyintroduction) {
+        this.getdetail4(this.detail.companyintroduction)
       }
     }
   },
@@ -458,30 +609,46 @@ export default {
 
 .pdetail-leftp1 {
 	margin-top: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #464c5b;
+  font-size: 16px;
+  font-weight: 600;
+  color: #404040;
 }
 
 .pdetail-leftp2 {
   margin-top: 10px;
-  font-size: 14px;
-  color: #464c5b;
-  text-indent: 2em;
-  font-weight: 600;
+  font-size: 16px;
+  color: #404040;
+  font-weight: 100;
+  line-height: 25px;
 }
 
 .pdetail-leftp3 {
   margin-top: 10px;
   font-size: 16px;
-  font-weight: 600;
-  color: #464c5b;
+  font-weight: 100;
+  color: #404040;
+  line-height: 25px;
 }
-
+.pdetail-leftp4{
+  font-size: 24px;
+  color:#404040;
+  font-size: 600;
+}
+.mobilepdetail-leftp4{
+  font-size:14px;
+  color:#404040;
+  font-size: bold;
+}
 .pdetail-leftspan {
-  font-size: 18px;
-  font-weight: bold;
-  color: #464c5b;
+  font-size: 16px;
+  font-weight: 600;
+  color: #404040;
+}
+.pdetail-leftspan2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #404040;
+  margin-top: 10px;
 }
 
 .imgsize {
@@ -576,41 +743,42 @@ export default {
 }
 
 .mobilepdetail-left {
-  width: 66%;
-  padding: 0 2%;
+  width: 90%;
+  padding: 0 5%;
 }
 
 .mobilepdetail-right {
-  width: 26%;
-  border-top: 3px solid #ee882a;
+  margin-top: 15px;
+  width: 96%;
+  border-top: 3px solid #f2ab699c;
   padding: 0 2%;
   position: relative;
+  overflow: hidden;
 }
 
 .mobilepdetail-leftp1 {
   font-size: 12px;
   font-weight: 600;
-  color: #464c5b;
+  color: #404040;
   margin-top:10px;
 }
 
 .mobilepdetail-leftp2 {
   margin-top: 10px;
-  font-size: 10px;
-  color: #464c5b;
-  text-indent: 2em;
+  font-size: 12px;
+  color: #404040;
 }
 
 .mobilepdetail-leftp3 {
   margin-top: 10px;
   font-size: 10px;
-  color: #464c5b;
+  color: #404040;
 }
 
 .mobilepdetail-leftspan {
   font-size: 12px;
   font-weight: 600;
-  color: #464c5b;
+  color: #404040;
 }
 
 .mobileimgsize {
@@ -619,9 +787,11 @@ export default {
   max-width: 80%;
   height: 0;
   overflow:hidden;
+  margin: 0 auto;
 }
 .mobileimgsize img{
-  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
 }
 .mobilepdetail-rightp1 {
   margin-top: 10px;
@@ -632,11 +802,12 @@ export default {
   text-indent: 2em;
 }
 .mobileserverbox {
-  width: 100%;
+  width: 50%;
   position: relative;
   cursor: pointer;
   overflow: hidden;
   margin-top: 30px;
+  float: left;
 }
 .jingqingqidai{
   color: #ee882a;
@@ -648,12 +819,13 @@ export default {
   top: 0px;
   left: 0px;
   font-size: 0;
-  width: 100%;
+  width: 90%;
   text-align: center;
+  border: 2px #f2ab699c solid;
 }
 
 .mobileserverbox1 img {
-  height: 100%;
+  height: 90%;
 }
 .mobileprolist {
   margin-top: 50px;

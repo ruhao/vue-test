@@ -2,7 +2,7 @@
   <div>
 	<div v-if="width<1500&&width>640">
 		<div>
-			<div><img class="headerbg" src="../../../images/banner1.jpg"/></div>
+			<div><img class="headerbg" src="../../../images/banner1.jpg" alt="正在加载中"/></div>
 		</div>
 
 		<!--产品业务-->
@@ -18,38 +18,38 @@
 				</div>
 				<div class="index-product-content-right">
 					<div class="index-product-content-right-top">
-            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca6cd03d2b14449ff1a7',name:'进口零食'}}}" class="fontstyle">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e5fce9270fa4c2b6fc',name:'酒水饮料'}}}" class="fontstyle">
 						<div class="index-product-content-box1">
-							<img src="../../../images/products1-8.jpg" />
+							<img src="../../../images/products1-3.jpg" />
 						</div>
             </router-link>
-            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca6cd03d2b14449ff1a7',name:'进口零食'}}}" class="fontstyle">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e6fce9270fa4c2b6fd',name:'进口零食'}}}" class="fontstyle">
 						<div class="index-product-content-box">
 							<img src="../../../images/products2-8.jpg" class="productimg"/>
 							<p class="index-product-content-right-title">进口零食</p>
 							<p class="index-product-content-right-content">意大利有什么好吃的小吃？让我告诉你一些美味到不能停止的食品</p>
 						</div>
             </router-link>
-            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="fontstyle">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e7fce9270fa4c2b700',name:'粮油副食'}}}" class="fontstyle">
 						<div class="index-product-content-box1">
-							<img src="../../../images/products1-3.jpg" />
+							<img src="../../../images/products1-5.jpg" />
 						</div>
              </router-link>
 					</div>
 					<div class="index-product-content-right-bottom">
-             <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="fontstyle">
+             <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e5fce9270fa4c2b6fc',name:'酒水饮料'}}}" class="fontstyle">
 						<div class="index-product-content-box">
 							<img src="../../../images/products2-3.jpg" class="productimg"/>
 							<p class="index-product-content-right-title">酒水饮料</p>
-							<p class="index-product-content-right-content">意大利文化我们应该学习葡萄酒，意大利葡萄酒，葡萄酒和许多其他称是家庭的基本饮料</p>
+							<p class="index-product-content-right-content">意大利文化我们应该学习葡萄酒和许多其他称是家庭的基本饮料</p>
 						</div>
             </router-link>
-             <router-link :to="{name:'productcid',params:{id:{id:'5a72cac6d03d2b14449ff1aa',name:'粮油副食'}}}" class="fontstyle">
+             <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e6fce9270fa4c2b6fd',name:'进口零食'}}}" class="fontstyle">
 						<div class="index-product-content-box1">
-							<img src="../../../images/products1-5.jpg" />
+							<img src="../../../images/products1-8.jpg" />
 						</div>
             </router-link>
-             <router-link :to="{name:'productcid',params:{id:{id:'5a72cac6d03d2b14449ff1aa',name:'粮油副食'}}}" class="fontstyle">
+             <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e7fce9270fa4c2b700',name:'粮油副食'}}}" class="fontstyle">
 						<div class="index-product-content-box">
 							<img src="../../../images/products2-5.jpg" class="productimg"/>
 							<p class="index-product-content-right-title">粮油副食</p>
@@ -145,7 +145,7 @@
 			<div class="index-internet-content">
 				<div class="index-internet-top">
 					<p class="index-internet-title">营销网络</p>
-					<p class="index-internet-title-introduction">老外仓以““好”的生活，没那么“远””为经营理念, 精选意大利500+优质厂商，产品覆盖饮食、居家、厨房三大领域，主要负责采购、品控和物流销售。通过连接国外厂商和国内经销商，为用户提供最完善的服务体系，和用户一起为美好生活而努力</p>
+					<p class="index-internet-title-introduction">老外仓以“好”的生活，没那么“远”为经营理念，精选无数优质厂商，产品覆盖酒水饮料、休闲食品、粮油米面、新鲜蔬果、冷冻食品五大领域，主要负责采购、品控、物流以及销售。通过链接意大利厂商和国内经销商，为用户提供最完善的服务体系，和用户一起为美好生活而努力。</p>
 				</div>
 				<div class="index-internet-content">
 					<!--循环数据-->
@@ -164,7 +164,7 @@
 			<img class="imgsize" src="../../../images/index-contact.jpg" />
 			<div class="index-contact-c">
 				<div class="index-contact-content">
-					<p class="index-contact-introduce">某某控股集团有限公司成立于2005年1月18日，是一个市政府资本加快国有资本的战略性调整，一些重点企业做大做强，XX（实业）集团有限公司，国有独资公司XYZ控股有限公司和市燃气集团有限责任公司重组和一个城市的建立， 是其中的一个最大的国有企业资本、基础设施和公共设施和市政府和市国资委规划投资融资平台。自成立以来...
+					<p class="index-contact-introduce">老外仓国际贸易有限责任公司成立于2017年3月，注册资本伍仟万元，是一家新型的中外合资企业。团队成员主要来自中国和意大利两个国家。老外仓是在基于B2B电子商务平台上，为国内的经销商提供来自于意大利的优质食品。进口原产地,食品纯天然，健康无污染是老外仓在选择进口食品时的三大前提。在挑选意大利进口食品上...
 						<router-link to='/about' tag='span' class="navfont" active-class="routeactive">
             <span class="index-contact-more">MORE></span>
             </router-link></p>
@@ -190,8 +190,10 @@
 				</ul>
         </div>
 				<div class="index-cooperation-bottom">
-					<i><img :src="cooperationf[0]" id="ullongone" @click="ullongone"></i>
-					<i><img :src="cooperationf[1]" id="ullongtwo" @click="ullongtwo"></i>
+					<i v-for="(item,index) in BrangPage" :key=index class="ChangeBrand" @click="ChangeBrandsm(index)">
+            <img v-if="BrangPage[index] == 1" :src="cooperationf[0]">
+            <img v-if="BrangPage[index] != 1" :src="cooperationf[1]">
+          </i>
 				</div>
 				<p class="index-cooperation-footer">老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;浙ICP备15014783号-2</p>
 			</div>
@@ -201,7 +203,6 @@
 		<div>
 			<div><img class="midheaderbg" src="../../../images/banner1.jpg"/></div>
 		</div>
-
 		<!--产品业务-->
 		<div class="midwraperwidth">
 			<p class="midindex-product-title"><span>产品业务</span></p>
@@ -215,38 +216,38 @@
 				</div>
 				<div class="midindex-product-content-right">
 					<div class="midindex-product-content-right-top">
-            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca6cd03d2b14449ff1a7',name:'进口零食'}}}" class="midfontstyle">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e5fce9270fa4c2b6fc',name:'酒水饮料'}}}" class="midfontstyle">
 						<div class="midindex-product-content-box1">
-							<img src="../../../images/products1-8.jpg" />
+							<img src="../../../images/products1-3.jpg" />
 						</div>
             </router-link>
-            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca6cd03d2b14449ff1a7',name:'进口零食'}}}" class="midfontstyle">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e6fce9270fa4c2b6fd',name:'进口零食'}}}" class="midfontstyle">
 						<div class="midindex-product-content-box">
 							<img src="../../../images/products2-8.jpg" />
 							<p class="midindex-product-content-right-title">进口零食</p>
 							<p class="midindex-product-content-right-content">意大利有什么好吃的小吃？让我告诉你一些美味到不能停止的食品</p>
 						</div>
             </router-link>
-            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="midfontstyle">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e7fce9270fa4c2b700',name:'粮油副食'}}}" class="midfontstyle">
 						<div class="midindex-product-content-box1">
-							<img src="../../../images/products1-3.jpg" />
+							<img src="../../../images/products1-5.jpg" />
 						</div>
              </router-link>
 					</div>
 					<div class="midindex-product-content-right-bottom">
-             <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="midfontstyle">
+             <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e5fce9270fa4c2b6fc',name:'酒水饮料'}}}" class="midfontstyle">
 						<div class="midindex-product-content-box">
 							<img src="../../../images/products2-3.jpg" />
 							<p class="midindex-product-content-right-title">酒水饮料</p>
-							<p class="midindex-product-content-right-content">意大利文化我们应该学习葡萄酒，意大利葡萄酒，葡萄酒和许多其他称是家庭的基本饮料</p>
+							<p class="midindex-product-content-right-content">意大利文化我们应该学习葡萄酒和许多其他称是家庭的基本饮料</p>
 						</div>
             </router-link>
-             <router-link :to="{name:'productcid',params:{id:{id:'5a72cac6d03d2b14449ff1aa',name:'粮油副食'}}}" class="midfontstyle">
+             <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e6fce9270fa4c2b6fd',name:'进口零食'}}}" class="midfontstyle">
 						<div class="midindex-product-content-box1">
-							<img src="../../../images/products1-5.jpg" />
+							<img src="../../../images/products1-8.jpg" />
 						</div>
             </router-link>
-             <router-link :to="{name:'productcid',params:{id:{id:'5a72cac6d03d2b14449ff1aa',name:'粮油副食'}}}" class="midfontstyle">
+             <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e7fce9270fa4c2b700',name:'粮油副食'}}}" class="midfontstyle">
 						<div class="midindex-product-content-box">
 							<img src="../../../images/products2-5.jpg" />
 							<p class="midindex-product-content-right-title">粮油副食</p>
@@ -342,7 +343,7 @@
 			<div class="midindex-internet-content">
 				<div class="midindex-internet-top">
 					<p class="midindex-internet-title">营销网络</p>
-					<p class="midindex-internet-title-introduction">老外仓以““好”的生活，没那么“远””为经营理念, 精选意大利500+优质厂商，产品覆盖饮食、居家、厨房三大领域，主要负责采购、品控和物流销售。通过连接国外厂商和国内经销商，为用户提供最完善的服务体系，和用户一起为美好生活而努力</p>
+					<p class="midindex-internet-title-introduction">老外仓以“好”的生活，没那么“远”为经营理念，精选无数优质厂商，产品覆盖酒水饮料、休闲食品、粮油米面、新鲜蔬果、冷冻食品五大领域，主要负责采购、品控、物流以及销售。通过链接意大利厂商和国内经销商，为用户提供最完善的服务体系，和用户一起为美好生活而努力。</p>
 				</div>
 				<div class="midindex-internet-content">
 					<!--循环数据-->
@@ -361,7 +362,7 @@
 			<img class="midimgsize" src="../../../images/index-contact.jpg" />
 			<div class="midindex-contact-c">
 				<div class="midindex-contact-content">
-					<p class="midindex-contact-introduce">某某控股集团有限公司成立于2005年1月18日，是一个市政府资本加快国有资本的战略性调整，一些重点企业做大做强，XX（实业）集团有限公司，国有独资公司XYZ控股有限公司和市燃气集团有限责任公司重组和一个城市的建立， 是其中的一个最大的国有企业资本、基础设施和公共设施和市政府和市国资委规划投资融资平台。自成立以来...
+					<p class="midindex-contact-introduce">老外仓国际贸易有限责任公司成立于2017年3月，注册资本伍仟万元，是一家新型的中外合资企业。团队成员主要来自中国和意大利两个国家。老外仓是在基于B2B电子商务平台上，为国内的经销商提供来自于意大利的优质食品。进口原产地,食品纯天然，健康无污染是老外仓在选择进口食品时的三大前提。在挑选意大利进口食品上...
 						<router-link to='/about' tag='span' class="midnavfont" active-class="midrouteactive">
             <span class="midindex-contact-more">MORE></span>
             </router-link></p>
@@ -379,7 +380,7 @@
 				<p class="midindex-cooperation-content">这里是一些关于老外仓的业务服务伙伴</p>
         <div class="midulheight">
 				<ul class="midullong">
-					<li v-for="(item,index) in cooperation"  :key=index>
+					<li v-for="(item,index) in cooperation" :key=index>
             <router-link :to="'/brand/branddetail/'+item._id">
 						<img :src="item.imgurl" />
             </router-link>
@@ -387,8 +388,12 @@
 				</ul>
         </div>
 				<div class="midindex-cooperation-bottom">
-					<i><img :src="cooperationf[0]" id="ullongthree" @click="ullongthree"></i>
-					<i><img :src="cooperationf[1]" id="ullongfour" @click="ullongfour"></i>
+          <i v-for="(item,index) in BrangPage" :key=index class="ChangeBrand" @click="ChangeBrand(index)">
+            <img v-if="BrangPage[index] == 1" :src="cooperationf[0]">
+            <img v-if="BrangPage[index] != 1" :src="cooperationf[1]">
+          </i>
+					<!--<i><img :src="cooperationf[0]" id="ullongthree" @click="ullongthree"></i>
+					<i><img :src="cooperationf[1]" id="ullongfour" @click="ullongfour"></i>-->
 				</div>
 				<p class="midindex-cooperation-footer">老外仓&nbsp;&nbsp;版权所有&nbsp;&nbsp;2014-2019&nbsp;&nbsp;ICP&nbsp;&nbsp;浙ICP备15014783号-2</p>
 			</div>
@@ -412,38 +417,38 @@
 			<div class="mobileindex-product-content">
 				<div class="mobileindex-product-content-right">
 					<div class="mobileindex-product-content-right-top">
-            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca6cd03d2b14449ff1a7',name:'进口零食'}}}" class="mobilefontstyle mobileindex-product-content-box1">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e6fce9270fa4c2b6fd',name:'进口零食'}}}" class="mobilefontstyle mobileindex-product-content-box1">
 						<div >
 							<img src="../../../images/products1-8.jpg" />
 						</div>
             </router-link>
-            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="mobilefontstyle mobileindex-product-content-box">
-               <div>
-							<img src="../../../images/products2-3.jpg" />
-							<p class="mobileindex-product-content-right-title">酒水饮料</p>
-              </div>
-              </router-link>
-          </div>
-          <div class="mobileindex-product-content-right-top">
-            <router-link :to="{name:'productcid',params:{id:{id:'5a72ca6cd03d2b14449ff1a7',name:'进口零食'}}}" class="mobilefontstyle mobileindex-product-content-box">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e6fce9270fa4c2b6fd',name:'进口零食'}}}" class="mobilefontstyle mobileindex-product-content-box">
 						<div >
 						<img src="../../../images/products2-8.jpg" />
 						<p class="mobileindex-product-content-right-title">进口零食</p>
 						</div>
             </router-link>
-              <router-link :to="{name:'productcid',params:{id:{id:'5a72ca5fd03d2b14449ff1a6',name:'酒水饮料'}}}" class="mobilefontstyle mobileindex-product-content-box1">
+          </div>
+          <div class="mobileindex-product-content-right-top">
+            <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e5fce9270fa4c2b6fc',name:'酒水饮料'}}}" class="mobilefontstyle mobileindex-product-content-box">
+               <div>
+							<img src="../../../images/products2-3.jpg" />
+							<p class="mobileindex-product-content-right-title">酒水饮料</p>
+              </div>
+              </router-link>
+               <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e5fce9270fa4c2b6fc',name:'酒水饮料'}}}" class="mobilefontstyle mobileindex-product-content-box1">
 						<div>
 							<img src="../../../images/products1-3.jpg" />
 						</div>
             </router-link>
               </div>
             <div class="mobileindex-product-content-right-top">
-             <router-link :to="{name:'productcid',params:{id:{id:'5a72cac6d03d2b14449ff1aa',name:'粮油副食'}}}" class="mobilefontstyle mobileindex-product-content-box1">
+             <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e7fce9270fa4c2b700',name:'粮油副食'}}}" class="mobilefontstyle mobileindex-product-content-box1">
 						<div>
 							<img src="../../../images/products1-5.jpg" />
 						</div>
             </router-link>
-             <router-link :to="{name:'productcid',params:{id:{id:'5a72cac6d03d2b14449ff1aa',name:'粮油副食'}}}" class="mobilefontstyle mobileindex-product-content-box">
+             <router-link :to="{name:'productcid',params:{id:{id:'5a9bf5e7fce9270fa4c2b700',name:'粮油副食'}}}" class="mobilefontstyle mobileindex-product-content-box">
 						<div>
 							<img src="../../../images/products2-5.jpg" />
 							<p class="mobileindex-product-content-right-title">粮油副食</p>
@@ -559,126 +564,185 @@
   </div>
 </template>
 <script>
-import indexcontact1 from '../../../images/index-contact1.png'
-import indexcontact2 from '../../../images/index-contact2.png'
-import indexcontact3 from '../../../images/index-contact3.png'
-import indexcontact4 from '../../../images/index-contact4.png'
-import cooperation7 from '../../../images/cooperation-7.png'
-import cooperation8 from '../../../images/cooperation-8.png'
+import indexcontact1 from "../../../images/index-contact1.png";
+import indexcontact2 from "../../../images/index-contact2.png";
+import indexcontact3 from "../../../images/index-contact3.png";
+import indexcontact4 from "../../../images/index-contact4.png";
+import cooperation7 from "../../../images/cooperation-7.png";
+import cooperation8 from "../../../images/cooperation-8.png";
 export default {
-  data () {
+  data() {
     return {
+      BrangPage: [],
       fliterbrand: {
         data6: [],
-        limit: 10,
+        limit: 300,
         page: 1
       },
       fliternews: {
         data6: [],
         limit: 2,
         page: 1,
-        type: '1'
+        type: "1"
       },
       fliternews1: {
         data6: [],
         limit: 2,
         page: 2,
-        type: '1'
+        type: "1"
       },
       width: 1920,
       internet: [
         {
-          num: '860+',
-          introduction: '我们合作品牌的数量已达到860多个'
+          num: "100+",
+          introduction: "我们合作品牌的数量已达到100多个"
         },
         {
-          num: '125+',
-          introduction: '我们公司产品历史悠久，每一件都很经典'
+          num: "200+",
+          introduction: "我们公司产品历史悠久，每一件都很经典"
         },
         {
-          num: '1000+',
-          introduction: '我们的产品数量已达到1000多个'
+          num: "1000+",
+          introduction: "我们的产品数量已达到1000多个"
         },
         {
-          num: 'TOP',
-          introduction: '我们是业内最好的公司之一'
+          num: "TOP",
+          introduction: "我们是业内最好的公司之一"
         }
       ],
       contact: [
         {
           icon: indexcontact1,
-          value: '手机：86-15868121781 '
+          value: "手机：17767052082 "
         },
         {
           icon: indexcontact2,
-          value: '座机：86-010-15868121781'
+          value: "座机：0571-88305872"
         },
         {
           icon: indexcontact3,
-          value: '邮件：LWC@laowaicang.com'
+          value: "邮件：laowaicang@laowaicang.com"
         },
         {
           icon: indexcontact4,
-          value: '地址：中国杭州 滨江区 滨盛路1688号'
+          value: "地址：杭州 滨江区 滨盛路1688号"
         }
       ],
       cooperation: [],
       indexnews1: [],
       indexnews2: [],
-      cooperationf: [
-        cooperation7,
-        cooperation8
-      ]
-    }
+      cooperationf: [cooperation7, cooperation8],
+      fliterP1: {
+        data6: [],
+        limit: 5,
+        page: 8
+      },
+      fliterP2: {
+        data6: [],
+        limit: 5,
+        page: 10
+      }
+    };
   },
   methods: {
-    ullongone () {
-      document.getElementsByClassName('ullong')[0].style.left = 0
+    ChangeBrandsm(index) {
+      let Temlength = this.BrangPage.length;
+      this.BrangPage = [];
+      document.getElementsByClassName("ullong")[0].style.left =
+        -index * 5 * 200 + "px";
+      for (let i = 0; i < Temlength; i++) {
+        if (index === i) {
+          this.BrangPage.push("1");
+        } else {
+          this.BrangPage.push("2");
+        }
+      }
     },
-    ullongtwo () {
-      document.getElementsByClassName('ullong')[0].style.left = -parseInt(window.getComputedStyle(document.getElementsByClassName('ulheight')[0], null)['width']) + 'px'
-    },
-    ullongthree () {
-      document.getElementsByClassName('midullong')[0].style.left = 0
-    },
-    ullongfour () {
-      document.getElementsByClassName('midullong')[0].style.left = -parseInt(window.getComputedStyle(document.getElementsByClassName('midulheight')[0], null)['width']) + 'px'
-    }
-  },
-  created () {
-    this.width = document.documentElement.offsetWidth
-    this.$http.post('http://120.79.22.222:3000/brand/list', this.fliterbrand).then(res => {
-      this.cooperation = res.data.rows
-    })
-    this.$http.post('http://120.79.22.222:3000/news/list', this.fliternews).then(res => {
-      this.indexnews1 = res.data.rows
-    })
-    this.$http.post('http://120.79.22.222:3000/news/list', this.fliternews1).then(res => {
-      this.indexnews2 = res.data.rows
-    })
-  },
-  mounted () {
-    if (document.getElementsByClassName('mobilefontstyle')[0]) {
-      let ii = window.getComputedStyle(document.getElementsByClassName('mobilefontstyle')[0], null)['width']
-      let oo = document.getElementsByClassName('mobileindex-product-content-box1').length
-      for (let i = 0; i < oo; i++) {
-        document.getElementsByClassName('mobileindex-product-content-box')[i].style.height = ii
+    ChangeBrand(index) {
+      let Temlength = this.BrangPage.length;
+      this.BrangPage = [];
+      document.getElementsByClassName("midullong")[0].style.left =
+        -index * 5 * 284 + "px";
+      for (let i = 0; i < Temlength; i++) {
+        if (index === i) {
+          this.BrangPage.push("1");
+        } else {
+          this.BrangPage.push("2");
+        }
       }
     }
   },
-  updated () {
-    if (document.getElementsByClassName('mobilefontstyle')[0]) {
-      let ii = window.getComputedStyle(document.getElementsByClassName('mobilefontstyle')[0], null)['width']
-      let oo = document.getElementsByClassName('mobileindex-product-content-box1').length
+  created() {
+    this.width = document.documentElement.offsetWidth;
+    this.$http
+      .post(this.getTest() + "/brand/list", this.fliterbrand)
+      .then(res => {
+        let cooperationlength = res.data.rows.length;
+        for (let i = 0; i < cooperationlength; i++) {
+          if (res.data.rows[i].detail) {
+            this.cooperation.push(res.data.rows[i]);
+          }
+        }
+        if (document.getElementsByClassName("midullong")[0]) {
+          document.getElementsByClassName("midullong")[0].style.width =
+            this.cooperation.length * 284 + "px";
+        }
+        if (document.getElementsByClassName("ullong")[0]) {
+          document.getElementsByClassName("ullong")[0].style.width =
+            this.cooperation.length * 200 + "px";
+        }
+        let Brangp = parseInt(this.cooperation.length / 5) + 1;
+        for (let i = 0; i < Brangp; i++) {
+          this.BrangPage.push(i + 1);
+        }
+      });
+    this.$http
+      .post(this.getTest() + "/news/list", this.fliternews)
+      .then(res => {
+        this.indexnews1 = res.data.rows;
+      });
+    this.$http
+      .post(this.getTest() + "/news/list", this.fliternews1)
+      .then(res => {
+        this.indexnews2 = res.data.rows;
+      });
+  },
+  mounted() {
+    if (document.getElementsByClassName("mobilefontstyle")[0]) {
+      let ii = window.getComputedStyle(
+        document.getElementsByClassName("mobilefontstyle")[0],
+        null
+      )["width"];
+      let oo = document.getElementsByClassName(
+        "mobileindex-product-content-box1"
+      ).length;
       for (let i = 0; i < oo; i++) {
-        document.getElementsByClassName('mobileindex-product-content-box')[i].style.height = ii
+        document.getElementsByClassName("mobileindex-product-content-box")[
+          i
+        ].style.height = ii;
+      }
+    }
+  },
+  updated() {
+    if (document.getElementsByClassName("mobilefontstyle")[0]) {
+      let ii = window.getComputedStyle(
+        document.getElementsByClassName("mobilefontstyle")[0],
+        null
+      )["width"];
+      let oo = document.getElementsByClassName(
+        "mobileindex-product-content-box1"
+      ).length;
+      for (let i = 0; i < oo; i++) {
+        document.getElementsByClassName("mobileindex-product-content-box")[
+          i
+        ].style.height = ii;
       }
     }
     window.onresize = () => {
-      this.width = document.documentElement.offsetWidth
-    }
+      this.width = document.documentElement.offsetWidth;
+    };
   }
-}
+};
 </script>
 <style scoped>
 i {
@@ -701,7 +765,7 @@ li {
   width: 1000px;
   margin: 0 auto 0 auto;
 }
-.index-product-content-left-img{
+.index-product-content-left-img {
   width: 245px;
 }
 .index-about-content {
@@ -714,14 +778,14 @@ li {
   bottom: 0;
   display: flex;
 }
-img{
-  border:0
+img {
+  border: 0;
 }
 .index-product-title {
   margin-top: 80px;
   text-align: center;
 }
-.productimg{
+.productimg {
   width: 120px;
 }
 .index-product-title span {
@@ -730,7 +794,7 @@ img{
   margin: 0 auto;
   color: #f1662c;
 }
-.fontstyle{
+.fontstyle {
   text-decoration: none;
 }
 .index-product-introduction {
@@ -762,21 +826,24 @@ img{
 .index-product-content-box {
   width: 245px;
   height: 225px;
-  background: #faf4ee;
+  background: #f8efe8;
   padding-top: 20px;
   text-align: center;
+  z-index: 14;
 }
-.index-product-content-box1{
+.index-product-content-box1 {
   height: 245px;
   width: 245px;
+  z-index: 14;
 }
-.midindex-product-content-box1{
+.midindex-product-content-box1 {
   overflow: hidden;
+  z-index: 14;
 }
-.midindex-product-content-box1 img{
-   width: 100%;
+.midindex-product-content-box1 img {
+  width: 100%;
 }
-.index-product-content-box1 img{
+.index-product-content-box1 img {
   height: 100%;
 }
 .index-product-content-right-title {
@@ -797,7 +864,7 @@ img{
   background: #f5f5f5;
   padding-bottom: 80px;
 }
-.navfont{
+.navfont {
   cursor: pointer;
 }
 .index-news-title {
@@ -818,10 +885,15 @@ img{
 .index-news-content-top {
   display: flex;
 }
-.index-news-content-top-img{
+.index-news-content-top-img {
   width: 245px;
+  height: 147px;
 }
-.index-news-content-top-boxx{
+.midindex-news-content-top-img {
+  width: 350px;
+  height: 210px;
+}
+.index-news-content-top-boxx {
   width: 490px;
   margin-right: 5px;
 }
@@ -836,7 +908,7 @@ img{
 
 .index-news-content-top i .index-news-content-span {
   display: block;
-  width: 220px;
+  width: 230px;
   height: 100px;
   margin: 10px;
   background: #f0f2f2;
@@ -945,14 +1017,14 @@ img{
   float: left;
   text-align: center;
 }
-.ulheight{
+.ulheight {
   height: 155px;
   width: 1000px;
   overflow: hidden;
   position: relative;
   margin: 0 auto;
 }
-.midulheight{
+.midulheight {
   height: 175px;
   width: 1420px;
   overflow: hidden;
@@ -1013,7 +1085,7 @@ img{
   font-size: 10px;
   letter-spacing: 3px;
   text-indent: 2em;
-  margin-top: 15px;
+  margin-top: 35px;
 }
 
 .index-contact-more {
@@ -1026,7 +1098,7 @@ img{
 
 .index-contact-method {
   list-style: none;
-  margin-top: 20px;
+  margin-top: 50px;
   position: relative;
 }
 
@@ -1044,7 +1116,7 @@ img{
   text-indent: 2em;
 }
 
-.iconfont{
+.iconfont {
   width: 20px;
 }
 
@@ -1102,7 +1174,7 @@ li {
   margin: 0;
   padding: 0;
 }
-.midfontstyle{
+.midfontstyle {
   text-decoration: none;
 }
 .midheaderbg {
@@ -1164,9 +1236,10 @@ li {
 .midindex-product-content-box {
   width: 348px;
   height: 318px;
-  background: #faf4ee;
+  background: #f8efe8;
   padding-top: 30px;
   text-align: center;
+  z-index: 14;
 }
 
 .midindex-product-content-right-title {
@@ -1188,32 +1261,38 @@ li {
   background: #f5f5f5;
   padding-bottom: 100px;
 }
-.ullong{
+.ullong {
   width: 2000px;
   overflow: hidden;
   position: absolute;
   transition: all 1s;
+  left: 0;
 }
-.ullong li{
+.ullong li {
   width: 200px;
   text-align: center;
+  height: 100px;
 }
-.ullong img{
-  width: 100%;
+.ullong img {
+  max-width: 100%;
+  height: 100%;
 }
-.midullong{
+.midullong {
   width: 2840px;
   overflow: hidden;
   position: absolute;
   transition: all 1s;
+  left: 0;
 }
-.midullong li{
+.midullong li {
   width: 280px;
   margin-right: 4px;
   text-align: center;
+  height: 100px;
 }
-.midullong img{
-  width: 100%;
+.midullong img {
+  max-width: 280px;
+  height: 100%;
 }
 .midindex-news-title {
   text-align: center;
@@ -1242,7 +1321,7 @@ li {
   position: absolute;
   background: white;
 }
-.midnavfont{
+.midnavfont {
   cursor: pointer;
 }
 .midindex-news-content-top i .midindex-news-content-span {
@@ -1307,7 +1386,7 @@ li {
   text-align: center;
   margin-left: 220px;
 }
-.midindex-about-box img{
+.midindex-about-box img {
   width: 100%;
 }
 .midindex-about-box:nth-of-type(1) {
@@ -1479,7 +1558,7 @@ li {
   margin-top: 60px;
   padding-bottom: 20px;
 }
-.mobilefontstyle{
+.mobilefontstyle {
   text-decoration: none;
 }
 .mobileheaderbg {
@@ -1500,7 +1579,7 @@ li {
   right: 0;
   bottom: 0;
 }
-img{
+img {
   border: 0;
 }
 .mobileindex-product-title {
@@ -1518,7 +1597,7 @@ img{
   font-weight: 600;
   height: 40px;
   line-height: 40px;
-  padding:0 20px;
+  padding: 0 20px;
 }
 
 .mobileindex-product-title span {
@@ -1533,7 +1612,7 @@ img{
   color: #ee882a;
   margin-left: 20px;
 }
-.mobileindex-new-title .knowmore{
+.mobileindex-new-title .knowmore {
   color: gray;
   float: right;
   font-size: 14px;
@@ -1541,7 +1620,7 @@ img{
   position: relative;
   margin-right: 20px;
 }
-.mobileindex-product-title .knowmore{
+.mobileindex-product-title .knowmore {
   color: gray;
   float: right;
   font-size: 14px;
@@ -1553,7 +1632,7 @@ img{
   margin-top: 10px;
   text-align: center;
   color: #666666;
-  padding:0 10px;
+  padding: 0 10px;
   font-size: 14px;
 }
 
@@ -1561,7 +1640,7 @@ img{
   padding-top: 25px;
   display: flex;
 }
-.mobileindex-product-content-right{
+.mobileindex-product-content-right {
   width: 100%;
 }
 .mobileindex-product-content-right-top {
@@ -1576,16 +1655,17 @@ img{
 
 .mobileindex-product-content-box {
   width: 50%;
-  background: #faf4ee;
+  background: #f8efe8;
   text-align: center;
   height: 100%;
   position: relative;
   font-size: 0;
+  z-index: 14;
 }
-.mobileindex-product-content-box img{
+.mobileindex-product-content-box img {
   margin-top: 15px;
   width: 70%;
-  background: #faf4ee;
+  background: #f8efe8;
   text-align: center;
 }
 
@@ -1593,12 +1673,13 @@ img{
   font-size: 16px;
   color: #ee882a;
 }
-.mobileindex-product-content-box1{
+.mobileindex-product-content-box1 {
   width: 50%;
   height: 100%;
   font-size: 0;
+  z-index: 14;
 }
-.mobileindex-product-content-box1 img{
+.mobileindex-product-content-box1 img {
   width: 100%;
   height: 100%;
 }
@@ -1623,7 +1704,7 @@ img{
 .mobileindex-news-content {
   margin-top: 50px;
 }
-.mobileindex-news-content-top-boxx{
+.mobileindex-news-content-top-boxx {
   display: flex;
   width: 100%;
   margin-bottom: 10px;
@@ -1652,21 +1733,24 @@ img{
   padding-top: 10px;
   padding-right: 5px;
   position: relative;
-  z-index: 12
+  z-index: 12;
 }
 
 .mobileindex-news-content-top i .mobileindex-news-content-span:hover {
   margin-left: 0px;
   transition: all 1s;
 }
-.mobileindex-news-content-top-img{
+.mobileindex-news-content-top-img {
   width: 50%;
   margin-left: 50%;
   height: 105px;
   position: relative;
-  z-index: 11
+  z-index: 11;
 }
-.mobileindex-news-content-top i .mobileindex-news-content-span .mobileindex-news-p1 {
+.mobileindex-news-content-top
+  i
+  .mobileindex-news-content-span
+  .mobileindex-news-p1 {
   margin-left: 25px;
 }
 
@@ -1708,9 +1792,9 @@ img{
   float: left;
   text-align: center;
 }
-.mobileindex-about-box img{
+.mobileindex-about-box img {
   margin-top: 5px;
-  width: 50%
+  width: 50%;
 }
 .mobileindex-about-box:nth-of-type(1) {
   margin: 0;
@@ -1748,20 +1832,20 @@ img{
   font-weight: 600;
   color: #f1662c;
 }
-.mobileimgsizein{
+.mobileimgsizein {
   width: 200%;
   margin-top: 60px;
   height: 180px;
-  margin-left:-50%;
+  margin-left: -50%;
 }
 .mobileindex-internet-box {
   width: 50%;
   float: left;
   text-align: center;
-   margin-top: 60px;
+  margin-top: 60px;
 }
 
-.mobileindex-internet-box:nth-of-type(n+3) {
+.mobileindex-internet-box:nth-of-type(n + 3) {
   margin: 0;
 }
 
@@ -1789,7 +1873,7 @@ img{
 .mobileindex-contact {
   position: relative;
 }
-.mobileimgsizeco{
+.mobileimgsizeco {
   width: 100%;
   height: 150px;
 }
@@ -1825,7 +1909,7 @@ img{
   position: relative;
 }
 
-.mobileindex-contact-method img{
+.mobileindex-contact-method img {
   width: 18px;
 }
 
@@ -1860,5 +1944,8 @@ img{
   font-size: 12px;
   width: 100%;
   text-align: center;
+}
+.ChangeBrand {
+  margin-left: 10px;
 }
 </style>

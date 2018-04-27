@@ -26,6 +26,9 @@ import Producten from '@/component/product/product'
 import ProductListen from '@/component/product/productlist'
 import ProductCiden from '@/component/product/productcid'
 import ProductDetailen from '@/component/product/productdetail'
+import Brandlisten from '@/component/product/brandlist'
+import Branden from '@/component/product/brand'
+import Branddetailen from '@/component/product/branddetail'
 import Index from '@/components/index/index'
 import Contact from '@/components/contact/contact'
 import Message from '@/components/message/message'
@@ -280,6 +283,25 @@ export default new Router({
         components: {
           default: ProductDetailen
         }
+      },
+      {
+        path: '/enbrand',
+        components: {
+          default: Branden
+        },
+        children: [{
+          path: '/',
+          components: {
+            default: Brandlisten
+          }
+        },
+        {
+          path: 'enbranddetail/:id',
+          name: 'enbranddetail',
+          components: {
+            default: Branddetailen
+          }
+        }]
       }]
     },
     {

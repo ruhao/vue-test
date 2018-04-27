@@ -117,7 +117,7 @@ export default {
   methods: {
     getData (index) {
       this.fliter.type = this.typeone[index]
-      this.$http.post('http://120.79.22.222:3000/brand/list', this.fliter).then(res => {
+      this.$http.post(this.getTest() + '/brand/list', this.fliter).then(res => {
         this.pages.push(res.data.pages)
         this.content.push(res.data.rows)
         if (res.data.rows.length > 0) {
@@ -133,7 +133,7 @@ export default {
     getmore (index) {
       this.fliter.limit = this.fliter.limit + 12
       this.fliter.type = this.typeone[index]
-      this.$http.post('http://120.79.22.222:3000/brand/list', this.fliter).then(res => {
+      this.$http.post(this.getTest() + '/brand/list', this.fliter).then(res => {
         this.content[index] = res.data.rows
         this.flag.push('flase')
       })
@@ -141,7 +141,7 @@ export default {
     getless (index) {
       this.fliter.limit = 12
       this.fliter.type = this.typeone[index]
-      this.$http.post('http://120.79.22.222:3000/brand/list', this.fliter).then(res => {
+      this.$http.post(this.getTest() + '/brand/list', this.fliter).then(res => {
         this.content[index] = res.data.rows
         this.flag.push('flase')
       })
@@ -200,10 +200,11 @@ ul{
   padding: 5px 0;
   cursor: pointer;
   box-sizing: border-box;
-   overflow: hidden;
+  overflow: hidden;
 }
 .brandcontent img{
   max-width: 155px;
+  height: 100%;
 }
 .brandcontent1{
   cursor: pointer;
@@ -214,6 +215,7 @@ ul{
   height: 40px;
   box-sizing: border-box;
   line-height: 40px;
+  overflow: hidden;
 }
 .fontstyle{
  text-decoration: none;
@@ -275,6 +277,7 @@ ul{
 }
 .midbrandcontent img{
   max-width: 200px;
+  height: 100%;
 }
 .midbrandcontent1{
   cursor: pointer;
@@ -351,6 +354,7 @@ ul{
 }
 .mobilebrandcontent img{
   max-width: 95%;
+  height: 100%;
 }
 .mobilebrandcontent1{
   cursor: pointer;

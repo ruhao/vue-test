@@ -113,7 +113,7 @@ export default {
   created () {
     this.width = document.documentElement.offsetWidth
     this.$http
-      .post('http://http://120.79.22.222:3000/about/list', this.fliter)
+      .post(this.getTest() + '/about/list', this.fliter)
       .then(res => {
         let ii = res.data.rows.length
         for (let i = 0; i < ii; i++) {
@@ -189,6 +189,7 @@ img {
   font-size: 28px;
   color: #ee882a;
   margin-bottom: 35px;
+  text-indent: 0.8em;
 }
 .honorcontentp {
   margin-left: 50px;
@@ -196,8 +197,8 @@ img {
   font-size: 12px;
   line-height: 25px;
   color: #5b6270;
-  text-shadow: 0.4px 0.4px 0.4px #9ba7b5;
   letter-spacing: 2px;
+  text-indent: 1.5em;
 }
 .midwraperwidth {
   width: 1420px;
@@ -241,6 +242,7 @@ img {
   font-size: 28px;
   color: #ee882a;
   margin-bottom: 35px;
+  text-indent: 0.8em;
 }
 .midhonorcontentp {
   margin-left: 50px;
@@ -248,8 +250,8 @@ img {
   font-size: 12px;
   line-height: 25px;
   color: #5b6270;
-  text-shadow: 0.4px 0.4px 0.4px #9ba7b5;
   letter-spacing: 2px;
+  text-indent: 1.5em;
 }
 .mobilewraperwidth {
   width: 100%;
@@ -302,7 +304,7 @@ img {
   font-size: 10px;
   line-height: 18px;
   color: #5b6270;
-  text-shadow: 0.4px 0.4px 0.4px #9ba7b5;
   letter-spacing: 2px;
+  text-indent: 1.5em;
 }
 </style>

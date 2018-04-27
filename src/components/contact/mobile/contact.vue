@@ -23,6 +23,7 @@
 					<div class='midcontact-content-tc'>
 						<h3>意大利总部</h3>
 						<ul class="midindex-contact-method">
+            <br />
 						<li v-for="(item,index) in contact1" :key=index><img :src="item.icon"><span class="midindex-contact-span">{{item.value}}</span></li>
 					</ul>
 					</div>
@@ -47,20 +48,26 @@ export default {
     return {
       contact: [
         {
-          icon: indexcontact1,
-          value: '手机：86-15868121781'
-        },
-        {
           icon: indexcontact2,
-          value: '座机：86-010-15868121781'
+          value: '座机：0571-88305872'
         },
         {
           icon: indexcontact3,
-          value: '邮件：15868121781@qq.com'
+          value: '邮件：laowaicang@laowaicang.com'
         },
         {
           icon: indexcontact4,
           value: '地址：中国杭州 滨江区 滨盛路1688号'
+        }
+      ],
+      contact1: [
+        {
+          icon: indexcontact1,
+          value: '电话：39320 3933535'
+        },
+        {
+          icon: indexcontact4,
+          value: '地址：Via Varese,2/a 21047 Saronno(VA),Italy'
         }
       ]
     }
@@ -154,6 +161,7 @@ img,ul{
   padding: 5% 0 0 5%;
   margin: 10px auto 0;
   top:10px;
+  height: 135px;
 }
 
 .midcontact-content-tc h3 {

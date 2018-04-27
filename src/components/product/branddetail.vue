@@ -97,7 +97,20 @@ export default {
         limit: 1000,
         page: 1,
         type: '',
-        belong: ''
+        belong: []
+      }
+    }
+  },
+  methods: {
+    getId (type, data, data1) {
+      if (data.children) {
+        this.getId(type, data.children[0], data1)
+      } else {
+        if (type === data.type) {
+          this.id = data1._id
+          this.cidsec1 = data1.text
+          console.log(this.cidsec1, this.id)
+        }
       }
     }
   },
@@ -107,23 +120,21 @@ export default {
   created () {
     this.width = document.documentElement.offsetWidth
     this.$http
-      .get('http://120.79.22.222:3000/brand/data/' + this.$route.params.id)
+      .get(this.getTest() + '/brand/data/' + this.$route.params.id)
       .then(res => {
+        this.fliter.belong = []
         this.content = res.data
         this.content.detail = this.content.detail.split('&&')
-        this.fliter.belong = res.data.name
+        this.fliter.belong.push(res.data.name)
         this.$http
-          .post('http://120.79.22.222:3000/products/list', this.fliter)
+          .post(this.getTest() + '/products/list', this.fliter)
           .then(res => {
             this.relation = res.data.rows
             this.fliter.type = res.data.rows[0].type
-            this.$http.get('http://120.79.22.222:3000/kind/data').then(res => {
-              let rr = res.data[0].children[5].children.length
+            this.$http.get(this.getTest() + '/kind/data').then(res => {
+              let rr = res.data[0].children[0].children[5].children.length
               for (let i = 0; i < rr; i++) {
-                if (this.fliter.type === res.data[0].children[5].children[i].type) {
-                  this.id = res.data[0].children[5].children[i]._id
-                  this.cidsec1 = res.data[0].children[5].children[i].text
-                }
+                this.getId(this.fliter.type, res.data[0].children[0].children[5].children[i], res.data[0].children[0].children[5].children[i])
               }
             })
           })
@@ -179,7 +190,8 @@ export default {
      overflow: hidden;
  }
 .box img{
-    width: 495px;
+    max-width: 495px;
+    height: 100%;
     margin: auto;
     vertical-align:middle;
 }
@@ -190,10 +202,11 @@ export default {
     color: #ef9643;
 }
 .content{
-    margin: 20px 45px 0;
-    line-height: 20px;
+    margin: 10px 45px 0;
+    line-height: 18px;
     letter-spacing: 1px;
-    font-size: 14px;
+    font-size: 12px;
+    text-indent: 1.5em;
 }
 .wraperwidthtwo{
     width: 1000px;
@@ -339,6 +352,7 @@ export default {
      overflow: hidden;
      margin: 0 2%;
      text-overflow: ellipsis;
+     padding-bottom: 15px;
  }
 .mobilebox img{
     width: 90%;
